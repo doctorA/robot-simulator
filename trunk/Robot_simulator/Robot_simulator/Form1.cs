@@ -27,7 +27,7 @@ namespace Robot_simulator
         int width;
         Robot robot = new Robot(0,60,30,90,0);
         #endregion
-
+        //ej
 
         #region lol2
         public Form1()
