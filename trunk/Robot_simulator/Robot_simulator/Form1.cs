@@ -178,5 +178,13 @@ namespace Robot_simulator
             label5.Text = trackBar5.Value.ToString();
             glControl1.Invalidate();
         }
+
+
+        //zbiši ko neboš rabo več :)
+        private void button_tmp_Click(object sender, EventArgs e)
+        {
+            Rezkar lol = new Rezkar();
+            lol.ShowDialog();
+        }
     }
 }
