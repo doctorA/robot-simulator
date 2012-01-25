@@ -36,15 +36,17 @@
             this.odpriJBIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izhodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nastavitveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox_orodjarna = new System.Windows.Forms.GroupBox();
             this.button_brisi = new System.Windows.Forms.Button();
             this.button_premakni = new System.Windows.Forms.Button();
             this.button_kvadrat = new System.Windows.Forms.Button();
             this.button_lok = new System.Windows.Forms.Button();
             this.button_krog = new System.Windows.Forms.Button();
             this.button_crta = new System.Windows.Forms.Button();
+            this.robotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vmesnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.groupBox_orodjarna.SuspendLayout();
             this.SuspendLayout();
             // 
             // glControl1
@@ -55,6 +57,8 @@
             this.glControl1.Size = new System.Drawing.Size(562, 660);
             this.glControl1.TabIndex = 0;
             this.glControl1.VSync = false;
+            this.glControl1.Load += new System.EventHandler(this.glControl1_Load);
+            this.glControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.glControl1_Paint);
             // 
             // menuStrip1
             // 
@@ -80,46 +84,49 @@
             // shraniJBIToolStripMenuItem
             // 
             this.shraniJBIToolStripMenuItem.Name = "shraniJBIToolStripMenuItem";
-            this.shraniJBIToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.shraniJBIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.shraniJBIToolStripMenuItem.Text = "Shrani JBI...";
             // 
             // odpriJBIToolStripMenuItem
             // 
             this.odpriJBIToolStripMenuItem.Name = "odpriJBIToolStripMenuItem";
-            this.odpriJBIToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.odpriJBIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.odpriJBIToolStripMenuItem.Text = "Odpri JBI...";
             // 
             // izhodToolStripMenuItem
             // 
             this.izhodToolStripMenuItem.Name = "izhodToolStripMenuItem";
-            this.izhodToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.izhodToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.izhodToolStripMenuItem.Text = "Izhod";
             // 
             // nastavitveToolStripMenuItem
             // 
+            this.nastavitveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.robotaToolStripMenuItem,
+            this.vmesnikToolStripMenuItem});
             this.nastavitveToolStripMenuItem.Name = "nastavitveToolStripMenuItem";
             this.nastavitveToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.nastavitveToolStripMenuItem.Text = "Nastavitve";
             // 
-            // groupBox1
+            // groupBox_orodjarna
             // 
-            this.groupBox1.Controls.Add(this.button_brisi);
-            this.groupBox1.Controls.Add(this.button_premakni);
-            this.groupBox1.Controls.Add(this.button_kvadrat);
-            this.groupBox1.Controls.Add(this.button_lok);
-            this.groupBox1.Controls.Add(this.button_krog);
-            this.groupBox1.Controls.Add(this.button_crta);
-            this.groupBox1.Location = new System.Drawing.Point(594, 27);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(193, 668);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Orodjarna";
+            this.groupBox_orodjarna.Controls.Add(this.button_brisi);
+            this.groupBox_orodjarna.Controls.Add(this.button_premakni);
+            this.groupBox_orodjarna.Controls.Add(this.button_kvadrat);
+            this.groupBox_orodjarna.Controls.Add(this.button_lok);
+            this.groupBox_orodjarna.Controls.Add(this.button_krog);
+            this.groupBox_orodjarna.Controls.Add(this.button_crta);
+            this.groupBox_orodjarna.Location = new System.Drawing.Point(594, 27);
+            this.groupBox_orodjarna.Name = "groupBox_orodjarna";
+            this.groupBox_orodjarna.Size = new System.Drawing.Size(193, 660);
+            this.groupBox_orodjarna.TabIndex = 2;
+            this.groupBox_orodjarna.TabStop = false;
+            this.groupBox_orodjarna.Text = "Orodjarna";
             // 
             // button_brisi
             // 
             this.button_brisi.Image = ((System.Drawing.Image)(resources.GetObject("button_brisi.Image")));
-            this.button_brisi.Location = new System.Drawing.Point(52, 560);
+            this.button_brisi.Location = new System.Drawing.Point(40, 549);
             this.button_brisi.Name = "button_brisi";
             this.button_brisi.Size = new System.Drawing.Size(100, 100);
             this.button_brisi.TabIndex = 5;
@@ -128,7 +135,7 @@
             // button_premakni
             // 
             this.button_premakni.Image = ((System.Drawing.Image)(resources.GetObject("button_premakni.Image")));
-            this.button_premakni.Location = new System.Drawing.Point(52, 454);
+            this.button_premakni.Location = new System.Drawing.Point(40, 443);
             this.button_premakni.Name = "button_premakni";
             this.button_premakni.Size = new System.Drawing.Size(100, 100);
             this.button_premakni.TabIndex = 4;
@@ -137,7 +144,7 @@
             // button_kvadrat
             // 
             this.button_kvadrat.Image = ((System.Drawing.Image)(resources.GetObject("button_kvadrat.Image")));
-            this.button_kvadrat.Location = new System.Drawing.Point(52, 242);
+            this.button_kvadrat.Location = new System.Drawing.Point(40, 231);
             this.button_kvadrat.Name = "button_kvadrat";
             this.button_kvadrat.Size = new System.Drawing.Size(100, 100);
             this.button_kvadrat.TabIndex = 3;
@@ -146,7 +153,7 @@
             // button_lok
             // 
             this.button_lok.Image = ((System.Drawing.Image)(resources.GetObject("button_lok.Image")));
-            this.button_lok.Location = new System.Drawing.Point(52, 136);
+            this.button_lok.Location = new System.Drawing.Point(40, 125);
             this.button_lok.Name = "button_lok";
             this.button_lok.Size = new System.Drawing.Size(100, 100);
             this.button_lok.TabIndex = 1;
@@ -155,7 +162,7 @@
             // button_krog
             // 
             this.button_krog.Image = ((System.Drawing.Image)(resources.GetObject("button_krog.Image")));
-            this.button_krog.Location = new System.Drawing.Point(52, 348);
+            this.button_krog.Location = new System.Drawing.Point(40, 337);
             this.button_krog.Name = "button_krog";
             this.button_krog.Size = new System.Drawing.Size(100, 100);
             this.button_krog.TabIndex = 2;
@@ -164,18 +171,31 @@
             // button_crta
             // 
             this.button_crta.Image = ((System.Drawing.Image)(resources.GetObject("button_crta.Image")));
-            this.button_crta.Location = new System.Drawing.Point(52, 30);
+            this.button_crta.Location = new System.Drawing.Point(40, 19);
             this.button_crta.Name = "button_crta";
             this.button_crta.Size = new System.Drawing.Size(100, 100);
             this.button_crta.TabIndex = 0;
             this.button_crta.UseVisualStyleBackColor = true;
+            this.button_crta.Click += new System.EventHandler(this.button_crta_Click);
+            // 
+            // robotaToolStripMenuItem
+            // 
+            this.robotaToolStripMenuItem.Name = "robotaToolStripMenuItem";
+            this.robotaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.robotaToolStripMenuItem.Text = "Spošne nastavitve";
+            // 
+            // vmesnikToolStripMenuItem
+            // 
+            this.vmesnikToolStripMenuItem.Name = "vmesnikToolStripMenuItem";
+            this.vmesnikToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.vmesnikToolStripMenuItem.Text = "Vmesnik";
             // 
             // Rezkar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(795, 696);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox_orodjarna);
             this.Controls.Add(this.glControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -183,7 +203,7 @@
             this.Text = "Rezkar";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.groupBox_orodjarna.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,12 +218,14 @@
         private System.Windows.Forms.ToolStripMenuItem odpriJBIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem izhodToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nastavitveToolStripMenuItem;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox_orodjarna;
         private System.Windows.Forms.Button button_premakni;
         private System.Windows.Forms.Button button_kvadrat;
         private System.Windows.Forms.Button button_krog;
         private System.Windows.Forms.Button button_lok;
         private System.Windows.Forms.Button button_crta;
         private System.Windows.Forms.Button button_brisi;
+        private System.Windows.Forms.ToolStripMenuItem robotaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vmesnikToolStripMenuItem;
     }
 }
