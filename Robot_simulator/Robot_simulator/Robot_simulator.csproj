@@ -92,8 +92,19 @@
     <Compile Include="Robot.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ProgramZaRezkanje\Ikone\brisi.png" />
+    <Content Include="Content\ProgramZaRezkanje\Ikone\brisi1.png" />
+    <Content Include="Content\ProgramZaRezkanje\Ikone\crta.png" />
+    <Content Include="Content\ProgramZaRezkanje\Ikone\isci.png" />
+    <Content Include="Content\ProgramZaRezkanje\Ikone\krog.png" />
+    <Content Include="Content\ProgramZaRezkanje\Ikone\krog1.png" />
+    <Content Include="Content\ProgramZaRezkanje\Ikone\kvadrat.png" />
+    <Content Include="Content\ProgramZaRezkanje\Ikone\kvadrat1.png" />
+    <Content Include="Content\ProgramZaRezkanje\Ikone\premakni.png" />
+    <Content Include="Content\ProgramZaRezkanje\Ikone\polkrog.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Content\ProgramZaRezkanje\ChuckNorris\" />
-    <Folder Include="Content\ProgramZaRezkanje\Ikone\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
