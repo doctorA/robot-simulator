@@ -15,6 +15,8 @@ namespace Robot_simulator
 {
     public partial class Rezkar : Form
     {
+        Conf_rezkar conf = new Conf_rezkar();
+
         public Rezkar()
         {
             InitializeComponent();
@@ -26,7 +28,7 @@ namespace Robot_simulator
             int h = glControl1.Height;
             GL.MatrixMode(MatrixMode.Projection);
             GL.LoadIdentity();
-            GL.Ortho(-5, 45, -5, 55, -1, 1);
+            GL.Ortho(-5, conf.vel_ploscice.X+5, -5, conf.vel_ploscice.Y+5, -1, 1);
             GL.Viewport(0, 0, w, h);
         }
 
@@ -46,9 +48,9 @@ namespace Robot_simulator
             GL.Begin(BeginMode.Quads);
             GL.Color3(Color.Blue);
             GL.Vertex2(0, 0);
-            GL.Vertex2(40, 0);
-            GL.Vertex2(40,50);
-            GL.Vertex2(0, 50);
+            GL.Vertex2(conf.vel_ploscice.X, 0);
+            GL.Vertex2(conf.vel_ploscice.X, conf.vel_ploscice.Y);
+            GL.Vertex2(0, conf.vel_ploscice.Y);
 
             glControl1.SwapBuffers();
         }

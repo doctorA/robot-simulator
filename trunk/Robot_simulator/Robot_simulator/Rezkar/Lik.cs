@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Robot_simulator
 {
-    class Crta
+    public abstract class Lik
     {
+
     }
 }
