@@ -36,6 +36,8 @@
             this.odpriJBIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izhodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nastavitveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.robotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vmesnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox_orodjarna = new System.Windows.Forms.GroupBox();
             this.button_brisi = new System.Windows.Forms.Button();
             this.button_premakni = new System.Windows.Forms.Button();
@@ -43,8 +45,6 @@
             this.button_lok = new System.Windows.Forms.Button();
             this.button_krog = new System.Windows.Forms.Button();
             this.button_crta = new System.Windows.Forms.Button();
-            this.robotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vmesnikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox_orodjarna.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +59,7 @@
             this.glControl1.VSync = false;
             this.glControl1.Load += new System.EventHandler(this.glControl1_Load);
             this.glControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.glControl1_Paint);
+            this.glControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControl1_MouseDown);
             // 
             // menuStrip1
             // 
@@ -84,19 +85,19 @@
             // shraniJBIToolStripMenuItem
             // 
             this.shraniJBIToolStripMenuItem.Name = "shraniJBIToolStripMenuItem";
-            this.shraniJBIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.shraniJBIToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.shraniJBIToolStripMenuItem.Text = "Shrani JBI...";
             // 
             // odpriJBIToolStripMenuItem
             // 
             this.odpriJBIToolStripMenuItem.Name = "odpriJBIToolStripMenuItem";
-            this.odpriJBIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.odpriJBIToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.odpriJBIToolStripMenuItem.Text = "Odpri JBI...";
             // 
             // izhodToolStripMenuItem
             // 
             this.izhodToolStripMenuItem.Name = "izhodToolStripMenuItem";
-            this.izhodToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.izhodToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.izhodToolStripMenuItem.Text = "Izhod";
             // 
             // nastavitveToolStripMenuItem
@@ -107,6 +108,18 @@
             this.nastavitveToolStripMenuItem.Name = "nastavitveToolStripMenuItem";
             this.nastavitveToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.nastavitveToolStripMenuItem.Text = "Nastavitve";
+            // 
+            // robotaToolStripMenuItem
+            // 
+            this.robotaToolStripMenuItem.Name = "robotaToolStripMenuItem";
+            this.robotaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.robotaToolStripMenuItem.Text = "Spošne nastavitve";
+            // 
+            // vmesnikToolStripMenuItem
+            // 
+            this.vmesnikToolStripMenuItem.Name = "vmesnikToolStripMenuItem";
+            this.vmesnikToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.vmesnikToolStripMenuItem.Text = "Vmesnik";
             // 
             // groupBox_orodjarna
             // 
@@ -177,18 +190,6 @@
             this.button_crta.TabIndex = 0;
             this.button_crta.UseVisualStyleBackColor = true;
             this.button_crta.Click += new System.EventHandler(this.button_crta_Click);
-            // 
-            // robotaToolStripMenuItem
-            // 
-            this.robotaToolStripMenuItem.Name = "robotaToolStripMenuItem";
-            this.robotaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.robotaToolStripMenuItem.Text = "Spošne nastavitve";
-            // 
-            // vmesnikToolStripMenuItem
-            // 
-            this.vmesnikToolStripMenuItem.Name = "vmesnikToolStripMenuItem";
-            this.vmesnikToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.vmesnikToolStripMenuItem.Text = "Vmesnik";
             // 
             // Rezkar
             // 

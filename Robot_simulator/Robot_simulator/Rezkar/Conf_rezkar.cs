@@ -9,7 +9,7 @@ using OpenTK.Graphics.OpenGL;
 
 namespace Robot_simulator
 {
-    class Conf_rezkar
+    public class Conf_rezkar
     {
         public Vector3 zacetna_tocka;
         public float debelina_svedra;

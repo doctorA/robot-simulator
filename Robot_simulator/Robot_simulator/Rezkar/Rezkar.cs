@@ -16,6 +16,7 @@ namespace Robot_simulator
     public partial class Rezkar : Form
     {
         Conf_rezkar conf = new Conf_rezkar();
+        List<Lik> liki = new List<Lik>();
 
         public Rezkar()
         {
@@ -51,12 +52,32 @@ namespace Robot_simulator
             GL.Vertex2(conf.vel_ploscice.X, 0);
             GL.Vertex2(conf.vel_ploscice.X, conf.vel_ploscice.Y);
             GL.Vertex2(0, conf.vel_ploscice.Y);
+            GL.End();
+
+            foreach (Lik L in liki)
+            {
+                L.risi(conf);
+            }
 
             glControl1.SwapBuffers();
         }
 
         private void button_crta_Click(object sender, EventArgs e)
         {
+            liki.Add(new Crta());
+        }
+
+        private void glControl1_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            float x = ((float)e.X / (float)glControl1.Width) * (float)(conf.vel_ploscice.X + 10) - 5f;
+            float y = ((float)e.Y / (float)glControl1.Height) * (float)(conf.vel_ploscice.Y + 10) - 5f;
+            y = ((float)(conf.vel_ploscice.Y + 10) - 10f) - y;
+            if (liki.Count>0)
+            {
+                liki.Last().tocke.Add(new Vector2(x, y));
+                glControl1.Invalidate();
+            }
         }
     }
 }
