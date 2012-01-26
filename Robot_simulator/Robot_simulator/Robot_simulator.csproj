@@ -51,17 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Crta.cs" />
+    <Compile Include="Rezkar\Conf_rezkar.cs" />
+    <Compile Include="Rezkar\Crta.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Krog.cs" />
-    <Compile Include="kvadrat.cs" />
-    <Compile Include="Lik.cs" />
-    <Compile Include="Lok.cs" />
+    <Compile Include="Rezkar\Krog.cs" />
+    <Compile Include="Rezkar\Kvadrat.cs" />
+    <Compile Include="Rezkar\Lik.cs" />
+    <Compile Include="Rezkar\Lok.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -72,7 +73,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rezkar.resx">
+    <EmbeddedResource Include="Rezkar\Rezkar.resx">
       <DependentUpon>Rezkar.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -88,10 +89,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Rezkar.cs">
+    <Compile Include="Rezkar\Rezkar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Rezkar.Designer.cs">
+    <Compile Include="Rezkar\Rezkar.Designer.cs">
       <DependentUpon>Rezkar.cs</DependentUpon>
     </Compile>
     <Compile Include="Robot.cs" />

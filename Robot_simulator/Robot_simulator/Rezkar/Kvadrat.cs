@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Robot_simulator
 {
-    class kvadrat
+    class Kvadrat
     {
     }
 }
