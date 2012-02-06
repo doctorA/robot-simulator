@@ -27,7 +27,7 @@ namespace Robot_simulator
         bool mouseDownRight = false;
         int height;
         int width;
-        LightwaveObject robot_model;
+        LightwaveObject[] robot_model;
         Robot robot = new Robot(0,60,30,90,0);
         #endregion
         //ej
@@ -38,8 +38,9 @@ namespace Robot_simulator
             InitializeComponent();
             glControl1.MouseWheel += new MouseEventHandler(glControl1_MouseWheel);
             string dir = Environment.CurrentDirectory;
-            dir=dir.Remove(dir.IndexOf("bin"));
-            robot_model = LightwaveObject.LoadObject(dir + "ModelsLWO\\MH6\\MH6_base.lwo");
+            dir=dir.Remove(dir.IndexOf("bin")) + "ModelsLWO\\";
+            robot_model = new LightwaveObject[6];
+            robot_model[0] = LightwaveObject.LoadObject(dir + "MH6_base.lwo");
         }
         #endregion
 
