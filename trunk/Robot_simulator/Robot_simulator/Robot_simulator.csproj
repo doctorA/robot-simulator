@@ -47,10 +47,7 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ClassLibrary, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>ModelsLWO\ClassLibrary.dll</HintPath>
-    </Reference>
+    <Reference Include="ClassLibrary, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="OpenTK, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4" />
     <Reference Include="OpenTK.Compatibility, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
     <Reference Include="OpenTK.GLControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
@@ -137,6 +134,7 @@
     <Content Include="Content\ProgramZaRezkanje\Ikone\kvadrat1.png" />
     <Content Include="Content\ProgramZaRezkanje\Ikone\premakni.png" />
     <Content Include="Content\ProgramZaRezkanje\Ikone\polkrog.png" />
+    <Content Include="Lightwave\ClassLibrary.dll" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\ProgramZaRezkanje\ChuckNorris\" />
