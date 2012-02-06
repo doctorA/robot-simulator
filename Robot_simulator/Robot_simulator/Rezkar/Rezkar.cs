@@ -25,6 +25,12 @@ namespace Robot_simulator
 
         private void SetupViewport()
         {
+            GL.Enable(EnableCap.LineSmooth);
+            GL.ShadeModel(ShadingModel.Smooth);
+            GL.Hint(HintTarget.LineSmoothHint, HintMode.Nicest);
+            GL.Enable(EnableCap.Blend);
+            GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
+
             int w = glControl1.Width;
             int h = glControl1.Height;
             GL.MatrixMode(MatrixMode.Projection);
@@ -75,9 +81,18 @@ namespace Robot_simulator
             y = ((float)(conf.vel_ploscice.Y + 10) - 10f) - y;
             if (liki.Count>0)
             {
+                if (liki.Last().tip == 2 && liki.Last().tocke.Count==2) //krog
+                {
+                    liki.Add(new Krog());
+                }
                 liki.Last().tocke.Add(new Vector2(x, y));
                 glControl1.Invalidate();
             }
+        }
+
+        private void button_krog_Click(object sender, EventArgs e)
+        {
+            liki.Add(new Krog());
         }
     }
 }

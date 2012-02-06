@@ -54,7 +54,7 @@
             this.glControl1.BackColor = System.Drawing.Color.Black;
             this.glControl1.Location = new System.Drawing.Point(12, 27);
             this.glControl1.Name = "glControl1";
-            this.glControl1.Size = new System.Drawing.Size(562, 660);
+            this.glControl1.Size = new System.Drawing.Size(450, 675);
             this.glControl1.TabIndex = 0;
             this.glControl1.VSync = false;
             this.glControl1.Load += new System.EventHandler(this.glControl1_Load);
@@ -68,7 +68,7 @@
             this.nastavitveToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(795, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(706, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -129,7 +129,7 @@
             this.groupBox_orodjarna.Controls.Add(this.button_lok);
             this.groupBox_orodjarna.Controls.Add(this.button_krog);
             this.groupBox_orodjarna.Controls.Add(this.button_crta);
-            this.groupBox_orodjarna.Location = new System.Drawing.Point(594, 27);
+            this.groupBox_orodjarna.Location = new System.Drawing.Point(486, 27);
             this.groupBox_orodjarna.Name = "groupBox_orodjarna";
             this.groupBox_orodjarna.Size = new System.Drawing.Size(193, 660);
             this.groupBox_orodjarna.TabIndex = 2;
@@ -180,6 +180,7 @@
             this.button_krog.Size = new System.Drawing.Size(100, 100);
             this.button_krog.TabIndex = 2;
             this.button_krog.UseVisualStyleBackColor = true;
+            this.button_krog.Click += new System.EventHandler(this.button_krog_Click);
             // 
             // button_crta
             // 
@@ -195,7 +196,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 696);
+            this.ClientSize = new System.Drawing.Size(706, 720);
             this.Controls.Add(this.groupBox_orodjarna);
             this.Controls.Add(this.glControl1);
             this.Controls.Add(this.menuStrip1);
