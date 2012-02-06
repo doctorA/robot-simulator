@@ -100,6 +100,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ModelsLWO\MH6_base.lwo" />
+    <None Include="ModelsLWO\MH6_baxis.lwo" />
+    <None Include="ModelsLWO\MH6_laxis.lwo" />
+    <None Include="ModelsLWO\MH6_raxis.lwo" />
+    <None Include="ModelsLWO\MH6_saxis.lwo" />
+    <None Include="ModelsLWO\MH6_taxis.lwo" />
+    <None Include="ModelsLWO\MH6_uaxis.lwo" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -131,7 +138,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\ProgramZaRezkanje\ChuckNorris\" />
-    <Folder Include="ModelsLWO\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
