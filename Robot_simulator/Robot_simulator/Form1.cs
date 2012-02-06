@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
 
+using Lightwave;
+
 namespace Robot_simulator
 {
     public partial class Form1 : Form
@@ -25,6 +27,7 @@ namespace Robot_simulator
         bool mouseDownRight = false;
         int height;
         int width;
+        LightwaveObject robot_model;
         Robot robot = new Robot(0,60,30,90,0);
         #endregion
         //ej
@@ -34,6 +37,9 @@ namespace Robot_simulator
         {
             InitializeComponent();
             glControl1.MouseWheel += new MouseEventHandler(glControl1_MouseWheel);
+            string dir = Environment.CurrentDirectory;
+            dir=dir.Remove(dir.IndexOf("bin"));
+            robot_model = LightwaveObject.LoadObject(dir + "ModelsLWO\\MH6\\MH6_base.lwo");
         }
         #endregion
 
@@ -44,7 +50,6 @@ namespace Robot_simulator
         {
             GL.Enable(EnableCap.DepthTest);
             GL.DepthFunc(DepthFunction.Lequal);
-
             setup_viewport();
         }
 
