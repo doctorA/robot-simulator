@@ -16,6 +16,8 @@ namespace Robot_simulator
             tip = 2;
         }
 
+ 
+
         public void glCircle3i(Vector2 p1, float radius)
         {
             float angle;

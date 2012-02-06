@@ -173,6 +173,7 @@
             this.button_lok.Size = new System.Drawing.Size(100, 100);
             this.button_lok.TabIndex = 1;
             this.button_lok.UseVisualStyleBackColor = true;
+            this.button_lok.Click += new System.EventHandler(this.button_lok_Click);
             // 
             // button_krog
             // 
