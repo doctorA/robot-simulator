@@ -16,7 +16,7 @@ namespace Robot_simulator
             tip = 2;
         }
 
-        void glCircle3i(float x, float y, float radius)
+        public void glCircle3i(Vector2 p1, float radius)
         {
             float angle;
             GL.PushMatrix();
@@ -27,7 +27,7 @@ namespace Robot_simulator
             for (int i = 0; i < 100; i++)
             {
                 angle = i * 2f * (float)Math.PI / 100f;
-                GL.Vertex2(x + ((float)Math.Cos(angle) * radius), y + ((float)Math.Sin(angle) * radius));
+                GL.Vertex2(p1.X + ((float)Math.Cos(angle) * radius), p1.Y + ((float)Math.Sin(angle) * radius));
             }
             GL.End();
             GL.PopMatrix();
@@ -45,7 +45,7 @@ namespace Robot_simulator
                 GL.Enable(EnableCap.Blend);
                 GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
 
-                glCircle3i(tocke[0].X, tocke[0].Y, (new Vector2(tocke[0].X - tocke[1].X, tocke[0].Y - tocke[1].Y)).Length);
+                glCircle3i(tocke[0], (new Vector2(tocke[0].X - tocke[1].X, tocke[0].Y - tocke[1].Y)).Length);
 
                /* GL.LineWidth(5f);
                 GL.Begin(BeginMode.Lines);
@@ -58,6 +58,7 @@ namespace Robot_simulator
                 }
                 GL.End();
 
+                */
                 GL.PointSize(10f);
                 GL.Color3(Color.Red);
                 GL.Begin(BeginMode.Points);
@@ -65,7 +66,7 @@ namespace Robot_simulator
                 {
                     GL.Vertex2(tocke[i]);
                 }
-                GL.End();*/
+                GL.End();
             }
         }
 
