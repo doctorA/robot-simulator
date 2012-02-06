@@ -19,6 +19,7 @@ namespace Robot_simulator
         public int rotacija3 = 0;
         public int rotacija4 = 0;
         public int rotacija5 = 0;
+        public bool modelOK = false;
 
         public Robot(int rot1, int rot2, int rot3, int rot4, int rot5)
         {
@@ -27,6 +28,11 @@ namespace Robot_simulator
             rotacija3 = rot3;
             rotacija4 = rot4;
             rotacija5 = rot5;
+            LightwaveObject[] robot_model;
+            string dir = Environment.CurrentDirectory;
+            dir = dir.Remove(dir.IndexOf("bin")) + "ModelsLWO\\";
+            robot_model = new LightwaveObject[6];
+            robot_model[0] = LightwaveObject.LoadObject(dir + "MH6_base.lwo");
         }
 
         public void narisi()
