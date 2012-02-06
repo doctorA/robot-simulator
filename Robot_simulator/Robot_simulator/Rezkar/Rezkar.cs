@@ -107,6 +107,10 @@ namespace Robot_simulator
                     tempKvadratBool = false;
                     liki.Add(new Kvadrat());
                 }
+                else if (liki.Last().tip == 4 && liki.Last().tocke.Count == 3)
+                {
+                    liki.Add(new Lok());
+                }
                 if (liki.Last().tip == 2 && liki.Last().tocke.Count == 0)
                 {
                     tempKrog.tocke[0] = new Vector2(x, y);
@@ -157,6 +161,13 @@ namespace Robot_simulator
             tempKrogBool = false;
             tempKvadratBool = false;
             liki.Add(new Kvadrat());
+        }
+
+        private void button_lok_Click(object sender, EventArgs e)
+        {
+            tempKrogBool = false;
+            tempKvadratBool = false;
+            liki.Add(new Lok());
         }
     }
 }
