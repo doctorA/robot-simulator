@@ -18,13 +18,17 @@ namespace Robot_simulator
         Conf_rezkar conf = new Conf_rezkar();
         List<Lik> liki = new List<Lik>();
         bool tempKrogBool = false;
+        bool tempKvadratBool = false;
         Krog tempKrog = new Krog();
+        Kvadrat tempKvadrat = new Kvadrat();
 
         public Rezkar()
         {
             InitializeComponent();
             tempKrog.tocke.Add(new Vector2());
             tempKrog.tocke.Add(new Vector2());
+            tempKvadrat.tocke.Add(new Vector2());
+            tempKvadrat.tocke.Add(new Vector2());
         }
 
         private void SetupViewport()
@@ -68,11 +72,14 @@ namespace Robot_simulator
             {
                 L.risi(conf);
             }
-            if (tempKrogBool == true)
+            if (tempKrogBool)
             {
                 tempKrog.risi(conf);
             }
-
+            if (tempKvadratBool)
+            {
+                tempKvadrat.risi(conf);
+            }
             glControl1.SwapBuffers();
         }
 
@@ -95,9 +102,18 @@ namespace Robot_simulator
                     liki.Add(new Krog());
                     //tempKrog = new Krog();
                 }
+                else if (liki.Last().tip == 3 && liki.Last().tocke.Count == 2) //kvadrat
+                {
+                    tempKvadratBool = false;
+                    liki.Add(new Kvadrat());
+                }
                 if (liki.Last().tip == 2 && liki.Last().tocke.Count == 0)
                 {
                     tempKrog.tocke[0] = new Vector2(x, y);
+                }
+                else if (liki.Last().tip == 3 && liki.Last().tocke.Count == 0)
+                {
+                    tempKvadrat.tocke[0] = new Vector2(x, y);
                 }
                 liki.Last().tocke.Add(new Vector2(x, y));
                 glControl1.Invalidate();
@@ -107,6 +123,7 @@ namespace Robot_simulator
         private void button_krog_Click(object sender, EventArgs e)
         {
             tempKrogBool = false;
+            tempKvadratBool = false;
             liki.Add(new Krog());
         }
 
@@ -123,7 +140,23 @@ namespace Robot_simulator
                     tempKrog.tocke[1] = new Vector2(x, y);
                     glControl1.Invalidate();
                 }
+                else if (liki.Last().tip == 3 && liki.Last().tocke.Count == 1) //krog in imamo določeno središče
+                {
+                    tempKvadratBool = true;
+                    float x = ((float)e.X / (float)glControl1.Width) * (float)(conf.vel_ploscice.X + 10) - 5f;
+                    float y = ((float)e.Y / (float)glControl1.Height) * (float)(conf.vel_ploscice.Y + 10) - 5f;
+                    y = ((float)(conf.vel_ploscice.Y + 10) - 10f) - y;
+                    tempKvadrat.tocke[1] = new Vector2(x, y);
+                    glControl1.Invalidate();
+                }
             }
+        }
+
+        private void button_kvadrat_Click(object sender, EventArgs e)
+        {
+            tempKrogBool = false;
+            tempKvadratBool = false;
+            liki.Add(new Kvadrat());
         }
     }
 }
