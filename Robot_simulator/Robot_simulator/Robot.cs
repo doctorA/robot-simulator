@@ -112,7 +112,7 @@ namespace Robot_simulator
             quadric = GLU.NewQuadric();
             GLU.PartialDisk(quadric, 0.1, 0.7f, 32, 32, 0, 360);
 
-            //..........4 zglob...............................................................
+            //4 del
 
             GL.Color3(0.0f, 0.0f, 1.0f);
             quadric = GLU.NewQuadric();

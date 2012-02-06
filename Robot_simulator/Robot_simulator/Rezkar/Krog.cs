@@ -47,18 +47,6 @@ namespace Robot_simulator
 
                 glCircle3i(tocke[0], (new Vector2(tocke[0].X - tocke[1].X, tocke[0].Y - tocke[1].Y)).Length);
 
-               /* GL.LineWidth(5f);
-                GL.Begin(BeginMode.Lines);
-                //GL.LineWidth(200f);
-                GL.Color3(Color.White);
-                for (int i = 0; i < tocke.Count - 1; i++)
-                {
-                    GL.Vertex2(tocke[i]);
-                    GL.Vertex2(tocke[i + 1]);
-                }
-                GL.End();
-
-                */
                 GL.PointSize(10f);
                 GL.Color3(Color.Red);
                 GL.Begin(BeginMode.Points);
