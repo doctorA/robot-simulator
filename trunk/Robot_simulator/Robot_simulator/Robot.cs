@@ -8,6 +8,8 @@ using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using GLU = OpenTK.Graphics.Glu;
 
+using Lightwave;
+
 
 namespace Robot_simulator
 {
