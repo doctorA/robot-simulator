@@ -24,9 +24,18 @@ namespace Robot_simulator
                 GL.Begin(BeginMode.Lines);
                 //GL.LineWidth(200f);
                 GL.Color3(Color.White);
+                    GL.Vertex2(tocke[0].X, tocke[0].Y); //x1y1
+                    GL.Vertex2(tocke[1].X, tocke[0].Y); //x2x1
 
-                    GL.Vertex2(tocke[i]); //x1y1
-                    GL.Vertex2(tocke[i].X, tocke[i+1].Y);
+                    GL.Vertex2(tocke[1].X, tocke[0].Y); //x2y1
+                    GL.Vertex2(tocke[1].X, tocke[1].Y); //x2y2
+
+                    GL.Vertex2(tocke[1].X, tocke[1].Y); //x2y2
+                    GL.Vertex2(tocke[0].X, tocke[1].Y); //x1y2
+
+                    GL.Vertex2(tocke[0].X, tocke[1].Y); //x1y2
+                    GL.Vertex2(tocke[0].X, tocke[0].Y); //x1y1
+
                 GL.End();
 
                 GL.PointSize(10f);
