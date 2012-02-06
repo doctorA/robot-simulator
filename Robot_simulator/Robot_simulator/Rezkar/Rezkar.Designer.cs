@@ -163,6 +163,7 @@
             this.button_kvadrat.Size = new System.Drawing.Size(100, 100);
             this.button_kvadrat.TabIndex = 3;
             this.button_kvadrat.UseVisualStyleBackColor = true;
+            this.button_kvadrat.Click += new System.EventHandler(this.button_kvadrat_Click);
             // 
             // button_lok
             // 
