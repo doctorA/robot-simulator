@@ -21,9 +21,9 @@ namespace Robot_simulator
         public float visina_svedra_med_pomiki;
         public float globina_med_reskanjem;
         public float hitrost_restkanja;
-        bool vklop_orodja;
+        public bool vklop_orodja;
         public Vector2 vel_ploscice;
-        DateTime datum;
+        public string datum;
 
         public Conf_rezkar()
         {
@@ -39,7 +39,7 @@ namespace Robot_simulator
             hitrost_restkanja = 20;
             vklop_orodja = true;
             vel_ploscice = new Vector2(40,60);
-            DateTime datum = DateTime.Now;
+            datum = DateTime.Now.ToString();
 
         }
     }

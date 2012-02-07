@@ -292,5 +292,11 @@ namespace Robot_simulator
                 liki[i].toJBI(conf, tocke, premiki);
             }
         }
+
+        private void robotaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Nastavitve n = new Nastavitve(conf);
+            n.ShowDialog();
+        }
     }
 }
