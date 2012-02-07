@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Rezkar\Nastavitve\Nastavitve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rezkar\Nastavitve\Nastavitve.Designer.cs">
+      <DependentUpon>Nastavitve.cs</DependentUpon>
+    </Compile>
     <Compile Include="Rezkar\Conf_rezkar.cs" />
     <Compile Include="Rezkar\Crta.cs" />
     <Compile Include="Form1.cs">
