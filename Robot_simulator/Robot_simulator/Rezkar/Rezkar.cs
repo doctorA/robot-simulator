@@ -108,6 +108,8 @@ namespace Robot_simulator
             tempBrisi = false;
             tempKrogBool = false;
             tempKvadratBool = false;
+            tempPremakni = false;
+            tempPremakniPremikam = false;
             liki.Add(new Crta());
         }
 
