@@ -20,6 +20,10 @@ namespace Robot_simulator
         bool tempKrogBool = false;
         bool tempKvadratBool = false;
         bool tempBrisi = false;
+        bool tempPremakni = false;
+        bool tempPremakniPremikam = true;
+        int premikam_index1 = -1;
+        int premikam_index2 = -1;
         Krog tempKrog = new Krog();
         Kvadrat tempKvadrat = new Kvadrat();
        
@@ -133,6 +137,35 @@ namespace Robot_simulator
                         liki.RemoveAt(index);
                     }
                 }
+                else if (tempPremakni)
+                {
+                    if (!tempPremakniPremikam)
+                    {
+                        float razdalja = 3f;
+                        int index1 = -1;
+                        int index2 = 0;
+                        int temp = 0;
+                        Vector2 v = (new Vector2(x, y));
+                        for (int i = 0; i < liki.Count; i++)
+                        {
+                            if (razdalja > liki[i].razdalja_ind(v, ref temp))
+                            {
+                                razdalja = liki[i].razdalja_ind(v, ref index2);
+                                index1 = i;
+                            }
+                        }
+                        if (index1 >= 0)
+                        {
+                            tempPremakniPremikam = true;
+                            premikam_index1 = index1;
+                            premikam_index2 = index2;
+                        }
+                    }
+                    else
+                    {
+                        tempPremakniPremikam = false;
+                    }
+                }
                 else
                 {
                     if (liki.Last().tip == 2 && liki.Last().tocke.Count == 2) //krog
@@ -176,23 +209,34 @@ namespace Robot_simulator
         {
             if (liki.Count > 0)
             {
-                if (liki.Last().tip == 2 && liki.Last().tocke.Count == 1) //krog in imamo določeno središče
+                if (tempPremakniPremikam && tempPremakni)
                 {
-                    tempKrogBool = true;
                     float x = ((float)e.X / (float)glControl1.Width) * (float)(conf.vel_ploscice.X + 10) - 5f;
                     float y = ((float)e.Y / (float)glControl1.Height) * (float)(conf.vel_ploscice.Y + 10) - 5f;
                     y = ((float)(conf.vel_ploscice.Y + 10) - 10f) - y;
-                    tempKrog.tocke[1] = new Vector2(x, y);
+                    liki[premikam_index1].tocke[premikam_index2] = new Vector2(x, y);
                     glControl1.Invalidate();
                 }
-                else if (liki.Last().tip == 3 && liki.Last().tocke.Count == 1) //krog in imamo določeno središče
+                else
                 {
-                    tempKvadratBool = true;
-                    float x = ((float)e.X / (float)glControl1.Width) * (float)(conf.vel_ploscice.X + 10) - 5f;
-                    float y = ((float)e.Y / (float)glControl1.Height) * (float)(conf.vel_ploscice.Y + 10) - 5f;
-                    y = ((float)(conf.vel_ploscice.Y + 10) - 10f) - y;
-                    tempKvadrat.tocke[1] = new Vector2(x, y);
-                    glControl1.Invalidate();
+                    if (liki.Last().tip == 2 && liki.Last().tocke.Count == 1) //krog in imamo določeno središče
+                    {
+                        tempKrogBool = true;
+                        float x = ((float)e.X / (float)glControl1.Width) * (float)(conf.vel_ploscice.X + 10) - 5f;
+                        float y = ((float)e.Y / (float)glControl1.Height) * (float)(conf.vel_ploscice.Y + 10) - 5f;
+                        y = ((float)(conf.vel_ploscice.Y + 10) - 10f) - y;
+                        tempKrog.tocke[1] = new Vector2(x, y);
+                        glControl1.Invalidate();
+                    }
+                    else if (liki.Last().tip == 3 && liki.Last().tocke.Count == 1) //krog in imamo določeno središče
+                    {
+                        tempKvadratBool = true;
+                        float x = ((float)e.X / (float)glControl1.Width) * (float)(conf.vel_ploscice.X + 10) - 5f;
+                        float y = ((float)e.Y / (float)glControl1.Height) * (float)(conf.vel_ploscice.Y + 10) - 5f;
+                        y = ((float)(conf.vel_ploscice.Y + 10) - 10f) - y;
+                        tempKvadrat.tocke[1] = new Vector2(x, y);
+                        glControl1.Invalidate();
+                    }
                 }
             }
         }
@@ -218,6 +262,15 @@ namespace Robot_simulator
             tempKrogBool = false;
             tempKvadratBool = false;
             tempBrisi = true;
+        }
+
+        private void button_premakni_Click(object sender, EventArgs e)
+        {
+            tempPremakni = true;
+            tempPremakniPremikam = false;
+            tempKrogBool = false;
+            tempKvadratBool = false;
+            tempBrisi = false;
         }
     }
 }

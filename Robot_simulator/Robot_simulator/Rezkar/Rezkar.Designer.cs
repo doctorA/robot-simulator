@@ -155,6 +155,7 @@
             this.button_premakni.Size = new System.Drawing.Size(100, 100);
             this.button_premakni.TabIndex = 4;
             this.button_premakni.UseVisualStyleBackColor = true;
+            this.button_premakni.Click += new System.EventHandler(this.button_premakni_Click);
             // 
             // button_kvadrat
             // 
