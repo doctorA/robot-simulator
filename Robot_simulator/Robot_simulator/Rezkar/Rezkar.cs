@@ -202,6 +202,8 @@ namespace Robot_simulator
             tempKrogBool = false;
             tempKvadratBool = false;
             tempBrisi = false;
+            tempPremakni = false;
+            tempPremakniPremikam = false;
             liki.Add(new Krog());
         }
 
@@ -246,6 +248,8 @@ namespace Robot_simulator
             tempKrogBool = false;
             tempKvadratBool = false;
             tempBrisi = false;
+            tempPremakni = false;
+            tempPremakniPremikam = false;
             liki.Add(new Kvadrat());
         }
 
@@ -254,6 +258,8 @@ namespace Robot_simulator
             tempKrogBool = false;
             tempKvadratBool = false;
             tempBrisi = false;
+            tempPremakni = false;
+            tempPremakniPremikam = false;
             liki.Add(new Lok());
         }
 
@@ -261,6 +267,8 @@ namespace Robot_simulator
         {
             tempKrogBool = false;
             tempKvadratBool = false;
+            tempPremakni = false;
+            tempPremakniPremikam = false;
             tempBrisi = true;
         }
 
