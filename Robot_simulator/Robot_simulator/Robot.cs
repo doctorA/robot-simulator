@@ -21,35 +21,39 @@ namespace Robot_simulator
         public int rotacija3 = 0;
         public int rotacija4 = 0;
         public int rotacija5 = 0;
+        public int rotacija6 = 0;
         public bool modelOK = false;
+        public bool set_tool = true;
         public LightwaveObject[] robot_model;  //objekt za modele robota
 
-        public Robot(int rot1, int rot2, int rot3, int rot4, int rot5)
+        public Robot(int rot1, int rot2, int rot3, int rot4, int rot5, int rot6)
         {
             rotacija1 = rot1;
             rotacija2 = rot2;
             rotacija3 = rot3;
             rotacija4 = rot4;
             rotacija5 = rot5;
+            rotacija6 = rot6;
             string dir = Environment.CurrentDirectory;
             dir = dir.Remove(dir.IndexOf("bin")) + "ModelsLWO\\";  //pot do modelov
-            robot_model = new LightwaveObject[7];
+            robot_model = new LightwaveObject[10];
             // od tu pa do konca catch zakomentiraj če ne dela model robota :)
-            //try
-            //{
-            //    robot_model[0] = LightwaveObject.LoadObject(dir + "MH6_base.lwo");  //poizkusi naložit modele
-            //    robot_model[1] = LightwaveObject.LoadObject(dir + "MH6_baxis.lwo");
-            //    robot_model[2] = LightwaveObject.LoadObject(dir + "MH6_laxis.lwo");
-            //    robot_model[3] = LightwaveObject.LoadObject(dir + "MH6_raxis.lwo");
-            //    robot_model[4] = LightwaveObject.LoadObject(dir + "MH6_saxis.lwo");
-            //    robot_model[5] = LightwaveObject.LoadObject(dir + "MH6_taxis.lwo");
-            //    robot_model[6] = LightwaveObject.LoadObject(dir + "MH6_uaxis.lwo");
-            //    modelOK = true;
-            //}
-            //catch (Exception e)
-            //{
-            //    modelOK = false;  //če so napake to definiraj s to spremenljivko
-            //}
+            try
+            {
+                robot_model[0] = LightwaveObject.LoadObject(dir + "MH6_base.lwo");  //poizkusi naložit modele
+                robot_model[1] = LightwaveObject.LoadObject(dir + "MH6_saxis.lwo");
+                robot_model[2] = LightwaveObject.LoadObject(dir + "MH6_laxis.lwo");
+                robot_model[3] = LightwaveObject.LoadObject(dir + "MH6_uaxis.lwo");
+                robot_model[4] = LightwaveObject.LoadObject(dir + "MH6_raxis.lwo");
+                robot_model[5] = LightwaveObject.LoadObject(dir + "MH6_baxis.lwo");
+                robot_model[6] = LightwaveObject.LoadObject(dir + "MH6_taxis.lwo");
+                robot_model[7] = LightwaveObject.LoadObject(dir + "TOOL1.lwo");
+                modelOK = true;
+            }
+            catch (Exception e)
+            {
+                modelOK = false;  //če so napake to definiraj s to spremenljivko
+            }
         }
 
         public void narisi()
@@ -167,30 +171,74 @@ namespace Robot_simulator
             else  //če pa ni bilo napak pa nariši naložen LWO objekt
             {
                 GL.PushMatrix();
-                //GL.LoadIdentity();
-                for(int m=0;m<7;m++){
-                LightwaveObject model = robot_model[m];
+                GL.Rotate(90, 1.0f, 0.0f, 0.0f);
 
-                for(int l=0;l<model.Layers.Count;l++)
+                risi_del_robota(robot_model[0]);  //podstavek
+
+                GL.Rotate(rotacija1 + 90, 0.0f, 1.0f, 0.0f);
+                risi_del_robota(robot_model[1]); // prvi motor
+               
+
+                GL.Translate(3.75f, 8.30f, -1.60f); // prva roka
+                GL.Rotate(rotacija2, 0.0f, 0.0f, 1.0f);
+                risi_del_robota(robot_model[2]);
+
+                GL.Translate(0.0f, 15.35f, -0.4f);
+                GL.Rotate(rotacija3, 0.0f, 0.0f, 1.0f);
+                risi_del_robota(robot_model[3]);
+
+                GL.Translate(5.2f, 3.9f, 2.0f);
+                GL.Rotate(rotacija4, 1.0f, 0.0f, 0.0f);
+                GL.Rotate(-90.0f, 1.0f, 0.0f, 0.0f);
+                risi_del_robota(robot_model[4]);
+
+                GL.Translate(10.8f, 0.0f, 0.0f);
+                GL.Rotate(rotacija5, 0.0f, 0.0f, 1.0f);
+                risi_del_robota(robot_model[5]);
+
+                GL.Translate(2.2f, 0.0f, 0.0f);
+                GL.Rotate(rotacija6, 1.0f, 0.0f, 0.0f);
+                risi_del_robota(robot_model[6]);
+
+                if (set_tool)
                 {
-                    Layer layer=model.Layers[l];
-                    for (int i = 0; i < layer.Polygons.Count; i++)
-                    {
-                        Polygon poly = layer.Polygons[i];
-                        GL.Begin(BeginMode.Polygon);
-                        //GL.Color3(Color.Blue);
-                        GL.Color3(model.Surfaces[0].color.Red, model.Surfaces[0].color.Green, model.Surfaces[0].color.Blue);
-                        for (int j = 0; j < poly.Vertices.Count; j++)
-                        {
-                            Lightwave.Point p = layer.Points[(int)poly.Vertices[j].Index];
-                            GL.Normal3(poly.Vertices[j].normal_x, poly.Vertices[j].normal_y, poly.Vertices[j].normal_z);
-                            GL.Vertex3(p.position_x, p.position_y, p.position_z);
-                        }
-                        GL.End();
-                    }
+                    GL.Translate(0.4f, 0.0f, 0.0f);
+                    risi_del_robota(robot_model[7]);
                 }
 
                 GL.PopMatrix();
+            }
+        }
+
+
+        public void risi_del_robota(LightwaveObject model)
+        {
+            for (int l = 0; l < model.Layers.Count; l++)
+            {
+                Layer layer = model.Layers[l];
+                for (int i = 0; i < layer.Polygons.Count; i++)
+                {
+                    Polygon poly = layer.Polygons[i];
+                    GL.Begin(BeginMode.Polygon);
+                    Surface s=new Surface();
+                    try
+                    {
+                        s = poly.SurfaceReference;
+                    }
+                    catch (Exception e)
+                    {
+                        s.color.Red = 0.0f;
+                        s.color.Green = 0.0f;
+                        s.color.Blue = 0.8f;
+                    }
+                    GL.Color3(s.color.Red, s.color.Green, s.color.Blue);
+                    for (int j = 0; j < poly.Vertices.Count; j++)
+                    {
+                        Lightwave.Point p = layer.Points[(int)poly.Vertices[j].Index];
+                        GL.Normal3(poly.Vertices[j].normal_x, poly.Vertices[j].normal_y, poly.Vertices[j].normal_z);
+                        GL.Vertex3(p.position_x, p.position_y, p.position_z);
+                    }
+                    GL.End();
                 }
             }
         }

@@ -27,7 +27,7 @@ namespace Robot_simulator
         bool mouseDownRight = false;
         int height;
         int width;
-        Robot robot = new Robot(0,60,30,90,0);
+        Robot robot = new Robot(0,60,-35,90,0,0);
         #endregion
         //ej
 
@@ -64,6 +64,26 @@ namespace Robot_simulator
             OpenTK.Graphics.Glu.Perspective(45.0, (double)width / (double)height, 0.1, 1500.0);
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadIdentity();
+
+            float[] light_ambient = { 0.0f, 0.0f, 0.0f, 1f };
+            float[] light_diffuse = { 0.9f, 0.9f, 0.9f, 1f };
+            float[] light_position = { 1000.0f, 1000.0f, 0.0f, 1.0f };
+            float[] light_specular = { 0.3f, 0.3f, 0.3f, 1.0f };
+            float[] light_shininess = { 2.0f };
+
+            GL.Material(MaterialFace.Front, MaterialParameter.Specular, light_specular);
+            GL.Material(MaterialFace.Front, MaterialParameter.Shininess, light_shininess);
+            GL.Material(MaterialFace.Front, MaterialParameter.Ambient, light_ambient);
+
+            GL.Light(LightName.Light0, LightParameter.Position, light_position);
+            GL.Light(LightName.Light0, LightParameter.Ambient, light_ambient);
+            GL.Light(LightName.Light0, LightParameter.Diffuse, light_diffuse);
+
+            GL.Enable(EnableCap.Lighting);
+            GL.Enable(EnableCap.Light0);
+
+            GL.Enable(EnableCap.ColorMaterial);
+            GL.ColorMaterial(MaterialFace.FrontAndBack, ColorMaterialParameter.AmbientAndDiffuse);
             glControl1.Invalidate();
         }
 
@@ -71,11 +91,13 @@ namespace Robot_simulator
         {
             GL.ClearColor(Color.Black);
 
+            GL.Enable(EnableCap.Lighting);
+
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadIdentity();
             GL.Translate(0, 0, zoom);
-            GL.Translate(-trans_X / 20, trans_Y / 20 - 5, -100);
+            GL.Translate(-trans_X / 20, trans_Y / 20 - 20, -50);
             GL.Rotate(-rtri, 0.0, 1.0, 0.0);
             GL.Rotate(rtri2, 1.0, 0.0, 0.0);
             GL.Rotate(-90, 1.0, 0.0, 0.0);
@@ -180,6 +202,13 @@ namespace Robot_simulator
             glControl1.Invalidate();
         }
 
+        private void trackBar6_ValueChanged(object sender, EventArgs e)
+        {
+            robot.rotacija6 = trackBar6.Value;
+            label6.Text = trackBar6.Value.ToString();
+            glControl1.Invalidate();
+        }
+
 
         //zbiši ko neboš rabo več :)
         private void button_tmp_Click(object sender, EventArgs e)
@@ -187,5 +216,7 @@ namespace Robot_simulator
             Rezkar lol = new Rezkar();
             lol.ShowDialog();
         }
+
+
     }
 }
