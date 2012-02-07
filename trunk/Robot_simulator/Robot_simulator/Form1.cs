@@ -215,6 +215,9 @@ namespace Robot_simulator
         {
             Rezkar lol = new Rezkar();
             lol.ShowDialog();
+            glControl1.MakeCurrent();
+            glControl1.Invalidate();
+           // glControl1.s
         }
 
 
