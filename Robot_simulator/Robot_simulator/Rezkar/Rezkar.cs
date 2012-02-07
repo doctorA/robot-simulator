@@ -21,6 +21,7 @@ namespace Robot_simulator
         bool tempKvadratBool = false;
         Krog tempKrog = new Krog();
         Kvadrat tempKvadrat = new Kvadrat();
+       
 
         public Rezkar()
         {
@@ -79,6 +80,20 @@ namespace Robot_simulator
             if (tempKvadratBool)
             {
                 tempKvadrat.risi(conf);
+            }
+            if (liki.Count > 0)
+            {
+                if (liki.Last().tip == 4 && (liki.Last().tocke.Count == 1 || liki.Last().tocke.Count == 2))
+                {
+                    GL.Color3(Color.Yellow);
+                    GL.PointSize(10f);
+                    GL.Begin(BeginMode.Points);
+                    for (int i = 0; i < liki.Last().tocke.Count; i++)
+                    {
+                        GL.Vertex2(liki.Last().tocke[i]);
+                    }
+                    GL.End();
+                }
             }
             glControl1.SwapBuffers();
         }

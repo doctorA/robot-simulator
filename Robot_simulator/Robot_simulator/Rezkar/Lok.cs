@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Windows.Forms;
 
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
@@ -13,6 +14,9 @@ namespace Robot_simulator
     {
         Vector2 Center = new Vector2();
         float radius;
+        int angle1 = 0;
+        int angle2 = 360;
+      
         public Lok()
         {
             tip = 4;
@@ -25,12 +29,14 @@ namespace Robot_simulator
             GL.LoadIdentity();
             GL.Color3(Color.White);
             GL.LineWidth(5f);
-            GL.Begin(BeginMode.LineLoop);
-            for (int i = 0; i < 100; i++)
+            GL.Begin(BeginMode.LineStrip);
+
+            for (int i = angle1; i < angle2; i++)
             {
-                angle = i * 2f * (float)Math.PI / 100f;
-                GL.Vertex2(p1.X + ((float)Math.Cos(angle) * radius), p1.Y + ((float)Math.Sin(angle) * radius));
+                 angle = i * 2f * (float)Math.PI / 360f;
+                 GL.Vertex2(p1.X + ((float)Math.Cos(angle) * radius), p1.Y + ((float)Math.Sin(angle) * radius));
             }
+
             GL.End();
             GL.PopMatrix();
         }
@@ -117,6 +123,55 @@ namespace Robot_simulator
             Center.Y = -1 * (Center.X - (p1.X + p2.X)/2) / aSlope + (p1.Y + p2.Y) / 2;
 
             radius = (new Vector2(Center.X-p1.X, Center.Y-p1.Y)).Length;
+
+            int temp = (int)izracunajKot(new Vector2(Center.X + radius, Center.Y), Center, p3);
+            angle1 = temp;
+            angle2 = temp;
+            temp = (int)izracunajKot(new Vector2(Center.X + radius, Center.Y), Center, p1);
+            if (temp < angle1)
+            {
+                angle1 = temp;
+            }
+            else
+            {
+                angle2 = temp;
+            }
+            temp = (int)izracunajKot(new Vector2(Center.X + radius, Center.Y), Center, p2);
+            if (temp < angle1)
+            {
+                angle1 = temp;
+            }
+            else if(temp>angle2)
+            {
+                angle2 = temp;
+            } 
+        }
+
+        double izracunajKot(Vector2 p1, Vector2 p2, Vector2 p3)
+        {
+
+            Vector2 ab = new Vector2(p1.X - p2.X, p1.Y - p2.Y);
+            Vector2 cb = new Vector2(p3.X - p2.X, p3.Y - p2.Y);
+            ab.Normalize();
+            cb.Normalize();
+
+            /* GL.Begin(BeginMode.Lines);
+            {
+                GL.Vertex2(p1);
+                GL.Vertex2(p2);
+
+                GL.Vertex2(p2);
+                GL.Vertex2(p3);
+            }*/
+
+            double rslt = (Math.Atan2(cb.Y, cb.X) - Math.Atan2(ab.Y, ab.X));
+            //double rslt = Math.Acos(ab.X * cb.X + ab.Y * cb.Y);
+            double rs = (rslt * 180) / 3.141592;
+            if (rs < 0)
+            {
+                rs = 360 + rs;
+            }
+            return rs;
         }
 
         public override void risi(Conf_rezkar conf)
