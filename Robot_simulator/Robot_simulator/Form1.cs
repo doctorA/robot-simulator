@@ -75,7 +75,7 @@ namespace Robot_simulator
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadIdentity();
             GL.Translate(0, 0, zoom);
-            GL.Translate(-trans_X / 20, trans_Y / 20 - 5, 0);
+            GL.Translate(-trans_X / 20, trans_Y / 20 - 5, -100);
             GL.Rotate(-rtri, 0.0, 1.0, 0.0);
             GL.Rotate(rtri2, 1.0, 0.0, 0.0);
             GL.Rotate(-90, 1.0, 0.0, 0.0);
