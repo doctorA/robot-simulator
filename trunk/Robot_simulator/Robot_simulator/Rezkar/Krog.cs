@@ -60,9 +60,46 @@ namespace Robot_simulator
             }
         }
 
-        public override void toJBI(Conf_rezkar conf)
+        public override void toJBI(Conf_rezkar conf, List<string> tockeList, List<string> premikiList)
         {
-            throw new NotImplementedException();
+            string startPos = string.Format("{0:F3},{1:F3},{2:F3}", conf.zacetna_tocka.X, conf.zacetna_tocka.Y, conf.zacetna_tocka.Z);
+            string hitrost = (string.Format("V:{0:F1}", conf.hitrost_restkanja));
+            string visinaSvedra = (string.Format("{0:F3}", conf.visina_svedra_med_pomiki));
+            string globinaSvedraMedRezkanjem = (string.Format("{0:F3}", conf.globina_med_reskanjem));
+
+             Vector2 center = tocke[0];
+             float radius = (new Vector2(tocke[0].X - tocke[1].X, tocke[0].Y - tocke[1].Y)).Length
+
+            Vector2 p1 = new Vector2(center.X, center.Y + radius);
+            Vector2 p2 = new Vector2(center.X + radius, center.Y);
+            Vector2 p3 = new Vector2(center.X, center.Y -radius);
+            Vector2 p3 = new Vector2(center.X-radius, center.Y);
+
+            tockeList.Add(string.Format("{0:F3},{1:F3},{2},{3}", p1.Y, p1.X, visinaSvedra, startPos));
+            premikiList.Add("MOVL " + hitrost);
+
+            tockeList.Add(string.Format("{0:F3},{1:F3},{2},{3}", p1.Y, p1.X, globinaSvedraMedRezkanjem, startPos));
+            premikiList.Add("MOVL " + hitrost);
+
+            //krožni premiki
+            tockeList.Add(string.Format("{0:F3},{1:F3},{2},{3}", p1.Y, p1.X, globinaSvedraMedRezkanjem, startPos));
+            premikiList.Add("MOVC " + hitrost);
+
+            tockeList.Add(string.Format("{0:F3},{1:F3},{2},{3}", p2.Y, p2.X, globinaSvedraMedRezkanjem, startPos));
+            premikiList.Add("MOVC " + hitrost);
+
+            tockeList.Add(string.Format("{0:F3},{1:F3},{2},{3}", p3.Y, p3.X, globinaSvedraMedRezkanjem, startPos));
+            premikiList.Add("MOVC " + hitrost);
+
+            tockeList.Add(string.Format("{0:F3},{1:F3},{2},{3}", p4.Y, p4.X, globinaSvedraMedRezkanjem, startPos));
+            premikiList.Add("MOVC " + hitrost);
+
+            tockeList.Add(string.Format("{0:F3},{1:F3},{2},{3}", p1.Y, p1.X, globinaSvedraMedRezkanjem, startPos));
+            premikiList.Add("MOVC " + hitrost);
+
+            //dvignemo sveder na koncu
+            tockeList.Add(string.Format("{0:F3},{1:F3},{2},{3}", p1.Y, p1.X, visinaSvedra, startPos));
+            premikiList.Add("MOVL " + hitrost);
         }
     }
 }
