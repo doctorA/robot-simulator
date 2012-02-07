@@ -114,6 +114,7 @@
             this.robotaToolStripMenuItem.Name = "robotaToolStripMenuItem";
             this.robotaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.robotaToolStripMenuItem.Text = "Spošne nastavitve";
+            this.robotaToolStripMenuItem.Click += new System.EventHandler(this.robotaToolStripMenuItem_Click);
             // 
             // groupBox_orodjarna
             // 

@@ -68,12 +68,12 @@ namespace Robot_simulator
             string globinaSvedraMedRezkanjem = (string.Format("{0:F3}", conf.globina_med_reskanjem));
 
              Vector2 center = tocke[0];
-             float radius = (new Vector2(tocke[0].X - tocke[1].X, tocke[0].Y - tocke[1].Y)).Length
+             float radius = (new Vector2(tocke[0].X - tocke[1].X, tocke[0].Y - tocke[1].Y)).Length;
 
             Vector2 p1 = new Vector2(center.X, center.Y + radius);
             Vector2 p2 = new Vector2(center.X + radius, center.Y);
             Vector2 p3 = new Vector2(center.X, center.Y -radius);
-            Vector2 p3 = new Vector2(center.X-radius, center.Y);
+            Vector2 p4 = new Vector2(center.X-radius, center.Y);
 
             tockeList.Add(string.Format("{0:F3},{1:F3},{2},{3}", p1.Y, p1.X, visinaSvedra, startPos));
             premikiList.Add("MOVL " + hitrost);

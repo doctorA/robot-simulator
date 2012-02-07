@@ -97,6 +97,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Rezkar\Nastavitve\Nastavitve.resx">
+      <DependentUpon>Nastavitve.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Rezkar\Rezkar.resx">
       <DependentUpon>Rezkar.cs</DependentUpon>
       <SubType>Designer</SubType>
