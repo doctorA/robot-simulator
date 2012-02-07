@@ -19,6 +19,21 @@ namespace Robot_simulator
 
         }
 
+        public float razdalja(Vector2 p1)
+        {
+            float r=float.MaxValue;
+            float tmp;
+            foreach(Vector2 v in tocke)
+            {
+                tmp=(new Vector2(v.X - p1.X, v.Y - p1.Y)).Length;
+                if (r > tmp)
+                {
+                    r = tmp;
+                }
+            }
+            return r;
+        }
+
         public abstract void risi(Conf_rezkar conf);
         public abstract void toJBI(Conf_rezkar conf);
     }

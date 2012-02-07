@@ -145,6 +145,7 @@
             this.button_brisi.Size = new System.Drawing.Size(100, 100);
             this.button_brisi.TabIndex = 5;
             this.button_brisi.UseVisualStyleBackColor = true;
+            this.button_brisi.Click += new System.EventHandler(this.button_brisi_Click);
             // 
             // button_premakni
             // 

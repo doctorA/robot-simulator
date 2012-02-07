@@ -19,6 +19,7 @@ namespace Robot_simulator
         List<Lik> liki = new List<Lik>();
         bool tempKrogBool = false;
         bool tempKvadratBool = false;
+        bool tempBrisi = false;
         Krog tempKrog = new Krog();
         Kvadrat tempKvadrat = new Kvadrat();
        
@@ -100,6 +101,9 @@ namespace Robot_simulator
 
         private void button_crta_Click(object sender, EventArgs e)
         {
+            tempBrisi = false;
+            tempKrogBool = false;
+            tempKvadratBool = false;
             liki.Add(new Crta());
         }
 
@@ -111,30 +115,51 @@ namespace Robot_simulator
             y = ((float)(conf.vel_ploscice.Y + 10) - 10f) - y;
             if (liki.Count>0)
             {
-                if (liki.Last().tip == 2 && liki.Last().tocke.Count==2) //krog
+                if (tempBrisi)
                 {
-                    tempKrogBool = false;
-                    liki.Add(new Krog());
-                    //tempKrog = new Krog();
+                    float razdalja = 3f;
+                    int index = -1;
+                    Vector2 v = (new Vector2(x, y));
+                    for (int i = 0; i < liki.Count; i++ )
+                    {
+                        if (razdalja > liki[i].razdalja(v))
+                        {
+                            razdalja = liki[i].razdalja(v);
+                            index = i;
+                        }
+                    }
+                    if(index>=0)
+                    {
+                        liki.RemoveAt(index);
+                    }
                 }
-                else if (liki.Last().tip == 3 && liki.Last().tocke.Count == 2) //kvadrat
+                else
                 {
-                    tempKvadratBool = false;
-                    liki.Add(new Kvadrat());
+                    if (liki.Last().tip == 2 && liki.Last().tocke.Count == 2) //krog
+                    {
+                        tempKrogBool = false;
+                        liki.Add(new Krog());
+                        //tempKrog = new Krog();
+                    }
+                    else if (liki.Last().tip == 3 && liki.Last().tocke.Count == 2) //kvadrat
+                    {
+                        tempKvadratBool = false;
+                        liki.Add(new Kvadrat());
+                    }
+                    else if (liki.Last().tip == 4 && liki.Last().tocke.Count == 3)
+                    {
+                        liki.Add(new Lok());
+                    }
+                    if (liki.Last().tip == 2 && liki.Last().tocke.Count == 0)
+                    {
+                        tempKrog.tocke[0] = new Vector2(x, y);
+                    }
+                    else if (liki.Last().tip == 3 && liki.Last().tocke.Count == 0)
+                    {
+                        tempKvadrat.tocke[0] = new Vector2(x, y);
+                    }
+                    liki.Last().tocke.Add(new Vector2(x, y));
                 }
-                else if (liki.Last().tip == 4 && liki.Last().tocke.Count == 3)
-                {
-                    liki.Add(new Lok());
-                }
-                if (liki.Last().tip == 2 && liki.Last().tocke.Count == 0)
-                {
-                    tempKrog.tocke[0] = new Vector2(x, y);
-                }
-                else if (liki.Last().tip == 3 && liki.Last().tocke.Count == 0)
-                {
-                    tempKvadrat.tocke[0] = new Vector2(x, y);
-                }
-                liki.Last().tocke.Add(new Vector2(x, y));
                 glControl1.Invalidate();
             }
         }
@@ -143,6 +168,7 @@ namespace Robot_simulator
         {
             tempKrogBool = false;
             tempKvadratBool = false;
+            tempBrisi = false;
             liki.Add(new Krog());
         }
 
@@ -175,6 +201,7 @@ namespace Robot_simulator
         {
             tempKrogBool = false;
             tempKvadratBool = false;
+            tempBrisi = false;
             liki.Add(new Kvadrat());
         }
 
@@ -182,7 +209,15 @@ namespace Robot_simulator
         {
             tempKrogBool = false;
             tempKvadratBool = false;
+            tempBrisi = false;
             liki.Add(new Lok());
+        }
+
+        private void button_brisi_Click(object sender, EventArgs e)
+        {
+            tempKrogBool = false;
+            tempKvadratBool = false;
+            tempBrisi = true;
         }
     }
 }
