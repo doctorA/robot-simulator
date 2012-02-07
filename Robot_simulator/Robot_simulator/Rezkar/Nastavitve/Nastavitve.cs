@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Robot_simulator.Rezkar
+namespace Robot_simulator
 {
-    public partial class Form1 : Form
+    public partial class Nastavitve : Form
     {
-        public Form1()
+        public Nastavitve()
         {
             InitializeComponent();
         }
