@@ -49,9 +49,35 @@ namespace Robot_simulator
             }
         }
 
-        public override void toJBI(Conf_rezkar conf)
+        public override void toJBI(Conf_rezkar conf, List<string> tockeList, List<string> premikiList)
         {
-            throw new NotImplementedException();
+            string startPos = string.Format("{0:F3},{1:F3},{2:F3}", conf.zacetna_tocka.X, conf.zacetna_tocka.Y, conf.zacetna_tocka.Z);
+            string hitrost = (string.Format("V:{0:F1}", conf.hitrost_restkanja));
+            string visinaSvedra = (string.Format("{0:F3}", conf.visina_svedra_med_pomiki));
+            string globinaSvedraMedRezkanjem = (string.Format("{0:F3}", conf.globina_med_reskanjem));
+
+            tockeList.Add(string.Format("{0:F3},{1:F3},{2},{3}", tocke[0].Y, tocke[0].X, visinaSvedra,startPos));
+            premikiList.Add("MOVL " + hitrost);
+
+            tockeList.Add(string.Format("{0:F3},{1:F3},{2},{3}", tocke[0].Y, tocke[0].X, globinaSvedraMedRezkanjem, startPos));
+            premikiList.Add("MOVL " + hitrost);
+            //smo dola
+
+            tockeList.Add(string.Format("{0:F3},{1:F3},{2},{3}", tocke[1].Y, tocke[0].X, globinaSvedraMedRezkanjem, startPos));
+            premikiList.Add("MOVL " + hitrost);
+
+            tockeList.Add(string.Format("{0:F3},{1:F3},{2},{3}", tocke[1].Y, tocke[1].X, globinaSvedraMedRezkanjem, startPos));
+            premikiList.Add("MOVL " + hitrost);
+
+            tockeList.Add(string.Format("{0:F3},{1:F3},{2},{3}", tocke[0].Y, tocke[1].X, globinaSvedraMedRezkanjem, startPos));
+            premikiList.Add("MOVL " + hitrost);
+
+            tockeList.Add(string.Format("{0:F3},{1:F3},{2},{3}", tocke[0].Y, tocke[0].X, globinaSvedraMedRezkanjem, startPos));
+            premikiList.Add("MOVL " + hitrost);
+
+            //lets go fly 
+            tockeList.Add(string.Format("{0:F3},{1:F3},{2},{3}", tocke[0].Y, tocke[0].X, visinaSvedra, startPos));
+            premikiList.Add("MOVL " + hitrost);
         }
     }
 }

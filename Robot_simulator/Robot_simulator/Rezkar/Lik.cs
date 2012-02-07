@@ -52,6 +52,6 @@ namespace Robot_simulator
         }
 
         public abstract void risi(Conf_rezkar conf);
-        public abstract void toJBI(Conf_rezkar conf);
+        public abstract void toJBI(Conf_rezkar conf, List<string> tockeList, List<string> premikiList);
     }
 }
