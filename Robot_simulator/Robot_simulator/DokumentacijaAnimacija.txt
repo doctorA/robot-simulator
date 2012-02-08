@@ -1,0 +1,40 @@
+﻿1. V projektu se velikokrat uporablja skaliranje z Scale metodo. V javi ta metoda sprejme 1 skalirni argument, c# pa hoče vsako točko 3d vektorja skalirat posebaj. Priporoča pa klic metode Mult, ki skalira z eno vrednostjo - ALI TO SPREMENIMO ?
+2. Namestu vseh razredov Point3D v javi, sem uporabil Vector3D razred
+3. Stvari, ki jih še nisem znal pretvorit, bodisi zaradi klicev zunanjih knjižnic, bodisi zaradi razlik med c# in java, so zakomentirane in je zraven napisano da prej ni bilo zakomentirano !!
+
+4. Ali je metoda v C# Vector3D.Mult = Point3D.mul v JAVI?
+
+5. Vključit je bilo potrebno using System.Threading; in using System.Collections
+
+6. Vse kaj se nahaja znotraj komentarjev :
+
+/*************************************************************************/
+//NEK KOMENTAR 
+
+/*************************************************************************/
+
+Je bilo prej odkomentirano, ampak nisem znal primerno spremenit iz jave v c# ...
+
+X. Importane datoteke v javi : 
+  - JRobSim.control.stopJob
+  - JRobSim.control.pauseJob
+  - JRobSim.control
+  - import com.uni.mb.jrobsim.gui.JRobSim;
+  - import com.uni.mb.jrobsim.scene.*; // scene
+
+  Točka 1 in 4 : 
+  
+  krnekaj warningov je zaradi tega, ko piše da bi naj namestu Scale uporabil Mult ? to se lahko 
+  po potrebi zamenja 
+
+  Točka 2 :
+  
+  namestu Point3D sem uporabljal Vector3D, saj gre za isto stvar
+
+  Točka 3 in 6 :
+
+  ZAJ KOLK VEM TEH IMPORTOV scene in gui sploh ne rabimo, kr bi jih naj sami napisali, te pač tisti
+  ko jih je napisal, vrjetno ve več o tem ko jaz, pa bi lahko to dopolnil ... vsi ti klici teh importov
+  so zakomentirani po zgornji 6 točki, pa ni jih tak dosti, ponavljajo se
+
+  Točka 5 : 2 knjižnici ki sta potrebni
