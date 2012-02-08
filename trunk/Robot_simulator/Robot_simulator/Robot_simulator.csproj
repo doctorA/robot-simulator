@@ -48,7 +48,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ClassLibrary, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="OpenTK, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4" />
+    <Reference Include="OpenTK, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
     <Reference Include="OpenTK.Compatibility, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
     <Reference Include="OpenTK.GLControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -135,6 +135,9 @@
     <Compile Include="Robot.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\OpenTk\OpenTK.Compatibility.dll" />
+    <Content Include="Content\OpenTk\OpenTK.dll" />
+    <Content Include="Content\OpenTk\OpenTK.GLControl.dll" />
     <Content Include="Content\ProgramZaRezkanje\Ikone\brisi.png" />
     <Content Include="Content\ProgramZaRezkanje\Ikone\brisi1.png" />
     <Content Include="Content\ProgramZaRezkanje\Ikone\crta.png" />
