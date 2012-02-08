@@ -15,12 +15,12 @@ namespace Robot_simulator
 {
     class Robot
     {
-        public int rotacija1 = 0;
-        public int rotacija2 = 0;
-        public int rotacija3 = 0;
-        public int rotacija4 = 0;
-        public int rotacija5 = 0;
-        public int rotacija6 = 0;
+        public float rotacija1 = 0;
+        public float rotacija2 = 0;
+        public float rotacija3 = 0;
+        public float rotacija4 = 0;
+        public float rotacija5 = 0;
+        public float rotacija6 = 0;
         public bool modelOK = false;
         public bool set_tool = true;
         public LightwaveObject[] robot_model;  //objekt za modele robota
@@ -126,36 +126,42 @@ namespace Robot_simulator
             Vector3 curr = getVrhOrodja();
             float distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
             float new_distance;
-                rotacija1++;
+                rotacija1+=0.1f;
                 curr = getVrhOrodja();
                 new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
                 if (new_distance > distance)
-                    rotacija1 -= 2;
-                rotacija2++;
+                    rotacija1 -= 0.2f;
+
+                rotacija2 += 0.1f;
                 curr = getVrhOrodja();
                 new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
                 if (new_distance > distance)
-                    rotacija2 -= 2;
-                rotacija3++;
+                    rotacija2 -= 0.2f;
+
+                rotacija3 += 0.1f;
                 curr = getVrhOrodja();
                 new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
                 if (new_distance > distance)
-                    rotacija3 -= 2;
-                rotacija4++;
+                    rotacija3 -= 0.2f;
+
+                rotacija4 += 0.1f;
                 curr = getVrhOrodja();
                 new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
                 if (new_distance > distance)
-                    rotacija4 -= 2;
-                rotacija5++;
+                    rotacija4 -= 0.2f;
+
+                rotacija5 += 0.1f;
                 curr = getVrhOrodja();
                 new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
                 if (new_distance > distance)
-                    rotacija5 -= 2;
-                rotacija6++;
+                    rotacija5 -= 0.2f;
+
+                rotacija6 += 0.1f;
                 curr = getVrhOrodja();
                 new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
                 if (new_distance > distance)
-                    rotacija6 -= 2;
+                    rotacija6 -= 0.2f;
+
 
         }
 

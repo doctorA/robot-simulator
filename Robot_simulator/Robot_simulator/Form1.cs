@@ -555,7 +555,7 @@ namespace Robot_simulator
             Vector3 curr = robot.getVrhOrodja();
             float distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
             
-            while (distance > 10)
+            while (distance > 0.005)
             {
                 robot.idi_tja(v);
                 curr = robot.getVrhOrodja();
@@ -563,6 +563,27 @@ namespace Robot_simulator
                 glControl1.Invalidate();
             }
             
+        }
+
+
+
+        private void glControl1_KeyDown(object sender, KeyEventArgs e)
+        {
+            Vector3 v = robot.getVrhOrodja();
+            if (e.KeyCode == Keys.Q)
+                v.X += 1;
+            else if (e.KeyCode == Keys.A)
+                v.X -= 1;
+            else if (e.KeyCode == Keys.W)
+                v.Y += 1;
+            else if (e.KeyCode == Keys.S)
+                v.Y -= 1;
+            else if (e.KeyCode == Keys.E)
+                v.Z += 1;
+            else if (e.KeyCode == Keys.D)
+                v.Z -= 1;
+            robot.idi_tja(v);
+            glControl1.Invalidate();
         }
         //konec inverzne
     }
