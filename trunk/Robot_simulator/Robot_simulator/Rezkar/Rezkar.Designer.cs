@@ -85,7 +85,7 @@
             // shraniJBIToolStripMenuItem
             // 
             this.shraniJBIToolStripMenuItem.Name = "shraniJBIToolStripMenuItem";
-            this.shraniJBIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.shraniJBIToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.shraniJBIToolStripMenuItem.Text = "Shrani JBI...";
             this.shraniJBIToolStripMenuItem.Click += new System.EventHandler(this.shraniJBIToolStripMenuItem_Click);
             // 
@@ -99,7 +99,7 @@
             // izhodToolStripMenuItem
             // 
             this.izhodToolStripMenuItem.Name = "izhodToolStripMenuItem";
-            this.izhodToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.izhodToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.izhodToolStripMenuItem.Text = "Izhod";
             // 
             // nastavitveToolStripMenuItem
