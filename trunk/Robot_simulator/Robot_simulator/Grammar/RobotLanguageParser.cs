@@ -8,20 +8,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g 2012-02-08 15:56:41
-/*
+// $ANTLR 3.4 D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g 2012-02-08 16:36:32
+
 // The variable 'variable' is assigned but its value is never used.
-#pragma warning disable 168, 219
+#pragma warning disable 219
 // Unreachable code detected.
 #pragma warning disable 162
 // Missing XML comment for publicly visible type or member 'Type_or_Member'
 #pragma warning disable 1591
+// CLS compliance checking will not be performed on 'type' because it is not visible from outside this assembly.
+#pragma warning disable 3019
 
 
 using System.Collections.Generic;
 using Antlr.Runtime;
 using Antlr.Runtime.Misc;
-using ConditionalAttribute = System.Diagnostics.ConditionalAttribute;
 
 
 using Antlr.Runtime.Tree;
@@ -32,10 +33,9 @@ using RewriteRuleITokenStream = Antlr.Runtime.Tree.RewriteRuleTokenStream;
 public partial class RobotLanguageParser : Antlr.Runtime.Parser
 {
 	internal static readonly string[] tokenNames = new string[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ATTR", "COMM", "DATE", "DIN", "DOUT", "FRAME", "GROUP", "INST", "INT", "JOB", "MOVC", "MOVJ", "MOVL", "MOVS", "NAME", "NEWLINE", "NPOS", "POS", "POSTYPE", "RCONF", "REAL", "RECTAN", "TIME", "TIMER", "TOOL", "USER", "WS", "','", "'-'", "'/'", "'0'", "'1'", "'='", "'A'", "'C'", "'END'", "'NOP'", "'PULSE'", "'USER'", "'V'", "'VJ'", "'Z'"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ATTR", "COMM", "DATE", "DIN", "DOUT", "FRAME", "GROUP", "INST", "INT", "JOB", "MOVC", "MOVJ", "MOVL", "MOVS", "NAME", "NEWLINE", "NIZ", "NPOS", "POS", "POSTYPE", "RCONF", "REAL", "RECTAN", "TIME", "TIMER", "TOOL", "USER", "WS", "','", "'-'", "'/'", "'0'", "'1'", "'='", "'A'", "'C'", "'END'", "'NOP'", "'PULSE'", "'USER'", "'V'", "'VJ'", "'Z'"
 	};
 	public const int EOF=-1;
-	public const int T__31=31;
 	public const int T__32=32;
 	public const int T__33=33;
 	public const int T__34=34;
@@ -50,6 +50,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 	public const int T__43=43;
 	public const int T__44=44;
 	public const int T__45=45;
+	public const int T__46=46;
 	public const int ATTR=4;
 	public const int COMM=5;
 	public const int DATE=6;
@@ -66,30 +67,19 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 	public const int MOVS=17;
 	public const int NAME=18;
 	public const int NEWLINE=19;
-	public const int NPOS=20;
-	public const int POS=21;
-	public const int POSTYPE=22;
-	public const int RCONF=23;
-	public const int REAL=24;
-	public const int RECTAN=25;
-	public const int TIME=26;
-	public const int TIMER=27;
-	public const int TOOL=28;
-	public const int USER=29;
-	public const int WS=30;
+	public const int NIZ=20;
+	public const int NPOS=21;
+	public const int POS=22;
+	public const int POSTYPE=23;
+	public const int RCONF=24;
+	public const int REAL=25;
+	public const int RECTAN=26;
+	public const int TIME=27;
+	public const int TIMER=28;
+	public const int TOOL=29;
+	public const int USER=30;
+	public const int WS=31;
 
-	#if ANTLR_DEBUG
-		private static readonly bool[] decisionCanBacktrack =
-			new bool[]
-			{
-				false, // invalid decision
-				false, false, false, false, false, false, false, false, false, false, 
-				false, false, false, false, false, false, false, false, false, false, 
-				false, false, false, false, false, false
-			};
-	#else
-		private static readonly bool[] decisionCanBacktrack = new bool[0];
-	#endif
 	public RobotLanguageParser(ITokenStream input)
 		: this(input, new RecognizerSharedState())
 	{
@@ -97,8 +87,14 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 	public RobotLanguageParser(ITokenStream input, RecognizerSharedState state)
 		: base(input, state)
 	{
+		ITreeAdaptor treeAdaptor = default(ITreeAdaptor);
+		CreateTreeAdaptor(ref treeAdaptor);
+		TreeAdaptor = treeAdaptor ?? new CommonTreeAdaptor();
 		OnCreated();
 	}
+	// Implement this function in your helper file to use a custom tree adaptor
+	partial void CreateTreeAdaptor(ref ITreeAdaptor adaptor);
+
 	private ITreeAdaptor adaptor;
 
 	public ITreeAdaptor TreeAdaptor
@@ -118,19 +114,13 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 	public override string GrammarFileName { get { return "D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g"; } }
 
 
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void OnCreated() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule(string ruleName, int ruleIndex) {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule(string ruleName, int ruleIndex) {}
+	partial void OnCreated();
+	partial void EnterRule(string ruleName, int ruleIndex);
+	partial void LeaveRule(string ruleName, int ruleIndex);
 
 	#region Rules
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_start() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_start() {}
+	partial void EnterRule_start();
+	partial void LeaveRule_start();
 
 	// $ANTLR start "start"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:10:8: public start : prog ;
@@ -140,13 +130,12 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_start();
 		EnterRule("start", 1);
 		TraceIn("start", 1);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    AstParserRuleReturnScope<CommonTree, IToken> prog1 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-
+		AstParserRuleReturnScope<CommonTree, IToken> prog1 = default(AstParserRuleReturnScope<CommonTree, IToken>);
 
 		try { DebugEnterRule(GrammarFileName, "start");
 		DebugLocation(10, 2);
@@ -192,19 +181,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("start", 1);
 			LeaveRule("start", 1);
 			LeaveRule_start();
-	    }
-	 	DebugLocation(17, 2);
+		}
+		DebugLocation(17, 2);
 		} finally { DebugExitRule(GrammarFileName, "start"); }
 		return retval;
 
 	}
 	// $ANTLR end "start"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_prog() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_prog() {}
+	partial void EnterRule_prog();
+	partial void LeaveRule_prog();
 
 	// $ANTLR start "prog"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:19:1: prog : job name pos npos user tool postype rectan ( ( rconf )? cindeks )+ inst date comm attr frame group main -> job name pos npos user tool postype rectan rconf cindeks inst date comm attr frame group main ;
@@ -214,46 +200,46 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_prog();
 		EnterRule("prog", 2);
 		TraceIn("prog", 2);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    AstParserRuleReturnScope<CommonTree, IToken> job2 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> name3 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> pos4 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> npos5 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> user6 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> tool7 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> postype8 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> rectan9 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> rconf10 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> cindeks11 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> inst12 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> date13 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> comm14 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> attr15 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> frame16 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> group17 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> main18 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> job2 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> name3 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> pos4 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> npos5 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> user6 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> tool7 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> postype8 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> rectan9 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> rconf10 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> cindeks11 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> inst12 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> date13 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> comm14 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> attr15 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> frame16 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> group17 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> main18 = default(AstParserRuleReturnScope<CommonTree, IToken>);
 
-	    RewriteRuleSubtreeStream stream_comm=new RewriteRuleSubtreeStream(adaptor,"rule comm");
-	    RewriteRuleSubtreeStream stream_rectan=new RewriteRuleSubtreeStream(adaptor,"rule rectan");
-	    RewriteRuleSubtreeStream stream_tool=new RewriteRuleSubtreeStream(adaptor,"rule tool");
-	    RewriteRuleSubtreeStream stream_job=new RewriteRuleSubtreeStream(adaptor,"rule job");
-	    RewriteRuleSubtreeStream stream_attr=new RewriteRuleSubtreeStream(adaptor,"rule attr");
-	    RewriteRuleSubtreeStream stream_inst=new RewriteRuleSubtreeStream(adaptor,"rule inst");
-	    RewriteRuleSubtreeStream stream_date=new RewriteRuleSubtreeStream(adaptor,"rule date");
-	    RewriteRuleSubtreeStream stream_main=new RewriteRuleSubtreeStream(adaptor,"rule main");
-	    RewriteRuleSubtreeStream stream_pos=new RewriteRuleSubtreeStream(adaptor,"rule pos");
-	    RewriteRuleSubtreeStream stream_postype=new RewriteRuleSubtreeStream(adaptor,"rule postype");
-	    RewriteRuleSubtreeStream stream_frame=new RewriteRuleSubtreeStream(adaptor,"rule frame");
-	    RewriteRuleSubtreeStream stream_name=new RewriteRuleSubtreeStream(adaptor,"rule name");
-	    RewriteRuleSubtreeStream stream_rconf=new RewriteRuleSubtreeStream(adaptor,"rule rconf");
-	    RewriteRuleSubtreeStream stream_group=new RewriteRuleSubtreeStream(adaptor,"rule group");
-	    RewriteRuleSubtreeStream stream_user=new RewriteRuleSubtreeStream(adaptor,"rule user");
-	    RewriteRuleSubtreeStream stream_cindeks=new RewriteRuleSubtreeStream(adaptor,"rule cindeks");
-	    RewriteRuleSubtreeStream stream_npos=new RewriteRuleSubtreeStream(adaptor,"rule npos");
+		RewriteRuleSubtreeStream stream_comm=new RewriteRuleSubtreeStream(adaptor,"rule comm");
+		RewriteRuleSubtreeStream stream_rectan=new RewriteRuleSubtreeStream(adaptor,"rule rectan");
+		RewriteRuleSubtreeStream stream_tool=new RewriteRuleSubtreeStream(adaptor,"rule tool");
+		RewriteRuleSubtreeStream stream_job=new RewriteRuleSubtreeStream(adaptor,"rule job");
+		RewriteRuleSubtreeStream stream_attr=new RewriteRuleSubtreeStream(adaptor,"rule attr");
+		RewriteRuleSubtreeStream stream_inst=new RewriteRuleSubtreeStream(adaptor,"rule inst");
+		RewriteRuleSubtreeStream stream_date=new RewriteRuleSubtreeStream(adaptor,"rule date");
+		RewriteRuleSubtreeStream stream_main=new RewriteRuleSubtreeStream(adaptor,"rule main");
+		RewriteRuleSubtreeStream stream_pos=new RewriteRuleSubtreeStream(adaptor,"rule pos");
+		RewriteRuleSubtreeStream stream_postype=new RewriteRuleSubtreeStream(adaptor,"rule postype");
+		RewriteRuleSubtreeStream stream_frame=new RewriteRuleSubtreeStream(adaptor,"rule frame");
+		RewriteRuleSubtreeStream stream_name=new RewriteRuleSubtreeStream(adaptor,"rule name");
+		RewriteRuleSubtreeStream stream_rconf=new RewriteRuleSubtreeStream(adaptor,"rule rconf");
+		RewriteRuleSubtreeStream stream_group=new RewriteRuleSubtreeStream(adaptor,"rule group");
+		RewriteRuleSubtreeStream stream_user=new RewriteRuleSubtreeStream(adaptor,"rule user");
+		RewriteRuleSubtreeStream stream_cindeks=new RewriteRuleSubtreeStream(adaptor,"rule cindeks");
+		RewriteRuleSubtreeStream stream_npos=new RewriteRuleSubtreeStream(adaptor,"rule npos");
 		try { DebugEnterRule(GrammarFileName, "prog");
 		DebugLocation(19, 201);
 		try
@@ -317,10 +303,10 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			while (true)
 			{
 				int alt2=2;
-				try { DebugEnterDecision(2, decisionCanBacktrack[2]);
+				try { DebugEnterDecision(2, false);
 				int LA2_0 = input.LA(1);
 
-				if ((LA2_0==RCONF||LA2_0==38))
+				if ((LA2_0==RCONF||LA2_0==39))
 				{
 					alt2 = 1;
 				}
@@ -337,7 +323,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:19:52: ( rconf )?
 					int alt1=2;
 					try { DebugEnterSubRule(1);
-					try { DebugEnterDecision(1, decisionCanBacktrack[1]);
+					try { DebugEnterDecision(1, false);
 					int LA1_0 = input.LA(1);
 
 					if ((LA1_0==RCONF))
@@ -435,7 +421,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: postype, rectan, pos, rconf, main, frame, inst, name, attr, user, cindeks, group, job, date, comm, tool, npos
+			// elements: date, job, tool, npos, postype, inst, name, group, pos, cindeks, rconf, attr, frame, user, comm, main, rectan
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -507,19 +493,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("prog", 2);
 			LeaveRule("prog", 2);
 			LeaveRule_prog();
-	    }
-	 	DebugLocation(19, 201);
+		}
+		DebugLocation(19, 201);
 		} finally { DebugExitRule(GrammarFileName, "prog"); }
 		return retval;
 
 	}
 	// $ANTLR end "prog"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_job() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_job() {}
+	partial void EnterRule_job();
+	partial void LeaveRule_job();
 
 	// $ANTLR start "job"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:21:1: job : JOB ;
@@ -529,15 +512,14 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_job();
 		EnterRule("job", 3);
 		TraceIn("job", 3);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken JOB19 = default(IToken);
+		IToken JOB19 = default(IToken);
 
-	    CommonTree JOB19_tree = default(CommonTree);
-
+		CommonTree JOB19_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "job");
 		DebugLocation(21, 10);
 		try
@@ -552,7 +534,6 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			JOB19=(IToken)Match(input,JOB,Follow._JOB_in_job130); 
 			JOB19_tree = (CommonTree)adaptor.Create(JOB19);
 			adaptor.AddChild(root_0, JOB19_tree);
-
 
 			}
 
@@ -574,46 +555,42 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("job", 3);
 			LeaveRule("job", 3);
 			LeaveRule_job();
-	    }
-	 	DebugLocation(21, 10);
+		}
+		DebugLocation(21, 10);
 		} finally { DebugExitRule(GrammarFileName, "job"); }
 		return retval;
 
 	}
 	// $ANTLR end "job"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_name() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_name() {}
+	partial void EnterRule_name();
+	partial void LeaveRule_name();
 
 	// $ANTLR start "name"
-	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:22:1: name : NAME ( 'A' .. 'Z' )+ ;
+	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:22:1: name : NAME NIZ ;
 	[GrammarRule("name")]
 	private AstParserRuleReturnScope<CommonTree, IToken> name()
 	{
 		EnterRule_name();
 		EnterRule("name", 4);
 		TraceIn("name", 4);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken NAME20 = default(IToken);
-	    IToken set21 = default(IToken);
+		IToken NAME20 = default(IToken);
+		IToken NIZ21 = default(IToken);
 
-	    CommonTree NAME20_tree = default(CommonTree);
-	    CommonTree set21_tree = default(CommonTree);
-
+		CommonTree NAME20_tree = default(CommonTree);
+		CommonTree NIZ21_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "name");
-		DebugLocation(22, 23);
+		DebugLocation(22, 15);
 		try
 		{
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:22:6: ( NAME ( 'A' .. 'Z' )+ )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:22:6: ( NAME NIZ )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:22:8: NAME ( 'A' .. 'Z' )+
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:22:8: NAME NIZ
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
@@ -621,65 +598,10 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			NAME20=(IToken)Match(input,NAME,Follow._NAME_in_name137); 
 			NAME20_tree = (CommonTree)adaptor.Create(NAME20);
 			adaptor.AddChild(root_0, NAME20_tree);
-
 			DebugLocation(22, 13);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:22:13: ( 'A' .. 'Z' )+
-			int cnt3=0;
-			try { DebugEnterSubRule(3);
-			while (true)
-			{
-				int alt3=2;
-				try { DebugEnterDecision(3, decisionCanBacktrack[3]);
-				int LA3_0 = input.LA(1);
-
-				if (())
-				{
-					alt3 = 1;
-				}
-
-
-				} finally { DebugExitDecision(3); }
-				switch (alt3)
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:
-					{
-					DebugLocation(22, 13);
-
-					set21=(IToken)input.LT(1);
-					if ()
-					{
-						input.Consume();
-						adaptor.AddChild(root_0, (CommonTree)adaptor.Create(set21));
-						state.errorRecovery=false;
-					}
-					else
-					{
-						MismatchedSetException mse = new MismatchedSetException(null,input);
-						DebugRecognitionException(mse);
-						throw mse;
-					}
-
-
-					}
-					break;
-
-				default:
-					if (cnt3 >= 1)
-						goto loop3;
-
-					EarlyExitException eee3 = new EarlyExitException( 3, input );
-					DebugRecognitionException(eee3);
-					throw eee3;
-				}
-				cnt3++;
-			}
-			loop3:
-				;
-
-			} finally { DebugExitSubRule(3); }
-
+			NIZ21=(IToken)Match(input,NIZ,Follow._NIZ_in_name139); 
+			NIZ21_tree = (CommonTree)adaptor.Create(NIZ21);
+			adaptor.AddChild(root_0, NIZ21_tree);
 
 			}
 
@@ -701,19 +623,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("name", 4);
 			LeaveRule("name", 4);
 			LeaveRule_name();
-	    }
-	 	DebugLocation(22, 23);
+		}
+		DebugLocation(22, 15);
 		} finally { DebugExitRule(GrammarFileName, "name"); }
 		return retval;
 
 	}
 	// $ANTLR end "name"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_pos() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_pos() {}
+	partial void EnterRule_pos();
+	partial void LeaveRule_pos();
 
 	// $ANTLR start "pos"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:23:1: pos : POS ;
@@ -723,15 +642,14 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_pos();
 		EnterRule("pos", 5);
 		TraceIn("pos", 5);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken POS22 = default(IToken);
+		IToken POS22 = default(IToken);
 
-	    CommonTree POS22_tree = default(CommonTree);
-
+		CommonTree POS22_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "pos");
 		DebugLocation(23, 9);
 		try
@@ -743,10 +661,9 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(23, 7);
-			POS22=(IToken)Match(input,POS,Follow._POS_in_pos151); 
+			POS22=(IToken)Match(input,POS,Follow._POS_in_pos146); 
 			POS22_tree = (CommonTree)adaptor.Create(POS22);
 			adaptor.AddChild(root_0, POS22_tree);
-
 
 			}
 
@@ -768,19 +685,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("pos", 5);
 			LeaveRule("pos", 5);
 			LeaveRule_pos();
-	    }
-	 	DebugLocation(23, 9);
+		}
+		DebugLocation(23, 9);
 		} finally { DebugExitRule(GrammarFileName, "pos"); }
 		return retval;
 
 	}
 	// $ANTLR end "pos"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_npos() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_npos() {}
+	partial void EnterRule_npos();
+	partial void LeaveRule_npos();
 
 	// $ANTLR start "npos"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:24:1: npos : NPOS INT ( ( ',' )? ( '-' )? INT )+ ;
@@ -790,23 +704,22 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_npos();
 		EnterRule("npos", 6);
 		TraceIn("npos", 6);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken NPOS23 = default(IToken);
-	    IToken INT24 = default(IToken);
-	    IToken char_literal25 = default(IToken);
-	    IToken char_literal26 = default(IToken);
-	    IToken INT27 = default(IToken);
+		IToken NPOS23 = default(IToken);
+		IToken INT24 = default(IToken);
+		IToken char_literal25 = default(IToken);
+		IToken char_literal26 = default(IToken);
+		IToken INT27 = default(IToken);
 
-	    CommonTree NPOS23_tree = default(CommonTree);
-	    CommonTree INT24_tree = default(CommonTree);
-	    CommonTree char_literal25_tree = default(CommonTree);
-	    CommonTree char_literal26_tree = default(CommonTree);
-	    CommonTree INT27_tree = default(CommonTree);
-
+		CommonTree NPOS23_tree = default(CommonTree);
+		CommonTree INT24_tree = default(CommonTree);
+		CommonTree char_literal25_tree = default(CommonTree);
+		CommonTree char_literal26_tree = default(CommonTree);
+		CommonTree INT27_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "npos");
 		DebugLocation(24, 32);
 		try
@@ -818,33 +731,31 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(24, 8);
-			NPOS23=(IToken)Match(input,NPOS,Follow._NPOS_in_npos158); 
+			NPOS23=(IToken)Match(input,NPOS,Follow._NPOS_in_npos153); 
 			NPOS23_tree = (CommonTree)adaptor.Create(NPOS23);
 			adaptor.AddChild(root_0, NPOS23_tree);
-
 			DebugLocation(24, 13);
-			INT24=(IToken)Match(input,INT,Follow._INT_in_npos160); 
+			INT24=(IToken)Match(input,INT,Follow._INT_in_npos155); 
 			INT24_tree = (CommonTree)adaptor.Create(INT24);
 			adaptor.AddChild(root_0, INT24_tree);
-
 			DebugLocation(24, 17);
 			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:24:17: ( ( ',' )? ( '-' )? INT )+
-			int cnt6=0;
-			try { DebugEnterSubRule(6);
+			int cnt5=0;
+			try { DebugEnterSubRule(5);
 			while (true)
 			{
-				int alt6=2;
-				try { DebugEnterDecision(6, decisionCanBacktrack[6]);
-				int LA6_0 = input.LA(1);
+				int alt5=2;
+				try { DebugEnterDecision(5, false);
+				int LA5_0 = input.LA(1);
 
-				if ((LA6_0==INT||(LA6_0>=31 && LA6_0<=32)))
+				if ((LA5_0==INT||(LA5_0>=32 && LA5_0<=33)))
 				{
-					alt6 = 1;
+					alt5 = 1;
 				}
 
 
-				} finally { DebugExitDecision(6); }
-				switch (alt6)
+				} finally { DebugExitDecision(5); }
+				switch (alt5)
 				{
 				case 1:
 					DebugEnterAlt(1);
@@ -852,12 +763,41 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					{
 					DebugLocation(24, 18);
 					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:24:18: ( ',' )?
+					int alt3=2;
+					try { DebugEnterSubRule(3);
+					try { DebugEnterDecision(3, false);
+					int LA3_0 = input.LA(1);
+
+					if ((LA3_0==32))
+					{
+						alt3 = 1;
+					}
+					} finally { DebugExitDecision(3); }
+					switch (alt3)
+					{
+					case 1:
+						DebugEnterAlt(1);
+						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:24:18: ','
+						{
+						DebugLocation(24, 18);
+						char_literal25=(IToken)Match(input,32,Follow._32_in_npos158); 
+						char_literal25_tree = (CommonTree)adaptor.Create(char_literal25);
+						adaptor.AddChild(root_0, char_literal25_tree);
+
+						}
+						break;
+
+					}
+					} finally { DebugExitSubRule(3); }
+
+					DebugLocation(24, 23);
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:24:23: ( '-' )?
 					int alt4=2;
 					try { DebugEnterSubRule(4);
-					try { DebugEnterDecision(4, decisionCanBacktrack[4]);
+					try { DebugEnterDecision(4, false);
 					int LA4_0 = input.LA(1);
 
-					if ((LA4_0==31))
+					if ((LA4_0==33))
 					{
 						alt4 = 1;
 					}
@@ -866,13 +806,12 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:24:18: ','
+						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:24:23: '-'
 						{
-						DebugLocation(24, 18);
-						char_literal25=(IToken)Match(input,31,Follow._31_in_npos163); 
-						char_literal25_tree = (CommonTree)adaptor.Create(char_literal25);
-						adaptor.AddChild(root_0, char_literal25_tree);
-
+						DebugLocation(24, 23);
+						char_literal26=(IToken)Match(input,33,Follow._33_in_npos161); 
+						char_literal26_tree = (CommonTree)adaptor.Create(char_literal26);
+						adaptor.AddChild(root_0, char_literal26_tree);
 
 						}
 						break;
@@ -880,59 +819,28 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					}
 					} finally { DebugExitSubRule(4); }
 
-					DebugLocation(24, 23);
-					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:24:23: ( '-' )?
-					int alt5=2;
-					try { DebugEnterSubRule(5);
-					try { DebugEnterDecision(5, decisionCanBacktrack[5]);
-					int LA5_0 = input.LA(1);
-
-					if ((LA5_0==32))
-					{
-						alt5 = 1;
-					}
-					} finally { DebugExitDecision(5); }
-					switch (alt5)
-					{
-					case 1:
-						DebugEnterAlt(1);
-						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:24:23: '-'
-						{
-						DebugLocation(24, 23);
-						char_literal26=(IToken)Match(input,32,Follow._32_in_npos166); 
-						char_literal26_tree = (CommonTree)adaptor.Create(char_literal26);
-						adaptor.AddChild(root_0, char_literal26_tree);
-
-
-						}
-						break;
-
-					}
-					} finally { DebugExitSubRule(5); }
-
 					DebugLocation(24, 28);
-					INT27=(IToken)Match(input,INT,Follow._INT_in_npos169); 
+					INT27=(IToken)Match(input,INT,Follow._INT_in_npos164); 
 					INT27_tree = (CommonTree)adaptor.Create(INT27);
 					adaptor.AddChild(root_0, INT27_tree);
-
 
 					}
 					break;
 
 				default:
-					if (cnt6 >= 1)
-						goto loop6;
+					if (cnt5 >= 1)
+						goto loop5;
 
-					EarlyExitException eee6 = new EarlyExitException( 6, input );
-					DebugRecognitionException(eee6);
-					throw eee6;
+					EarlyExitException eee5 = new EarlyExitException( 5, input );
+					DebugRecognitionException(eee5);
+					throw eee5;
 				}
-				cnt6++;
+				cnt5++;
 			}
-			loop6:
+			loop5:
 				;
 
-			} finally { DebugExitSubRule(6); }
+			} finally { DebugExitSubRule(5); }
 
 
 			}
@@ -955,19 +863,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("npos", 6);
 			LeaveRule("npos", 6);
 			LeaveRule_npos();
-	    }
-	 	DebugLocation(24, 32);
+		}
+		DebugLocation(24, 32);
 		} finally { DebugExitRule(GrammarFileName, "npos"); }
 		return retval;
 
 	}
 	// $ANTLR end "npos"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_user() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_user() {}
+	partial void EnterRule_user();
+	partial void LeaveRule_user();
 
 	// $ANTLR start "user"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:1: user : USER INT ;
@@ -977,17 +882,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_user();
 		EnterRule("user", 7);
 		TraceIn("user", 7);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken USER28 = default(IToken);
-	    IToken INT29 = default(IToken);
+		IToken USER28 = default(IToken);
+		IToken INT29 = default(IToken);
 
-	    CommonTree USER28_tree = default(CommonTree);
-	    CommonTree INT29_tree = default(CommonTree);
-
+		CommonTree USER28_tree = default(CommonTree);
+		CommonTree INT29_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "user");
 		DebugLocation(25, 15);
 		try
@@ -999,15 +903,13 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(25, 8);
-			USER28=(IToken)Match(input,USER,Follow._USER_in_user178); 
+			USER28=(IToken)Match(input,USER,Follow._USER_in_user173); 
 			USER28_tree = (CommonTree)adaptor.Create(USER28);
 			adaptor.AddChild(root_0, USER28_tree);
-
 			DebugLocation(25, 13);
-			INT29=(IToken)Match(input,INT,Follow._INT_in_user180); 
+			INT29=(IToken)Match(input,INT,Follow._INT_in_user175); 
 			INT29_tree = (CommonTree)adaptor.Create(INT29);
 			adaptor.AddChild(root_0, INT29_tree);
-
 
 			}
 
@@ -1029,19 +931,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("user", 7);
 			LeaveRule("user", 7);
 			LeaveRule_user();
-	    }
-	 	DebugLocation(25, 15);
+		}
+		DebugLocation(25, 15);
 		} finally { DebugExitRule(GrammarFileName, "user"); }
 		return retval;
 
 	}
 	// $ANTLR end "user"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_tool() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_tool() {}
+	partial void EnterRule_tool();
+	partial void LeaveRule_tool();
 
 	// $ANTLR start "tool"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:26:1: tool : TOOL INT ;
@@ -1051,17 +950,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_tool();
 		EnterRule("tool", 8);
 		TraceIn("tool", 8);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken TOOL30 = default(IToken);
-	    IToken INT31 = default(IToken);
+		IToken TOOL30 = default(IToken);
+		IToken INT31 = default(IToken);
 
-	    CommonTree TOOL30_tree = default(CommonTree);
-	    CommonTree INT31_tree = default(CommonTree);
-
+		CommonTree TOOL30_tree = default(CommonTree);
+		CommonTree INT31_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "tool");
 		DebugLocation(26, 15);
 		try
@@ -1073,15 +971,13 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(26, 8);
-			TOOL30=(IToken)Match(input,TOOL,Follow._TOOL_in_tool187); 
+			TOOL30=(IToken)Match(input,TOOL,Follow._TOOL_in_tool182); 
 			TOOL30_tree = (CommonTree)adaptor.Create(TOOL30);
 			adaptor.AddChild(root_0, TOOL30_tree);
-
 			DebugLocation(26, 13);
-			INT31=(IToken)Match(input,INT,Follow._INT_in_tool189); 
+			INT31=(IToken)Match(input,INT,Follow._INT_in_tool184); 
 			INT31_tree = (CommonTree)adaptor.Create(INT31);
 			adaptor.AddChild(root_0, INT31_tree);
-
 
 			}
 
@@ -1103,19 +999,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("tool", 8);
 			LeaveRule("tool", 8);
 			LeaveRule_tool();
-	    }
-	 	DebugLocation(26, 15);
+		}
+		DebugLocation(26, 15);
 		} finally { DebugExitRule(GrammarFileName, "tool"); }
 		return retval;
 
 	}
 	// $ANTLR end "tool"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_postype() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_postype() {}
+	partial void EnterRule_postype();
+	partial void LeaveRule_postype();
 
 	// $ANTLR start "postype"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:27:1: postype : POSTYPE ( 'USER' | 'PULSE' ) ;
@@ -1125,17 +1018,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_postype();
 		EnterRule("postype", 9);
 		TraceIn("postype", 9);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken POSTYPE32 = default(IToken);
-	    IToken set33 = default(IToken);
+		IToken POSTYPE32 = default(IToken);
+		IToken set33 = default(IToken);
 
-	    CommonTree POSTYPE32_tree = default(CommonTree);
-	    CommonTree set33_tree = default(CommonTree);
-
+		CommonTree POSTYPE32_tree = default(CommonTree);
+		CommonTree set33_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "postype");
 		DebugLocation(27, 36);
 		try
@@ -1147,14 +1039,13 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(27, 11);
-			POSTYPE32=(IToken)Match(input,POSTYPE,Follow._POSTYPE_in_postype196); 
+			POSTYPE32=(IToken)Match(input,POSTYPE,Follow._POSTYPE_in_postype191); 
 			POSTYPE32_tree = (CommonTree)adaptor.Create(POSTYPE32);
 			adaptor.AddChild(root_0, POSTYPE32_tree);
-
 			DebugLocation(27, 19);
 
 			set33=(IToken)input.LT(1);
-			if ((input.LA(1)>=41 && input.LA(1)<=42))
+			if ((input.LA(1)>=42 && input.LA(1)<=43))
 			{
 				input.Consume();
 				adaptor.AddChild(root_0, (CommonTree)adaptor.Create(set33));
@@ -1188,19 +1079,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("postype", 9);
 			LeaveRule("postype", 9);
 			LeaveRule_postype();
-	    }
-	 	DebugLocation(27, 36);
+		}
+		DebugLocation(27, 36);
 		} finally { DebugExitRule(GrammarFileName, "postype"); }
 		return retval;
 
 	}
 	// $ANTLR end "postype"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_rectan() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_rectan() {}
+	partial void EnterRule_rectan();
+	partial void LeaveRule_rectan();
 
 	// $ANTLR start "rectan"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:28:1: rectan : RECTAN ;
@@ -1210,15 +1098,14 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_rectan();
 		EnterRule("rectan", 10);
 		TraceIn("rectan", 10);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken RECTAN34 = default(IToken);
+		IToken RECTAN34 = default(IToken);
 
-	    CommonTree RECTAN34_tree = default(CommonTree);
-
+		CommonTree RECTAN34_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "rectan");
 		DebugLocation(28, 15);
 		try
@@ -1230,10 +1117,9 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(28, 10);
-			RECTAN34=(IToken)Match(input,RECTAN,Follow._RECTAN_in_rectan211); 
+			RECTAN34=(IToken)Match(input,RECTAN,Follow._RECTAN_in_rectan206); 
 			RECTAN34_tree = (CommonTree)adaptor.Create(RECTAN34);
 			adaptor.AddChild(root_0, RECTAN34_tree);
-
 
 			}
 
@@ -1255,19 +1141,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("rectan", 10);
 			LeaveRule("rectan", 10);
 			LeaveRule_rectan();
-	    }
-	 	DebugLocation(28, 15);
+		}
+		DebugLocation(28, 15);
 		} finally { DebugExitRule(GrammarFileName, "rectan"); }
 		return retval;
 
 	}
 	// $ANTLR end "rectan"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_rconf() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_rconf() {}
+	partial void EnterRule_rconf();
+	partial void LeaveRule_rconf();
 
 	// $ANTLR start "rconf"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:29:1: rconf : RCONF ( ( ',' )? ( '0' | '1' ) )+ ;
@@ -1277,19 +1160,18 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_rconf();
 		EnterRule("rconf", 11);
 		TraceIn("rconf", 11);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken RCONF35 = default(IToken);
-	    IToken char_literal36 = default(IToken);
-	    IToken set37 = default(IToken);
+		IToken RCONF35 = default(IToken);
+		IToken char_literal36 = default(IToken);
+		IToken set37 = default(IToken);
 
-	    CommonTree RCONF35_tree = default(CommonTree);
-	    CommonTree char_literal36_tree = default(CommonTree);
-	    CommonTree set37_tree = default(CommonTree);
-
+		CommonTree RCONF35_tree = default(CommonTree);
+		CommonTree char_literal36_tree = default(CommonTree);
+		CommonTree set37_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "rconf");
 		DebugLocation(29, 31);
 		try
@@ -1301,28 +1183,27 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(29, 9);
-			RCONF35=(IToken)Match(input,RCONF,Follow._RCONF_in_rconf218); 
+			RCONF35=(IToken)Match(input,RCONF,Follow._RCONF_in_rconf213); 
 			RCONF35_tree = (CommonTree)adaptor.Create(RCONF35);
 			adaptor.AddChild(root_0, RCONF35_tree);
-
 			DebugLocation(29, 15);
 			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:29:15: ( ( ',' )? ( '0' | '1' ) )+
-			int cnt8=0;
-			try { DebugEnterSubRule(8);
+			int cnt7=0;
+			try { DebugEnterSubRule(7);
 			while (true)
 			{
-				int alt8=2;
-				try { DebugEnterDecision(8, decisionCanBacktrack[8]);
-				int LA8_0 = input.LA(1);
+				int alt7=2;
+				try { DebugEnterDecision(7, false);
+				int LA7_0 = input.LA(1);
 
-				if ((LA8_0==31||(LA8_0>=34 && LA8_0<=35)))
+				if ((LA7_0==32||(LA7_0>=35 && LA7_0<=36)))
 				{
-					alt8 = 1;
+					alt7 = 1;
 				}
 
 
-				} finally { DebugExitDecision(8); }
-				switch (alt8)
+				} finally { DebugExitDecision(7); }
+				switch (alt7)
 				{
 				case 1:
 					DebugEnterAlt(1);
@@ -1330,38 +1211,37 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					{
 					DebugLocation(29, 16);
 					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:29:16: ( ',' )?
-					int alt7=2;
-					try { DebugEnterSubRule(7);
-					try { DebugEnterDecision(7, decisionCanBacktrack[7]);
-					int LA7_0 = input.LA(1);
+					int alt6=2;
+					try { DebugEnterSubRule(6);
+					try { DebugEnterDecision(6, false);
+					int LA6_0 = input.LA(1);
 
-					if ((LA7_0==31))
+					if ((LA6_0==32))
 					{
-						alt7 = 1;
+						alt6 = 1;
 					}
-					} finally { DebugExitDecision(7); }
-					switch (alt7)
+					} finally { DebugExitDecision(6); }
+					switch (alt6)
 					{
 					case 1:
 						DebugEnterAlt(1);
 						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:29:16: ','
 						{
 						DebugLocation(29, 16);
-						char_literal36=(IToken)Match(input,31,Follow._31_in_rconf221); 
+						char_literal36=(IToken)Match(input,32,Follow._32_in_rconf216); 
 						char_literal36_tree = (CommonTree)adaptor.Create(char_literal36);
 						adaptor.AddChild(root_0, char_literal36_tree);
-
 
 						}
 						break;
 
 					}
-					} finally { DebugExitSubRule(7); }
+					} finally { DebugExitSubRule(6); }
 
 					DebugLocation(29, 21);
 
 					set37=(IToken)input.LT(1);
-					if ((input.LA(1)>=34 && input.LA(1)<=35))
+					if ((input.LA(1)>=35 && input.LA(1)<=36))
 					{
 						input.Consume();
 						adaptor.AddChild(root_0, (CommonTree)adaptor.Create(set37));
@@ -1379,19 +1259,19 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					break;
 
 				default:
-					if (cnt8 >= 1)
-						goto loop8;
+					if (cnt7 >= 1)
+						goto loop7;
 
-					EarlyExitException eee8 = new EarlyExitException( 8, input );
-					DebugRecognitionException(eee8);
-					throw eee8;
+					EarlyExitException eee7 = new EarlyExitException( 7, input );
+					DebugRecognitionException(eee7);
+					throw eee7;
 				}
-				cnt8++;
+				cnt7++;
 			}
-			loop8:
+			loop7:
 				;
 
-			} finally { DebugExitSubRule(8); }
+			} finally { DebugExitSubRule(7); }
 
 
 			}
@@ -1414,19 +1294,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("rconf", 11);
 			LeaveRule("rconf", 11);
 			LeaveRule_rconf();
-	    }
-	 	DebugLocation(29, 31);
+		}
+		DebugLocation(29, 31);
 		} finally { DebugExitRule(GrammarFileName, "rconf"); }
 		return retval;
 
 	}
 	// $ANTLR end "rconf"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_cindeks() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_cindeks() {}
+	partial void EnterRule_cindeks();
+	partial void LeaveRule_cindeks();
 
 	// $ANTLR start "cindeks"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:30:1: cindeks : 'C' ( INT )+ '=' ( ( ',' )? ( '-' )? REAL )+ ;
@@ -1436,25 +1313,24 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_cindeks();
 		EnterRule("cindeks", 12);
 		TraceIn("cindeks", 12);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken char_literal38 = default(IToken);
-	    IToken INT39 = default(IToken);
-	    IToken char_literal40 = default(IToken);
-	    IToken char_literal41 = default(IToken);
-	    IToken char_literal42 = default(IToken);
-	    IToken REAL43 = default(IToken);
+		IToken char_literal38 = default(IToken);
+		IToken INT39 = default(IToken);
+		IToken char_literal40 = default(IToken);
+		IToken char_literal41 = default(IToken);
+		IToken char_literal42 = default(IToken);
+		IToken REAL43 = default(IToken);
 
-	    CommonTree char_literal38_tree = default(CommonTree);
-	    CommonTree INT39_tree = default(CommonTree);
-	    CommonTree char_literal40_tree = default(CommonTree);
-	    CommonTree char_literal41_tree = default(CommonTree);
-	    CommonTree char_literal42_tree = default(CommonTree);
-	    CommonTree REAL43_tree = default(CommonTree);
-
+		CommonTree char_literal38_tree = default(CommonTree);
+		CommonTree INT39_tree = default(CommonTree);
+		CommonTree char_literal40_tree = default(CommonTree);
+		CommonTree char_literal41_tree = default(CommonTree);
+		CommonTree char_literal42_tree = default(CommonTree);
+		CommonTree REAL43_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "cindeks");
 		DebugLocation(30, 40);
 		try
@@ -1466,80 +1342,77 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(30, 11);
-			char_literal38=(IToken)Match(input,38,Follow._38_in_cindeks237); 
+			char_literal38=(IToken)Match(input,39,Follow._39_in_cindeks232); 
 			char_literal38_tree = (CommonTree)adaptor.Create(char_literal38);
 			adaptor.AddChild(root_0, char_literal38_tree);
-
 			DebugLocation(30, 15);
 			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:30:15: ( INT )+
-			int cnt9=0;
-			try { DebugEnterSubRule(9);
+			int cnt8=0;
+			try { DebugEnterSubRule(8);
 			while (true)
 			{
-				int alt9=2;
-				try { DebugEnterDecision(9, decisionCanBacktrack[9]);
-				int LA9_0 = input.LA(1);
+				int alt8=2;
+				try { DebugEnterDecision(8, false);
+				int LA8_0 = input.LA(1);
 
-				if ((LA9_0==INT))
+				if ((LA8_0==INT))
 				{
-					alt9 = 1;
+					alt8 = 1;
 				}
 
 
-				} finally { DebugExitDecision(9); }
-				switch (alt9)
+				} finally { DebugExitDecision(8); }
+				switch (alt8)
 				{
 				case 1:
 					DebugEnterAlt(1);
 					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:30:15: INT
 					{
 					DebugLocation(30, 15);
-					INT39=(IToken)Match(input,INT,Follow._INT_in_cindeks239); 
+					INT39=(IToken)Match(input,INT,Follow._INT_in_cindeks234); 
 					INT39_tree = (CommonTree)adaptor.Create(INT39);
 					adaptor.AddChild(root_0, INT39_tree);
-
 
 					}
 					break;
 
 				default:
-					if (cnt9 >= 1)
-						goto loop9;
+					if (cnt8 >= 1)
+						goto loop8;
 
-					EarlyExitException eee9 = new EarlyExitException( 9, input );
-					DebugRecognitionException(eee9);
-					throw eee9;
+					EarlyExitException eee8 = new EarlyExitException( 8, input );
+					DebugRecognitionException(eee8);
+					throw eee8;
 				}
-				cnt9++;
+				cnt8++;
 			}
-			loop9:
+			loop8:
 				;
 
-			} finally { DebugExitSubRule(9); }
+			} finally { DebugExitSubRule(8); }
 
 			DebugLocation(30, 20);
-			char_literal40=(IToken)Match(input,36,Follow._36_in_cindeks242); 
+			char_literal40=(IToken)Match(input,37,Follow._37_in_cindeks237); 
 			char_literal40_tree = (CommonTree)adaptor.Create(char_literal40);
 			adaptor.AddChild(root_0, char_literal40_tree);
-
 			DebugLocation(30, 24);
 			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:30:24: ( ( ',' )? ( '-' )? REAL )+
-			int cnt12=0;
-			try { DebugEnterSubRule(12);
+			int cnt11=0;
+			try { DebugEnterSubRule(11);
 			while (true)
 			{
-				int alt12=2;
-				try { DebugEnterDecision(12, decisionCanBacktrack[12]);
-				int LA12_0 = input.LA(1);
+				int alt11=2;
+				try { DebugEnterDecision(11, false);
+				int LA11_0 = input.LA(1);
 
-				if ((LA12_0==REAL||(LA12_0>=31 && LA12_0<=32)))
+				if ((LA11_0==REAL||(LA11_0>=32 && LA11_0<=33)))
 				{
-					alt12 = 1;
+					alt11 = 1;
 				}
 
 
-				} finally { DebugExitDecision(12); }
-				switch (alt12)
+				} finally { DebugExitDecision(11); }
+				switch (alt11)
 				{
 				case 1:
 					DebugEnterAlt(1);
@@ -1547,12 +1420,41 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					{
 					DebugLocation(30, 25);
 					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:30:25: ( ',' )?
+					int alt9=2;
+					try { DebugEnterSubRule(9);
+					try { DebugEnterDecision(9, false);
+					int LA9_0 = input.LA(1);
+
+					if ((LA9_0==32))
+					{
+						alt9 = 1;
+					}
+					} finally { DebugExitDecision(9); }
+					switch (alt9)
+					{
+					case 1:
+						DebugEnterAlt(1);
+						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:30:25: ','
+						{
+						DebugLocation(30, 25);
+						char_literal41=(IToken)Match(input,32,Follow._32_in_cindeks240); 
+						char_literal41_tree = (CommonTree)adaptor.Create(char_literal41);
+						adaptor.AddChild(root_0, char_literal41_tree);
+
+						}
+						break;
+
+					}
+					} finally { DebugExitSubRule(9); }
+
+					DebugLocation(30, 30);
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:30:30: ( '-' )?
 					int alt10=2;
 					try { DebugEnterSubRule(10);
-					try { DebugEnterDecision(10, decisionCanBacktrack[10]);
+					try { DebugEnterDecision(10, false);
 					int LA10_0 = input.LA(1);
 
-					if ((LA10_0==31))
+					if ((LA10_0==33))
 					{
 						alt10 = 1;
 					}
@@ -1561,13 +1463,12 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:30:25: ','
+						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:30:30: '-'
 						{
-						DebugLocation(30, 25);
-						char_literal41=(IToken)Match(input,31,Follow._31_in_cindeks245); 
-						char_literal41_tree = (CommonTree)adaptor.Create(char_literal41);
-						adaptor.AddChild(root_0, char_literal41_tree);
-
+						DebugLocation(30, 30);
+						char_literal42=(IToken)Match(input,33,Follow._33_in_cindeks243); 
+						char_literal42_tree = (CommonTree)adaptor.Create(char_literal42);
+						adaptor.AddChild(root_0, char_literal42_tree);
 
 						}
 						break;
@@ -1575,59 +1476,28 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					}
 					} finally { DebugExitSubRule(10); }
 
-					DebugLocation(30, 30);
-					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:30:30: ( '-' )?
-					int alt11=2;
-					try { DebugEnterSubRule(11);
-					try { DebugEnterDecision(11, decisionCanBacktrack[11]);
-					int LA11_0 = input.LA(1);
-
-					if ((LA11_0==32))
-					{
-						alt11 = 1;
-					}
-					} finally { DebugExitDecision(11); }
-					switch (alt11)
-					{
-					case 1:
-						DebugEnterAlt(1);
-						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:30:30: '-'
-						{
-						DebugLocation(30, 30);
-						char_literal42=(IToken)Match(input,32,Follow._32_in_cindeks248); 
-						char_literal42_tree = (CommonTree)adaptor.Create(char_literal42);
-						adaptor.AddChild(root_0, char_literal42_tree);
-
-
-						}
-						break;
-
-					}
-					} finally { DebugExitSubRule(11); }
-
 					DebugLocation(30, 35);
-					REAL43=(IToken)Match(input,REAL,Follow._REAL_in_cindeks251); 
+					REAL43=(IToken)Match(input,REAL,Follow._REAL_in_cindeks246); 
 					REAL43_tree = (CommonTree)adaptor.Create(REAL43);
 					adaptor.AddChild(root_0, REAL43_tree);
-
 
 					}
 					break;
 
 				default:
-					if (cnt12 >= 1)
-						goto loop12;
+					if (cnt11 >= 1)
+						goto loop11;
 
-					EarlyExitException eee12 = new EarlyExitException( 12, input );
-					DebugRecognitionException(eee12);
-					throw eee12;
+					EarlyExitException eee11 = new EarlyExitException( 11, input );
+					DebugRecognitionException(eee11);
+					throw eee11;
 				}
-				cnt12++;
+				cnt11++;
 			}
-			loop12:
+			loop11:
 				;
 
-			} finally { DebugExitSubRule(12); }
+			} finally { DebugExitSubRule(11); }
 
 
 			}
@@ -1650,19 +1520,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("cindeks", 12);
 			LeaveRule("cindeks", 12);
 			LeaveRule_cindeks();
-	    }
-	 	DebugLocation(30, 40);
+		}
+		DebugLocation(30, 40);
 		} finally { DebugExitRule(GrammarFileName, "cindeks"); }
 		return retval;
 
 	}
 	// $ANTLR end "cindeks"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_inst() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_inst() {}
+	partial void EnterRule_inst();
+	partial void LeaveRule_inst();
 
 	// $ANTLR start "inst"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:31:1: inst : INST ;
@@ -1672,15 +1539,14 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_inst();
 		EnterRule("inst", 13);
 		TraceIn("inst", 13);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken INST44 = default(IToken);
+		IToken INST44 = default(IToken);
 
-	    CommonTree INST44_tree = default(CommonTree);
-
+		CommonTree INST44_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "inst");
 		DebugLocation(31, 11);
 		try
@@ -1692,10 +1558,9 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(31, 8);
-			INST44=(IToken)Match(input,INST,Follow._INST_in_inst260); 
+			INST44=(IToken)Match(input,INST,Follow._INST_in_inst255); 
 			INST44_tree = (CommonTree)adaptor.Create(INST44);
 			adaptor.AddChild(root_0, INST44_tree);
-
 
 			}
 
@@ -1717,19 +1582,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("inst", 13);
 			LeaveRule("inst", 13);
 			LeaveRule_inst();
-	    }
-	 	DebugLocation(31, 11);
+		}
+		DebugLocation(31, 11);
 		} finally { DebugExitRule(GrammarFileName, "inst"); }
 		return retval;
 
 	}
 	// $ANTLR end "inst"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_date() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_date() {}
+	partial void EnterRule_date();
+	partial void LeaveRule_date();
 
 	// $ANTLR start "date"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:32:1: date : DATE ( INT )+ '/' ! ( INT )+ '/' ! ( INT )+ TIME ;
@@ -1739,27 +1601,26 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_date();
 		EnterRule("date", 14);
 		TraceIn("date", 14);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken DATE45 = default(IToken);
-	    IToken INT46 = default(IToken);
-	    IToken char_literal47 = default(IToken);
-	    IToken INT48 = default(IToken);
-	    IToken char_literal49 = default(IToken);
-	    IToken INT50 = default(IToken);
-	    IToken TIME51 = default(IToken);
+		IToken DATE45 = default(IToken);
+		IToken INT46 = default(IToken);
+		IToken char_literal47 = default(IToken);
+		IToken INT48 = default(IToken);
+		IToken char_literal49 = default(IToken);
+		IToken INT50 = default(IToken);
+		IToken TIME51 = default(IToken);
 
-	    CommonTree DATE45_tree = default(CommonTree);
-	    CommonTree INT46_tree = default(CommonTree);
-	    CommonTree char_literal47_tree = default(CommonTree);
-	    CommonTree INT48_tree = default(CommonTree);
-	    CommonTree char_literal49_tree = default(CommonTree);
-	    CommonTree INT50_tree = default(CommonTree);
-	    CommonTree TIME51_tree = default(CommonTree);
-
+		CommonTree DATE45_tree = default(CommonTree);
+		CommonTree INT46_tree = default(CommonTree);
+		CommonTree char_literal47_tree = default(CommonTree);
+		CommonTree INT48_tree = default(CommonTree);
+		CommonTree char_literal49_tree = default(CommonTree);
+		CommonTree INT50_tree = default(CommonTree);
+		CommonTree TIME51_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "date");
 		DebugLocation(32, 41);
 		try
@@ -1771,18 +1632,65 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(32, 8);
-			DATE45=(IToken)Match(input,DATE,Follow._DATE_in_date267); 
+			DATE45=(IToken)Match(input,DATE,Follow._DATE_in_date262); 
 			DATE45_tree = (CommonTree)adaptor.Create(DATE45);
 			adaptor.AddChild(root_0, DATE45_tree);
-
 			DebugLocation(32, 13);
 			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:32:13: ( INT )+
+			int cnt12=0;
+			try { DebugEnterSubRule(12);
+			while (true)
+			{
+				int alt12=2;
+				try { DebugEnterDecision(12, false);
+				int LA12_0 = input.LA(1);
+
+				if ((LA12_0==INT))
+				{
+					alt12 = 1;
+				}
+
+
+				} finally { DebugExitDecision(12); }
+				switch (alt12)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:32:13: INT
+					{
+					DebugLocation(32, 13);
+					INT46=(IToken)Match(input,INT,Follow._INT_in_date264); 
+					INT46_tree = (CommonTree)adaptor.Create(INT46);
+					adaptor.AddChild(root_0, INT46_tree);
+
+					}
+					break;
+
+				default:
+					if (cnt12 >= 1)
+						goto loop12;
+
+					EarlyExitException eee12 = new EarlyExitException( 12, input );
+					DebugRecognitionException(eee12);
+					throw eee12;
+				}
+				cnt12++;
+			}
+			loop12:
+				;
+
+			} finally { DebugExitSubRule(12); }
+
+			DebugLocation(32, 21);
+			char_literal47=(IToken)Match(input,34,Follow._34_in_date267); 
+			DebugLocation(32, 23);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:32:23: ( INT )+
 			int cnt13=0;
 			try { DebugEnterSubRule(13);
 			while (true)
 			{
 				int alt13=2;
-				try { DebugEnterDecision(13, decisionCanBacktrack[13]);
+				try { DebugEnterDecision(13, false);
 				int LA13_0 = input.LA(1);
 
 				if ((LA13_0==INT))
@@ -1796,13 +1704,12 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:32:13: INT
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:32:23: INT
 					{
-					DebugLocation(32, 13);
-					INT46=(IToken)Match(input,INT,Follow._INT_in_date269); 
-					INT46_tree = (CommonTree)adaptor.Create(INT46);
-					adaptor.AddChild(root_0, INT46_tree);
-
+					DebugLocation(32, 23);
+					INT48=(IToken)Match(input,INT,Follow._INT_in_date270); 
+					INT48_tree = (CommonTree)adaptor.Create(INT48);
+					adaptor.AddChild(root_0, INT48_tree);
 
 					}
 					break;
@@ -1822,16 +1729,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 
 			} finally { DebugExitSubRule(13); }
 
-			DebugLocation(32, 21);
-			char_literal47=(IToken)Match(input,33,Follow._33_in_date272); 
-			DebugLocation(32, 23);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:32:23: ( INT )+
+			DebugLocation(32, 31);
+			char_literal49=(IToken)Match(input,34,Follow._34_in_date273); 
+			DebugLocation(32, 33);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:32:33: ( INT )+
 			int cnt14=0;
 			try { DebugEnterSubRule(14);
 			while (true)
 			{
 				int alt14=2;
-				try { DebugEnterDecision(14, decisionCanBacktrack[14]);
+				try { DebugEnterDecision(14, false);
 				int LA14_0 = input.LA(1);
 
 				if ((LA14_0==INT))
@@ -1845,13 +1752,12 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:32:23: INT
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:32:33: INT
 					{
-					DebugLocation(32, 23);
-					INT48=(IToken)Match(input,INT,Follow._INT_in_date275); 
-					INT48_tree = (CommonTree)adaptor.Create(INT48);
-					adaptor.AddChild(root_0, INT48_tree);
-
+					DebugLocation(32, 33);
+					INT50=(IToken)Match(input,INT,Follow._INT_in_date276); 
+					INT50_tree = (CommonTree)adaptor.Create(INT50);
+					adaptor.AddChild(root_0, INT50_tree);
 
 					}
 					break;
@@ -1871,60 +1777,10 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 
 			} finally { DebugExitSubRule(14); }
 
-			DebugLocation(32, 31);
-			char_literal49=(IToken)Match(input,33,Follow._33_in_date278); 
-			DebugLocation(32, 33);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:32:33: ( INT )+
-			int cnt15=0;
-			try { DebugEnterSubRule(15);
-			while (true)
-			{
-				int alt15=2;
-				try { DebugEnterDecision(15, decisionCanBacktrack[15]);
-				int LA15_0 = input.LA(1);
-
-				if ((LA15_0==INT))
-				{
-					alt15 = 1;
-				}
-
-
-				} finally { DebugExitDecision(15); }
-				switch (alt15)
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:32:33: INT
-					{
-					DebugLocation(32, 33);
-					INT50=(IToken)Match(input,INT,Follow._INT_in_date281); 
-					INT50_tree = (CommonTree)adaptor.Create(INT50);
-					adaptor.AddChild(root_0, INT50_tree);
-
-
-					}
-					break;
-
-				default:
-					if (cnt15 >= 1)
-						goto loop15;
-
-					EarlyExitException eee15 = new EarlyExitException( 15, input );
-					DebugRecognitionException(eee15);
-					throw eee15;
-				}
-				cnt15++;
-			}
-			loop15:
-				;
-
-			} finally { DebugExitSubRule(15); }
-
 			DebugLocation(32, 38);
-			TIME51=(IToken)Match(input,TIME,Follow._TIME_in_date284); 
+			TIME51=(IToken)Match(input,TIME,Follow._TIME_in_date279); 
 			TIME51_tree = (CommonTree)adaptor.Create(TIME51);
 			adaptor.AddChild(root_0, TIME51_tree);
-
 
 			}
 
@@ -1946,19 +1802,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("date", 14);
 			LeaveRule("date", 14);
 			LeaveRule_date();
-	    }
-	 	DebugLocation(32, 41);
+		}
+		DebugLocation(32, 41);
 		} finally { DebugExitRule(GrammarFileName, "date"); }
 		return retval;
 
 	}
 	// $ANTLR end "date"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_comm() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_comm() {}
+	partial void EnterRule_comm();
+	partial void LeaveRule_comm();
 
 	// $ANTLR start "comm"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:33:1: comm : COMM ( INT | 'A' .. 'Z' )+ ;
@@ -1968,17 +1821,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_comm();
 		EnterRule("comm", 15);
 		TraceIn("comm", 15);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken COMM52 = default(IToken);
-	    IToken set53 = default(IToken);
+		IToken COMM52 = default(IToken);
+		IToken set53 = default(IToken);
 
-	    CommonTree COMM52_tree = default(CommonTree);
-	    CommonTree set53_tree = default(CommonTree);
-
+		CommonTree COMM52_tree = default(CommonTree);
+		CommonTree set53_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "comm");
 		DebugLocation(33, 27);
 		try
@@ -1990,28 +1842,27 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(33, 8);
-			COMM52=(IToken)Match(input,COMM,Follow._COMM_in_comm291); 
+			COMM52=(IToken)Match(input,COMM,Follow._COMM_in_comm286); 
 			COMM52_tree = (CommonTree)adaptor.Create(COMM52);
 			adaptor.AddChild(root_0, COMM52_tree);
-
 			DebugLocation(33, 13);
 			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:33:13: ( INT | 'A' .. 'Z' )+
-			int cnt16=0;
-			try { DebugEnterSubRule(16);
+			int cnt15=0;
+			try { DebugEnterSubRule(15);
 			while (true)
 			{
-				int alt16=2;
-				try { DebugEnterDecision(16, decisionCanBacktrack[16]);
-				int LA16_0 = input.LA(1);
+				int alt15=2;
+				try { DebugEnterDecision(15, false);
+				int LA15_0 = input.LA(1);
 
-				if ((LA16_0==INT))
+				if ((LA15_0==INT))
 				{
-					alt16 = 1;
+					alt15 = 1;
 				}
 
 
-				} finally { DebugExitDecision(16); }
-				switch (alt16)
+				} finally { DebugExitDecision(15); }
+				switch (alt15)
 				{
 				case 1:
 					DebugEnterAlt(1);
@@ -2038,19 +1889,19 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					break;
 
 				default:
-					if (cnt16 >= 1)
-						goto loop16;
+					if (cnt15 >= 1)
+						goto loop15;
 
-					EarlyExitException eee16 = new EarlyExitException( 16, input );
-					DebugRecognitionException(eee16);
-					throw eee16;
+					EarlyExitException eee15 = new EarlyExitException( 15, input );
+					DebugRecognitionException(eee15);
+					throw eee15;
 				}
-				cnt16++;
+				cnt15++;
 			}
-			loop16:
+			loop15:
 				;
 
-			} finally { DebugExitSubRule(16); }
+			} finally { DebugExitSubRule(15); }
 
 
 			}
@@ -2073,185 +1924,125 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("comm", 15);
 			LeaveRule("comm", 15);
 			LeaveRule_comm();
-	    }
-	 	DebugLocation(33, 27);
+		}
+		DebugLocation(33, 27);
 		} finally { DebugExitRule(GrammarFileName, "comm"); }
 		return retval;
 
 	}
 	// $ANTLR end "comm"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_attr() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_attr() {}
+	partial void EnterRule_attr();
+	partial void LeaveRule_attr();
 
 	// $ANTLR start "attr"
-	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:34:1: attr : ATTR ( ( ',' )? ( 'A' .. 'Z' )+ )+ ;
+	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:34:1: attr : ATTR ( ( ',' )? NIZ )+ ;
 	[GrammarRule("attr")]
 	private AstParserRuleReturnScope<CommonTree, IToken> attr()
 	{
 		EnterRule_attr();
 		EnterRule("attr", 16);
 		TraceIn("attr", 16);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken ATTR54 = default(IToken);
-	    IToken char_literal55 = default(IToken);
-	    IToken set56 = default(IToken);
+		IToken ATTR54 = default(IToken);
+		IToken char_literal55 = default(IToken);
+		IToken NIZ56 = default(IToken);
 
-	    CommonTree ATTR54_tree = default(CommonTree);
-	    CommonTree char_literal55_tree = default(CommonTree);
-	    CommonTree set56_tree = default(CommonTree);
-
+		CommonTree ATTR54_tree = default(CommonTree);
+		CommonTree char_literal55_tree = default(CommonTree);
+		CommonTree NIZ56_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "attr");
-		DebugLocation(34, 31);
+		DebugLocation(34, 23);
 		try
 		{
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:34:6: ( ATTR ( ( ',' )? ( 'A' .. 'Z' )+ )+ )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:34:6: ( ATTR ( ( ',' )? NIZ )+ )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:34:8: ATTR ( ( ',' )? ( 'A' .. 'Z' )+ )+
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:34:8: ATTR ( ( ',' )? NIZ )+
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(34, 8);
-			ATTR54=(IToken)Match(input,ATTR,Follow._ATTR_in_attr307); 
+			ATTR54=(IToken)Match(input,ATTR,Follow._ATTR_in_attr302); 
 			ATTR54_tree = (CommonTree)adaptor.Create(ATTR54);
 			adaptor.AddChild(root_0, ATTR54_tree);
-
 			DebugLocation(34, 13);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:34:13: ( ( ',' )? ( 'A' .. 'Z' )+ )+
-			int cnt19=0;
-			try { DebugEnterSubRule(19);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:34:13: ( ( ',' )? NIZ )+
+			int cnt17=0;
+			try { DebugEnterSubRule(17);
 			while (true)
 			{
-				int alt19=2;
-				try { DebugEnterDecision(19, decisionCanBacktrack[19]);
-				int LA19_0 = input.LA(1);
+				int alt17=2;
+				try { DebugEnterDecision(17, false);
+				int LA17_0 = input.LA(1);
 
-				if ((LA19_0==31))
+				if ((LA17_0==NIZ||LA17_0==32))
 				{
-					alt19 = 1;
+					alt17 = 1;
 				}
 
 
-				} finally { DebugExitDecision(19); }
-				switch (alt19)
+				} finally { DebugExitDecision(17); }
+				switch (alt17)
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:34:14: ( ',' )? ( 'A' .. 'Z' )+
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:34:14: ( ',' )? NIZ
 					{
 					DebugLocation(34, 14);
 					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:34:14: ( ',' )?
-					int alt17=2;
-					try { DebugEnterSubRule(17);
-					try { DebugEnterDecision(17, decisionCanBacktrack[17]);
-					int LA17_0 = input.LA(1);
+					int alt16=2;
+					try { DebugEnterSubRule(16);
+					try { DebugEnterDecision(16, false);
+					int LA16_0 = input.LA(1);
 
-					if ((LA17_0==31))
+					if ((LA16_0==32))
 					{
-						alt17 = 1;
+						alt16 = 1;
 					}
-					} finally { DebugExitDecision(17); }
-					switch (alt17)
+					} finally { DebugExitDecision(16); }
+					switch (alt16)
 					{
 					case 1:
 						DebugEnterAlt(1);
 						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:34:14: ','
 						{
 						DebugLocation(34, 14);
-						char_literal55=(IToken)Match(input,31,Follow._31_in_attr310); 
+						char_literal55=(IToken)Match(input,32,Follow._32_in_attr305); 
 						char_literal55_tree = (CommonTree)adaptor.Create(char_literal55);
 						adaptor.AddChild(root_0, char_literal55_tree);
-
 
 						}
 						break;
 
 					}
-					} finally { DebugExitSubRule(17); }
+					} finally { DebugExitSubRule(16); }
 
 					DebugLocation(34, 19);
-					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:34:19: ( 'A' .. 'Z' )+
-					int cnt18=0;
-					try { DebugEnterSubRule(18);
-					while (true)
-					{
-						int alt18=2;
-						try { DebugEnterDecision(18, decisionCanBacktrack[18]);
-						int LA18_0 = input.LA(1);
-
-						if (())
-						{
-							alt18 = 1;
-						}
-
-
-						} finally { DebugExitDecision(18); }
-						switch (alt18)
-						{
-						case 1:
-							DebugEnterAlt(1);
-							// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:
-							{
-							DebugLocation(34, 19);
-
-							set56=(IToken)input.LT(1);
-							if ()
-							{
-								input.Consume();
-								adaptor.AddChild(root_0, (CommonTree)adaptor.Create(set56));
-								state.errorRecovery=false;
-							}
-							else
-							{
-								MismatchedSetException mse = new MismatchedSetException(null,input);
-								DebugRecognitionException(mse);
-								throw mse;
-							}
-
-
-							}
-							break;
-
-						default:
-							if (cnt18 >= 1)
-								goto loop18;
-
-							EarlyExitException eee18 = new EarlyExitException( 18, input );
-							DebugRecognitionException(eee18);
-							throw eee18;
-						}
-						cnt18++;
-					}
-					loop18:
-						;
-
-					} finally { DebugExitSubRule(18); }
-
+					NIZ56=(IToken)Match(input,NIZ,Follow._NIZ_in_attr308); 
+					NIZ56_tree = (CommonTree)adaptor.Create(NIZ56);
+					adaptor.AddChild(root_0, NIZ56_tree);
 
 					}
 					break;
 
 				default:
-					if (cnt19 >= 1)
-						goto loop19;
+					if (cnt17 >= 1)
+						goto loop17;
 
-					EarlyExitException eee19 = new EarlyExitException( 19, input );
-					DebugRecognitionException(eee19);
-					throw eee19;
+					EarlyExitException eee17 = new EarlyExitException( 17, input );
+					DebugRecognitionException(eee17);
+					throw eee17;
 				}
-				cnt19++;
+				cnt17++;
 			}
-			loop19:
+			loop17:
 				;
 
-			} finally { DebugExitSubRule(19); }
+			} finally { DebugExitSubRule(17); }
 
 
 			}
@@ -2274,19 +2065,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("attr", 16);
 			LeaveRule("attr", 16);
 			LeaveRule_attr();
-	    }
-	 	DebugLocation(34, 31);
+		}
+		DebugLocation(34, 23);
 		} finally { DebugExitRule(GrammarFileName, "attr"); }
 		return retval;
 
 	}
 	// $ANTLR end "attr"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_frame() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_frame() {}
+	partial void EnterRule_frame();
+	partial void LeaveRule_frame();
 
 	// $ANTLR start "frame"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:35:1: frame : FRAME 'USER' INT ;
@@ -2296,19 +2084,18 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_frame();
 		EnterRule("frame", 17);
 		TraceIn("frame", 17);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken FRAME57 = default(IToken);
-	    IToken string_literal58 = default(IToken);
-	    IToken INT59 = default(IToken);
+		IToken FRAME57 = default(IToken);
+		IToken string_literal58 = default(IToken);
+		IToken INT59 = default(IToken);
 
-	    CommonTree FRAME57_tree = default(CommonTree);
-	    CommonTree string_literal58_tree = default(CommonTree);
-	    CommonTree INT59_tree = default(CommonTree);
-
+		CommonTree FRAME57_tree = default(CommonTree);
+		CommonTree string_literal58_tree = default(CommonTree);
+		CommonTree INT59_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "frame");
 		DebugLocation(35, 24);
 		try
@@ -2320,20 +2107,17 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(35, 9);
-			FRAME57=(IToken)Match(input,FRAME,Follow._FRAME_in_frame327); 
+			FRAME57=(IToken)Match(input,FRAME,Follow._FRAME_in_frame317); 
 			FRAME57_tree = (CommonTree)adaptor.Create(FRAME57);
 			adaptor.AddChild(root_0, FRAME57_tree);
-
 			DebugLocation(35, 15);
-			string_literal58=(IToken)Match(input,42,Follow._42_in_frame329); 
+			string_literal58=(IToken)Match(input,43,Follow._43_in_frame319); 
 			string_literal58_tree = (CommonTree)adaptor.Create(string_literal58);
 			adaptor.AddChild(root_0, string_literal58_tree);
-
 			DebugLocation(35, 22);
-			INT59=(IToken)Match(input,INT,Follow._INT_in_frame331); 
+			INT59=(IToken)Match(input,INT,Follow._INT_in_frame321); 
 			INT59_tree = (CommonTree)adaptor.Create(INT59);
 			adaptor.AddChild(root_0, INT59_tree);
-
 
 			}
 
@@ -2355,19 +2139,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("frame", 17);
 			LeaveRule("frame", 17);
 			LeaveRule_frame();
-	    }
-	 	DebugLocation(35, 24);
+		}
+		DebugLocation(35, 24);
 		} finally { DebugExitRule(GrammarFileName, "frame"); }
 		return retval;
 
 	}
 	// $ANTLR end "frame"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_group() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_group() {}
+	partial void EnterRule_group();
+	partial void LeaveRule_group();
 
 	// $ANTLR start "group"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:36:1: group : GROUP ( 'A' .. 'Z' | INT )+ ;
@@ -2377,17 +2158,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_group();
 		EnterRule("group", 18);
 		TraceIn("group", 18);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken GROUP60 = default(IToken);
-	    IToken set61 = default(IToken);
+		IToken GROUP60 = default(IToken);
+		IToken set61 = default(IToken);
 
-	    CommonTree GROUP60_tree = default(CommonTree);
-	    CommonTree set61_tree = default(CommonTree);
-
+		CommonTree GROUP60_tree = default(CommonTree);
+		CommonTree set61_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "group");
 		DebugLocation(36, 29);
 		try
@@ -2399,28 +2179,27 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(36, 9);
-			GROUP60=(IToken)Match(input,GROUP,Follow._GROUP_in_group338); 
+			GROUP60=(IToken)Match(input,GROUP,Follow._GROUP_in_group328); 
 			GROUP60_tree = (CommonTree)adaptor.Create(GROUP60);
 			adaptor.AddChild(root_0, GROUP60_tree);
-
 			DebugLocation(36, 15);
 			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:36:15: ( 'A' .. 'Z' | INT )+
-			int cnt20=0;
-			try { DebugEnterSubRule(20);
+			int cnt18=0;
+			try { DebugEnterSubRule(18);
 			while (true)
 			{
-				int alt20=2;
-				try { DebugEnterDecision(20, decisionCanBacktrack[20]);
-				int LA20_0 = input.LA(1);
+				int alt18=2;
+				try { DebugEnterDecision(18, false);
+				int LA18_0 = input.LA(1);
 
-				if ((LA20_0==INT))
+				if ((LA18_0==INT))
 				{
-					alt20 = 1;
+					alt18 = 1;
 				}
 
 
-				} finally { DebugExitDecision(20); }
-				switch (alt20)
+				} finally { DebugExitDecision(18); }
+				switch (alt18)
 				{
 				case 1:
 					DebugEnterAlt(1);
@@ -2447,19 +2226,19 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					break;
 
 				default:
-					if (cnt20 >= 1)
-						goto loop20;
+					if (cnt18 >= 1)
+						goto loop18;
 
-					EarlyExitException eee20 = new EarlyExitException( 20, input );
-					DebugRecognitionException(eee20);
-					throw eee20;
+					EarlyExitException eee18 = new EarlyExitException( 18, input );
+					DebugRecognitionException(eee18);
+					throw eee18;
 				}
-				cnt20++;
+				cnt18++;
 			}
-			loop20:
+			loop18:
 				;
 
-			} finally { DebugExitSubRule(20); }
+			} finally { DebugExitSubRule(18); }
 
 
 			}
@@ -2482,19 +2261,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("group", 18);
 			LeaveRule("group", 18);
 			LeaveRule_group();
-	    }
-	 	DebugLocation(36, 29);
+		}
+		DebugLocation(36, 29);
 		} finally { DebugExitRule(GrammarFileName, "group"); }
 		return retval;
 
 	}
 	// $ANTLR end "group"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_main() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_main() {}
+	partial void EnterRule_main();
+	partial void LeaveRule_main();
 
 	// $ANTLR start "main"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:37:1: main : 'NOP' ukazi 'END' ;
@@ -2504,18 +2280,17 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_main();
 		EnterRule("main", 19);
 		TraceIn("main", 19);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken string_literal62 = default(IToken);
-	    IToken string_literal64 = default(IToken);
-	    AstParserRuleReturnScope<CommonTree, IToken> ukazi63 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		IToken string_literal62 = default(IToken);
+		IToken string_literal64 = default(IToken);
+		AstParserRuleReturnScope<CommonTree, IToken> ukazi63 = default(AstParserRuleReturnScope<CommonTree, IToken>);
 
-	    CommonTree string_literal62_tree = default(CommonTree);
-	    CommonTree string_literal64_tree = default(CommonTree);
-
+		CommonTree string_literal62_tree = default(CommonTree);
+		CommonTree string_literal64_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "main");
 		DebugLocation(37, 24);
 		try
@@ -2527,21 +2302,19 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(37, 8);
-			string_literal62=(IToken)Match(input,40,Follow._40_in_main354); 
+			string_literal62=(IToken)Match(input,41,Follow._41_in_main344); 
 			string_literal62_tree = (CommonTree)adaptor.Create(string_literal62);
 			adaptor.AddChild(root_0, string_literal62_tree);
-
 			DebugLocation(37, 14);
-			PushFollow(Follow._ukazi_in_main356);
+			PushFollow(Follow._ukazi_in_main346);
 			ukazi63=ukazi();
 			PopFollow();
 
 			adaptor.AddChild(root_0, ukazi63.Tree);
 			DebugLocation(37, 20);
-			string_literal64=(IToken)Match(input,39,Follow._39_in_main358); 
+			string_literal64=(IToken)Match(input,40,Follow._40_in_main348); 
 			string_literal64_tree = (CommonTree)adaptor.Create(string_literal64);
 			adaptor.AddChild(root_0, string_literal64_tree);
-
 
 			}
 
@@ -2563,19 +2336,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("main", 19);
 			LeaveRule("main", 19);
 			LeaveRule_main();
-	    }
-	 	DebugLocation(37, 24);
+		}
+		DebugLocation(37, 24);
 		} finally { DebugExitRule(GrammarFileName, "main"); }
 		return retval;
 
 	}
 	// $ANTLR end "main"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_ukazi() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_ukazi() {}
+	partial void EnterRule_ukazi();
+	partial void LeaveRule_ukazi();
 
 	// $ANTLR start "ukazi"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:38:1: ukazi : premik DOUT TIMER premiki DOUT premik ;
@@ -2585,22 +2355,21 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_ukazi();
 		EnterRule("ukazi", 20);
 		TraceIn("ukazi", 20);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken DOUT66 = default(IToken);
-	    IToken TIMER67 = default(IToken);
-	    IToken DOUT69 = default(IToken);
-	    AstParserRuleReturnScope<CommonTree, IToken> premik65 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> premiki68 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> premik70 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		IToken DOUT66 = default(IToken);
+		IToken TIMER67 = default(IToken);
+		IToken DOUT69 = default(IToken);
+		AstParserRuleReturnScope<CommonTree, IToken> premik65 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> premiki68 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> premik70 = default(AstParserRuleReturnScope<CommonTree, IToken>);
 
-	    CommonTree DOUT66_tree = default(CommonTree);
-	    CommonTree TIMER67_tree = default(CommonTree);
-	    CommonTree DOUT69_tree = default(CommonTree);
-
+		CommonTree DOUT66_tree = default(CommonTree);
+		CommonTree TIMER67_tree = default(CommonTree);
+		CommonTree DOUT69_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "ukazi");
 		DebugLocation(38, 45);
 		try
@@ -2612,34 +2381,31 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(38, 9);
-			PushFollow(Follow._premik_in_ukazi365);
+			PushFollow(Follow._premik_in_ukazi355);
 			premik65=premik();
 			PopFollow();
 
 			adaptor.AddChild(root_0, premik65.Tree);
 			DebugLocation(38, 16);
-			DOUT66=(IToken)Match(input,DOUT,Follow._DOUT_in_ukazi367); 
+			DOUT66=(IToken)Match(input,DOUT,Follow._DOUT_in_ukazi357); 
 			DOUT66_tree = (CommonTree)adaptor.Create(DOUT66);
 			adaptor.AddChild(root_0, DOUT66_tree);
-
 			DebugLocation(38, 21);
-			TIMER67=(IToken)Match(input,TIMER,Follow._TIMER_in_ukazi369); 
+			TIMER67=(IToken)Match(input,TIMER,Follow._TIMER_in_ukazi359); 
 			TIMER67_tree = (CommonTree)adaptor.Create(TIMER67);
 			adaptor.AddChild(root_0, TIMER67_tree);
-
 			DebugLocation(38, 27);
-			PushFollow(Follow._premiki_in_ukazi371);
+			PushFollow(Follow._premiki_in_ukazi361);
 			premiki68=premiki();
 			PopFollow();
 
 			adaptor.AddChild(root_0, premiki68.Tree);
 			DebugLocation(38, 35);
-			DOUT69=(IToken)Match(input,DOUT,Follow._DOUT_in_ukazi373); 
+			DOUT69=(IToken)Match(input,DOUT,Follow._DOUT_in_ukazi363); 
 			DOUT69_tree = (CommonTree)adaptor.Create(DOUT69);
 			adaptor.AddChild(root_0, DOUT69_tree);
-
 			DebugLocation(38, 40);
-			PushFollow(Follow._premik_in_ukazi375);
+			PushFollow(Follow._premik_in_ukazi365);
 			premik70=premik();
 			PopFollow();
 
@@ -2665,19 +2431,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("ukazi", 20);
 			LeaveRule("ukazi", 20);
 			LeaveRule_ukazi();
-	    }
-	 	DebugLocation(38, 45);
+		}
+		DebugLocation(38, 45);
 		} finally { DebugExitRule(GrammarFileName, "ukazi"); }
 		return retval;
 
 	}
 	// $ANTLR end "ukazi"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_premiki() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_premiki() {}
+	partial void EnterRule_premiki();
+	partial void LeaveRule_premiki();
 
 	// $ANTLR start "premiki"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:39:1: premiki : ( premik premiki | premik );
@@ -2687,34 +2450,33 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_premiki();
 		EnterRule("premiki", 21);
 		TraceIn("premiki", 21);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    AstParserRuleReturnScope<CommonTree, IToken> premik71 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> premiki72 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-	    AstParserRuleReturnScope<CommonTree, IToken> premik73 = default(AstParserRuleReturnScope<CommonTree, IToken>);
-
+		AstParserRuleReturnScope<CommonTree, IToken> premik71 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> premiki72 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		AstParserRuleReturnScope<CommonTree, IToken> premik73 = default(AstParserRuleReturnScope<CommonTree, IToken>);
 
 		try { DebugEnterRule(GrammarFileName, "premiki");
 		DebugLocation(39, 33);
 		try
 		{
 			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:39:9: ( premik premiki | premik )
-			int alt21=2;
-			try { DebugEnterDecision(21, decisionCanBacktrack[21]);
+			int alt19=2;
+			try { DebugEnterDecision(19, false);
 			try
 			{
-				alt21 = dfa21.Predict(input);
+				alt19 = dfa19.Predict(input);
 			}
 			catch (NoViableAltException nvae)
 			{
 				DebugRecognitionException(nvae);
 				throw;
 			}
-			} finally { DebugExitDecision(21); }
-			switch (alt21)
+			} finally { DebugExitDecision(19); }
+			switch (alt19)
 			{
 			case 1:
 				DebugEnterAlt(1);
@@ -2723,13 +2485,13 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(39, 11);
-				PushFollow(Follow._premik_in_premiki382);
+				PushFollow(Follow._premik_in_premiki372);
 				premik71=premik();
 				PopFollow();
 
 				adaptor.AddChild(root_0, premik71.Tree);
 				DebugLocation(39, 18);
-				PushFollow(Follow._premiki_in_premiki384);
+				PushFollow(Follow._premiki_in_premiki374);
 				premiki72=premiki();
 				PopFollow();
 
@@ -2744,7 +2506,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(39, 28);
-				PushFollow(Follow._premik_in_premiki388);
+				PushFollow(Follow._premik_in_premiki378);
 				premik73=premik();
 				PopFollow();
 
@@ -2772,19 +2534,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("premiki", 21);
 			LeaveRule("premiki", 21);
 			LeaveRule_premiki();
-	    }
-	 	DebugLocation(39, 33);
+		}
+		DebugLocation(39, 33);
 		} finally { DebugExitRule(GrammarFileName, "premiki"); }
 		return retval;
 
 	}
 	// $ANTLR end "premiki"
 
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule_premik() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule_premik() {}
+	partial void EnterRule_premik();
+	partial void LeaveRule_premik();
 
 	// $ANTLR start "premik"
 	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:1: premik : ( ( MOVJ 'C' ( INT )+ 'VJ' '=' ! REAL ) | ( MOVL 'C' ( INT )+ 'V' '=' ! REAL ) | ( MOVC 'C' ( INT )+ 'V' '=' ! REAL ) | ( MOVS 'C' ( INT )+ 'V' '=' ! REAL ) );
@@ -2794,100 +2553,99 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		EnterRule_premik();
 		EnterRule("premik", 22);
 		TraceIn("premik", 22);
-	    AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
-	    retval.Start = (IToken)input.LT(1);
+		AstParserRuleReturnScope<CommonTree, IToken> retval = new AstParserRuleReturnScope<CommonTree, IToken>();
+		retval.Start = (IToken)input.LT(1);
 
-	    CommonTree root_0 = default(CommonTree);
+		CommonTree root_0 = default(CommonTree);
 
-	    IToken MOVJ74 = default(IToken);
-	    IToken char_literal75 = default(IToken);
-	    IToken INT76 = default(IToken);
-	    IToken string_literal77 = default(IToken);
-	    IToken char_literal78 = default(IToken);
-	    IToken REAL79 = default(IToken);
-	    IToken MOVL80 = default(IToken);
-	    IToken char_literal81 = default(IToken);
-	    IToken INT82 = default(IToken);
-	    IToken char_literal83 = default(IToken);
-	    IToken char_literal84 = default(IToken);
-	    IToken REAL85 = default(IToken);
-	    IToken MOVC86 = default(IToken);
-	    IToken char_literal87 = default(IToken);
-	    IToken INT88 = default(IToken);
-	    IToken char_literal89 = default(IToken);
-	    IToken char_literal90 = default(IToken);
-	    IToken REAL91 = default(IToken);
-	    IToken MOVS92 = default(IToken);
-	    IToken char_literal93 = default(IToken);
-	    IToken INT94 = default(IToken);
-	    IToken char_literal95 = default(IToken);
-	    IToken char_literal96 = default(IToken);
-	    IToken REAL97 = default(IToken);
+		IToken MOVJ74 = default(IToken);
+		IToken char_literal75 = default(IToken);
+		IToken INT76 = default(IToken);
+		IToken string_literal77 = default(IToken);
+		IToken char_literal78 = default(IToken);
+		IToken REAL79 = default(IToken);
+		IToken MOVL80 = default(IToken);
+		IToken char_literal81 = default(IToken);
+		IToken INT82 = default(IToken);
+		IToken char_literal83 = default(IToken);
+		IToken char_literal84 = default(IToken);
+		IToken REAL85 = default(IToken);
+		IToken MOVC86 = default(IToken);
+		IToken char_literal87 = default(IToken);
+		IToken INT88 = default(IToken);
+		IToken char_literal89 = default(IToken);
+		IToken char_literal90 = default(IToken);
+		IToken REAL91 = default(IToken);
+		IToken MOVS92 = default(IToken);
+		IToken char_literal93 = default(IToken);
+		IToken INT94 = default(IToken);
+		IToken char_literal95 = default(IToken);
+		IToken char_literal96 = default(IToken);
+		IToken REAL97 = default(IToken);
 
-	    CommonTree MOVJ74_tree = default(CommonTree);
-	    CommonTree char_literal75_tree = default(CommonTree);
-	    CommonTree INT76_tree = default(CommonTree);
-	    CommonTree string_literal77_tree = default(CommonTree);
-	    CommonTree char_literal78_tree = default(CommonTree);
-	    CommonTree REAL79_tree = default(CommonTree);
-	    CommonTree MOVL80_tree = default(CommonTree);
-	    CommonTree char_literal81_tree = default(CommonTree);
-	    CommonTree INT82_tree = default(CommonTree);
-	    CommonTree char_literal83_tree = default(CommonTree);
-	    CommonTree char_literal84_tree = default(CommonTree);
-	    CommonTree REAL85_tree = default(CommonTree);
-	    CommonTree MOVC86_tree = default(CommonTree);
-	    CommonTree char_literal87_tree = default(CommonTree);
-	    CommonTree INT88_tree = default(CommonTree);
-	    CommonTree char_literal89_tree = default(CommonTree);
-	    CommonTree char_literal90_tree = default(CommonTree);
-	    CommonTree REAL91_tree = default(CommonTree);
-	    CommonTree MOVS92_tree = default(CommonTree);
-	    CommonTree char_literal93_tree = default(CommonTree);
-	    CommonTree INT94_tree = default(CommonTree);
-	    CommonTree char_literal95_tree = default(CommonTree);
-	    CommonTree char_literal96_tree = default(CommonTree);
-	    CommonTree REAL97_tree = default(CommonTree);
-
+		CommonTree MOVJ74_tree = default(CommonTree);
+		CommonTree char_literal75_tree = default(CommonTree);
+		CommonTree INT76_tree = default(CommonTree);
+		CommonTree string_literal77_tree = default(CommonTree);
+		CommonTree char_literal78_tree = default(CommonTree);
+		CommonTree REAL79_tree = default(CommonTree);
+		CommonTree MOVL80_tree = default(CommonTree);
+		CommonTree char_literal81_tree = default(CommonTree);
+		CommonTree INT82_tree = default(CommonTree);
+		CommonTree char_literal83_tree = default(CommonTree);
+		CommonTree char_literal84_tree = default(CommonTree);
+		CommonTree REAL85_tree = default(CommonTree);
+		CommonTree MOVC86_tree = default(CommonTree);
+		CommonTree char_literal87_tree = default(CommonTree);
+		CommonTree INT88_tree = default(CommonTree);
+		CommonTree char_literal89_tree = default(CommonTree);
+		CommonTree char_literal90_tree = default(CommonTree);
+		CommonTree REAL91_tree = default(CommonTree);
+		CommonTree MOVS92_tree = default(CommonTree);
+		CommonTree char_literal93_tree = default(CommonTree);
+		CommonTree INT94_tree = default(CommonTree);
+		CommonTree char_literal95_tree = default(CommonTree);
+		CommonTree char_literal96_tree = default(CommonTree);
+		CommonTree REAL97_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "premik");
 		DebugLocation(40, 135);
 		try
 		{
 			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:8: ( ( MOVJ 'C' ( INT )+ 'VJ' '=' ! REAL ) | ( MOVL 'C' ( INT )+ 'V' '=' ! REAL ) | ( MOVC 'C' ( INT )+ 'V' '=' ! REAL ) | ( MOVS 'C' ( INT )+ 'V' '=' ! REAL ) )
-			int alt26=4;
-			try { DebugEnterDecision(26, decisionCanBacktrack[26]);
+			int alt24=4;
+			try { DebugEnterDecision(24, false);
 			switch (input.LA(1))
 			{
 			case MOVJ:
 				{
-				alt26 = 1;
+				alt24 = 1;
 				}
 				break;
 			case MOVL:
 				{
-				alt26 = 2;
+				alt24 = 2;
 				}
 				break;
 			case MOVC:
 				{
-				alt26 = 3;
+				alt24 = 3;
 				}
 				break;
 			case MOVS:
 				{
-				alt26 = 4;
+				alt24 = 4;
 				}
 				break;
 			default:
 				{
-					NoViableAltException nvae = new NoViableAltException("", 26, 0, input);
+					NoViableAltException nvae = new NoViableAltException("", 24, 0, input);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
 			}
 
-			} finally { DebugExitDecision(26); }
-			switch (alt26)
+			} finally { DebugExitDecision(24); }
+			switch (alt24)
 			{
 			case 1:
 				DebugEnterAlt(1);
@@ -2901,23 +2659,183 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:11: MOVJ 'C' ( INT )+ 'VJ' '=' ! REAL
 				{
 				DebugLocation(40, 11);
-				MOVJ74=(IToken)Match(input,MOVJ,Follow._MOVJ_in_premik396); 
+				MOVJ74=(IToken)Match(input,MOVJ,Follow._MOVJ_in_premik386); 
 				MOVJ74_tree = (CommonTree)adaptor.Create(MOVJ74);
 				adaptor.AddChild(root_0, MOVJ74_tree);
-
 				DebugLocation(40, 16);
-				char_literal75=(IToken)Match(input,38,Follow._38_in_premik398); 
+				char_literal75=(IToken)Match(input,39,Follow._39_in_premik388); 
 				char_literal75_tree = (CommonTree)adaptor.Create(char_literal75);
 				adaptor.AddChild(root_0, char_literal75_tree);
-
 				DebugLocation(40, 20);
 				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:20: ( INT )+
+				int cnt20=0;
+				try { DebugEnterSubRule(20);
+				while (true)
+				{
+					int alt20=2;
+					try { DebugEnterDecision(20, false);
+					int LA20_0 = input.LA(1);
+
+					if ((LA20_0==INT))
+					{
+						alt20 = 1;
+					}
+
+
+					} finally { DebugExitDecision(20); }
+					switch (alt20)
+					{
+					case 1:
+						DebugEnterAlt(1);
+						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:20: INT
+						{
+						DebugLocation(40, 20);
+						INT76=(IToken)Match(input,INT,Follow._INT_in_premik390); 
+						INT76_tree = (CommonTree)adaptor.Create(INT76);
+						adaptor.AddChild(root_0, INT76_tree);
+
+						}
+						break;
+
+					default:
+						if (cnt20 >= 1)
+							goto loop20;
+
+						EarlyExitException eee20 = new EarlyExitException( 20, input );
+						DebugRecognitionException(eee20);
+						throw eee20;
+					}
+					cnt20++;
+				}
+				loop20:
+					;
+
+				} finally { DebugExitSubRule(20); }
+
+				DebugLocation(40, 25);
+				string_literal77=(IToken)Match(input,45,Follow._45_in_premik393); 
+				string_literal77_tree = (CommonTree)adaptor.Create(string_literal77);
+				adaptor.AddChild(root_0, string_literal77_tree);
+				DebugLocation(40, 33);
+				char_literal78=(IToken)Match(input,37,Follow._37_in_premik395); 
+				DebugLocation(40, 35);
+				REAL79=(IToken)Match(input,REAL,Follow._REAL_in_premik398); 
+				REAL79_tree = (CommonTree)adaptor.Create(REAL79);
+				adaptor.AddChild(root_0, REAL79_tree);
+
+				}
+
+
+				}
+				break;
+			case 2:
+				DebugEnterAlt(2);
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:43: ( MOVL 'C' ( INT )+ 'V' '=' ! REAL )
+				{
+				root_0 = (CommonTree)adaptor.Nil();
+
+				DebugLocation(40, 43);
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:43: ( MOVL 'C' ( INT )+ 'V' '=' ! REAL )
+				DebugEnterAlt(1);
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:44: MOVL 'C' ( INT )+ 'V' '=' ! REAL
+				{
+				DebugLocation(40, 44);
+				MOVL80=(IToken)Match(input,MOVL,Follow._MOVL_in_premik404); 
+				MOVL80_tree = (CommonTree)adaptor.Create(MOVL80);
+				adaptor.AddChild(root_0, MOVL80_tree);
+				DebugLocation(40, 49);
+				char_literal81=(IToken)Match(input,39,Follow._39_in_premik406); 
+				char_literal81_tree = (CommonTree)adaptor.Create(char_literal81);
+				adaptor.AddChild(root_0, char_literal81_tree);
+				DebugLocation(40, 53);
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:53: ( INT )+
+				int cnt21=0;
+				try { DebugEnterSubRule(21);
+				while (true)
+				{
+					int alt21=2;
+					try { DebugEnterDecision(21, false);
+					int LA21_0 = input.LA(1);
+
+					if ((LA21_0==INT))
+					{
+						alt21 = 1;
+					}
+
+
+					} finally { DebugExitDecision(21); }
+					switch (alt21)
+					{
+					case 1:
+						DebugEnterAlt(1);
+						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:53: INT
+						{
+						DebugLocation(40, 53);
+						INT82=(IToken)Match(input,INT,Follow._INT_in_premik408); 
+						INT82_tree = (CommonTree)adaptor.Create(INT82);
+						adaptor.AddChild(root_0, INT82_tree);
+
+						}
+						break;
+
+					default:
+						if (cnt21 >= 1)
+							goto loop21;
+
+						EarlyExitException eee21 = new EarlyExitException( 21, input );
+						DebugRecognitionException(eee21);
+						throw eee21;
+					}
+					cnt21++;
+				}
+				loop21:
+					;
+
+				} finally { DebugExitSubRule(21); }
+
+				DebugLocation(40, 58);
+				char_literal83=(IToken)Match(input,44,Follow._44_in_premik411); 
+				char_literal83_tree = (CommonTree)adaptor.Create(char_literal83);
+				adaptor.AddChild(root_0, char_literal83_tree);
+				DebugLocation(40, 65);
+				char_literal84=(IToken)Match(input,37,Follow._37_in_premik413); 
+				DebugLocation(40, 67);
+				REAL85=(IToken)Match(input,REAL,Follow._REAL_in_premik416); 
+				REAL85_tree = (CommonTree)adaptor.Create(REAL85);
+				adaptor.AddChild(root_0, REAL85_tree);
+
+				}
+
+
+				}
+				break;
+			case 3:
+				DebugEnterAlt(3);
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:75: ( MOVC 'C' ( INT )+ 'V' '=' ! REAL )
+				{
+				root_0 = (CommonTree)adaptor.Nil();
+
+				DebugLocation(40, 75);
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:75: ( MOVC 'C' ( INT )+ 'V' '=' ! REAL )
+				DebugEnterAlt(1);
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:76: MOVC 'C' ( INT )+ 'V' '=' ! REAL
+				{
+				DebugLocation(40, 76);
+				MOVC86=(IToken)Match(input,MOVC,Follow._MOVC_in_premik422); 
+				MOVC86_tree = (CommonTree)adaptor.Create(MOVC86);
+				adaptor.AddChild(root_0, MOVC86_tree);
+				DebugLocation(40, 81);
+				char_literal87=(IToken)Match(input,39,Follow._39_in_premik424); 
+				char_literal87_tree = (CommonTree)adaptor.Create(char_literal87);
+				adaptor.AddChild(root_0, char_literal87_tree);
+				DebugLocation(40, 85);
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:85: ( INT )+
 				int cnt22=0;
 				try { DebugEnterSubRule(22);
 				while (true)
 				{
 					int alt22=2;
-					try { DebugEnterDecision(22, decisionCanBacktrack[22]);
+					try { DebugEnterDecision(22, false);
 					int LA22_0 = input.LA(1);
 
 					if ((LA22_0==INT))
@@ -2931,13 +2849,12 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:20: INT
+						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:85: INT
 						{
-						DebugLocation(40, 20);
-						INT76=(IToken)Match(input,INT,Follow._INT_in_premik400); 
-						INT76_tree = (CommonTree)adaptor.Create(INT76);
-						adaptor.AddChild(root_0, INT76_tree);
-
+						DebugLocation(40, 85);
+						INT88=(IToken)Match(input,INT,Follow._INT_in_premik426); 
+						INT88_tree = (CommonTree)adaptor.Create(INT88);
+						adaptor.AddChild(root_0, INT88_tree);
 
 						}
 						break;
@@ -2957,53 +2874,49 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 
 				} finally { DebugExitSubRule(22); }
 
-				DebugLocation(40, 25);
-				string_literal77=(IToken)Match(input,44,Follow._44_in_premik403); 
-				string_literal77_tree = (CommonTree)adaptor.Create(string_literal77);
-				adaptor.AddChild(root_0, string_literal77_tree);
-
-				DebugLocation(40, 33);
-				char_literal78=(IToken)Match(input,36,Follow._36_in_premik405); 
-				DebugLocation(40, 35);
-				REAL79=(IToken)Match(input,REAL,Follow._REAL_in_premik408); 
-				REAL79_tree = (CommonTree)adaptor.Create(REAL79);
-				adaptor.AddChild(root_0, REAL79_tree);
-
+				DebugLocation(40, 90);
+				char_literal89=(IToken)Match(input,44,Follow._44_in_premik429); 
+				char_literal89_tree = (CommonTree)adaptor.Create(char_literal89);
+				adaptor.AddChild(root_0, char_literal89_tree);
+				DebugLocation(40, 97);
+				char_literal90=(IToken)Match(input,37,Follow._37_in_premik431); 
+				DebugLocation(40, 99);
+				REAL91=(IToken)Match(input,REAL,Follow._REAL_in_premik434); 
+				REAL91_tree = (CommonTree)adaptor.Create(REAL91);
+				adaptor.AddChild(root_0, REAL91_tree);
 
 				}
 
 
 				}
 				break;
-			case 2:
-				DebugEnterAlt(2);
-				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:43: ( MOVL 'C' ( INT )+ 'V' '=' ! REAL )
+			case 4:
+				DebugEnterAlt(4);
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:107: ( MOVS 'C' ( INT )+ 'V' '=' ! REAL )
 				{
 				root_0 = (CommonTree)adaptor.Nil();
 
-				DebugLocation(40, 43);
-				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:43: ( MOVL 'C' ( INT )+ 'V' '=' ! REAL )
+				DebugLocation(40, 107);
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:107: ( MOVS 'C' ( INT )+ 'V' '=' ! REAL )
 				DebugEnterAlt(1);
-				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:44: MOVL 'C' ( INT )+ 'V' '=' ! REAL
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:108: MOVS 'C' ( INT )+ 'V' '=' ! REAL
 				{
-				DebugLocation(40, 44);
-				MOVL80=(IToken)Match(input,MOVL,Follow._MOVL_in_premik414); 
-				MOVL80_tree = (CommonTree)adaptor.Create(MOVL80);
-				adaptor.AddChild(root_0, MOVL80_tree);
-
-				DebugLocation(40, 49);
-				char_literal81=(IToken)Match(input,38,Follow._38_in_premik416); 
-				char_literal81_tree = (CommonTree)adaptor.Create(char_literal81);
-				adaptor.AddChild(root_0, char_literal81_tree);
-
-				DebugLocation(40, 53);
-				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:53: ( INT )+
+				DebugLocation(40, 108);
+				MOVS92=(IToken)Match(input,MOVS,Follow._MOVS_in_premik440); 
+				MOVS92_tree = (CommonTree)adaptor.Create(MOVS92);
+				adaptor.AddChild(root_0, MOVS92_tree);
+				DebugLocation(40, 113);
+				char_literal93=(IToken)Match(input,39,Follow._39_in_premik442); 
+				char_literal93_tree = (CommonTree)adaptor.Create(char_literal93);
+				adaptor.AddChild(root_0, char_literal93_tree);
+				DebugLocation(40, 117);
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:117: ( INT )+
 				int cnt23=0;
 				try { DebugEnterSubRule(23);
 				while (true)
 				{
 					int alt23=2;
-					try { DebugEnterDecision(23, decisionCanBacktrack[23]);
+					try { DebugEnterDecision(23, false);
 					int LA23_0 = input.LA(1);
 
 					if ((LA23_0==INT))
@@ -3017,13 +2930,12 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:53: INT
+						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:117: INT
 						{
-						DebugLocation(40, 53);
-						INT82=(IToken)Match(input,INT,Follow._INT_in_premik418); 
-						INT82_tree = (CommonTree)adaptor.Create(INT82);
-						adaptor.AddChild(root_0, INT82_tree);
-
+						DebugLocation(40, 117);
+						INT94=(IToken)Match(input,INT,Follow._INT_in_premik444); 
+						INT94_tree = (CommonTree)adaptor.Create(INT94);
+						adaptor.AddChild(root_0, INT94_tree);
 
 						}
 						break;
@@ -3043,190 +2955,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 
 				} finally { DebugExitSubRule(23); }
 
-				DebugLocation(40, 58);
-				char_literal83=(IToken)Match(input,43,Follow._43_in_premik421); 
-				char_literal83_tree = (CommonTree)adaptor.Create(char_literal83);
-				adaptor.AddChild(root_0, char_literal83_tree);
-
-				DebugLocation(40, 65);
-				char_literal84=(IToken)Match(input,36,Follow._36_in_premik423); 
-				DebugLocation(40, 67);
-				REAL85=(IToken)Match(input,REAL,Follow._REAL_in_premik426); 
-				REAL85_tree = (CommonTree)adaptor.Create(REAL85);
-				adaptor.AddChild(root_0, REAL85_tree);
-
-
-				}
-
-
-				}
-				break;
-			case 3:
-				DebugEnterAlt(3);
-				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:75: ( MOVC 'C' ( INT )+ 'V' '=' ! REAL )
-				{
-				root_0 = (CommonTree)adaptor.Nil();
-
-				DebugLocation(40, 75);
-				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:75: ( MOVC 'C' ( INT )+ 'V' '=' ! REAL )
-				DebugEnterAlt(1);
-				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:76: MOVC 'C' ( INT )+ 'V' '=' ! REAL
-				{
-				DebugLocation(40, 76);
-				MOVC86=(IToken)Match(input,MOVC,Follow._MOVC_in_premik432); 
-				MOVC86_tree = (CommonTree)adaptor.Create(MOVC86);
-				adaptor.AddChild(root_0, MOVC86_tree);
-
-				DebugLocation(40, 81);
-				char_literal87=(IToken)Match(input,38,Follow._38_in_premik434); 
-				char_literal87_tree = (CommonTree)adaptor.Create(char_literal87);
-				adaptor.AddChild(root_0, char_literal87_tree);
-
-				DebugLocation(40, 85);
-				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:85: ( INT )+
-				int cnt24=0;
-				try { DebugEnterSubRule(24);
-				while (true)
-				{
-					int alt24=2;
-					try { DebugEnterDecision(24, decisionCanBacktrack[24]);
-					int LA24_0 = input.LA(1);
-
-					if ((LA24_0==INT))
-					{
-						alt24 = 1;
-					}
-
-
-					} finally { DebugExitDecision(24); }
-					switch (alt24)
-					{
-					case 1:
-						DebugEnterAlt(1);
-						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:85: INT
-						{
-						DebugLocation(40, 85);
-						INT88=(IToken)Match(input,INT,Follow._INT_in_premik436); 
-						INT88_tree = (CommonTree)adaptor.Create(INT88);
-						adaptor.AddChild(root_0, INT88_tree);
-
-
-						}
-						break;
-
-					default:
-						if (cnt24 >= 1)
-							goto loop24;
-
-						EarlyExitException eee24 = new EarlyExitException( 24, input );
-						DebugRecognitionException(eee24);
-						throw eee24;
-					}
-					cnt24++;
-				}
-				loop24:
-					;
-
-				} finally { DebugExitSubRule(24); }
-
-				DebugLocation(40, 90);
-				char_literal89=(IToken)Match(input,43,Follow._43_in_premik439); 
-				char_literal89_tree = (CommonTree)adaptor.Create(char_literal89);
-				adaptor.AddChild(root_0, char_literal89_tree);
-
-				DebugLocation(40, 97);
-				char_literal90=(IToken)Match(input,36,Follow._36_in_premik441); 
-				DebugLocation(40, 99);
-				REAL91=(IToken)Match(input,REAL,Follow._REAL_in_premik444); 
-				REAL91_tree = (CommonTree)adaptor.Create(REAL91);
-				adaptor.AddChild(root_0, REAL91_tree);
-
-
-				}
-
-
-				}
-				break;
-			case 4:
-				DebugEnterAlt(4);
-				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:107: ( MOVS 'C' ( INT )+ 'V' '=' ! REAL )
-				{
-				root_0 = (CommonTree)adaptor.Nil();
-
-				DebugLocation(40, 107);
-				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:107: ( MOVS 'C' ( INT )+ 'V' '=' ! REAL )
-				DebugEnterAlt(1);
-				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:108: MOVS 'C' ( INT )+ 'V' '=' ! REAL
-				{
-				DebugLocation(40, 108);
-				MOVS92=(IToken)Match(input,MOVS,Follow._MOVS_in_premik450); 
-				MOVS92_tree = (CommonTree)adaptor.Create(MOVS92);
-				adaptor.AddChild(root_0, MOVS92_tree);
-
-				DebugLocation(40, 113);
-				char_literal93=(IToken)Match(input,38,Follow._38_in_premik452); 
-				char_literal93_tree = (CommonTree)adaptor.Create(char_literal93);
-				adaptor.AddChild(root_0, char_literal93_tree);
-
-				DebugLocation(40, 117);
-				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:117: ( INT )+
-				int cnt25=0;
-				try { DebugEnterSubRule(25);
-				while (true)
-				{
-					int alt25=2;
-					try { DebugEnterDecision(25, decisionCanBacktrack[25]);
-					int LA25_0 = input.LA(1);
-
-					if ((LA25_0==INT))
-					{
-						alt25 = 1;
-					}
-
-
-					} finally { DebugExitDecision(25); }
-					switch (alt25)
-					{
-					case 1:
-						DebugEnterAlt(1);
-						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:117: INT
-						{
-						DebugLocation(40, 117);
-						INT94=(IToken)Match(input,INT,Follow._INT_in_premik454); 
-						INT94_tree = (CommonTree)adaptor.Create(INT94);
-						adaptor.AddChild(root_0, INT94_tree);
-
-
-						}
-						break;
-
-					default:
-						if (cnt25 >= 1)
-							goto loop25;
-
-						EarlyExitException eee25 = new EarlyExitException( 25, input );
-						DebugRecognitionException(eee25);
-						throw eee25;
-					}
-					cnt25++;
-				}
-				loop25:
-					;
-
-				} finally { DebugExitSubRule(25); }
-
 				DebugLocation(40, 122);
-				char_literal95=(IToken)Match(input,43,Follow._43_in_premik457); 
+				char_literal95=(IToken)Match(input,44,Follow._44_in_premik447); 
 				char_literal95_tree = (CommonTree)adaptor.Create(char_literal95);
 				adaptor.AddChild(root_0, char_literal95_tree);
-
 				DebugLocation(40, 129);
-				char_literal96=(IToken)Match(input,36,Follow._36_in_premik459); 
+				char_literal96=(IToken)Match(input,37,Follow._37_in_premik449); 
 				DebugLocation(40, 131);
-				REAL97=(IToken)Match(input,REAL,Follow._REAL_in_premik462); 
+				REAL97=(IToken)Match(input,REAL,Follow._REAL_in_premik452); 
 				REAL97_tree = (CommonTree)adaptor.Create(REAL97);
 				adaptor.AddChild(root_0, REAL97_tree);
-
 
 				}
 
@@ -3253,8 +2991,8 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			TraceOut("premik", 22);
 			LeaveRule("premik", 22);
 			LeaveRule_premik();
-	    }
-	 	DebugLocation(40, 135);
+		}
+		DebugLocation(40, 135);
 		} finally { DebugExitRule(GrammarFileName, "premik"); }
 		return retval;
 
@@ -3264,29 +3002,29 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 
 
 	#region DFA
-	private DFA21 dfa21;
+	private DFA19 dfa19;
 
 	protected override void InitDFAs()
 	{
 		base.InitDFAs();
-		dfa21 = new DFA21( this );
+		dfa19 = new DFA19( this );
 	}
 
-	private class DFA21 : DFA
+	private class DFA19 : DFA
 	{
-		private const string DFA21_eotS =
+		private const string DFA19_eotS =
 			"\x1B\xFFFF";
-		private const string DFA21_eofS =
+		private const string DFA19_eofS =
 			"\x1B\xFFFF";
-		private const string DFA21_minS =
-			"\x1\xE\x4\x26\x8\xC\x4\x24\x4\x18\x4\x8\x2\xFFFF";
-		private const string DFA21_maxS =
-			"\x1\x11\x4\x26\x4\xC\x1\x2C\x3\x2B\x4\x24\x4\x18\x4\x11\x2\xFFFF";
-		private const string DFA21_acceptS =
+		private const string DFA19_minS =
+			"\x1\xE\x4\x27\x8\xC\x4\x25\x4\x19\x4\x8\x2\xFFFF";
+		private const string DFA19_maxS =
+			"\x1\x11\x4\x27\x4\xC\x1\x2D\x3\x2C\x4\x25\x4\x19\x4\x11\x2\xFFFF";
+		private const string DFA19_acceptS =
 			"\x19\xFFFF\x1\x1\x1\x2";
-		private const string DFA21_specialS =
+		private const string DFA19_specialS =
 			"\x1B\xFFFF}>";
-		private static readonly string[] DFA21_transitionS =
+		private static readonly string[] DFA19_transitionS =
 			{
 				"\x1\x3\x1\x1\x1\x2\x1\x4",
 				"\x1\x5",
@@ -3297,10 +3035,10 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				"\x1\xA",
 				"\x1\xB",
 				"\x1\xC",
-				"\x1\x9\x1F\xFFFF\x1\xD",
-				"\x1\xA\x1E\xFFFF\x1\xE",
-				"\x1\xB\x1E\xFFFF\x1\xF",
-				"\x1\xC\x1E\xFFFF\x1\x10",
+				"\x1\x9\x20\xFFFF\x1\xD",
+				"\x1\xA\x1F\xFFFF\x1\xE",
+				"\x1\xB\x1F\xFFFF\x1\xF",
+				"\x1\xC\x1F\xFFFF\x1\x10",
 				"\x1\x11",
 				"\x1\x12",
 				"\x1\x13",
@@ -3317,35 +3055,35 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				""
 			};
 
-		private static readonly short[] DFA21_eot = DFA.UnpackEncodedString(DFA21_eotS);
-		private static readonly short[] DFA21_eof = DFA.UnpackEncodedString(DFA21_eofS);
-		private static readonly char[] DFA21_min = DFA.UnpackEncodedStringToUnsignedChars(DFA21_minS);
-		private static readonly char[] DFA21_max = DFA.UnpackEncodedStringToUnsignedChars(DFA21_maxS);
-		private static readonly short[] DFA21_accept = DFA.UnpackEncodedString(DFA21_acceptS);
-		private static readonly short[] DFA21_special = DFA.UnpackEncodedString(DFA21_specialS);
-		private static readonly short[][] DFA21_transition;
+		private static readonly short[] DFA19_eot = DFA.UnpackEncodedString(DFA19_eotS);
+		private static readonly short[] DFA19_eof = DFA.UnpackEncodedString(DFA19_eofS);
+		private static readonly char[] DFA19_min = DFA.UnpackEncodedStringToUnsignedChars(DFA19_minS);
+		private static readonly char[] DFA19_max = DFA.UnpackEncodedStringToUnsignedChars(DFA19_maxS);
+		private static readonly short[] DFA19_accept = DFA.UnpackEncodedString(DFA19_acceptS);
+		private static readonly short[] DFA19_special = DFA.UnpackEncodedString(DFA19_specialS);
+		private static readonly short[][] DFA19_transition;
 
-		static DFA21()
+		static DFA19()
 		{
-			int numStates = DFA21_transitionS.Length;
-			DFA21_transition = new short[numStates][];
+			int numStates = DFA19_transitionS.Length;
+			DFA19_transition = new short[numStates][];
 			for ( int i=0; i < numStates; i++ )
 			{
-				DFA21_transition[i] = DFA.UnpackEncodedString(DFA21_transitionS[i]);
+				DFA19_transition[i] = DFA.UnpackEncodedString(DFA19_transitionS[i]);
 			}
 		}
 
-		public DFA21( BaseRecognizer recognizer )
+		public DFA19( BaseRecognizer recognizer )
 		{
 			this.recognizer = recognizer;
-			this.decisionNumber = 21;
-			this.eot = DFA21_eot;
-			this.eof = DFA21_eof;
-			this.min = DFA21_min;
-			this.max = DFA21_max;
-			this.accept = DFA21_accept;
-			this.special = DFA21_special;
-			this.transition = DFA21_transition;
+			this.decisionNumber = 19;
+			this.eot = DFA19_eot;
+			this.eof = DFA19_eof;
+			this.min = DFA19_min;
+			this.max = DFA19_max;
+			this.accept = DFA19_accept;
+			this.special = DFA19_special;
+			this.transition = DFA19_transition;
 		}
 
 		public override string Description { get { return "39:1: premiki : ( premik premiki | premik );"; } }
@@ -3364,98 +3102,99 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 	{
 		public static readonly BitSet _prog_in_start37 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _job_in_prog49 = new BitSet(new ulong[]{0x40000UL});
-		public static readonly BitSet _name_in_prog51 = new BitSet(new ulong[]{0x200000UL});
-		public static readonly BitSet _pos_in_prog53 = new BitSet(new ulong[]{0x100000UL});
-		public static readonly BitSet _npos_in_prog55 = new BitSet(new ulong[]{0x20000000UL});
-		public static readonly BitSet _user_in_prog57 = new BitSet(new ulong[]{0x10000000UL});
-		public static readonly BitSet _tool_in_prog59 = new BitSet(new ulong[]{0x400000UL});
-		public static readonly BitSet _postype_in_prog61 = new BitSet(new ulong[]{0x2000000UL});
-		public static readonly BitSet _rectan_in_prog63 = new BitSet(new ulong[]{0x4000800000UL});
-		public static readonly BitSet _rconf_in_prog66 = new BitSet(new ulong[]{0x4000000000UL});
-		public static readonly BitSet _cindeks_in_prog69 = new BitSet(new ulong[]{0x4000800800UL});
+		public static readonly BitSet _name_in_prog51 = new BitSet(new ulong[]{0x400000UL});
+		public static readonly BitSet _pos_in_prog53 = new BitSet(new ulong[]{0x200000UL});
+		public static readonly BitSet _npos_in_prog55 = new BitSet(new ulong[]{0x40000000UL});
+		public static readonly BitSet _user_in_prog57 = new BitSet(new ulong[]{0x20000000UL});
+		public static readonly BitSet _tool_in_prog59 = new BitSet(new ulong[]{0x800000UL});
+		public static readonly BitSet _postype_in_prog61 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _rectan_in_prog63 = new BitSet(new ulong[]{0x8001000000UL});
+		public static readonly BitSet _rconf_in_prog66 = new BitSet(new ulong[]{0x8000000000UL});
+		public static readonly BitSet _cindeks_in_prog69 = new BitSet(new ulong[]{0x8001000800UL});
 		public static readonly BitSet _inst_in_prog73 = new BitSet(new ulong[]{0x40UL});
 		public static readonly BitSet _date_in_prog75 = new BitSet(new ulong[]{0x20UL});
 		public static readonly BitSet _comm_in_prog77 = new BitSet(new ulong[]{0x10UL});
 		public static readonly BitSet _attr_in_prog79 = new BitSet(new ulong[]{0x200UL});
 		public static readonly BitSet _frame_in_prog81 = new BitSet(new ulong[]{0x400UL});
-		public static readonly BitSet _group_in_prog83 = new BitSet(new ulong[]{0x10000000000UL});
+		public static readonly BitSet _group_in_prog83 = new BitSet(new ulong[]{0x20000000000UL});
 		public static readonly BitSet _main_in_prog85 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _JOB_in_job130 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _NAME_in_name137 = new BitSet(new ulong[]{0x0UL});
-		public static readonly BitSet _POS_in_pos151 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _NPOS_in_npos158 = new BitSet(new ulong[]{0x1000UL});
-		public static readonly BitSet _INT_in_npos160 = new BitSet(new ulong[]{0x180001000UL});
-		public static readonly BitSet _31_in_npos163 = new BitSet(new ulong[]{0x100001000UL});
-		public static readonly BitSet _32_in_npos166 = new BitSet(new ulong[]{0x1000UL});
-		public static readonly BitSet _INT_in_npos169 = new BitSet(new ulong[]{0x180001002UL});
-		public static readonly BitSet _USER_in_user178 = new BitSet(new ulong[]{0x1000UL});
-		public static readonly BitSet _INT_in_user180 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _TOOL_in_tool187 = new BitSet(new ulong[]{0x1000UL});
-		public static readonly BitSet _INT_in_tool189 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _POSTYPE_in_postype196 = new BitSet(new ulong[]{0x60000000000UL});
-		public static readonly BitSet _set_in_postype198 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _RECTAN_in_rectan211 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _RCONF_in_rconf218 = new BitSet(new ulong[]{0xC80000000UL});
-		public static readonly BitSet _31_in_rconf221 = new BitSet(new ulong[]{0xC00000000UL});
-		public static readonly BitSet _set_in_rconf224 = new BitSet(new ulong[]{0xC80000002UL});
-		public static readonly BitSet _38_in_cindeks237 = new BitSet(new ulong[]{0x1000UL});
-		public static readonly BitSet _INT_in_cindeks239 = new BitSet(new ulong[]{0x1000001000UL});
-		public static readonly BitSet _36_in_cindeks242 = new BitSet(new ulong[]{0x181000000UL});
-		public static readonly BitSet _31_in_cindeks245 = new BitSet(new ulong[]{0x101000000UL});
-		public static readonly BitSet _32_in_cindeks248 = new BitSet(new ulong[]{0x1000000UL});
-		public static readonly BitSet _REAL_in_cindeks251 = new BitSet(new ulong[]{0x181000002UL});
-		public static readonly BitSet _INST_in_inst260 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DATE_in_date267 = new BitSet(new ulong[]{0x1000UL});
-		public static readonly BitSet _INT_in_date269 = new BitSet(new ulong[]{0x200001000UL});
-		public static readonly BitSet _33_in_date272 = new BitSet(new ulong[]{0x1000UL});
-		public static readonly BitSet _INT_in_date275 = new BitSet(new ulong[]{0x200001000UL});
-		public static readonly BitSet _33_in_date278 = new BitSet(new ulong[]{0x1000UL});
-		public static readonly BitSet _INT_in_date281 = new BitSet(new ulong[]{0x4001000UL});
-		public static readonly BitSet _TIME_in_date284 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _COMM_in_comm291 = new BitSet(new ulong[]{0x1000UL});
-		public static readonly BitSet _ATTR_in_attr307 = new BitSet(new ulong[]{0x80000000UL});
-		public static readonly BitSet _31_in_attr310 = new BitSet(new ulong[]{0x0UL});
-		public static readonly BitSet _FRAME_in_frame327 = new BitSet(new ulong[]{0x40000000000UL});
-		public static readonly BitSet _42_in_frame329 = new BitSet(new ulong[]{0x1000UL});
-		public static readonly BitSet _INT_in_frame331 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _GROUP_in_group338 = new BitSet(new ulong[]{0x1000UL});
-		public static readonly BitSet _40_in_main354 = new BitSet(new ulong[]{0x3C000UL});
-		public static readonly BitSet _ukazi_in_main356 = new BitSet(new ulong[]{0x8000000000UL});
-		public static readonly BitSet _39_in_main358 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _premik_in_ukazi365 = new BitSet(new ulong[]{0x100UL});
-		public static readonly BitSet _DOUT_in_ukazi367 = new BitSet(new ulong[]{0x8000000UL});
-		public static readonly BitSet _TIMER_in_ukazi369 = new BitSet(new ulong[]{0x3C000UL});
-		public static readonly BitSet _premiki_in_ukazi371 = new BitSet(new ulong[]{0x100UL});
-		public static readonly BitSet _DOUT_in_ukazi373 = new BitSet(new ulong[]{0x3C000UL});
-		public static readonly BitSet _premik_in_ukazi375 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _premik_in_premiki382 = new BitSet(new ulong[]{0x3C000UL});
-		public static readonly BitSet _premiki_in_premiki384 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _premik_in_premiki388 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _MOVJ_in_premik396 = new BitSet(new ulong[]{0x4000000000UL});
-		public static readonly BitSet _38_in_premik398 = new BitSet(new ulong[]{0x1000UL});
-		public static readonly BitSet _INT_in_premik400 = new BitSet(new ulong[]{0x100000001000UL});
-		public static readonly BitSet _44_in_premik403 = new BitSet(new ulong[]{0x1000000000UL});
-		public static readonly BitSet _36_in_premik405 = new BitSet(new ulong[]{0x1000000UL});
-		public static readonly BitSet _REAL_in_premik408 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _MOVL_in_premik414 = new BitSet(new ulong[]{0x4000000000UL});
-		public static readonly BitSet _38_in_premik416 = new BitSet(new ulong[]{0x1000UL});
-		public static readonly BitSet _INT_in_premik418 = new BitSet(new ulong[]{0x80000001000UL});
-		public static readonly BitSet _43_in_premik421 = new BitSet(new ulong[]{0x1000000000UL});
-		public static readonly BitSet _36_in_premik423 = new BitSet(new ulong[]{0x1000000UL});
-		public static readonly BitSet _REAL_in_premik426 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _MOVC_in_premik432 = new BitSet(new ulong[]{0x4000000000UL});
-		public static readonly BitSet _38_in_premik434 = new BitSet(new ulong[]{0x1000UL});
-		public static readonly BitSet _INT_in_premik436 = new BitSet(new ulong[]{0x80000001000UL});
-		public static readonly BitSet _43_in_premik439 = new BitSet(new ulong[]{0x1000000000UL});
-		public static readonly BitSet _36_in_premik441 = new BitSet(new ulong[]{0x1000000UL});
-		public static readonly BitSet _REAL_in_premik444 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _MOVS_in_premik450 = new BitSet(new ulong[]{0x4000000000UL});
-		public static readonly BitSet _38_in_premik452 = new BitSet(new ulong[]{0x1000UL});
-		public static readonly BitSet _INT_in_premik454 = new BitSet(new ulong[]{0x80000001000UL});
-		public static readonly BitSet _43_in_premik457 = new BitSet(new ulong[]{0x1000000000UL});
-		public static readonly BitSet _36_in_premik459 = new BitSet(new ulong[]{0x1000000UL});
-		public static readonly BitSet _REAL_in_premik462 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _NAME_in_name137 = new BitSet(new ulong[]{0x100000UL});
+		public static readonly BitSet _NIZ_in_name139 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _POS_in_pos146 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _NPOS_in_npos153 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _INT_in_npos155 = new BitSet(new ulong[]{0x300001000UL});
+		public static readonly BitSet _32_in_npos158 = new BitSet(new ulong[]{0x200001000UL});
+		public static readonly BitSet _33_in_npos161 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _INT_in_npos164 = new BitSet(new ulong[]{0x300001002UL});
+		public static readonly BitSet _USER_in_user173 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _INT_in_user175 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _TOOL_in_tool182 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _INT_in_tool184 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _POSTYPE_in_postype191 = new BitSet(new ulong[]{0xC0000000000UL});
+		public static readonly BitSet _set_in_postype193 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _RECTAN_in_rectan206 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _RCONF_in_rconf213 = new BitSet(new ulong[]{0x1900000000UL});
+		public static readonly BitSet _32_in_rconf216 = new BitSet(new ulong[]{0x1800000000UL});
+		public static readonly BitSet _set_in_rconf219 = new BitSet(new ulong[]{0x1900000002UL});
+		public static readonly BitSet _39_in_cindeks232 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _INT_in_cindeks234 = new BitSet(new ulong[]{0x2000001000UL});
+		public static readonly BitSet _37_in_cindeks237 = new BitSet(new ulong[]{0x302000000UL});
+		public static readonly BitSet _32_in_cindeks240 = new BitSet(new ulong[]{0x202000000UL});
+		public static readonly BitSet _33_in_cindeks243 = new BitSet(new ulong[]{0x2000000UL});
+		public static readonly BitSet _REAL_in_cindeks246 = new BitSet(new ulong[]{0x302000002UL});
+		public static readonly BitSet _INST_in_inst255 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DATE_in_date262 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _INT_in_date264 = new BitSet(new ulong[]{0x400001000UL});
+		public static readonly BitSet _34_in_date267 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _INT_in_date270 = new BitSet(new ulong[]{0x400001000UL});
+		public static readonly BitSet _34_in_date273 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _INT_in_date276 = new BitSet(new ulong[]{0x8001000UL});
+		public static readonly BitSet _TIME_in_date279 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _COMM_in_comm286 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _ATTR_in_attr302 = new BitSet(new ulong[]{0x100100000UL});
+		public static readonly BitSet _32_in_attr305 = new BitSet(new ulong[]{0x100000UL});
+		public static readonly BitSet _NIZ_in_attr308 = new BitSet(new ulong[]{0x100100002UL});
+		public static readonly BitSet _FRAME_in_frame317 = new BitSet(new ulong[]{0x80000000000UL});
+		public static readonly BitSet _43_in_frame319 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _INT_in_frame321 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _GROUP_in_group328 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _41_in_main344 = new BitSet(new ulong[]{0x3C000UL});
+		public static readonly BitSet _ukazi_in_main346 = new BitSet(new ulong[]{0x10000000000UL});
+		public static readonly BitSet _40_in_main348 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _premik_in_ukazi355 = new BitSet(new ulong[]{0x100UL});
+		public static readonly BitSet _DOUT_in_ukazi357 = new BitSet(new ulong[]{0x10000000UL});
+		public static readonly BitSet _TIMER_in_ukazi359 = new BitSet(new ulong[]{0x3C000UL});
+		public static readonly BitSet _premiki_in_ukazi361 = new BitSet(new ulong[]{0x100UL});
+		public static readonly BitSet _DOUT_in_ukazi363 = new BitSet(new ulong[]{0x3C000UL});
+		public static readonly BitSet _premik_in_ukazi365 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _premik_in_premiki372 = new BitSet(new ulong[]{0x3C000UL});
+		public static readonly BitSet _premiki_in_premiki374 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _premik_in_premiki378 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _MOVJ_in_premik386 = new BitSet(new ulong[]{0x8000000000UL});
+		public static readonly BitSet _39_in_premik388 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _INT_in_premik390 = new BitSet(new ulong[]{0x200000001000UL});
+		public static readonly BitSet _45_in_premik393 = new BitSet(new ulong[]{0x2000000000UL});
+		public static readonly BitSet _37_in_premik395 = new BitSet(new ulong[]{0x2000000UL});
+		public static readonly BitSet _REAL_in_premik398 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _MOVL_in_premik404 = new BitSet(new ulong[]{0x8000000000UL});
+		public static readonly BitSet _39_in_premik406 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _INT_in_premik408 = new BitSet(new ulong[]{0x100000001000UL});
+		public static readonly BitSet _44_in_premik411 = new BitSet(new ulong[]{0x2000000000UL});
+		public static readonly BitSet _37_in_premik413 = new BitSet(new ulong[]{0x2000000UL});
+		public static readonly BitSet _REAL_in_premik416 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _MOVC_in_premik422 = new BitSet(new ulong[]{0x8000000000UL});
+		public static readonly BitSet _39_in_premik424 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _INT_in_premik426 = new BitSet(new ulong[]{0x100000001000UL});
+		public static readonly BitSet _44_in_premik429 = new BitSet(new ulong[]{0x2000000000UL});
+		public static readonly BitSet _37_in_premik431 = new BitSet(new ulong[]{0x2000000UL});
+		public static readonly BitSet _REAL_in_premik434 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _MOVS_in_premik440 = new BitSet(new ulong[]{0x8000000000UL});
+		public static readonly BitSet _39_in_premik442 = new BitSet(new ulong[]{0x1000UL});
+		public static readonly BitSet _INT_in_premik444 = new BitSet(new ulong[]{0x100000001000UL});
+		public static readonly BitSet _44_in_premik447 = new BitSet(new ulong[]{0x2000000000UL});
+		public static readonly BitSet _37_in_premik449 = new BitSet(new ulong[]{0x2000000UL});
+		public static readonly BitSet _REAL_in_premik452 = new BitSet(new ulong[]{0x2UL});
 	}
 	#endregion Follow sets
 }
-*/
