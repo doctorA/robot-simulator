@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.glControl1 = new OpenTK.GLControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -51,8 +53,6 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button_tmp = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).BeginInit();
@@ -95,6 +95,24 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Orodjarna";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(294, 644);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(50, 22);
+            this.button5.TabIndex = 11;
+            this.button5.Text = "Idi tja";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(215, 646);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(72, 20);
+            this.textBox1.TabIndex = 10;
+            this.textBox1.Text = "-150,150,-150";
             // 
             // button4
             // 
@@ -312,24 +330,6 @@
             this.button_tmp.Text = "Rezkar";
             this.button_tmp.UseVisualStyleBackColor = false;
             this.button_tmp.Click += new System.EventHandler(this.button_tmp_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(215, 646);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(72, 20);
-            this.textBox1.TabIndex = 10;
-            this.textBox1.Text = "10,10,10";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(294, 644);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(50, 22);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "Idi tja";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 
