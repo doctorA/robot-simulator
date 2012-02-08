@@ -71,6 +71,7 @@
             this.glControl1.VSync = false;
             this.glControl1.Load += new System.EventHandler(this.glControl1_Load);
             this.glControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.glControl1_Paint);
+            this.glControl1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.glControl1_KeyDown);
             this.glControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControl1_MouseDown);
             this.glControl1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControl1_MouseMove);
             this.glControl1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControl1_MouseUp);
@@ -94,9 +95,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(279, 644);
+            this.button4.Location = new System.Drawing.Point(256, 644);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(68, 23);
+            this.button4.Size = new System.Drawing.Size(97, 23);
             this.button4.TabIndex = 9;
             this.button4.Text = "Vrh robota";
             this.button4.UseVisualStyleBackColor = true;
@@ -104,9 +105,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(144, 644);
+            this.button3.Location = new System.Drawing.Point(14, 644);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(129, 23);
+            this.button3.Size = new System.Drawing.Size(236, 23);
             this.button3.TabIndex = 8;
             this.button3.Text = "Moves Like Jagger";
             this.button3.UseVisualStyleBackColor = true;
