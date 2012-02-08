@@ -62,6 +62,67 @@ namespace Robot_simulator
             }
         }
 
+        public Vector3 getVrhOrodja()
+        {
+            Vector3 vrh;
+            //dolžine posameznih objektov
+            //podstavek: 0, -3.2, 0;
+            //prvi zglob: 3.75, 8.3, -1.6; rot: z : rot1+90
+            //prva roka: 0, 15.35, -0.4; rot: z
+            //drugi zglob: 5.2, 3.9, 2.0; rot: x, pa -90 po x
+            //druga roka: 10.8, 0, 0; rot: z
+            //zadnji zglob: 2.2, 0, 0; rot: x
+            //oni krogec za orodja montirat: 0.4, 0, 0
+            // orodje ima svoje dolžine, rotacija je po x
+
+            vrh = new Vector3(0.4f, 0.0f, 0.0f);
+            vrh = rot_po_x(vrh, rotacija6);
+            vrh += new Vector3(2.2f, 0f, 0f);
+            vrh = rot_po_z(vrh, rotacija5);
+            vrh += new Vector3(10.8f, 0f, 0f);
+            vrh = rot_po_x(vrh, rotacija4);
+            vrh += new Vector3(5.2f, 3.9f, 2.0f);
+            vrh = rot_po_x(vrh, -90);
+            vrh = rot_po_z(vrh, rotacija3);
+            vrh += new Vector3(0f, 15.35f, -0.4f); //nadaljuj za vse člene
+            vrh = rot_po_z(vrh, rotacija2);
+            //izračun vrha
+            vrh += new Vector3(3.75f, 8.3f, -1.6f); //prištej vsak vektor člena
+            vrh = rot_po_y(vrh, rotacija1 + 90); // in rotiraj
+
+            return vrh;
+        }
+
+        public Vector3 rot_po_x(Vector3 state, float angle)
+        {
+            angle = angle / 180 * (float)Math.PI;
+            Vector3 v = new Vector3();
+            v.Y = state.Y * (float)Math.Cos(angle) - state.Z * (float)Math.Sin(angle);
+            v.Z = state.Y * (float)Math.Sin(angle) + state.Z * (float)Math.Cos(angle);
+            v.X = state.X;
+            return v;
+        }
+
+        public Vector3 rot_po_y(Vector3 state, float angle)
+        {
+            angle = angle / 180 * (float)Math.PI;
+            Vector3 v = new Vector3();
+            v.Z = state.Z * (float)Math.Cos(angle) - state.X * (float)Math.Sin(angle);
+            v.X = state.Z * (float)Math.Sin(angle) + state.X * (float)Math.Cos(angle);
+            v.Y=state.Y;
+            return v;
+        }
+
+        public Vector3 rot_po_z(Vector3 state, float angle)
+        {
+            angle=angle/180*(float)Math.PI;
+            Vector3 v=new Vector3();
+            v.X = state.X * (float)Math.Cos(angle) - state.Y * (float)Math.Sin(angle);
+            v.Y = state.X * (float)Math.Sin(angle) + state.Y * (float)Math.Cos(angle);
+            v.Z = state.Z;
+            return v;
+        }
+
         public void narisi()
         {
             #region simple model
@@ -199,12 +260,12 @@ namespace Robot_simulator
                 GL.PushMatrix();
                 
                 //dolžine posameznih objektov
-                //podstavek: 0, -3.2, 0
-                //prvi zglob: 3.75, 8.3, -1.6
-                //prva roka: 0, 15.35, -0.4
-                //drugi zglob: 5.2, 3.9, 2.0
-                //druga roka: 10.8, 0, 0
-                //zadnji zglob: 2.2, 0, 0
+                //podstavek: 0, -3.2, 0;
+                //prvi zglob: 3.75, 8.3, -1.6; rot: z : rot1+90
+                //prva roka: 0, 15.35, -0.4; rot: z
+                //drugi zglob: 5.2, 3.9, 2.0; rot: x, pa -90 po x
+                //druga roka: 10.8, 0, 0; rot: z
+                //zadnji zglob: 2.2, 0, 0; rot: x
                 //oni krogec za orodja montirat: 0.4, 0, 0
 
 

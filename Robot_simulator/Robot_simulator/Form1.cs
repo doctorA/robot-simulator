@@ -355,5 +355,11 @@ namespace Robot_simulator
             bla();
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Vector3 vrh = robot.getVrhOrodja();
+            MessageBox.Show("Vrh: " + vrh.ToString());
+        }
+
     }
 }
