@@ -198,7 +198,7 @@ namespace Robot_simulator
             {
                 // string startPos = string.Format("{0:F3},{1:F3},{2:F3}", conf.zacetna_tocka.X, conf.zacetna_tocka.Y, conf.zacetna_tocka.Z);
                 string startPos = conf.zacetna_tocka.X.ToString("0.00", CultureInfo.InvariantCulture) + ',' + conf.zacetna_tocka.Y.ToString("0.00", CultureInfo.InvariantCulture) + ',' + conf.zacetna_tocka.Z.ToString("0.00", CultureInfo.InvariantCulture);
-                string hitrost = (string.Format("V:{0:F1}", conf.hitrost_restkanja)).Replace(',', '.');
+                string hitrost = (string.Format("V={0:F1}", conf.hitrost_restkanja)).Replace(',', '.');
                 string visinaSvedra = conf.visina_svedra_med_pomiki.ToString("0.000", CultureInfo.InvariantCulture);
                 string globinaSvedraMedRezkanjem = conf.globina_med_reskanjem.ToString("0.000", CultureInfo.InvariantCulture);
 
