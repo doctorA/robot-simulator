@@ -101,7 +101,6 @@
     <Compile Include="CommonTools.cs" />
     <Compile Include="Grammar\RobotLanguageLexer.cs" />
     <Compile Include="Grammar\RobotLanguageParser.cs" />
-    <Compile Include="Kinematika.cs" />
     <Compile Include="Rezkar\Nastavitve\Nastavitve.cs">
       <SubType>Form</SubType>
     </Compile>
