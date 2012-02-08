@@ -289,7 +289,7 @@ namespace Robot_simulator
        {
             aTimer = new System.Timers.Timer();
             aTimer.Elapsed+=new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = 100;
+            aTimer.Interval = 250;
             aTimer.Enabled=true;
             cout_utrip = 0;
 
@@ -298,7 +298,7 @@ namespace Robot_simulator
 
      private void OnTimedEvent(object source, ElapsedEventArgs e)
      {
-         if (cout_utrip < 10)
+         if (cout_utrip < 4)
          {
 
              if (Color.Black == ozadje)
