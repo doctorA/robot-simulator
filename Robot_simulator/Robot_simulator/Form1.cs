@@ -68,11 +68,11 @@ namespace Robot_simulator
             GL.LoadIdentity();
 
             float[] light0_ambient = { 0.0f, 0.0f, 0.0f, 1f };
-            float[] light0_diffuse = { 0.2f, 0.2f, 0.2f, 1f };
+            float[] light0_diffuse = { 0.1f, 0.1f, 0.1f, 1f };
             float[] light0_position = { 100.0f, 100.0f, 0.0f, 1.0f };
             float[] light1_position = { -100.0f, 100.0f, 100.0f, 1.0f };
             float[] light0_specular = { 0.8f, 0.8f, 0.8f, 1.0f };
-            float[] light0_shininess = { 5.0f };
+            float[] light0_shininess = { 8.0f };
 
             GL.Material(MaterialFace.Front, MaterialParameter.Specular, light0_specular);
             GL.Material(MaterialFace.Front, MaterialParameter.Shininess, light0_shininess);
