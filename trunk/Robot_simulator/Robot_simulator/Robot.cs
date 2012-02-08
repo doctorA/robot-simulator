@@ -216,21 +216,22 @@ namespace Robot_simulator
             for (int l = 0; l < model.Layers.Count; l++)
             {
                 Layer layer = model.Layers[l];
+                Surface s = new Surface();
                 for (int i = 0; i < layer.Polygons.Count; i++)
                 {
                     Polygon poly = layer.Polygons[i];
                     GL.Begin(BeginMode.Polygon);
-                    Surface s=new Surface();
-                    try
-                    {
+                    
+                    //try
+                    //{
                         s = poly.SurfaceReference;
-                    }
-                    catch (Exception e)
-                    {
-                        s.color.Red = 0.0f;
-                        s.color.Green = 0.0f;
-                        s.color.Blue = 0.8f;
-                    }
+                    //}
+                    //catch (Exception e)
+                    //{
+                    //    s.color.Red = 0.0f;
+                    //    s.color.Green = 0.0f;
+                    //    s.color.Blue = 0.8f;
+                    //}
                     GL.Color3(s.color.Red, s.color.Green, s.color.Blue);
                     for (int j = 0; j < poly.Vertices.Count; j++)
                     {
