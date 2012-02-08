@@ -190,6 +190,7 @@
     <Content Include="Content\ProgramZaRezkanje\Ikone\polkrog.png" />
     <Content Include="DokumentacijaAnimacija.txt" />
     <Content Include="Grammar\Antlr3.Runtime.dll" />
+    <Content Include="Grammar\gramatika.txt" />
     <Content Include="Lightwave\ClassLibrary.dll" />
   </ItemGroup>
   <ItemGroup>
