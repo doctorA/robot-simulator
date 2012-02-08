@@ -50,7 +50,7 @@ namespace Robot_simulator
                 robot_model[7] = LightwaveObject.LoadObject(dir + "TOOL1.lwo");
                 modelOK = true;
             }
-            catch (Exception e)
+            catch
             {
                 modelOK = false;  //če so napake to definiraj s to spremenljivko
             }
