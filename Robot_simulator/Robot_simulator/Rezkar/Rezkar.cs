@@ -370,6 +370,13 @@ namespace Robot_simulator
 
         private void odpriJBIToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            List<string> tocke = new List<string>();
+            List<string> premiki = new List<string>();
+            for (int i = 0; i < liki.Count; i++)
+            {
+                liki[i].toJBI(conf, tocke, premiki);
+            }
+
             String ime = "BLA";
             String program = "";
             program += ("/JOB") + Environment.NewLine;
