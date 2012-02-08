@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g 2012-02-08 16:36:33
+// $ANTLR 3.4 D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g 2012-02-08 18:34:20
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -29,7 +29,6 @@ using Antlr.Runtime.Misc;
 public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 {
 	public const int EOF=-1;
-	public const int T__32=32;
 	public const int T__33=33;
 	public const int T__34=34;
 	public const int T__35=35;
@@ -51,27 +50,28 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	public const int DOUT=8;
 	public const int FRAME=9;
 	public const int GROUP=10;
-	public const int INST=11;
-	public const int INT=12;
-	public const int JOB=13;
-	public const int MOVC=14;
-	public const int MOVJ=15;
-	public const int MOVL=16;
-	public const int MOVS=17;
-	public const int NAME=18;
-	public const int NEWLINE=19;
-	public const int NIZ=20;
-	public const int NPOS=21;
-	public const int POS=22;
-	public const int POSTYPE=23;
-	public const int RCONF=24;
-	public const int REAL=25;
-	public const int RECTAN=26;
-	public const int TIME=27;
-	public const int TIMER=28;
-	public const int TOOL=29;
-	public const int USER=30;
-	public const int WS=31;
+	public const int INDEKS=11;
+	public const int INST=12;
+	public const int INT=13;
+	public const int JOB=14;
+	public const int MOVC=15;
+	public const int MOVJ=16;
+	public const int MOVL=17;
+	public const int MOVS=18;
+	public const int NAME=19;
+	public const int NEWLINE=20;
+	public const int NIZ=21;
+	public const int NPOS=22;
+	public const int POS=23;
+	public const int POSTYPE=24;
+	public const int RCONF=25;
+	public const int REAL=26;
+	public const int RECTAN=27;
+	public const int TIME=28;
+	public const int TIMER=29;
+	public const int TOOL=30;
+	public const int USER=31;
+	public const int WS=32;
 
     // delegates
     // delegators
@@ -99,19 +99,19 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	partial void EnterRule(string ruleName, int ruleIndex);
 	partial void LeaveRule(string ruleName, int ruleIndex);
 
-	partial void EnterRule_T__32();
-	partial void LeaveRule_T__32();
+	partial void EnterRule_T__33();
+	partial void LeaveRule_T__33();
 
-	// $ANTLR start "T__32"
-	[GrammarRule("T__32")]
-	private void mT__32()
+	// $ANTLR start "T__33"
+	[GrammarRule("T__33")]
+	private void mT__33()
 	{
-		EnterRule_T__32();
-		EnterRule("T__32", 1);
-		TraceIn("T__32", 1);
+		EnterRule_T__33();
+		EnterRule("T__33", 1);
+		TraceIn("T__33", 1);
 		try
 		{
-			int _type = T__32;
+			int _type = T__33;
 			int _channel = DefaultTokenChannel;
 			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:7:7: ( ',' )
 			DebugEnterAlt(1);
@@ -127,26 +127,26 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__32", 1);
-			LeaveRule("T__32", 1);
-			LeaveRule_T__32();
+			TraceOut("T__33", 1);
+			LeaveRule("T__33", 1);
+			LeaveRule_T__33();
 		}
 	}
-	// $ANTLR end "T__32"
+	// $ANTLR end "T__33"
 
-	partial void EnterRule_T__33();
-	partial void LeaveRule_T__33();
+	partial void EnterRule_T__34();
+	partial void LeaveRule_T__34();
 
-	// $ANTLR start "T__33"
-	[GrammarRule("T__33")]
-	private void mT__33()
+	// $ANTLR start "T__34"
+	[GrammarRule("T__34")]
+	private void mT__34()
 	{
-		EnterRule_T__33();
-		EnterRule("T__33", 2);
-		TraceIn("T__33", 2);
+		EnterRule_T__34();
+		EnterRule("T__34", 2);
+		TraceIn("T__34", 2);
 		try
 		{
-			int _type = T__33;
+			int _type = T__34;
 			int _channel = DefaultTokenChannel;
 			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:8:7: ( '-' )
 			DebugEnterAlt(1);
@@ -162,26 +162,26 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__33", 2);
-			LeaveRule("T__33", 2);
-			LeaveRule_T__33();
+			TraceOut("T__34", 2);
+			LeaveRule("T__34", 2);
+			LeaveRule_T__34();
 		}
 	}
-	// $ANTLR end "T__33"
+	// $ANTLR end "T__34"
 
-	partial void EnterRule_T__34();
-	partial void LeaveRule_T__34();
+	partial void EnterRule_T__35();
+	partial void LeaveRule_T__35();
 
-	// $ANTLR start "T__34"
-	[GrammarRule("T__34")]
-	private void mT__34()
+	// $ANTLR start "T__35"
+	[GrammarRule("T__35")]
+	private void mT__35()
 	{
-		EnterRule_T__34();
-		EnterRule("T__34", 3);
-		TraceIn("T__34", 3);
+		EnterRule_T__35();
+		EnterRule("T__35", 3);
+		TraceIn("T__35", 3);
 		try
 		{
-			int _type = T__34;
+			int _type = T__35;
 			int _channel = DefaultTokenChannel;
 			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:9:7: ( '/' )
 			DebugEnterAlt(1);
@@ -197,26 +197,26 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__34", 3);
-			LeaveRule("T__34", 3);
-			LeaveRule_T__34();
+			TraceOut("T__35", 3);
+			LeaveRule("T__35", 3);
+			LeaveRule_T__35();
 		}
 	}
-	// $ANTLR end "T__34"
+	// $ANTLR end "T__35"
 
-	partial void EnterRule_T__35();
-	partial void LeaveRule_T__35();
+	partial void EnterRule_T__36();
+	partial void LeaveRule_T__36();
 
-	// $ANTLR start "T__35"
-	[GrammarRule("T__35")]
-	private void mT__35()
+	// $ANTLR start "T__36"
+	[GrammarRule("T__36")]
+	private void mT__36()
 	{
-		EnterRule_T__35();
-		EnterRule("T__35", 4);
-		TraceIn("T__35", 4);
+		EnterRule_T__36();
+		EnterRule("T__36", 4);
+		TraceIn("T__36", 4);
 		try
 		{
-			int _type = T__35;
+			int _type = T__36;
 			int _channel = DefaultTokenChannel;
 			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:10:7: ( '0' )
 			DebugEnterAlt(1);
@@ -232,26 +232,26 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__35", 4);
-			LeaveRule("T__35", 4);
-			LeaveRule_T__35();
+			TraceOut("T__36", 4);
+			LeaveRule("T__36", 4);
+			LeaveRule_T__36();
 		}
 	}
-	// $ANTLR end "T__35"
+	// $ANTLR end "T__36"
 
-	partial void EnterRule_T__36();
-	partial void LeaveRule_T__36();
+	partial void EnterRule_T__37();
+	partial void LeaveRule_T__37();
 
-	// $ANTLR start "T__36"
-	[GrammarRule("T__36")]
-	private void mT__36()
+	// $ANTLR start "T__37"
+	[GrammarRule("T__37")]
+	private void mT__37()
 	{
-		EnterRule_T__36();
-		EnterRule("T__36", 5);
-		TraceIn("T__36", 5);
+		EnterRule_T__37();
+		EnterRule("T__37", 5);
+		TraceIn("T__37", 5);
 		try
 		{
-			int _type = T__36;
+			int _type = T__37;
 			int _channel = DefaultTokenChannel;
 			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:11:7: ( '1' )
 			DebugEnterAlt(1);
@@ -267,26 +267,26 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__36", 5);
-			LeaveRule("T__36", 5);
-			LeaveRule_T__36();
+			TraceOut("T__37", 5);
+			LeaveRule("T__37", 5);
+			LeaveRule_T__37();
 		}
 	}
-	// $ANTLR end "T__36"
+	// $ANTLR end "T__37"
 
-	partial void EnterRule_T__37();
-	partial void LeaveRule_T__37();
+	partial void EnterRule_T__38();
+	partial void LeaveRule_T__38();
 
-	// $ANTLR start "T__37"
-	[GrammarRule("T__37")]
-	private void mT__37()
+	// $ANTLR start "T__38"
+	[GrammarRule("T__38")]
+	private void mT__38()
 	{
-		EnterRule_T__37();
-		EnterRule("T__37", 6);
-		TraceIn("T__37", 6);
+		EnterRule_T__38();
+		EnterRule("T__38", 6);
+		TraceIn("T__38", 6);
 		try
 		{
-			int _type = T__37;
+			int _type = T__38;
 			int _channel = DefaultTokenChannel;
 			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:12:7: ( '=' )
 			DebugEnterAlt(1);
@@ -302,26 +302,26 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__37", 6);
-			LeaveRule("T__37", 6);
-			LeaveRule_T__37();
+			TraceOut("T__38", 6);
+			LeaveRule("T__38", 6);
+			LeaveRule_T__38();
 		}
 	}
-	// $ANTLR end "T__37"
+	// $ANTLR end "T__38"
 
-	partial void EnterRule_T__38();
-	partial void LeaveRule_T__38();
+	partial void EnterRule_T__39();
+	partial void LeaveRule_T__39();
 
-	// $ANTLR start "T__38"
-	[GrammarRule("T__38")]
-	private void mT__38()
+	// $ANTLR start "T__39"
+	[GrammarRule("T__39")]
+	private void mT__39()
 	{
-		EnterRule_T__38();
-		EnterRule("T__38", 7);
-		TraceIn("T__38", 7);
+		EnterRule_T__39();
+		EnterRule("T__39", 7);
+		TraceIn("T__39", 7);
 		try
 		{
-			int _type = T__38;
+			int _type = T__39;
 			int _channel = DefaultTokenChannel;
 			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:13:7: ( 'A' )
 			DebugEnterAlt(1);
@@ -337,43 +337,8 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__38", 7);
-			LeaveRule("T__38", 7);
-			LeaveRule_T__38();
-		}
-	}
-	// $ANTLR end "T__38"
-
-	partial void EnterRule_T__39();
-	partial void LeaveRule_T__39();
-
-	// $ANTLR start "T__39"
-	[GrammarRule("T__39")]
-	private void mT__39()
-	{
-		EnterRule_T__39();
-		EnterRule("T__39", 8);
-		TraceIn("T__39", 8);
-		try
-		{
-			int _type = T__39;
-			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:14:7: ( 'C' )
-			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:14:9: 'C'
-			{
-			DebugLocation(14, 9);
-			Match('C'); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally
-		{
-			TraceOut("T__39", 8);
-			LeaveRule("T__39", 8);
+			TraceOut("T__39", 7);
+			LeaveRule("T__39", 7);
 			LeaveRule_T__39();
 		}
 	}
@@ -387,17 +352,17 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	private void mT__40()
 	{
 		EnterRule_T__40();
-		EnterRule("T__40", 9);
-		TraceIn("T__40", 9);
+		EnterRule("T__40", 8);
+		TraceIn("T__40", 8);
 		try
 		{
 			int _type = T__40;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:15:7: ( 'END' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:14:7: ( 'END' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:15:9: 'END'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:14:9: 'END'
 			{
-			DebugLocation(15, 9);
+			DebugLocation(14, 9);
 			Match("END"); 
 
 
@@ -408,8 +373,8 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__40", 9);
-			LeaveRule("T__40", 9);
+			TraceOut("T__40", 8);
+			LeaveRule("T__40", 8);
 			LeaveRule_T__40();
 		}
 	}
@@ -423,17 +388,17 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	private void mT__41()
 	{
 		EnterRule_T__41();
-		EnterRule("T__41", 10);
-		TraceIn("T__41", 10);
+		EnterRule("T__41", 9);
+		TraceIn("T__41", 9);
 		try
 		{
 			int _type = T__41;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:16:7: ( 'NOP' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:15:7: ( 'NOP' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:16:9: 'NOP'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:15:9: 'NOP'
 			{
-			DebugLocation(16, 9);
+			DebugLocation(15, 9);
 			Match("NOP"); 
 
 
@@ -444,8 +409,8 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__41", 10);
-			LeaveRule("T__41", 10);
+			TraceOut("T__41", 9);
+			LeaveRule("T__41", 9);
 			LeaveRule_T__41();
 		}
 	}
@@ -459,17 +424,17 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	private void mT__42()
 	{
 		EnterRule_T__42();
-		EnterRule("T__42", 11);
-		TraceIn("T__42", 11);
+		EnterRule("T__42", 10);
+		TraceIn("T__42", 10);
 		try
 		{
 			int _type = T__42;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:17:7: ( 'PULSE' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:16:7: ( 'PULSE' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:17:9: 'PULSE'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:16:9: 'PULSE'
 			{
-			DebugLocation(17, 9);
+			DebugLocation(16, 9);
 			Match("PULSE"); 
 
 
@@ -480,8 +445,8 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__42", 11);
-			LeaveRule("T__42", 11);
+			TraceOut("T__42", 10);
+			LeaveRule("T__42", 10);
 			LeaveRule_T__42();
 		}
 	}
@@ -495,17 +460,17 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	private void mT__43()
 	{
 		EnterRule_T__43();
-		EnterRule("T__43", 12);
-		TraceIn("T__43", 12);
+		EnterRule("T__43", 11);
+		TraceIn("T__43", 11);
 		try
 		{
 			int _type = T__43;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:18:7: ( 'USER' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:17:7: ( 'USER' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:18:9: 'USER'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:17:9: 'USER'
 			{
-			DebugLocation(18, 9);
+			DebugLocation(17, 9);
 			Match("USER"); 
 
 
@@ -516,8 +481,8 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__43", 12);
-			LeaveRule("T__43", 12);
+			TraceOut("T__43", 11);
+			LeaveRule("T__43", 11);
 			LeaveRule_T__43();
 		}
 	}
@@ -531,17 +496,17 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	private void mT__44()
 	{
 		EnterRule_T__44();
-		EnterRule("T__44", 13);
-		TraceIn("T__44", 13);
+		EnterRule("T__44", 12);
+		TraceIn("T__44", 12);
 		try
 		{
 			int _type = T__44;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:19:7: ( 'V' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:18:7: ( 'V' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:19:9: 'V'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:18:9: 'V'
 			{
-			DebugLocation(19, 9);
+			DebugLocation(18, 9);
 			Match('V'); 
 
 			}
@@ -551,8 +516,8 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__44", 13);
-			LeaveRule("T__44", 13);
+			TraceOut("T__44", 12);
+			LeaveRule("T__44", 12);
 			LeaveRule_T__44();
 		}
 	}
@@ -566,17 +531,17 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	private void mT__45()
 	{
 		EnterRule_T__45();
-		EnterRule("T__45", 14);
-		TraceIn("T__45", 14);
+		EnterRule("T__45", 13);
+		TraceIn("T__45", 13);
 		try
 		{
 			int _type = T__45;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:20:7: ( 'VJ' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:19:7: ( 'VJ' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:20:9: 'VJ'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:19:9: 'VJ'
 			{
-			DebugLocation(20, 9);
+			DebugLocation(19, 9);
 			Match("VJ"); 
 
 
@@ -587,8 +552,8 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__45", 14);
-			LeaveRule("T__45", 14);
+			TraceOut("T__45", 13);
+			LeaveRule("T__45", 13);
 			LeaveRule_T__45();
 		}
 	}
@@ -602,17 +567,17 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	private void mT__46()
 	{
 		EnterRule_T__46();
-		EnterRule("T__46", 15);
-		TraceIn("T__46", 15);
+		EnterRule("T__46", 14);
+		TraceIn("T__46", 14);
 		try
 		{
 			int _type = T__46;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:21:7: ( 'Z' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:20:7: ( 'Z' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:21:9: 'Z'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:20:9: 'Z'
 			{
-			DebugLocation(21, 9);
+			DebugLocation(20, 9);
 			Match('Z'); 
 
 			}
@@ -622,8 +587,8 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("T__46", 15);
-			LeaveRule("T__46", 15);
+			TraceOut("T__46", 14);
+			LeaveRule("T__46", 14);
 			LeaveRule_T__46();
 		}
 	}
@@ -637,17 +602,17 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	private void mJOB()
 	{
 		EnterRule_JOB();
-		EnterRule("JOB", 16);
-		TraceIn("JOB", 16);
+		EnterRule("JOB", 15);
+		TraceIn("JOB", 15);
 		try
 		{
 			int _type = JOB;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:42:5: ( '/JOB' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:36:5: ( '/JOB' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:42:7: '/JOB'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:36:7: '/JOB'
 			{
-			DebugLocation(42, 7);
+			DebugLocation(36, 7);
 			Match("/JOB"); 
 
 
@@ -658,8 +623,8 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("JOB", 16);
-			LeaveRule("JOB", 16);
+			TraceOut("JOB", 15);
+			LeaveRule("JOB", 15);
 			LeaveRule_JOB();
 		}
 	}
@@ -673,17 +638,17 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	private void mNAME()
 	{
 		EnterRule_NAME();
-		EnterRule("NAME", 17);
-		TraceIn("NAME", 17);
+		EnterRule("NAME", 16);
+		TraceIn("NAME", 16);
 		try
 		{
 			int _type = NAME;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:43:6: ( '//NAME' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:37:6: ( '//NAME' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:43:8: '//NAME'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:37:8: '//NAME'
 			{
-			DebugLocation(43, 8);
+			DebugLocation(37, 8);
 			Match("//NAME"); 
 
 
@@ -694,8 +659,8 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("NAME", 17);
-			LeaveRule("NAME", 17);
+			TraceOut("NAME", 16);
+			LeaveRule("NAME", 16);
 			LeaveRule_NAME();
 		}
 	}
@@ -709,17 +674,17 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	private void mPOS()
 	{
 		EnterRule_POS();
-		EnterRule("POS", 18);
-		TraceIn("POS", 18);
+		EnterRule("POS", 17);
+		TraceIn("POS", 17);
 		try
 		{
 			int _type = POS;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:44:5: ( '//POS' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:38:5: ( '//POS' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:44:7: '//POS'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:38:7: '//POS'
 			{
-			DebugLocation(44, 7);
+			DebugLocation(38, 7);
 			Match("//POS"); 
 
 
@@ -730,8 +695,8 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("POS", 18);
-			LeaveRule("POS", 18);
+			TraceOut("POS", 17);
+			LeaveRule("POS", 17);
 			LeaveRule_POS();
 		}
 	}
@@ -745,17 +710,17 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	private void mNPOS()
 	{
 		EnterRule_NPOS();
-		EnterRule("NPOS", 19);
-		TraceIn("NPOS", 19);
+		EnterRule("NPOS", 18);
+		TraceIn("NPOS", 18);
 		try
 		{
 			int _type = NPOS;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:45:6: ( '///NPOS' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:39:6: ( '///NPOS' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:45:8: '///NPOS'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:39:8: '///NPOS'
 			{
-			DebugLocation(45, 8);
+			DebugLocation(39, 8);
 			Match("///NPOS"); 
 
 
@@ -766,8 +731,8 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("NPOS", 19);
-			LeaveRule("NPOS", 19);
+			TraceOut("NPOS", 18);
+			LeaveRule("NPOS", 18);
 			LeaveRule_NPOS();
 		}
 	}
@@ -781,17 +746,17 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	private void mUSER()
 	{
 		EnterRule_USER();
-		EnterRule("USER", 20);
-		TraceIn("USER", 20);
+		EnterRule("USER", 19);
+		TraceIn("USER", 19);
 		try
 		{
 			int _type = USER;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:46:6: ( '///USER' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:6: ( '///USER' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:46:8: '///USER'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:40:8: '///USER'
 			{
-			DebugLocation(46, 8);
+			DebugLocation(40, 8);
 			Match("///USER"); 
 
 
@@ -802,8 +767,8 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("USER", 20);
-			LeaveRule("USER", 20);
+			TraceOut("USER", 19);
+			LeaveRule("USER", 19);
 			LeaveRule_USER();
 		}
 	}
@@ -817,17 +782,17 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	private void mTOOL()
 	{
 		EnterRule_TOOL();
-		EnterRule("TOOL", 21);
-		TraceIn("TOOL", 21);
+		EnterRule("TOOL", 20);
+		TraceIn("TOOL", 20);
 		try
 		{
 			int _type = TOOL;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:47:6: ( '///TOOL' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:41:6: ( '///TOOL' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:47:8: '///TOOL'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:41:8: '///TOOL'
 			{
-			DebugLocation(47, 8);
+			DebugLocation(41, 8);
 			Match("///TOOL"); 
 
 
@@ -838,8 +803,8 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("TOOL", 21);
-			LeaveRule("TOOL", 21);
+			TraceOut("TOOL", 20);
+			LeaveRule("TOOL", 20);
 			LeaveRule_TOOL();
 		}
 	}
@@ -853,17 +818,17 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	private void mPOSTYPE()
 	{
 		EnterRule_POSTYPE();
-		EnterRule("POSTYPE", 22);
-		TraceIn("POSTYPE", 22);
+		EnterRule("POSTYPE", 21);
+		TraceIn("POSTYPE", 21);
 		try
 		{
 			int _type = POSTYPE;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:48:9: ( '///POSTYPE' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:42:9: ( '///POSTYPE' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:48:11: '///POSTYPE'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:42:11: '///POSTYPE'
 			{
-			DebugLocation(48, 11);
+			DebugLocation(42, 11);
 			Match("///POSTYPE"); 
 
 
@@ -874,8 +839,8 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("POSTYPE", 22);
-			LeaveRule("POSTYPE", 22);
+			TraceOut("POSTYPE", 21);
+			LeaveRule("POSTYPE", 21);
 			LeaveRule_POSTYPE();
 		}
 	}
@@ -889,17 +854,17 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	private void mRECTAN()
 	{
 		EnterRule_RECTAN();
-		EnterRule("RECTAN", 23);
-		TraceIn("RECTAN", 23);
+		EnterRule("RECTAN", 22);
+		TraceIn("RECTAN", 22);
 		try
 		{
 			int _type = RECTAN;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:49:8: ( '///RECTAN' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:43:8: ( '///RECTAN' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:49:10: '///RECTAN'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:43:10: '///RECTAN'
 			{
-			DebugLocation(49, 10);
+			DebugLocation(43, 10);
 			Match("///RECTAN"); 
 
 
@@ -910,8 +875,8 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("RECTAN", 23);
-			LeaveRule("RECTAN", 23);
+			TraceOut("RECTAN", 22);
+			LeaveRule("RECTAN", 22);
 			LeaveRule_RECTAN();
 		}
 	}
@@ -925,17 +890,17 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	private void mRCONF()
 	{
 		EnterRule_RCONF();
-		EnterRule("RCONF", 24);
-		TraceIn("RCONF", 24);
+		EnterRule("RCONF", 23);
+		TraceIn("RCONF", 23);
 		try
 		{
 			int _type = RCONF;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:50:7: ( '///RCONF' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:44:7: ( '///RCONF' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:50:9: '///RCONF'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:44:9: '///RCONF'
 			{
-			DebugLocation(50, 9);
+			DebugLocation(44, 9);
 			Match("///RCONF"); 
 
 
@@ -946,12 +911,91 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		}
 		finally
 		{
-			TraceOut("RCONF", 24);
-			LeaveRule("RCONF", 24);
+			TraceOut("RCONF", 23);
+			LeaveRule("RCONF", 23);
 			LeaveRule_RCONF();
 		}
 	}
 	// $ANTLR end "RCONF"
+
+	partial void EnterRule_INDEKS();
+	partial void LeaveRule_INDEKS();
+
+	// $ANTLR start "INDEKS"
+	[GrammarRule("INDEKS")]
+	private void mINDEKS()
+	{
+		EnterRule_INDEKS();
+		EnterRule("INDEKS", 24);
+		TraceIn("INDEKS", 24);
+		try
+		{
+			int _type = INDEKS;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:45:8: ( 'C' ( INT )+ )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:45:10: 'C' ( INT )+
+			{
+			DebugLocation(45, 10);
+			Match('C'); 
+			DebugLocation(45, 14);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:45:14: ( INT )+
+			int cnt1=0;
+			try { DebugEnterSubRule(1);
+			while (true)
+			{
+				int alt1=2;
+				try { DebugEnterDecision(1, false);
+				int LA1_0 = input.LA(1);
+
+				if (((LA1_0>='0' && LA1_0<='9')))
+				{
+					alt1 = 1;
+				}
+
+
+				} finally { DebugExitDecision(1); }
+				switch (alt1)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:45:14: INT
+					{
+					DebugLocation(45, 14);
+					mINT(); 
+
+					}
+					break;
+
+				default:
+					if (cnt1 >= 1)
+						goto loop1;
+
+					EarlyExitException eee1 = new EarlyExitException( 1, input );
+					DebugRecognitionException(eee1);
+					throw eee1;
+				}
+				cnt1++;
+			}
+			loop1:
+				;
+
+			} finally { DebugExitSubRule(1); }
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("INDEKS", 24);
+			LeaveRule("INDEKS", 24);
+			LeaveRule_INDEKS();
+		}
+	}
+	// $ANTLR end "INDEKS"
 
 	partial void EnterRule_INST();
 	partial void LeaveRule_INST();
@@ -967,11 +1011,11 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = INST;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:51:6: ( '//INST' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:46:6: ( '//INST' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:51:8: '//INST'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:46:8: '//INST'
 			{
-			DebugLocation(51, 8);
+			DebugLocation(46, 8);
 			Match("//INST"); 
 
 
@@ -1003,11 +1047,11 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = DATE;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:52:6: ( '///DATE' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:47:6: ( '///DATE' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:52:8: '///DATE'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:47:8: '///DATE'
 			{
-			DebugLocation(52, 8);
+			DebugLocation(47, 8);
 			Match("///DATE"); 
 
 
@@ -1039,58 +1083,12 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = TIME;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:6: ( ( INT )+ ':' ( INT )+ )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:48:6: ( ( INT )+ ':' ( INT )+ )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:8: ( INT )+ ':' ( INT )+
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:48:8: ( INT )+ ':' ( INT )+
 			{
-			DebugLocation(53, 8);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:8: ( INT )+
-			int cnt1=0;
-			try { DebugEnterSubRule(1);
-			while (true)
-			{
-				int alt1=2;
-				try { DebugEnterDecision(1, false);
-				int LA1_0 = input.LA(1);
-
-				if (((LA1_0>='0' && LA1_0<='9')))
-				{
-					alt1 = 1;
-				}
-
-
-				} finally { DebugExitDecision(1); }
-				switch (alt1)
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:8: INT
-					{
-					DebugLocation(53, 8);
-					mINT(); 
-
-					}
-					break;
-
-				default:
-					if (cnt1 >= 1)
-						goto loop1;
-
-					EarlyExitException eee1 = new EarlyExitException( 1, input );
-					DebugRecognitionException(eee1);
-					throw eee1;
-				}
-				cnt1++;
-			}
-			loop1:
-				;
-
-			} finally { DebugExitSubRule(1); }
-
-			DebugLocation(53, 13);
-			Match(':'); 
-			DebugLocation(53, 17);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:17: ( INT )+
+			DebugLocation(48, 8);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:48:8: ( INT )+
 			int cnt2=0;
 			try { DebugEnterSubRule(2);
 			while (true)
@@ -1110,9 +1108,9 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:17: INT
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:48:8: INT
 					{
-					DebugLocation(53, 17);
+					DebugLocation(48, 8);
 					mINT(); 
 
 					}
@@ -1132,6 +1130,52 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 				;
 
 			} finally { DebugExitSubRule(2); }
+
+			DebugLocation(48, 13);
+			Match(':'); 
+			DebugLocation(48, 17);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:48:17: ( INT )+
+			int cnt3=0;
+			try { DebugEnterSubRule(3);
+			while (true)
+			{
+				int alt3=2;
+				try { DebugEnterDecision(3, false);
+				int LA3_0 = input.LA(1);
+
+				if (((LA3_0>='0' && LA3_0<='9')))
+				{
+					alt3 = 1;
+				}
+
+
+				} finally { DebugExitDecision(3); }
+				switch (alt3)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:48:17: INT
+					{
+					DebugLocation(48, 17);
+					mINT(); 
+
+					}
+					break;
+
+				default:
+					if (cnt3 >= 1)
+						goto loop3;
+
+					EarlyExitException eee3 = new EarlyExitException( 3, input );
+					DebugRecognitionException(eee3);
+					throw eee3;
+				}
+				cnt3++;
+			}
+			loop3:
+				;
+
+			} finally { DebugExitSubRule(3); }
 
 
 			}
@@ -1162,11 +1206,11 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = COMM;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:54:6: ( '///COMM' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:49:6: ( '///COMM' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:54:8: '///COMM'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:49:8: '///COMM'
 			{
-			DebugLocation(54, 8);
+			DebugLocation(49, 8);
 			Match("///COMM"); 
 
 
@@ -1198,11 +1242,11 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = ATTR;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:55:6: ( '///ATTR' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:50:6: ( '///ATTR' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:55:8: '///ATTR'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:50:8: '///ATTR'
 			{
-			DebugLocation(55, 8);
+			DebugLocation(50, 8);
 			Match("///ATTR"); 
 
 
@@ -1234,11 +1278,11 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = FRAME;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:56:7: ( '////FRAME' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:51:7: ( '////FRAME' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:56:9: '////FRAME'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:51:9: '////FRAME'
 			{
-			DebugLocation(56, 9);
+			DebugLocation(51, 9);
 			Match("////FRAME"); 
 
 
@@ -1270,11 +1314,11 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = GROUP;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:57:7: ( '///GROUP1' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:52:7: ( '///GROUP1' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:57:9: '///GROUP1'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:52:9: '///GROUP1'
 			{
-			DebugLocation(57, 9);
+			DebugLocation(52, 9);
 			Match("///GROUP1"); 
 
 
@@ -1306,79 +1350,88 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = DOUT;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:58:6: ( 'DOUT OT#' '(' INT ')' ' ' ( 'ON' | 'OFF' ) )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:6: ( 'DOUT OT#' '(' INT ')' ( ' ON' | ' OFF' ) )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:58:8: 'DOUT OT#' '(' INT ')' ' ' ( 'ON' | 'OFF' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:8: 'DOUT OT#' '(' INT ')' ( ' ON' | ' OFF' )
 			{
-			DebugLocation(58, 8);
+			DebugLocation(53, 8);
 			Match("DOUT OT#"); 
 
-			DebugLocation(58, 19);
+			DebugLocation(53, 19);
 			Match('('); 
-			DebugLocation(58, 23);
+			DebugLocation(53, 23);
 			mINT(); 
-			DebugLocation(58, 27);
+			DebugLocation(53, 27);
 			Match(')'); 
-			DebugLocation(58, 31);
-			Match(' '); 
-			DebugLocation(58, 35);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:58:35: ( 'ON' | 'OFF' )
-			int alt3=2;
-			try { DebugEnterSubRule(3);
-			try { DebugEnterDecision(3, false);
-			int LA3_0 = input.LA(1);
+			DebugLocation(53, 31);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:31: ( ' ON' | ' OFF' )
+			int alt4=2;
+			try { DebugEnterSubRule(4);
+			try { DebugEnterDecision(4, false);
+			int LA4_0 = input.LA(1);
 
-			if ((LA3_0=='O'))
+			if ((LA4_0==' '))
 			{
-				int LA3_1 = input.LA(2);
+				int LA4_1 = input.LA(2);
 
-				if ((LA3_1=='N'))
+				if ((LA4_1=='O'))
 				{
-					alt3 = 1;
-				}
-				else if ((LA3_1=='F'))
-				{
-					alt3 = 2;
+					int LA4_2 = input.LA(3);
+
+					if ((LA4_2=='N'))
+					{
+						alt4 = 1;
+					}
+					else if ((LA4_2=='F'))
+					{
+						alt4 = 2;
+					}
+					else
+					{
+						NoViableAltException nvae = new NoViableAltException("", 4, 2, input);
+						DebugRecognitionException(nvae);
+						throw nvae;
+					}
 				}
 				else
 				{
-					NoViableAltException nvae = new NoViableAltException("", 3, 1, input);
+					NoViableAltException nvae = new NoViableAltException("", 4, 1, input);
 					DebugRecognitionException(nvae);
 					throw nvae;
 				}
 			}
 			else
 			{
-				NoViableAltException nvae = new NoViableAltException("", 3, 0, input);
+				NoViableAltException nvae = new NoViableAltException("", 4, 0, input);
 				DebugRecognitionException(nvae);
 				throw nvae;
 			}
-			} finally { DebugExitDecision(3); }
-			switch (alt3)
+			} finally { DebugExitDecision(4); }
+			switch (alt4)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:58:36: 'ON'
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:32: ' ON'
 				{
-				DebugLocation(58, 36);
-				Match("ON"); 
+				DebugLocation(53, 32);
+				Match(" ON"); 
 
 
 				}
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:58:43: 'OFF'
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:40: ' OFF'
 				{
-				DebugLocation(58, 43);
-				Match("OFF"); 
+				DebugLocation(53, 40);
+				Match(" OFF"); 
 
 
 				}
 				break;
 
 			}
-			} finally { DebugExitSubRule(3); }
+			} finally { DebugExitSubRule(4); }
 
 
 			}
@@ -1409,18 +1462,18 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = DIN;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:59:5: ( 'DIN OT#' '(' INT ')' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:54:5: ( 'DIN OT#' '(' INT ')' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:59:7: 'DIN OT#' '(' INT ')'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:54:7: 'DIN OT#' '(' INT ')'
 			{
-			DebugLocation(59, 7);
+			DebugLocation(54, 7);
 			Match("DIN OT#"); 
 
-			DebugLocation(59, 17);
+			DebugLocation(54, 17);
 			Match('('); 
-			DebugLocation(59, 21);
+			DebugLocation(54, 21);
 			mINT(); 
-			DebugLocation(59, 25);
+			DebugLocation(54, 25);
 			Match(')'); 
 
 			}
@@ -1451,15 +1504,13 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = TIMER;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:60:7: ( 'TIMER T=' REAL )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:55:7: ( 'TIMER T' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:60:9: 'TIMER T=' REAL
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:55:9: 'TIMER T'
 			{
-			DebugLocation(60, 9);
-			Match("TIMER T="); 
+			DebugLocation(55, 9);
+			Match("TIMER T"); 
 
-			DebugLocation(60, 20);
-			mREAL(); 
 
 			}
 
@@ -1489,11 +1540,11 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = MOVJ;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:61:6: ( 'MOVJ' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:56:6: ( 'MOVJ' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:61:8: 'MOVJ'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:56:8: 'MOVJ'
 			{
-			DebugLocation(61, 8);
+			DebugLocation(56, 8);
 			Match("MOVJ"); 
 
 
@@ -1525,11 +1576,11 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = MOVL;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:62:6: ( 'MOVL' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:57:6: ( 'MOVL' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:62:8: 'MOVL'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:57:8: 'MOVL'
 			{
-			DebugLocation(62, 8);
+			DebugLocation(57, 8);
 			Match("MOVL"); 
 
 
@@ -1561,11 +1612,11 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = MOVC;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:63:6: ( 'MOVC' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:58:6: ( 'MOVC' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:63:8: 'MOVC'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:58:8: 'MOVC'
 			{
-			DebugLocation(63, 8);
+			DebugLocation(58, 8);
 			Match("MOVC"); 
 
 
@@ -1597,11 +1648,11 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = MOVS;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:64:6: ( 'MOVS' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:59:6: ( 'MOVS' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:64:8: 'MOVS'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:59:8: 'MOVS'
 			{
-			DebugLocation(64, 8);
+			DebugLocation(59, 8);
 			Match("MOVS"); 
 
 
@@ -1633,34 +1684,34 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = NIZ;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:66:5: ( ( 'A' .. 'Z' )+ )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:61:5: ( ( 'A' .. 'Z' )+ )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:66:7: ( 'A' .. 'Z' )+
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:61:7: ( 'A' .. 'Z' )+
 			{
-			DebugLocation(66, 7);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:66:7: ( 'A' .. 'Z' )+
-			int cnt4=0;
-			try { DebugEnterSubRule(4);
+			DebugLocation(61, 7);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:61:7: ( 'A' .. 'Z' )+
+			int cnt5=0;
+			try { DebugEnterSubRule(5);
 			while (true)
 			{
-				int alt4=2;
-				try { DebugEnterDecision(4, false);
-				int LA4_0 = input.LA(1);
+				int alt5=2;
+				try { DebugEnterDecision(5, false);
+				int LA5_0 = input.LA(1);
 
-				if (((LA4_0>='A' && LA4_0<='Z')))
+				if (((LA5_0>='A' && LA5_0<='Z')))
 				{
-					alt4 = 1;
+					alt5 = 1;
 				}
 
 
-				} finally { DebugExitDecision(4); }
-				switch (alt4)
+				} finally { DebugExitDecision(5); }
+				switch (alt5)
 				{
 				case 1:
 					DebugEnterAlt(1);
 					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:
 					{
-					DebugLocation(66, 7);
+					DebugLocation(61, 7);
 					input.Consume();
 
 
@@ -1668,19 +1719,19 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 					break;
 
 				default:
-					if (cnt4 >= 1)
-						goto loop4;
+					if (cnt5 >= 1)
+						goto loop5;
 
-					EarlyExitException eee4 = new EarlyExitException( 4, input );
-					DebugRecognitionException(eee4);
-					throw eee4;
+					EarlyExitException eee5 = new EarlyExitException( 5, input );
+					DebugRecognitionException(eee5);
+					throw eee5;
 				}
-				cnt4++;
+				cnt5++;
 			}
-			loop4:
+			loop5:
 				;
 
-			} finally { DebugExitSubRule(4); }
+			} finally { DebugExitSubRule(5); }
 
 
 			}
@@ -1711,58 +1762,12 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = REAL;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:67:6: ( ( INT )+ '.' ( INT )+ )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:62:6: ( ( INT )+ '.' ( INT )+ )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:67:8: ( INT )+ '.' ( INT )+
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:62:8: ( INT )+ '.' ( INT )+
 			{
-			DebugLocation(67, 8);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:67:8: ( INT )+
-			int cnt5=0;
-			try { DebugEnterSubRule(5);
-			while (true)
-			{
-				int alt5=2;
-				try { DebugEnterDecision(5, false);
-				int LA5_0 = input.LA(1);
-
-				if (((LA5_0>='0' && LA5_0<='9')))
-				{
-					alt5 = 1;
-				}
-
-
-				} finally { DebugExitDecision(5); }
-				switch (alt5)
-				{
-				case 1:
-					DebugEnterAlt(1);
-					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:67:8: INT
-					{
-					DebugLocation(67, 8);
-					mINT(); 
-
-					}
-					break;
-
-				default:
-					if (cnt5 >= 1)
-						goto loop5;
-
-					EarlyExitException eee5 = new EarlyExitException( 5, input );
-					DebugRecognitionException(eee5);
-					throw eee5;
-				}
-				cnt5++;
-			}
-			loop5:
-				;
-
-			} finally { DebugExitSubRule(5); }
-
-			DebugLocation(67, 13);
-			Match('.'); 
-			DebugLocation(67, 17);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:67:17: ( INT )+
+			DebugLocation(62, 8);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:62:8: ( INT )+
 			int cnt6=0;
 			try { DebugEnterSubRule(6);
 			while (true)
@@ -1782,9 +1787,9 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:67:17: INT
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:62:8: INT
 					{
-					DebugLocation(67, 17);
+					DebugLocation(62, 8);
 					mINT(); 
 
 					}
@@ -1804,6 +1809,52 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 				;
 
 			} finally { DebugExitSubRule(6); }
+
+			DebugLocation(62, 13);
+			Match('.'); 
+			DebugLocation(62, 17);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:62:17: ( INT )+
+			int cnt7=0;
+			try { DebugEnterSubRule(7);
+			while (true)
+			{
+				int alt7=2;
+				try { DebugEnterDecision(7, false);
+				int LA7_0 = input.LA(1);
+
+				if (((LA7_0>='0' && LA7_0<='9')))
+				{
+					alt7 = 1;
+				}
+
+
+				} finally { DebugExitDecision(7); }
+				switch (alt7)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:62:17: INT
+					{
+					DebugLocation(62, 17);
+					mINT(); 
+
+					}
+					break;
+
+				default:
+					if (cnt7 >= 1)
+						goto loop7;
+
+					EarlyExitException eee7 = new EarlyExitException( 7, input );
+					DebugRecognitionException(eee7);
+					throw eee7;
+				}
+				cnt7++;
+			}
+			loop7:
+				;
+
+			} finally { DebugExitSubRule(7); }
 
 
 			}
@@ -1834,34 +1885,34 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = INT;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:68:6: ( ( '0' .. '9' )+ )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:63:6: ( ( '0' .. '9' )+ )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:68:8: ( '0' .. '9' )+
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:63:8: ( '0' .. '9' )+
 			{
-			DebugLocation(68, 8);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:68:8: ( '0' .. '9' )+
-			int cnt7=0;
-			try { DebugEnterSubRule(7);
+			DebugLocation(63, 8);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:63:8: ( '0' .. '9' )+
+			int cnt8=0;
+			try { DebugEnterSubRule(8);
 			while (true)
 			{
-				int alt7=2;
-				try { DebugEnterDecision(7, false);
-				int LA7_0 = input.LA(1);
+				int alt8=2;
+				try { DebugEnterDecision(8, false);
+				int LA8_0 = input.LA(1);
 
-				if (((LA7_0>='0' && LA7_0<='9')))
+				if (((LA8_0>='0' && LA8_0<='9')))
 				{
-					alt7 = 1;
+					alt8 = 1;
 				}
 
 
-				} finally { DebugExitDecision(7); }
-				switch (alt7)
+				} finally { DebugExitDecision(8); }
+				switch (alt8)
 				{
 				case 1:
 					DebugEnterAlt(1);
 					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:
 					{
-					DebugLocation(68, 8);
+					DebugLocation(63, 8);
 					input.Consume();
 
 
@@ -1869,19 +1920,19 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 					break;
 
 				default:
-					if (cnt7 >= 1)
-						goto loop7;
+					if (cnt8 >= 1)
+						goto loop8;
 
-					EarlyExitException eee7 = new EarlyExitException( 7, input );
-					DebugRecognitionException(eee7);
-					throw eee7;
+					EarlyExitException eee8 = new EarlyExitException( 8, input );
+					DebugRecognitionException(eee8);
+					throw eee8;
 				}
-				cnt7++;
+				cnt8++;
 			}
-			loop7:
+			loop8:
 				;
 
-			} finally { DebugExitSubRule(7); }
+			} finally { DebugExitSubRule(8); }
 
 
 			}
@@ -1912,40 +1963,40 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = NEWLINE;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:69:9: ( ( '\\r' )? '\\n' )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:64:9: ( ( '\\r' )? '\\n' )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:69:11: ( '\\r' )? '\\n'
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:64:11: ( '\\r' )? '\\n'
 			{
-			DebugLocation(69, 11);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:69:11: ( '\\r' )?
-			int alt8=2;
-			try { DebugEnterSubRule(8);
-			try { DebugEnterDecision(8, false);
-			int LA8_0 = input.LA(1);
+			DebugLocation(64, 11);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:64:11: ( '\\r' )?
+			int alt9=2;
+			try { DebugEnterSubRule(9);
+			try { DebugEnterDecision(9, false);
+			int LA9_0 = input.LA(1);
 
-			if ((LA8_0=='\r'))
+			if ((LA9_0=='\r'))
 			{
-				alt8 = 1;
+				alt9 = 1;
 			}
-			} finally { DebugExitDecision(8); }
-			switch (alt8)
+			} finally { DebugExitDecision(9); }
+			switch (alt9)
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:69:11: '\\r'
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:64:11: '\\r'
 				{
-				DebugLocation(69, 11);
+				DebugLocation(64, 11);
 				Match('\r'); 
 
 				}
 				break;
 
 			}
-			} finally { DebugExitSubRule(8); }
+			} finally { DebugExitSubRule(9); }
 
-			DebugLocation(69, 17);
+			DebugLocation(64, 17);
 			Match('\n'); 
-			DebugLocation(69, 22);
+			DebugLocation(64, 22);
 			Skip();
 
 			}
@@ -1976,34 +2027,34 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 		{
 			int _type = WS;
 			int _channel = DefaultTokenChannel;
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:70:5: ( ( ' ' | '\\t' )+ )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:65:5: ( ( ' ' | '\\t' )+ )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:70:7: ( ' ' | '\\t' )+
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:65:7: ( ' ' | '\\t' )+
 			{
-			DebugLocation(70, 7);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:70:7: ( ' ' | '\\t' )+
-			int cnt9=0;
-			try { DebugEnterSubRule(9);
+			DebugLocation(65, 7);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:65:7: ( ' ' | '\\t' )+
+			int cnt10=0;
+			try { DebugEnterSubRule(10);
 			while (true)
 			{
-				int alt9=2;
-				try { DebugEnterDecision(9, false);
-				int LA9_0 = input.LA(1);
+				int alt10=2;
+				try { DebugEnterDecision(10, false);
+				int LA10_0 = input.LA(1);
 
-				if ((LA9_0=='\t'||LA9_0==' '))
+				if ((LA10_0=='\t'||LA10_0==' '))
 				{
-					alt9 = 1;
+					alt10 = 1;
 				}
 
 
-				} finally { DebugExitDecision(9); }
-				switch (alt9)
+				} finally { DebugExitDecision(10); }
+				switch (alt10)
 				{
 				case 1:
 					DebugEnterAlt(1);
 					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:
 					{
-					DebugLocation(70, 7);
+					DebugLocation(65, 7);
 					input.Consume();
 
 
@@ -2011,21 +2062,21 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 					break;
 
 				default:
-					if (cnt9 >= 1)
-						goto loop9;
+					if (cnt10 >= 1)
+						goto loop10;
 
-					EarlyExitException eee9 = new EarlyExitException( 9, input );
-					DebugRecognitionException(eee9);
-					throw eee9;
+					EarlyExitException eee10 = new EarlyExitException( 10, input );
+					DebugRecognitionException(eee10);
+					throw eee10;
 				}
-				cnt9++;
+				cnt10++;
 			}
-			loop9:
+			loop10:
 				;
 
-			} finally { DebugExitSubRule(9); }
+			} finally { DebugExitSubRule(10); }
 
-			DebugLocation(70, 19);
+			DebugLocation(65, 19);
 			Skip();
 
 			}
@@ -2044,404 +2095,404 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 
 	public override void mTokens()
 	{
-		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:8: ( T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | JOB | NAME | POS | NPOS | USER | TOOL | POSTYPE | RECTAN | RCONF | INST | DATE | TIME | COMM | ATTR | FRAME | GROUP | DOUT | DIN | TIMER | MOVJ | MOVL | MOVC | MOVS | NIZ | REAL | INT | NEWLINE | WS )
-		int alt10=43;
-		try { DebugEnterDecision(10, false);
+		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:8: ( T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | JOB | NAME | POS | NPOS | USER | TOOL | POSTYPE | RECTAN | RCONF | INDEKS | INST | DATE | TIME | COMM | ATTR | FRAME | GROUP | DOUT | DIN | TIMER | MOVJ | MOVL | MOVC | MOVS | NIZ | REAL | INT | NEWLINE | WS )
+		int alt11=43;
+		try { DebugEnterDecision(11, false);
 		try
 		{
-			alt10 = dfa10.Predict(input);
+			alt11 = dfa11.Predict(input);
 		}
 		catch (NoViableAltException nvae)
 		{
 			DebugRecognitionException(nvae);
 			throw;
 		}
-		} finally { DebugExitDecision(10); }
-		switch (alt10)
+		} finally { DebugExitDecision(11); }
+		switch (alt11)
 		{
 		case 1:
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:10: T__32
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:10: T__33
 			{
 			DebugLocation(1, 10);
-			mT__32(); 
+			mT__33(); 
 
 			}
 			break;
 		case 2:
 			DebugEnterAlt(2);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:16: T__33
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:16: T__34
 			{
 			DebugLocation(1, 16);
-			mT__33(); 
+			mT__34(); 
 
 			}
 			break;
 		case 3:
 			DebugEnterAlt(3);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:22: T__34
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:22: T__35
 			{
 			DebugLocation(1, 22);
-			mT__34(); 
+			mT__35(); 
 
 			}
 			break;
 		case 4:
 			DebugEnterAlt(4);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:28: T__35
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:28: T__36
 			{
 			DebugLocation(1, 28);
-			mT__35(); 
+			mT__36(); 
 
 			}
 			break;
 		case 5:
 			DebugEnterAlt(5);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:34: T__36
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:34: T__37
 			{
 			DebugLocation(1, 34);
-			mT__36(); 
+			mT__37(); 
 
 			}
 			break;
 		case 6:
 			DebugEnterAlt(6);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:40: T__37
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:40: T__38
 			{
 			DebugLocation(1, 40);
-			mT__37(); 
+			mT__38(); 
 
 			}
 			break;
 		case 7:
 			DebugEnterAlt(7);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:46: T__38
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:46: T__39
 			{
 			DebugLocation(1, 46);
-			mT__38(); 
+			mT__39(); 
 
 			}
 			break;
 		case 8:
 			DebugEnterAlt(8);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:52: T__39
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:52: T__40
 			{
 			DebugLocation(1, 52);
-			mT__39(); 
+			mT__40(); 
 
 			}
 			break;
 		case 9:
 			DebugEnterAlt(9);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:58: T__40
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:58: T__41
 			{
 			DebugLocation(1, 58);
-			mT__40(); 
+			mT__41(); 
 
 			}
 			break;
 		case 10:
 			DebugEnterAlt(10);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:64: T__41
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:64: T__42
 			{
 			DebugLocation(1, 64);
-			mT__41(); 
+			mT__42(); 
 
 			}
 			break;
 		case 11:
 			DebugEnterAlt(11);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:70: T__42
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:70: T__43
 			{
 			DebugLocation(1, 70);
-			mT__42(); 
+			mT__43(); 
 
 			}
 			break;
 		case 12:
 			DebugEnterAlt(12);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:76: T__43
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:76: T__44
 			{
 			DebugLocation(1, 76);
-			mT__43(); 
+			mT__44(); 
 
 			}
 			break;
 		case 13:
 			DebugEnterAlt(13);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:82: T__44
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:82: T__45
 			{
 			DebugLocation(1, 82);
-			mT__44(); 
+			mT__45(); 
 
 			}
 			break;
 		case 14:
 			DebugEnterAlt(14);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:88: T__45
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:88: T__46
 			{
 			DebugLocation(1, 88);
-			mT__45(); 
+			mT__46(); 
 
 			}
 			break;
 		case 15:
 			DebugEnterAlt(15);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:94: T__46
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:94: JOB
 			{
 			DebugLocation(1, 94);
-			mT__46(); 
+			mJOB(); 
 
 			}
 			break;
 		case 16:
 			DebugEnterAlt(16);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:100: JOB
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:98: NAME
 			{
-			DebugLocation(1, 100);
-			mJOB(); 
+			DebugLocation(1, 98);
+			mNAME(); 
 
 			}
 			break;
 		case 17:
 			DebugEnterAlt(17);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:104: NAME
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:103: POS
 			{
-			DebugLocation(1, 104);
-			mNAME(); 
+			DebugLocation(1, 103);
+			mPOS(); 
 
 			}
 			break;
 		case 18:
 			DebugEnterAlt(18);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:109: POS
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:107: NPOS
 			{
-			DebugLocation(1, 109);
-			mPOS(); 
+			DebugLocation(1, 107);
+			mNPOS(); 
 
 			}
 			break;
 		case 19:
 			DebugEnterAlt(19);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:113: NPOS
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:112: USER
 			{
-			DebugLocation(1, 113);
-			mNPOS(); 
+			DebugLocation(1, 112);
+			mUSER(); 
 
 			}
 			break;
 		case 20:
 			DebugEnterAlt(20);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:118: USER
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:117: TOOL
 			{
-			DebugLocation(1, 118);
-			mUSER(); 
+			DebugLocation(1, 117);
+			mTOOL(); 
 
 			}
 			break;
 		case 21:
 			DebugEnterAlt(21);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:123: TOOL
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:122: POSTYPE
 			{
-			DebugLocation(1, 123);
-			mTOOL(); 
+			DebugLocation(1, 122);
+			mPOSTYPE(); 
 
 			}
 			break;
 		case 22:
 			DebugEnterAlt(22);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:128: POSTYPE
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:130: RECTAN
 			{
-			DebugLocation(1, 128);
-			mPOSTYPE(); 
+			DebugLocation(1, 130);
+			mRECTAN(); 
 
 			}
 			break;
 		case 23:
 			DebugEnterAlt(23);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:136: RECTAN
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:137: RCONF
 			{
-			DebugLocation(1, 136);
-			mRECTAN(); 
+			DebugLocation(1, 137);
+			mRCONF(); 
 
 			}
 			break;
 		case 24:
 			DebugEnterAlt(24);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:143: RCONF
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:143: INDEKS
 			{
 			DebugLocation(1, 143);
-			mRCONF(); 
+			mINDEKS(); 
 
 			}
 			break;
 		case 25:
 			DebugEnterAlt(25);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:149: INST
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:150: INST
 			{
-			DebugLocation(1, 149);
+			DebugLocation(1, 150);
 			mINST(); 
 
 			}
 			break;
 		case 26:
 			DebugEnterAlt(26);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:154: DATE
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:155: DATE
 			{
-			DebugLocation(1, 154);
+			DebugLocation(1, 155);
 			mDATE(); 
 
 			}
 			break;
 		case 27:
 			DebugEnterAlt(27);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:159: TIME
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:160: TIME
 			{
-			DebugLocation(1, 159);
+			DebugLocation(1, 160);
 			mTIME(); 
 
 			}
 			break;
 		case 28:
 			DebugEnterAlt(28);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:164: COMM
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:165: COMM
 			{
-			DebugLocation(1, 164);
+			DebugLocation(1, 165);
 			mCOMM(); 
 
 			}
 			break;
 		case 29:
 			DebugEnterAlt(29);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:169: ATTR
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:170: ATTR
 			{
-			DebugLocation(1, 169);
+			DebugLocation(1, 170);
 			mATTR(); 
 
 			}
 			break;
 		case 30:
 			DebugEnterAlt(30);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:174: FRAME
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:175: FRAME
 			{
-			DebugLocation(1, 174);
+			DebugLocation(1, 175);
 			mFRAME(); 
 
 			}
 			break;
 		case 31:
 			DebugEnterAlt(31);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:180: GROUP
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:181: GROUP
 			{
-			DebugLocation(1, 180);
+			DebugLocation(1, 181);
 			mGROUP(); 
 
 			}
 			break;
 		case 32:
 			DebugEnterAlt(32);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:186: DOUT
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:187: DOUT
 			{
-			DebugLocation(1, 186);
+			DebugLocation(1, 187);
 			mDOUT(); 
 
 			}
 			break;
 		case 33:
 			DebugEnterAlt(33);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:191: DIN
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:192: DIN
 			{
-			DebugLocation(1, 191);
+			DebugLocation(1, 192);
 			mDIN(); 
 
 			}
 			break;
 		case 34:
 			DebugEnterAlt(34);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:195: TIMER
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:196: TIMER
 			{
-			DebugLocation(1, 195);
+			DebugLocation(1, 196);
 			mTIMER(); 
 
 			}
 			break;
 		case 35:
 			DebugEnterAlt(35);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:201: MOVJ
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:202: MOVJ
 			{
-			DebugLocation(1, 201);
+			DebugLocation(1, 202);
 			mMOVJ(); 
 
 			}
 			break;
 		case 36:
 			DebugEnterAlt(36);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:206: MOVL
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:207: MOVL
 			{
-			DebugLocation(1, 206);
+			DebugLocation(1, 207);
 			mMOVL(); 
 
 			}
 			break;
 		case 37:
 			DebugEnterAlt(37);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:211: MOVC
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:212: MOVC
 			{
-			DebugLocation(1, 211);
+			DebugLocation(1, 212);
 			mMOVC(); 
 
 			}
 			break;
 		case 38:
 			DebugEnterAlt(38);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:216: MOVS
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:217: MOVS
 			{
-			DebugLocation(1, 216);
+			DebugLocation(1, 217);
 			mMOVS(); 
 
 			}
 			break;
 		case 39:
 			DebugEnterAlt(39);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:221: NIZ
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:222: NIZ
 			{
-			DebugLocation(1, 221);
+			DebugLocation(1, 222);
 			mNIZ(); 
 
 			}
 			break;
 		case 40:
 			DebugEnterAlt(40);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:225: REAL
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:226: REAL
 			{
-			DebugLocation(1, 225);
+			DebugLocation(1, 226);
 			mREAL(); 
 
 			}
 			break;
 		case 41:
 			DebugEnterAlt(41);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:230: INT
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:231: INT
 			{
-			DebugLocation(1, 230);
+			DebugLocation(1, 231);
 			mINT(); 
 
 			}
 			break;
 		case 42:
 			DebugEnterAlt(42);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:234: NEWLINE
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:235: NEWLINE
 			{
-			DebugLocation(1, 234);
+			DebugLocation(1, 235);
 			mNEWLINE(); 
 
 			}
 			break;
 		case 43:
 			DebugEnterAlt(43);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:242: WS
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:243: WS
 			{
-			DebugLocation(1, 242);
+			DebugLocation(1, 243);
 			mWS(); 
 
 			}
@@ -2453,53 +2504,53 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 
 
 	#region DFA
-	DFA10 dfa10;
+	DFA11 dfa11;
 
 	protected override void InitDFAs()
 	{
 		base.InitDFAs();
-		dfa10 = new DFA10(this);
+		dfa11 = new DFA11(this);
 	}
 
-	private class DFA10 : DFA
+	private class DFA11 : DFA
 	{
-		private const string DFA10_eotS =
-			"\x3\xFFFF\x1\x18\x1\x19\x1\x1C\x1\xFFFF\x1\x1D\x1\x1E\x4\x13\x1\x24\x1"+
-			"\x25\x1\x26\x3\x13\xC\xFFFF\x4\x13\x1\x33\x3\xFFFF\x4\x13\x4\xFFFF\x1"+
+		private const string DFA11_eotS =
+			"\x3\xFFFF\x1\x18\x1\x19\x1\x1C\x1\xFFFF\x1\x1D\x4\x13\x1\x23\x1\x24\x1"+
+			"\x13\x1\x26\x3\x13\xB\xFFFF\x4\x13\x1\x33\x4\xFFFF\x4\x13\x4\xFFFF\x1"+
 			"\x42\x1\x43\x2\x13\x1\xFFFF\x4\x13\xC\xFFFF\x1\x13\x1\x50\x1\x13\x1\xFFFF"+
 			"\x1\x13\x1\x53\x1\x54\x1\x55\x1\x56\x2\xFFFF\x1\x57\x2\xFFFF\x1\x13\x6"+
 			"\xFFFF";
-		private const string DFA10_eofS =
+		private const string DFA11_eofS =
 			"\x59\xFFFF";
-		private const string DFA10_minS =
-			"\x1\x9\x2\xFFFF\x1\x2F\x2\x2E\x1\xFFFF\x2\x41\x1\x4E\x1\x4F\x1\x55\x1"+
-			"\x53\x2\x41\x1\x2E\x2\x49\x1\x4F\x4\xFFFF\x1\x2F\x7\xFFFF\x1\x44\x1\x50"+
-			"\x1\x4C\x1\x45\x1\x41\x3\xFFFF\x1\x55\x1\x4E\x1\x4D\x1\x56\x2\xFFFF\x1"+
-			"\x2F\x1\xFFFF\x2\x41\x1\x53\x1\x52\x1\xFFFF\x1\x54\x1\x20\x1\x45\x1\x43"+
-			"\x4\xFFFF\x1\x43\x7\xFFFF\x1\x45\x1\x41\x1\x20\x1\xFFFF\x1\x52\x4\x41"+
-			"\x2\xFFFF\x1\x41\x2\xFFFF\x1\x20\x6\xFFFF";
-		private const string DFA10_maxS =
-			"\x1\x5A\x2\xFFFF\x1\x4A\x2\x3A\x1\xFFFF\x2\x5A\x1\x4E\x1\x4F\x1\x55\x1"+
-			"\x53\x2\x5A\x1\x3A\x1\x4F\x1\x49\x1\x4F\x4\xFFFF\x1\x50\x7\xFFFF\x1\x44"+
-			"\x1\x50\x1\x4C\x1\x45\x1\x5A\x3\xFFFF\x1\x55\x1\x4E\x1\x4D\x1\x56\x2"+
-			"\xFFFF\x1\x55\x1\xFFFF\x2\x5A\x1\x53\x1\x52\x1\xFFFF\x1\x54\x1\x20\x1"+
-			"\x45\x1\x53\x4\xFFFF\x1\x45\x7\xFFFF\x1\x45\x1\x5A\x1\x20\x1\xFFFF\x1"+
-			"\x52\x4\x5A\x2\xFFFF\x1\x5A\x2\xFFFF\x1\x20\x6\xFFFF";
-		private const string DFA10_acceptS =
+		private const string DFA11_minS =
+			"\x1\x9\x2\xFFFF\x1\x2F\x2\x2E\x1\xFFFF\x1\x41\x1\x4E\x1\x4F\x1\x55\x1"+
+			"\x53\x2\x41\x1\x30\x1\x2E\x2\x49\x1\x4F\x4\xFFFF\x1\x2F\x6\xFFFF\x1\x44"+
+			"\x1\x50\x1\x4C\x1\x45\x1\x41\x4\xFFFF\x1\x55\x1\x4E\x1\x4D\x1\x56\x2"+
+			"\xFFFF\x1\x2F\x1\xFFFF\x2\x41\x1\x53\x1\x52\x1\xFFFF\x1\x54\x1\x20\x1"+
+			"\x45\x1\x43\x4\xFFFF\x1\x43\x7\xFFFF\x1\x45\x1\x41\x1\x20\x1\xFFFF\x1"+
+			"\x52\x4\x41\x2\xFFFF\x1\x41\x2\xFFFF\x1\x20\x6\xFFFF";
+		private const string DFA11_maxS =
+			"\x1\x5A\x2\xFFFF\x1\x4A\x2\x3A\x1\xFFFF\x1\x5A\x1\x4E\x1\x4F\x1\x55\x1"+
+			"\x53\x2\x5A\x1\x39\x1\x3A\x1\x4F\x1\x49\x1\x4F\x4\xFFFF\x1\x50\x6\xFFFF"+
+			"\x1\x44\x1\x50\x1\x4C\x1\x45\x1\x5A\x4\xFFFF\x1\x55\x1\x4E\x1\x4D\x1"+
+			"\x56\x2\xFFFF\x1\x55\x1\xFFFF\x2\x5A\x1\x53\x1\x52\x1\xFFFF\x1\x54\x1"+
+			"\x20\x1\x45\x1\x53\x4\xFFFF\x1\x45\x7\xFFFF\x1\x45\x1\x5A\x1\x20\x1\xFFFF"+
+			"\x1\x52\x4\x5A\x2\xFFFF\x1\x5A\x2\xFFFF\x1\x20\x6\xFFFF";
+		private const string DFA11_acceptS =
 			"\x1\xFFFF\x1\x1\x1\x2\x3\xFFFF\x1\x6\xC\xFFFF\x1\x27\x1\x2A\x1\x2B\x1"+
-			"\x10\x1\xFFFF\x1\x3\x1\x4\x1\x1B\x1\x28\x1\x5\x1\x7\x1\x8\x5\xFFFF\x1"+
-			"\xD\x1\xF\x1\x29\x4\xFFFF\x1\x11\x1\x12\x1\xFFFF\x1\x19\x4\xFFFF\x1\xE"+
-			"\x4\xFFFF\x1\x13\x1\x14\x1\x15\x1\x16\x1\xFFFF\x1\x1A\x1\x1C\x1\x1D\x1"+
-			"\x1E\x1\x1F\x1\x9\x1\xA\x3\xFFFF\x1\x21\x5\xFFFF\x1\x17\x1\x18\x1\xFFFF"+
-			"\x1\xC\x1\x20\x1\xFFFF\x1\x23\x1\x24\x1\x25\x1\x26\x1\xB\x1\x22";
-		private const string DFA10_specialS =
+			"\xF\x1\xFFFF\x1\x3\x1\x4\x1\x1B\x1\x28\x1\x5\x1\x7\x5\xFFFF\x1\xC\x1"+
+			"\xE\x1\x18\x1\x29\x4\xFFFF\x1\x10\x1\x11\x1\xFFFF\x1\x19\x4\xFFFF\x1"+
+			"\xD\x4\xFFFF\x1\x12\x1\x13\x1\x14\x1\x15\x1\xFFFF\x1\x1A\x1\x1C\x1\x1D"+
+			"\x1\x1E\x1\x1F\x1\x8\x1\x9\x3\xFFFF\x1\x21\x5\xFFFF\x1\x16\x1\x17\x1"+
+			"\xFFFF\x1\xB\x1\x20\x1\xFFFF\x1\x23\x1\x24\x1\x25\x1\x26\x1\xA\x1\x22";
+		private const string DFA11_specialS =
 			"\x59\xFFFF}>";
-		private static readonly string[] DFA10_transitionS =
+		private static readonly string[] DFA11_transitionS =
 			{
 				"\x1\x15\x1\x14\x2\xFFFF\x1\x14\x12\xFFFF\x1\x15\xB\xFFFF\x1\x1\x1\x2"+
 				"\x1\xFFFF\x1\x3\x1\x4\x1\x5\x8\xF\x3\xFFFF\x1\x6\x3\xFFFF\x1\x7\x1\x13"+
-				"\x1\x8\x1\x10\x1\x9\x7\x13\x1\x12\x1\xA\x1\x13\x1\xB\x3\x13\x1\x11\x1"+
-				"\xC\x1\xD\x3\x13\x1\xE",
+				"\x1\xE\x1\x10\x1\x8\x7\x13\x1\x12\x1\x9\x1\x13\x1\xA\x3\x13\x1\x11\x1"+
+				"\xB\x1\xC\x3\x13\x1\xD",
 				"",
 				"",
 				"\x1\x17\x1A\xFFFF\x1\x16",
@@ -2507,13 +2558,13 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 				"\x1\x1B\x1\xFFFF\xA\xF\x1\x1A",
 				"",
 				"\x1A\x13",
-				"\x1A\x13",
+				"\x1\x1E",
 				"\x1\x1F",
 				"\x1\x20",
 				"\x1\x21",
-				"\x1\x22",
-				"\x9\x13\x1\x23\x10\x13",
+				"\x9\x13\x1\x22\x10\x13",
 				"\x1A\x13",
+				"\xA\x25",
 				"\x1\x1B\x1\xFFFF\xA\xF\x1\x1A",
 				"\x1\x28\x5\xFFFF\x1\x27",
 				"\x1\x29",
@@ -2529,12 +2580,12 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 				"",
 				"",
 				"",
-				"",
 				"\x1\x2F",
 				"\x1\x30",
 				"\x1\x31",
 				"\x1\x32",
 				"\x1A\x13",
+				"",
 				"",
 				"",
 				"",
@@ -2591,38 +2642,38 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 				""
 			};
 
-		private static readonly short[] DFA10_eot = DFA.UnpackEncodedString(DFA10_eotS);
-		private static readonly short[] DFA10_eof = DFA.UnpackEncodedString(DFA10_eofS);
-		private static readonly char[] DFA10_min = DFA.UnpackEncodedStringToUnsignedChars(DFA10_minS);
-		private static readonly char[] DFA10_max = DFA.UnpackEncodedStringToUnsignedChars(DFA10_maxS);
-		private static readonly short[] DFA10_accept = DFA.UnpackEncodedString(DFA10_acceptS);
-		private static readonly short[] DFA10_special = DFA.UnpackEncodedString(DFA10_specialS);
-		private static readonly short[][] DFA10_transition;
+		private static readonly short[] DFA11_eot = DFA.UnpackEncodedString(DFA11_eotS);
+		private static readonly short[] DFA11_eof = DFA.UnpackEncodedString(DFA11_eofS);
+		private static readonly char[] DFA11_min = DFA.UnpackEncodedStringToUnsignedChars(DFA11_minS);
+		private static readonly char[] DFA11_max = DFA.UnpackEncodedStringToUnsignedChars(DFA11_maxS);
+		private static readonly short[] DFA11_accept = DFA.UnpackEncodedString(DFA11_acceptS);
+		private static readonly short[] DFA11_special = DFA.UnpackEncodedString(DFA11_specialS);
+		private static readonly short[][] DFA11_transition;
 
-		static DFA10()
+		static DFA11()
 		{
-			int numStates = DFA10_transitionS.Length;
-			DFA10_transition = new short[numStates][];
+			int numStates = DFA11_transitionS.Length;
+			DFA11_transition = new short[numStates][];
 			for ( int i=0; i < numStates; i++ )
 			{
-				DFA10_transition[i] = DFA.UnpackEncodedString(DFA10_transitionS[i]);
+				DFA11_transition[i] = DFA.UnpackEncodedString(DFA11_transitionS[i]);
 			}
 		}
 
-		public DFA10( BaseRecognizer recognizer )
+		public DFA11( BaseRecognizer recognizer )
 		{
 			this.recognizer = recognizer;
-			this.decisionNumber = 10;
-			this.eot = DFA10_eot;
-			this.eof = DFA10_eof;
-			this.min = DFA10_min;
-			this.max = DFA10_max;
-			this.accept = DFA10_accept;
-			this.special = DFA10_special;
-			this.transition = DFA10_transition;
+			this.decisionNumber = 11;
+			this.eot = DFA11_eot;
+			this.eof = DFA11_eof;
+			this.min = DFA11_min;
+			this.max = DFA11_max;
+			this.accept = DFA11_accept;
+			this.special = DFA11_special;
+			this.transition = DFA11_transition;
 		}
 
-		public override string Description { get { return "1:1: Tokens : ( T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | JOB | NAME | POS | NPOS | USER | TOOL | POSTYPE | RECTAN | RCONF | INST | DATE | TIME | COMM | ATTR | FRAME | GROUP | DOUT | DIN | TIMER | MOVJ | MOVL | MOVC | MOVS | NIZ | REAL | INT | NEWLINE | WS );"; } }
+		public override string Description { get { return "1:1: Tokens : ( T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | JOB | NAME | POS | NPOS | USER | TOOL | POSTYPE | RECTAN | RCONF | INDEKS | INST | DATE | TIME | COMM | ATTR | FRAME | GROUP | DOUT | DIN | TIMER | MOVJ | MOVL | MOVC | MOVS | NIZ | REAL | INT | NEWLINE | WS );"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{
