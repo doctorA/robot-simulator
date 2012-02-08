@@ -312,7 +312,7 @@ namespace Robot_simulator
                 program += ("///RCONF 0,0,0,0,0,0,0,0") + Environment.NewLine;
 
                 string startPos = conf.zacetna_tocka.X.ToString("0.00", CultureInfo.InvariantCulture) + ',' + conf.zacetna_tocka.Y.ToString("0.00", CultureInfo.InvariantCulture) + ',' + conf.zacetna_tocka.Z.ToString("0.00", CultureInfo.InvariantCulture);
-                program += "C" + i.ToString("00000") + "=0.000,0.000," + conf.visina_svedra_pred_rezkanjem.ToString("0.000", CultureInfo.InvariantCulture) + "," + startPos + Environment.NewLine;
+                program += "C=0.000,0.000," + conf.visina_svedra_pred_rezkanjem.ToString("0.000", CultureInfo.InvariantCulture) + "," + startPos + Environment.NewLine;
                 for (int i = 1; i < tocke.Count+1; i++)
                 {
                     program += "C" + i.ToString("00000") + "=" + tocke[i-1] + Environment.NewLine;
