@@ -25,6 +25,7 @@ namespace Robot_simulator
         public bool modelOK = false;
         public bool set_tool = true;
         public LightwaveObject[] robot_model;  //objekt za modele robota
+        public LightwaveObject[] okolica; //objekti za okolico robota
 
         public Robot(int rot1, int rot2, int rot3, int rot4, int rot5, int rot6)
         {
@@ -37,6 +38,7 @@ namespace Robot_simulator
             string dir = Environment.CurrentDirectory;
             dir = dir.Remove(dir.IndexOf("bin")) + "ModelsLWO\\";  //pot do modelov
             robot_model = new LightwaveObject[10];
+            okolica = new LightwaveObject[10];
             // od tu pa do konca catch zakomentiraj če ne dela model robota :)
             try
             {
@@ -48,6 +50,8 @@ namespace Robot_simulator
                 robot_model[5] = LightwaveObject.LoadObject(dir + "MH6_baxis.lwo");
                 robot_model[6] = LightwaveObject.LoadObject(dir + "MH6_taxis.lwo");
                 robot_model[7] = LightwaveObject.LoadObject(dir + "TOOL1.lwo");
+                // okolica
+                okolica[0] = LightwaveObject.LoadObject(dir + "Okolica\\Barrel_6.lwo");
                 modelOK = true;
             }
             catch
@@ -173,45 +177,50 @@ namespace Robot_simulator
                 GL.PushMatrix();
                 GL.Rotate(90, 1.0f, 0.0f, 0.0f);
 
-                risi_del_robota(robot_model[0]);  //podstavek
+                risi_model(robot_model[0]);  //podstavek
 
                 GL.Rotate(rotacija1 + 90, 0.0f, 1.0f, 0.0f);
-                risi_del_robota(robot_model[1]); // prvi motor
+                risi_model(robot_model[1]); // prvi motor
                
 
                 GL.Translate(3.75f, 8.30f, -1.60f); // prva roka
                 GL.Rotate(rotacija2, 0.0f, 0.0f, 1.0f);
-                risi_del_robota(robot_model[2]);
+                risi_model(robot_model[2]);
 
                 GL.Translate(0.0f, 15.35f, -0.4f);
                 GL.Rotate(rotacija3, 0.0f, 0.0f, 1.0f);
-                risi_del_robota(robot_model[3]);
+                risi_model(robot_model[3]);
 
                 GL.Translate(5.2f, 3.9f, 2.0f);
                 GL.Rotate(rotacija4, 1.0f, 0.0f, 0.0f);
                 GL.Rotate(-90.0f, 1.0f, 0.0f, 0.0f);
-                risi_del_robota(robot_model[4]);
+                risi_model(robot_model[4]);
 
                 GL.Translate(10.8f, 0.0f, 0.0f);
                 GL.Rotate(rotacija5, 0.0f, 0.0f, 1.0f);
-                risi_del_robota(robot_model[5]);
+                risi_model(robot_model[5]);
 
                 GL.Translate(2.2f, 0.0f, 0.0f);
                 GL.Rotate(rotacija6, 1.0f, 0.0f, 0.0f);
-                risi_del_robota(robot_model[6]);
+                risi_model(robot_model[6]);
 
                 if (set_tool)
                 {
                     GL.Translate(0.4f, 0.0f, 0.0f);
-                    risi_del_robota(robot_model[7]);
+                    risi_model(robot_model[7]);
                 }
 
                 GL.PopMatrix();
+                // okolica robota
+                GL.PushMatrix();
+                GL.Translate(10.0f, 10.0f, 0.0f);
+                risi_model(okolica[0]);
+
             }
         }
 
 
-        public void risi_del_robota(LightwaveObject model)
+        public void risi_model(LightwaveObject model)
         {
             for (int l = 0; l < model.Layers.Count; l++)
             {
@@ -221,17 +230,7 @@ namespace Robot_simulator
                 {
                     Polygon poly = layer.Polygons[i];
                     GL.Begin(BeginMode.Polygon);
-                    
-                    //try
-                    //{
-                        s = poly.SurfaceReference;
-                    //}
-                    //catch (Exception e)
-                    //{
-                    //    s.color.Red = 0.0f;
-                    //    s.color.Green = 0.0f;
-                    //    s.color.Blue = 0.8f;
-                    //}
+                    s = poly.SurfaceReference;
                     GL.Color3(s.color.Red, s.color.Green, s.color.Blue);
                     for (int j = 0; j < poly.Vertices.Count; j++)
                     {
