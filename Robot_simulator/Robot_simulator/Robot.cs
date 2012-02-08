@@ -126,41 +126,81 @@ namespace Robot_simulator
             Vector3 curr = getVrhOrodja();
             float distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
             float new_distance;
-                rotacija1+=0.1f;
-                curr = getVrhOrodja();
-                new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
-                if (new_distance > distance)
-                    rotacija1 -= 0.2f;
 
-                rotacija2 += 0.1f;
-                curr = getVrhOrodja();
-                new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
-                if (new_distance > distance)
-                    rotacija2 -= 0.2f;
 
-                rotacija3 += 0.1f;
-                curr = getVrhOrodja();
-                new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
-                if (new_distance > distance)
-                    rotacija3 -= 0.2f;
-
-                rotacija4 += 0.1f;
-                curr = getVrhOrodja();
-                new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
-                if (new_distance > distance)
-                    rotacija4 -= 0.2f;
-
-                rotacija5 += 0.1f;
-                curr = getVrhOrodja();
-                new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
-                if (new_distance > distance)
-                    rotacija5 -= 0.2f;
-
+            rotacija6 += 0.1f;
+            curr = getVrhOrodja();
+            new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+            if (new_distance > distance)
+                rotacija6 -= 0.2f;
+            curr = getVrhOrodja();
+            new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+            if (new_distance > distance)
                 rotacija6 += 0.1f;
-                curr = getVrhOrodja();
-                new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
-                if (new_distance > distance)
-                    rotacija6 -= 0.2f;
+
+            rotacija5 += 0.1f;
+            curr = getVrhOrodja();
+            new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+            if (new_distance > distance)
+                rotacija5 -= 0.2f;
+            curr = getVrhOrodja();
+            new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+            if (new_distance > distance)
+                rotacija5 += 0.1f;
+            distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+
+            rotacija4 += 0.1f;
+            curr = getVrhOrodja();
+            new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+            if (new_distance > distance)
+                rotacija4 -= 0.2f;
+            curr = getVrhOrodja();
+            new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+            if (new_distance > distance)
+                rotacija4 += 0.1f;
+            distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+
+            rotacija3 += 0.1f;
+            curr = getVrhOrodja();
+            new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+            if (new_distance > distance)
+                rotacija3 -= 0.2f;
+            curr = getVrhOrodja();
+            new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+            if (new_distance > distance)
+                rotacija3 += 0.1f;
+            distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+
+            rotacija2 += 0.1f;
+            curr = getVrhOrodja();
+            new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+            if (new_distance > distance)
+                rotacija2 -= 0.2f;
+            curr = getVrhOrodja();
+            new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+            if (new_distance > distance)
+                rotacija2 += 0.1f;
+            distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+
+
+            rotacija1+=0.1f;
+            curr = getVrhOrodja();
+            new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+            if (new_distance > distance)
+                rotacija1 -= 0.2f;
+            curr = getVrhOrodja();
+            new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+            if (new_distance > distance)
+                rotacija1 += 0.1f;
+            distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+
+  
+                
+
+                
+                
+
+                
 
 
         }
