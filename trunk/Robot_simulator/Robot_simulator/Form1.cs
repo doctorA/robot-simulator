@@ -39,7 +39,7 @@ namespace Robot_simulator
         #endregion
         //ej
 
-        #region lol2
+        #region FORMA
         public Form1()
         {
             InitializeComponent();
@@ -49,7 +49,7 @@ namespace Robot_simulator
         }
         #endregion
 
-        #region lol3
+        #region OPENGL
 
 
         private void glControl1_Load(object sender, EventArgs e)
@@ -111,7 +111,7 @@ namespace Robot_simulator
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             GL.MatrixMode(MatrixMode.Modelview);
             GL.LoadIdentity();
-            GL.Translate(0, 0, zoom);
+            GL.Translate(0, 0, zoom*2);
             GL.Translate(-trans_X / 20, trans_Y / 20 - 20, -50);
             GL.Rotate(-rtri, 0.0, 1.0, 0.0);
             GL.Rotate(rtri2, 1.0, 0.0, 0.0);
@@ -129,9 +129,9 @@ namespace Robot_simulator
             if (e.Delta != 0)
             {
                 if (e.Delta > 0)
-                    zoom += 1;
+                    zoom += 2;
                 else if (e.Delta < 0)
-                    zoom += (-1);
+                    zoom += (-2);
                 glControl1.Invalidate();
             }
         }
