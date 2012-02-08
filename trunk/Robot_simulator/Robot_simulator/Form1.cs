@@ -33,6 +33,8 @@ namespace Robot_simulator
         Robot robot = new Robot(0,60,-35,90,0,0);
         string robo_app_TU_NOT_MATA_VIDVA_ZA_SPARSAT_SMAJLI = "";
         Color ozadje = Color.Black;
+        int cout_utrip = 0;
+        System.Timers.Timer aTimer;
 
         #endregion
         //ej
@@ -283,32 +285,38 @@ namespace Robot_simulator
 
 
 
-        public void bla()
-        {
-             System.Timers.Timer aTimer = new System.Timers.Timer();
-             aTimer.Elapsed+=new ElapsedEventHandler(OnTimedEvent);
-             // Set the Interval to 5 seconds.
-             aTimer.Interval = 100;
-             aTimer.Enabled=true;
-             
- 
-            // Console.WriteLine("Press \'q\' to quit the sample.");
-            // while(Console.Read()!='q');
+       public void bla()
+       {
+            aTimer = new System.Timers.Timer();
+            aTimer.Elapsed+=new ElapsedEventHandler(OnTimedEvent);
+            aTimer.Interval = 100;
+            aTimer.Enabled=true;
+            cout_utrip = 0;
+
      }
  
-     // Specify what you want to happen when the Elapsed event is raised.
+
      private void OnTimedEvent(object source, ElapsedEventArgs e)
      {
-
-         if (Color.Black == ozadje)
+         if (cout_utrip < 10)
          {
-             ozadje = Color.White;
+
+             if (Color.Black == ozadje)
+             {
+                 ozadje = Color.White;
+             }
+             else
+             {
+                 ozadje = Color.Black;
+             }
+             cout_utrip++;
+             glControl1.Invalidate();
          }
          else
          {
-             ozadje = Color.Black;
+             aTimer.Stop();
          }
-         glControl1.Invalidate();
+         
      }
 
 
