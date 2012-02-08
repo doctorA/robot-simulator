@@ -40,7 +40,6 @@ namespace Robot_simulator
             vklop_orodja = true;
             vel_ploscice = new Vector2(40,60);
             datum = DateTime.Now.ToString("yyyy'/'MM'/'dd hh:mm");
-
         }
     }
 }
