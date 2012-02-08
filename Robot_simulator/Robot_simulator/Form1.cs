@@ -351,7 +351,7 @@ namespace Robot_simulator
                                 }
                                 CINDEKS.Add(key, value); i--;
 
-                                //izpis += "\t" + token.Text + "(" + value[0].ToString() + " " + value[1].ToString() + " " + value[2].ToString() + " " + value[3].ToString() + " " + value[4].ToString() + " " + value[5].ToString() + ")" + Environment.NewLine;
+                                izpis += "\t" + token.Text + " (" + value[0].ToString() + " " + value[1].ToString() + " " + value[2].ToString() + " " + value[3].ToString() + " " + value[4].ToString() + " " + value[5].ToString() + ")" + Environment.NewLine;
                             }
                             catch
                             {
@@ -367,9 +367,9 @@ namespace Robot_simulator
                             {
                                 string usedKey = drevo.GetChild(i + 1).Text;
                                 float delay = (float)Convert.ToDouble(drevo.GetChild(i + 3).Text.Replace(".", ",")); 
-                                MOVC(CINDEKS[usedKey], delay);
+                                //MOVC(CINDEKS[usedKey], delay);
                                 i += 3;
-                                //izpis += "\t" + token.Text + "(" + drevo.GetChild(i + 1).Text + ", " + drevo.GetChild(i + 3).Text + ")" + Environment.NewLine;
+                                izpis += "\t" + token.Text + " (" + usedKey + ", " + delay.ToString() + ")" + Environment.NewLine;
                             }
                             catch
                             {
@@ -381,9 +381,9 @@ namespace Robot_simulator
                             {
                                 string usedKey = drevo.GetChild(i + 1).Text;
                                 float delay = (float)Convert.ToDouble(drevo.GetChild(i + 3).Text.Replace(".", ",")); 
-                                MOVJ(CINDEKS[usedKey], delay);
+                                //MOVJ(CINDEKS[usedKey], delay);
                                 i += 3;
-                                //izpis += "\t" + token.Text + "(" + drevo.GetChild(i + 1).Text + ", " + drevo.GetChild(i + 3).Text + ")" + Environment.NewLine;
+                                izpis += "\t" + token.Text + " (" + usedKey + ", " + delay.ToString() + ")" + Environment.NewLine;
                             }
                             catch
                             {
@@ -395,9 +395,9 @@ namespace Robot_simulator
                             {
                                 string usedKey = drevo.GetChild(i + 1).Text;
                                 float delay = (float)Convert.ToDouble(drevo.GetChild(i + 3).Text.Replace(".", ",")); 
-                                MOVL(CINDEKS[usedKey], delay);
+                                //MOVL(CINDEKS[usedKey], delay);
                                 i += 3;
-                                //izpis += "\t" + token.Text + "(" + drevo.GetChild(i + 1).Text + ", " + drevo.GetChild(i + 3).Text + ")" + Environment.NewLine;
+                                izpis += "\t" + token.Text + " (" + usedKey + ", " + delay.ToString() + ")" + Environment.NewLine;
                             }
                             catch
                             {
@@ -409,9 +409,9 @@ namespace Robot_simulator
                             {
                                 string usedKey = drevo.GetChild(i + 1).Text;
                                 float delay = (float)Convert.ToDouble(drevo.GetChild(i + 3).Text.Replace(".", ","));
-                                MOVS(CINDEKS[usedKey], delay);
+                                //MOVS(CINDEKS[usedKey], delay);
                                 i += 3;
-                                //izpis += "\t" + token.Text + "(" + drevo.GetChild(i + 1).Text + ", " + drevo.GetChild(i + 3).Text + ")" + Environment.NewLine; 
+                                izpis += "\t" + token.Text + " (" + usedKey + ", " + delay.ToString() + ")" + Environment.NewLine;
                             }
                             catch
                             {
@@ -446,7 +446,7 @@ namespace Robot_simulator
                     }
                 }
 
-                //richTextBox2.Text += GetTimestamp(DateTime.Now) + Environment.NewLine + izpis;
+                richTextBox2.Text += GetTimestamp(DateTime.Now) + Environment.NewLine + izpis;
                 return 0;
             /*}
             catch
