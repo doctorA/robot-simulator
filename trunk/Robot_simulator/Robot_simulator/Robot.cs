@@ -174,8 +174,21 @@ namespace Robot_simulator
             #endregion
             else  //če pa ni bilo napak pa nariši naložen LWO objekt
             {
+
+                //GL.Rotate(90, 1.0f, 0.0f, 0.0f);
+
+                // okolica robota
                 GL.PushMatrix();
-                GL.Rotate(90, 1.0f, 0.0f, 0.0f);
+                GL.Translate(10.0f, -3.0f, 10.0f);
+                risi_model(okolica[0]);
+                GL.Translate(7.0f, 0.0f, 0.0f);
+                risi_model(okolica[0]);
+
+                GL.PopMatrix();
+
+                // robot
+                GL.PushMatrix();
+                
 
                 risi_model(robot_model[0]);  //podstavek
 
@@ -211,10 +224,7 @@ namespace Robot_simulator
                 }
 
                 GL.PopMatrix();
-                // okolica robota
-                GL.PushMatrix();
-                GL.Translate(10.0f, 10.0f, 0.0f);
-                risi_model(okolica[0]);
+
 
             }
         }
