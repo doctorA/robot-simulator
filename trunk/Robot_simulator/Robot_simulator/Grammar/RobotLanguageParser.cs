@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // $ANTLR 3.4 D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g 2012-02-08 15:56:41
-
+/*
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 168, 219
 // Unreachable code detected.
@@ -3458,3 +3458,4 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 	}
 	#endregion Follow sets
 }
+*/
