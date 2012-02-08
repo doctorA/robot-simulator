@@ -24,8 +24,8 @@ X. Importane datoteke v javi :
 
   Točka 1 in 4 : 
   
-  krnekaj warningov je zaradi tega, ko piše da bi naj namestu Scale uporabil Mult ? to se lahko 
-  po potrebi zamenja 
+  krnekaj warningov je zaradi tega, ko piše da bi naj namestu Scale uporabil Multiply()
+  ? to se lahko po potrebi zamenja če je mišljena metoda Mult
 
   Točka 2 :
   
