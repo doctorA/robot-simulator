@@ -15,7 +15,6 @@ namespace Robot_simulator
 {
     class Robot
     {
-
         public int rotacija1 = 0;
         public int rotacija2 = 0;
         public int rotacija3 = 0;

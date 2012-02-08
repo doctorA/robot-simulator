@@ -315,7 +315,7 @@ namespace Robot_simulator
                 tool = tool_idx;
 
             setActiveToolMatrix(tool);        
-            dest_location.Scale(1.0 / scaleFactor, 1.0 / scaleFactor, 1.0 / scaleFactor);
+            dest_location.Mult(1.0 / scaleFactor);
 
             // Shrani si originalno orientacijo
             Vector3d dest_orientation_originalna = new Vector3d(dest_orientation);
@@ -330,8 +330,8 @@ namespace Robot_simulator
             getFrameOfDestination(dest_location, dest_orientation, (Vector3d)m_orientations[robot_idx]);
 
             //pretvori v mm - SKALIRANJE
-            curr_location.Scale(scaleFactor, scaleFactor, scaleFactor);
-            dest_location.Scale(scaleFactor, scaleFactor, scaleFactor);
+            curr_location.Mult(scaleFactor);
+            dest_location.Mult(scaleFactor);
 
             //preracuna razdaljo premika v mm
             double dist = Razdalja3D(curr_location.X, curr_location.Y, curr_location.Z, dest_location.X, dest_location.Y, dest_location.Z);
@@ -350,7 +350,7 @@ namespace Robot_simulator
 
             //diferencialni vektor za premik v pravi smeri
             Vector3d delta_vector = new Vector3d(direction);
-            delta_vector.Scale(1.0 / num_steps, 1.0 / num_steps, 1.0 / num_steps);
+            delta_vector.Mult(1.0 / num_steps);
 
             Vector3d next_loc = new Vector3d(curr_location);
             //double vect_len = delta_vector.length()*num_steps;   // Zakomentiral David Zakonjšek, ker se nikjer ne uporablja
@@ -366,7 +366,7 @@ namespace Robot_simulator
             {
                 deltaOrientacija = new Vector3d(dest_orientation);
                 deltaOrientacija.Sub(orientacijaPrejsnjegaUkaza);
-                deltaOrientacija.Scale(1.0 / num_steps, 1.0 / num_steps, 1.0 / num_steps);
+                deltaOrientacija.Mult(1.0 / num_steps);
             }
 
             Vector3d scaled_loc = new Vector3d(curr_location);
@@ -391,7 +391,7 @@ namespace Robot_simulator
 
                 // premik v smeri in sleep za animirano izvajanje
 			    next_loc.Add(delta_vector);		
-                scaled_loc.Scale(1.0 / scaleFactor, 1.0 / scaleFactor, 1.0 / scaleFactor);
+                scaled_loc.Mult(1.0 / scaleFactor);
                 
 			    transformirajTool(scaled_loc, tmpTrenutnaOrientacija);
     			
@@ -424,8 +424,8 @@ namespace Robot_simulator
                 saveCoords();
             }
             else
-            { 
-                dest_location.Scale(1.0 / scaleFactor, 1.0 / scaleFactor, 1.0 / scaleFactor);               
+            {             
+                dest_location.Mult(1.0 / scaleFactor);   
                 transformirajTool(dest_location, dest_orientation); 
                 moveTo(robot_idx, dest_location, dest_orientation); 
                 saveCoords();   
@@ -464,7 +464,7 @@ namespace Robot_simulator
                 tool = tool_idx;
             }
             setActiveToolMatrix(tool);
-            dest_location.Scale(1.0 / scaleFactor, 1.0 / scaleFactor, 1.0 / scaleFactor);
+            dest_location.Mult(1.0 / scaleFactor);
 
             Vector3d curr_location = new Vector3d();
             Vector3d curr_orientation = new Vector3d();
@@ -673,18 +673,18 @@ namespace Robot_simulator
             }
             setActiveToolMatrix(tool);
             //Skaliramo vse vrednosti v mm iz decimetrov
-            tocka1_3d.Scale(1.0 / scaleFactor, 1.0 / scaleFactor, 1.0 / scaleFactor);
-            tocka2_3d.Scale(1.0 / scaleFactor, 1.0 / scaleFactor, 1.0 / scaleFactor);
-            tocka3_3d.Scale(1.0 / scaleFactor, 1.0 / scaleFactor, 1.0 / scaleFactor);
+            tocka1_3d.Mult(1.0 / scaleFactor);
+            tocka2_3d.Mult(1.0 / scaleFactor);
+            tocka3_3d.Mult(1.0 / scaleFactor);
 
 
             getFrameOfDestination(tocka1_3d, orientacija1, (Vector3d)m_orientations[robot_idx]);
             getFrameOfDestination(tocka2_3d, orientacija2, (Vector3d)m_orientations[robot_idx]);
             getFrameOfDestination(tocka3_3d, orientacija3, (Vector3d)m_orientations[robot_idx]);
 
-            tocka1_3d.Scale(scaleFactor, scaleFactor, scaleFactor);
-            tocka2_3d.Scale(scaleFactor, scaleFactor, scaleFactor);
-            tocka3_3d.Scale(scaleFactor, scaleFactor, scaleFactor);
+            tocka1_3d.Mult(scaleFactor);
+            tocka2_3d.Mult(scaleFactor);
+            tocka3_3d.Mult(scaleFactor);
 
             //izvedemo primerjavo z zadnjimi tockami in si shranimo nove lokacije
             //Preverjamo kazalec na null, takrat prvic vstopamo v to funkcijo
@@ -1060,7 +1060,7 @@ namespace Robot_simulator
 
 
                     //na novo izracunane 3D koordinate premika skaliram nazaj
-                    novaTockaPremika.Scale(1.0 / scaleFactor, 1.0 / scaleFactor, 1.0 / scaleFactor);
+                    novaTockaPremika.Mult(1.0 / scaleFactor);
 
                     Vector3d tmpTrenutnaOrientacija = new Vector3d(trenutnaOrientacija);
                     transformirajTool(novaTockaPremika, tmpTrenutnaOrientacija);
