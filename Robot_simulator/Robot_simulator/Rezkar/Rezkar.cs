@@ -295,13 +295,14 @@ namespace Robot_simulator
                 liki[i].toJBI(conf, tocke, premiki);
             }
 
+
             SaveFileDialog sFile = new SaveFileDialog();
             sFile.Title="Shrani JBI program";
             sFile.Filter = "JBI datoteke(*.JBI)|*.JBI";
             if (sFile.ShowDialog() == DialogResult.OK)
             {
-
-                String ime = sFile.FileName.Substring(0, sFile.FileName.IndexOf(".JBI"));
+                int lol = sFile.FileName.LastIndexOf('\\') + 1;
+                String ime = sFile.FileName.Substring(lol, sFile.FileName.IndexOf(".JBI")-lol);
                 String program = "";
                 program += ("/JOB") + Environment.NewLine;
                 program += ("//NAME ") + ime.ToUpper() + Environment.NewLine;
@@ -347,13 +348,11 @@ namespace Robot_simulator
                 if(conf.vklop_orodja)
                 {
                     program += ("DOUT OT#(11) OFF") + Environment.NewLine;
-                    program += ("TIMER T=0.20") + Environment.NewLine;
                 }
 
 
                 program += ("END") + Environment.NewLine;
-
-                TextWriter tw = new StreamWriter(sFile.FileName);
+                TextWriter tw = new StreamWriter(sFile.FileName.ToUpper());
                 tw.Write(program);
                 tw.Close();
 
@@ -423,7 +422,6 @@ namespace Robot_simulator
             if (conf.vklop_orodja)
             {
                 program += ("DOUT OT#(11) OFF") + Environment.NewLine;
-                program += ("TIMER T=0.20") + Environment.NewLine;
             }
             program += ("END") + Environment.NewLine;
 
