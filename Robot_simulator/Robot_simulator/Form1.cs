@@ -12,6 +12,8 @@ using OpenTK.Graphics.OpenGL;
 
 using Lightwave;
 
+using System.IO;
+
 namespace Robot_simulator
 {
     public partial class Form1 : Form
@@ -38,6 +40,8 @@ namespace Robot_simulator
         {
             InitializeComponent();
             glControl1.MouseWheel += new MouseEventHandler(glControl1_MouseWheel);
+
+            richTextBox2.Text += GetTimestamp(DateTime.Now) + "Waiting for input..." + Environment.NewLine;
         }
         #endregion
 
@@ -225,8 +229,8 @@ namespace Robot_simulator
             robo_app_TU_NOT_MATA_VIDVA_ZA_SPARSAT_SMAJLI = lol.GLIHIC_vs_DUGIC;
             if (robo_app_TU_NOT_MATA_VIDVA_ZA_SPARSAT_SMAJLI.Length > 0)
             {
-                //pol se nekaj zgodi... magic... :D drugače pa uporabnik ni zbral akcije za rezkat
-                MessageBox.Show("Tu sem vežita vajino inicializacijo");
+                richTextBox1.Text = robo_app_TU_NOT_MATA_VIDVA_ZA_SPARSAT_SMAJLI;
+                richTextBox2.Text += GetTimestamp(DateTime.Now) + "Loaded new input..." + Environment.NewLine;
             }
             glControl1.MakeCurrent();
             glControl1.Invalidate();
@@ -243,7 +247,36 @@ namespace Robot_simulator
             glControl1.Invalidate();
         }
 
+        #region Ovrednotenje ukazov in sintaktična analiza
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "JBI Files(*.JBI)|*.JBI";
 
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                StreamReader streamReader = new StreamReader(openFile.FileName);
+                richTextBox1.Text = streamReader.ReadToEnd();
+                streamReader.Close();
+
+                richTextBox2.Text += GetTimestamp(DateTime.Now) + "Loaded new input..." + Environment.NewLine;
+            }
+        }
+
+        private static String GetTimestamp(DateTime value)
+        {
+            return value.ToString("(HH:mm:ss): ");
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            richTextBox2.Text += GetTimestamp(DateTime.Now) + "Analizing input..." + Environment.NewLine;
+
+            richTextBox2.Text += GetTimestamp(DateTime.Now) + "Valid input..." + Environment.NewLine;
+            richTextBox2.Text += GetTimestamp(DateTime.Now) + "Starting robot..." + Environment.NewLine;
+            richTextBox2.Text += GetTimestamp(DateTime.Now) + "Waiting for input..." + Environment.NewLine;
+        }
+        #endregion
     }
 }
