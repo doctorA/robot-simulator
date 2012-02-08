@@ -51,7 +51,7 @@
             // glControl1
             // 
             this.glControl1.BackColor = System.Drawing.Color.Black;
-            this.glControl1.Location = new System.Drawing.Point(12, 27);
+            this.glControl1.Location = new System.Drawing.Point(21, 73);
             this.glControl1.Name = "glControl1";
             this.glControl1.Size = new System.Drawing.Size(450, 675);
             this.glControl1.TabIndex = 0;
@@ -68,10 +68,9 @@
             this.nastavitveToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(697, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(689, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            //this.menuStrip1.Resize += new System.EventHandler(this.menuStrip1_Resize);
             // 
             // datotekaToolStripMenuItem
             // 
@@ -120,7 +119,6 @@
             // 
             // groupBox_orodjarna
             // 
-            this.groupBox_orodjarna.Controls.Add(this.button_brisi);
             this.groupBox_orodjarna.Controls.Add(this.button_premakni);
             this.groupBox_orodjarna.Controls.Add(this.button_kvadrat);
             this.groupBox_orodjarna.Controls.Add(this.button_lok);
@@ -128,7 +126,7 @@
             this.groupBox_orodjarna.Controls.Add(this.button_crta);
             this.groupBox_orodjarna.Location = new System.Drawing.Point(486, 27);
             this.groupBox_orodjarna.Name = "groupBox_orodjarna";
-            this.groupBox_orodjarna.Size = new System.Drawing.Size(193, 660);
+            this.groupBox_orodjarna.Size = new System.Drawing.Size(179, 782);
             this.groupBox_orodjarna.TabIndex = 2;
             this.groupBox_orodjarna.TabStop = false;
             this.groupBox_orodjarna.Text = "Orodjarna";
@@ -136,50 +134,60 @@
             // button_brisi
             // 
             this.button_brisi.Image = ((System.Drawing.Image)(resources.GetObject("button_brisi.Image")));
-            this.button_brisi.Location = new System.Drawing.Point(40, 549);
+            this.button_brisi.Location = new System.Drawing.Point(526, 676);
             this.button_brisi.Name = "button_brisi";
-            this.button_brisi.Size = new System.Drawing.Size(100, 100);
+            this.button_brisi.Size = new System.Drawing.Size(100, 120);
             this.button_brisi.TabIndex = 5;
+            this.button_brisi.Text = "Briši";
+            this.button_brisi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button_brisi.UseVisualStyleBackColor = true;
             this.button_brisi.Click += new System.EventHandler(this.button_brisi_Click);
             // 
             // button_premakni
             // 
             this.button_premakni.Image = ((System.Drawing.Image)(resources.GetObject("button_premakni.Image")));
-            this.button_premakni.Location = new System.Drawing.Point(40, 443);
+            this.button_premakni.Location = new System.Drawing.Point(40, 523);
             this.button_premakni.Name = "button_premakni";
-            this.button_premakni.Size = new System.Drawing.Size(100, 100);
+            this.button_premakni.Size = new System.Drawing.Size(100, 120);
             this.button_premakni.TabIndex = 4;
+            this.button_premakni.Text = "Premakni";
+            this.button_premakni.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button_premakni.UseVisualStyleBackColor = true;
             this.button_premakni.Click += new System.EventHandler(this.button_premakni_Click);
             // 
             // button_kvadrat
             // 
             this.button_kvadrat.Image = ((System.Drawing.Image)(resources.GetObject("button_kvadrat.Image")));
-            this.button_kvadrat.Location = new System.Drawing.Point(40, 231);
+            this.button_kvadrat.Location = new System.Drawing.Point(40, 271);
             this.button_kvadrat.Name = "button_kvadrat";
-            this.button_kvadrat.Size = new System.Drawing.Size(100, 100);
+            this.button_kvadrat.Size = new System.Drawing.Size(100, 120);
             this.button_kvadrat.TabIndex = 3;
+            this.button_kvadrat.Text = "Kvadrat";
+            this.button_kvadrat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button_kvadrat.UseVisualStyleBackColor = true;
             this.button_kvadrat.Click += new System.EventHandler(this.button_kvadrat_Click);
             // 
             // button_lok
             // 
             this.button_lok.Image = ((System.Drawing.Image)(resources.GetObject("button_lok.Image")));
-            this.button_lok.Location = new System.Drawing.Point(40, 125);
+            this.button_lok.Location = new System.Drawing.Point(40, 145);
             this.button_lok.Name = "button_lok";
-            this.button_lok.Size = new System.Drawing.Size(100, 100);
+            this.button_lok.Size = new System.Drawing.Size(100, 120);
             this.button_lok.TabIndex = 1;
+            this.button_lok.Text = "Krožni lok";
+            this.button_lok.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button_lok.UseVisualStyleBackColor = true;
             this.button_lok.Click += new System.EventHandler(this.button_lok_Click);
             // 
             // button_krog
             // 
             this.button_krog.Image = ((System.Drawing.Image)(resources.GetObject("button_krog.Image")));
-            this.button_krog.Location = new System.Drawing.Point(40, 337);
+            this.button_krog.Location = new System.Drawing.Point(40, 397);
             this.button_krog.Name = "button_krog";
-            this.button_krog.Size = new System.Drawing.Size(100, 100);
+            this.button_krog.Size = new System.Drawing.Size(100, 120);
             this.button_krog.TabIndex = 2;
+            this.button_krog.Text = "Krog";
+            this.button_krog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button_krog.UseVisualStyleBackColor = true;
             this.button_krog.Click += new System.EventHandler(this.button_krog_Click);
             // 
@@ -188,8 +196,11 @@
             this.button_crta.Image = ((System.Drawing.Image)(resources.GetObject("button_crta.Image")));
             this.button_crta.Location = new System.Drawing.Point(40, 19);
             this.button_crta.Name = "button_crta";
-            this.button_crta.Size = new System.Drawing.Size(100, 100);
+            this.button_crta.Size = new System.Drawing.Size(100, 120);
             this.button_crta.TabIndex = 0;
+            this.button_crta.Text = "Črta";
+            this.button_crta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button_crta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button_crta.UseVisualStyleBackColor = true;
             this.button_crta.Click += new System.EventHandler(this.button_crta_Click);
             // 
@@ -197,7 +208,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 720);
+            this.ClientSize = new System.Drawing.Size(689, 821);
+            this.Controls.Add(this.button_brisi);
             this.Controls.Add(this.groupBox_orodjarna);
             this.Controls.Add(this.glControl1);
             this.Controls.Add(this.menuStrip1);
