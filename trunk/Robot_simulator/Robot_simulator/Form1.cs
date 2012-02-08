@@ -550,7 +550,7 @@ namespace Robot_simulator
         // ono za inverzno:D
         private void button5_Click(object sender, EventArgs e)
         {
-            string[] vals=textBox1.Text.Split(',');
+            string[] vals= {"150", "150", "150"};
             Vector3 v=new Vector3(float.Parse(vals[0]), float.Parse(vals[1]), float.Parse(vals[2]));
             Vector3 curr = robot.getVrhOrodja();
             float distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
