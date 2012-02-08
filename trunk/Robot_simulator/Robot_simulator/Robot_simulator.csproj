@@ -95,6 +95,8 @@
   <ItemGroup>
     <Compile Include="Animacija.cs" />
     <Compile Include="CommonTools.cs" />
+    <Compile Include="Grammar\RobotLanguageLexer.cs" />
+    <Compile Include="Grammar\RobotLanguageParser.cs" />
     <Compile Include="Rezkar\Nastavitve\Nastavitve.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +140,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="Grammar\RobotLanguage.g" />
     <None Include="ModelsLWO\MH6_base.lwo" />
     <None Include="ModelsLWO\MH6_baxis.lwo" />
     <None Include="ModelsLWO\MH6_laxis.lwo" />

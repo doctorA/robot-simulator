@@ -112,9 +112,51 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>/JOB
+//NAME TEST
+//POS
+///NPOS 10,0,0,0,0,0
+///USER 5
+///TOOL 3
+///POSTYPE USER
+///RECTAN
+///RCONF 0,0,0,0,0,0,0,0
+C00000=0.000,0.000,40.000,1.00,-89.00,179.00
+C00001=19.700,14.200,5.000,1.00,-89.00,179.00
+C00002=19.700,14.200,-1.000,1.00,-89.00,179.00
+C00003=19.700,14.200,-1.000,1.00,-89.00,179.00
+C00004=13.200,20.700,-1.000,1.00,-89.00,179.00
+C00005=19.700,27.200,-1.000,1.00,-89.00,179.00
+C00006=26.200,20.700,-1.000,1.00,-89.00,179.00
+C00007=19.700,14.200,-1.000,1.00,-89.00,179.00
+C00008=19.700,14.200,5.000,1.00,-89.00,179.00
+C00009=0.000,0.000,40.000,1.00,-89.00,179.00
+//INST
+///DATE 2012/02/08 03:15
+///COMM KOMENTAR
+///ATTR SC,RW,RJ
+////FRAME USER 5
+///GROUP RB1
+NOP
+MOVJ C00000 VJ=20.00
+DOUT OT#(11) ON
+TIMER T=0.20
+MOVL C00001 V=20.0
+MOVL C00002 V=20.0
+MOVC C00003 V=20.0
+MOVC C00004 V=20.0
+MOVC C00005 V=20.0
+MOVC C00006 V=20.0
+MOVC C00007 V=20.0
+MOVL C00008 V=20.0
+DOUT OT#(11) OFF
+MOVL C00009 V=20.0
+END</value>
+  </data>
 </root>
