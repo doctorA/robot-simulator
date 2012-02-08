@@ -30,7 +30,7 @@ namespace Robot_simulator
             zacetna_tocka = new Vector3(1.00f, -89.00f, 179.00f);
             debelina_svedra = 3;
             komentar = "KOMENTAR";
-            ime = "NINJA ŽELVE";
+            ime = "CHUCK";
             tool = "TOOL 3";
             nacin_izvajanja = "USER 5";
             visina_svedra_pred_rezkanjem = 40;
