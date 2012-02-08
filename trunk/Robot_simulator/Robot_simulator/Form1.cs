@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Timers;
 
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
@@ -31,6 +32,7 @@ namespace Robot_simulator
         int width;
         Robot robot = new Robot(0,60,-35,90,0,0);
         string robo_app_TU_NOT_MATA_VIDVA_ZA_SPARSAT_SMAJLI = "";
+        Color ozadje = Color.Black;
 
         #endregion
         //ej
@@ -100,7 +102,7 @@ namespace Robot_simulator
 
         private void glControl1_Paint(object sender, PaintEventArgs e)
         {
-            GL.ClearColor(Color.Black);
+            GL.ClearColor(ozadje);
 
             GL.Enable(EnableCap.Lighting);
 
@@ -278,5 +280,43 @@ namespace Robot_simulator
             richTextBox2.Text += GetTimestamp(DateTime.Now) + "Waiting for input..." + Environment.NewLine;
         }
         #endregion
+
+
+
+        public void bla()
+        {
+             System.Timers.Timer aTimer = new System.Timers.Timer();
+             aTimer.Elapsed+=new ElapsedEventHandler(OnTimedEvent);
+             // Set the Interval to 5 seconds.
+             aTimer.Interval = 100;
+             aTimer.Enabled=true;
+             
+ 
+            // Console.WriteLine("Press \'q\' to quit the sample.");
+            // while(Console.Read()!='q');
+     }
+ 
+     // Specify what you want to happen when the Elapsed event is raised.
+     private void OnTimedEvent(object source, ElapsedEventArgs e)
+     {
+
+         if (Color.Black == ozadje)
+         {
+             ozadje = Color.White;
+         }
+         else
+         {
+             ozadje = Color.Black;
+         }
+         glControl1.Invalidate();
+     }
+
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            bla();
+        }
+
     }
 }
