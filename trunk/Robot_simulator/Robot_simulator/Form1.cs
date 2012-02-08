@@ -546,5 +546,22 @@ namespace Robot_simulator
         {
             richTextBox2.Text += "\t MOVS" + "(" + p[0].ToString() + " " + p[1].ToString() + " " + p[2].ToString() + " " + p[3].ToString() + " " + p[4].ToString() + " " + p[5].ToString() + ") & T(" + delay.ToString() + ")" + Environment.NewLine;
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string[] vals=textBox1.Text.Split(',');
+            Vector3 v=new Vector3(float.Parse(vals[0]), float.Parse(vals[1]), float.Parse(vals[2]));
+            Vector3 curr = robot.getVrhOrodja();
+            float distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+            
+            while (distance > 10)
+            {
+                robot.idi_tja(v);
+                curr = robot.getVrhOrodja();
+                distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+                glControl1.Invalidate();
+            }
+            
+        }
     }
 }

@@ -51,6 +51,8 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button_tmp = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).BeginInit();
@@ -77,6 +79,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
@@ -94,9 +98,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(231, 644);
+            this.button4.Location = new System.Drawing.Point(141, 644);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(116, 23);
+            this.button4.Size = new System.Drawing.Size(68, 23);
             this.button4.TabIndex = 9;
             this.button4.Text = "Vrh robota";
             this.button4.UseVisualStyleBackColor = true;
@@ -104,9 +108,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(6, 644);
+            this.button3.Location = new System.Drawing.Point(14, 644);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(219, 23);
+            this.button3.Size = new System.Drawing.Size(121, 23);
             this.button3.TabIndex = 8;
             this.button3.Text = "Moves Like Jagger";
             this.button3.UseVisualStyleBackColor = true;
@@ -129,7 +133,7 @@
             this.richTextBox2.Location = new System.Drawing.Point(6, 225);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(339, 143);
+            this.richTextBox2.Size = new System.Drawing.Size(339, 124);
             this.richTextBox2.TabIndex = 6;
             this.richTextBox2.Text = "";
             // 
@@ -147,9 +151,9 @@
             this.groupBox2.Controls.Add(this.trackBar3);
             this.groupBox2.Controls.Add(this.trackBar2);
             this.groupBox2.Controls.Add(this.trackBar1);
-            this.groupBox2.Location = new System.Drawing.Point(8, 374);
+            this.groupBox2.Location = new System.Drawing.Point(8, 355);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(339, 264);
+            this.groupBox2.Size = new System.Drawing.Size(339, 283);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stanje robota";
@@ -157,7 +161,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(295, 213);
+            this.label6.Location = new System.Drawing.Point(295, 233);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(13, 13);
             this.label6.TabIndex = 24;
@@ -165,7 +169,7 @@
             // 
             // trackBar6
             // 
-            this.trackBar6.Location = new System.Drawing.Point(6, 213);
+            this.trackBar6.Location = new System.Drawing.Point(6, 233);
             this.trackBar6.Maximum = 180;
             this.trackBar6.Minimum = -179;
             this.trackBar6.Name = "trackBar6";
@@ -177,7 +181,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(295, 176);
+            this.label5.Location = new System.Drawing.Point(295, 196);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(13, 13);
             this.label5.TabIndex = 22;
@@ -186,7 +190,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(289, 139);
+            this.label4.Location = new System.Drawing.Point(289, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(19, 13);
             this.label4.TabIndex = 21;
@@ -195,7 +199,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(286, 99);
+            this.label3.Location = new System.Drawing.Point(286, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 13);
             this.label3.TabIndex = 20;
@@ -204,7 +208,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(286, 58);
+            this.label2.Location = new System.Drawing.Point(286, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(19, 13);
             this.label2.TabIndex = 19;
@@ -213,7 +217,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(286, 19);
+            this.label1.Location = new System.Drawing.Point(286, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(13, 13);
             this.label1.TabIndex = 18;
@@ -221,7 +225,7 @@
             // 
             // trackBar5
             // 
-            this.trackBar5.Location = new System.Drawing.Point(6, 176);
+            this.trackBar5.Location = new System.Drawing.Point(6, 196);
             this.trackBar5.Maximum = 90;
             this.trackBar5.Minimum = -90;
             this.trackBar5.Name = "trackBar5";
@@ -232,7 +236,7 @@
             // 
             // trackBar4
             // 
-            this.trackBar4.Location = new System.Drawing.Point(6, 139);
+            this.trackBar4.Location = new System.Drawing.Point(6, 159);
             this.trackBar4.Maximum = 180;
             this.trackBar4.Minimum = -180;
             this.trackBar4.Name = "trackBar4";
@@ -244,7 +248,7 @@
             // 
             // trackBar3
             // 
-            this.trackBar3.Location = new System.Drawing.Point(6, 99);
+            this.trackBar3.Location = new System.Drawing.Point(6, 119);
             this.trackBar3.Maximum = 180;
             this.trackBar3.Minimum = -180;
             this.trackBar3.Name = "trackBar3";
@@ -256,7 +260,7 @@
             // 
             // trackBar2
             // 
-            this.trackBar2.Location = new System.Drawing.Point(6, 58);
+            this.trackBar2.Location = new System.Drawing.Point(6, 78);
             this.trackBar2.Maximum = 180;
             this.trackBar2.Minimum = -220;
             this.trackBar2.Name = "trackBar2";
@@ -268,7 +272,7 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(6, 19);
+            this.trackBar1.Location = new System.Drawing.Point(6, 39);
             this.trackBar1.Maximum = 180;
             this.trackBar1.Minimum = -180;
             this.trackBar1.Name = "trackBar1";
@@ -293,7 +297,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 62);
             this.button1.TabIndex = 4;
-            this.button1.Text = "RunBot";
+            this.button1.Text = "Puženi";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -309,6 +313,24 @@
             this.button_tmp.UseVisualStyleBackColor = false;
             this.button_tmp.Click += new System.EventHandler(this.button_tmp_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(215, 646);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(72, 20);
+            this.textBox1.TabIndex = 10;
+            this.textBox1.Text = "10,10,10";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(294, 644);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(50, 22);
+            this.button5.TabIndex = 11;
+            this.button5.Text = "Idi tja";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,6 +342,7 @@
             this.Text = "RobotSimulator.net";
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).EndInit();
@@ -356,6 +379,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
