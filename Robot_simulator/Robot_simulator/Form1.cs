@@ -14,6 +14,9 @@ using OpenTK.Graphics.OpenGL;
 using Lightwave;
 
 using System.IO;
+using Antlr.Runtime;
+using Antlr.Runtime.Misc;
+using Antlr.Runtime.Tree;
 
 namespace Robot_simulator
 {
@@ -283,11 +286,174 @@ namespace Robot_simulator
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            richTextBox2.Text += GetTimestamp(DateTime.Now) + "Analizing input..." + Environment.NewLine;
+            string input = richTextBox1.Text;
 
-            richTextBox2.Text += GetTimestamp(DateTime.Now) + "Valid input..." + Environment.NewLine;
-            richTextBox2.Text += GetTimestamp(DateTime.Now) + "Starting robot..." + Environment.NewLine;
-            richTextBox2.Text += GetTimestamp(DateTime.Now) + "Waiting for input..." + Environment.NewLine;
+            if (input.Length > 0)
+            {
+                richTextBox2.Text += GetTimestamp(DateTime.Now) + "Analizing input..." + Environment.NewLine;
+                if (checkGrammar(input) == 0)
+                {
+                    richTextBox2.Text += GetTimestamp(DateTime.Now) + "Valid input..." + Environment.NewLine;
+                    richTextBox2.Text += GetTimestamp(DateTime.Now) + "Starting robot..." + Environment.NewLine;
+                }
+                else
+                {
+                    richTextBox2.Text += GetTimestamp(DateTime.Now) + "Invalid input..." + Environment.NewLine;
+                }
+                richTextBox2.Text += GetTimestamp(DateTime.Now) + "Waiting for input..." + Environment.NewLine;
+            }
+            else
+            {
+                richTextBox2.Text += GetTimestamp(DateTime.Now) + "No input..." + Environment.NewLine;
+            }
+        }
+
+        private int checkGrammar(string vhod)
+        {
+            //try
+            //{
+                ANTLRStringStream sStream = new ANTLRStringStream(vhod);
+                RobotLanguageLexer lexer = new RobotLanguageLexer(sStream);
+
+                CommonTokenStream tStream = new CommonTokenStream(lexer);
+
+                RobotLanguageParser parser = new RobotLanguageParser(tStream);
+
+                AstParserRuleReturnScope<CommonTree, IToken> odgovor = parser.start();
+                CommonTree drevo = (CommonTree)odgovor.Tree;
+
+                string izpis = String.Empty;
+                Dictionary<string, float[]> CINDEKS = new Dictionary<string, float[]>();
+
+                for (int i = 0; i < drevo.ChildCount; i++)
+                {
+                    ITree token = drevo.GetChild(i);
+                    switch (token.Type)
+                    {
+                        case -1: break; //EOF
+                        //case 0: richTextBox2.Text += GetTimestamp(DateTime.Now) + "Napaka!! Vrstica: " + token.Text + Environment.NewLine; return -1;
+                        case 4: break; //ATTR
+                        case 5: break; //COMM
+                        case 6: break; //DATE
+                        case 7: break; //DIN
+                        case 8: break; //DOUT
+                        case 9: break; //FRAME
+                        case 10: break; //GROUP
+                        case 11:
+                            try
+                            {
+                                string key = token.Text; i++;
+                                float[] value = new float[6];
+                                for (int j = 0; j < 6; j++, i++)
+                                {
+                                    if (drevo.GetChild(i).Type == 15) { value[j] = -1f * (float)Convert.ToDouble(drevo.GetChild(i + 1).Text.Replace(".", ",")); i++; } //negativni predznak
+                                    else { value[j] = (float)Convert.ToDouble(drevo.GetChild(i).Text.Replace(".", ",")); }
+                                }
+                                CINDEKS.Add(key, value); i--;
+
+                                //izpis += "\t" + token.Text + "(" + value[0].ToString() + " " + value[1].ToString() + " " + value[2].ToString() + " " + value[3].ToString() + " " + value[4].ToString() + " " + value[5].ToString() + ")" + Environment.NewLine;
+                            }
+                            catch
+                            {
+                                richTextBox2.Text += GetTimestamp(DateTime.Now) + "Napaka!! Token" + "(" + i.ToString() + ")" + ": " + token.Text + Environment.NewLine; return -1;
+                            }
+                            break; //INDEKS
+                        case 12: break; //INST
+                        case 13: break; //INT
+                        case 14: break; //JOB
+                        case 15: break; //MINUS
+                        case 16:
+                            try
+                            {
+                                string usedKey = drevo.GetChild(i + 1).Text;
+                                float delay = (float)Convert.ToDouble(drevo.GetChild(i + 3).Text.Replace(".", ",")); 
+                                MOVC(CINDEKS[usedKey], delay);
+                                i += 3;
+                                //izpis += "\t" + token.Text + "(" + drevo.GetChild(i + 1).Text + ", " + drevo.GetChild(i + 3).Text + ")" + Environment.NewLine;
+                            }
+                            catch
+                            {
+                                richTextBox2.Text += GetTimestamp(DateTime.Now) + "Napaka!! Token" + "(" + i.ToString() + ")" + ": " + token.Text + Environment.NewLine; return -1;
+                            }
+                            break; //MOVC
+                        case 17:
+                            try
+                            {
+                                string usedKey = drevo.GetChild(i + 1).Text;
+                                float delay = (float)Convert.ToDouble(drevo.GetChild(i + 3).Text.Replace(".", ",")); 
+                                MOVJ(CINDEKS[usedKey], delay);
+                                i += 3;
+                                //izpis += "\t" + token.Text + "(" + drevo.GetChild(i + 1).Text + ", " + drevo.GetChild(i + 3).Text + ")" + Environment.NewLine;
+                            }
+                            catch
+                            {
+                                richTextBox2.Text += GetTimestamp(DateTime.Now) + "Napaka!! Token" + "(" + i.ToString() + ")" + ": " + token.Text + Environment.NewLine; return -1;
+                            } 
+                            break; //MOVJ
+                        case 18:
+                            try
+                            {
+                                string usedKey = drevo.GetChild(i + 1).Text;
+                                float delay = (float)Convert.ToDouble(drevo.GetChild(i + 3).Text.Replace(".", ",")); 
+                                MOVL(CINDEKS[usedKey], delay);
+                                i += 3;
+                                //izpis += "\t" + token.Text + "(" + drevo.GetChild(i + 1).Text + ", " + drevo.GetChild(i + 3).Text + ")" + Environment.NewLine;
+                            }
+                            catch
+                            {
+                                richTextBox2.Text += GetTimestamp(DateTime.Now) + "Napaka!! Token" + "(" + i.ToString() + ")" + ": " + token.Text + Environment.NewLine; return -1;
+                            }
+                            break; //MOVL
+                        case 19:
+                            try
+                            {
+                                string usedKey = drevo.GetChild(i + 1).Text;
+                                float delay = (float)Convert.ToDouble(drevo.GetChild(i + 3).Text.Replace(".", ","));
+                                MOVS(CINDEKS[usedKey], delay);
+                                i += 3;
+                                //izpis += "\t" + token.Text + "(" + drevo.GetChild(i + 1).Text + ", " + drevo.GetChild(i + 3).Text + ")" + Environment.NewLine; 
+                            }
+                            catch
+                            {
+                                richTextBox2.Text += GetTimestamp(DateTime.Now) + "Napaka!! Token" + "(" + i.ToString() + ")" + ": " + token.Text + Environment.NewLine; return -1;
+                            }
+                            break; //MOVS
+                        case 20: break; //NAME
+                        case 21: break; //NEWLINE
+                        case 22: break; //NIZ
+                        case 23: break; //NPOS
+                        case 24: break; //ONOFF
+                        case 25: break; //POS
+                        case 26: break; //POSTYPE
+                        case 27: break; //RCONF
+                        case 28: break; //REAL
+                        case 29: break; //RECTAN
+                        case 30: break; //TIME
+                        case 31:
+                            try
+                            {
+                                float timer = (float)Convert.ToDouble(drevo.GetChild(i + 1).Text.Replace(".", ","));
+                                //izpis += "\t" + token.Text + "(" + timer.ToString() + ")" + Environment.NewLine;
+                            }
+                            catch
+                            {
+                                richTextBox2.Text += GetTimestamp(DateTime.Now) + "Napaka!! Token" + "(" + i.ToString() + ")" + ": " + token.Text + Environment.NewLine; return -1;
+                            }
+                            break; //TIMER
+                        case 32: break; //TOOL
+                        case 33: break; //USER
+                        case 34: break; //WS
+                    }
+                }
+
+                //richTextBox2.Text += GetTimestamp(DateTime.Now) + Environment.NewLine + izpis;
+                return 0;
+            /*}
+            catch
+            {
+                richTextBox2.Text += GetTimestamp(DateTime.Now) + "Something went wrong..." + Environment.NewLine;
+                return -1;
+            }*/
         }
         #endregion
 
@@ -361,5 +527,24 @@ namespace Robot_simulator
             MessageBox.Show("Vrh: " + vrh.ToString());
         }
 
+        private void MOVC(float[] p, float delay)
+        {
+            richTextBox2.Text += "\t MOVC" + "(" + p[0].ToString() + " " + p[1].ToString() + " " + p[2].ToString() + " " + p[3].ToString() + " " + p[4].ToString() + " " + p[5].ToString() + ") & T(" + delay.ToString() + ")" + Environment.NewLine;
+        }
+
+        private void MOVJ(float[] p, float delay)
+        {
+            richTextBox2.Text += "\t MOVJ" + "(" + p[0].ToString() + " " + p[1].ToString() + " " + p[2].ToString() + " " + p[3].ToString() + " " + p[4].ToString() + " " + p[5].ToString() + ") & T(" + delay.ToString() + ")" + Environment.NewLine;
+        }
+
+        private void MOVL(float[] p, float delay)
+        {
+            richTextBox2.Text += "\t MOVL" + "(" + p[0].ToString() + " " + p[1].ToString() + " " + p[2].ToString() + " " + p[3].ToString() + " " + p[4].ToString() + " " + p[5].ToString() + ") & T(" + delay.ToString() + ")" + Environment.NewLine;
+        }
+
+        private void MOVS(float[] p, float delay)
+        {
+            richTextBox2.Text += "\t MOVS" + "(" + p[0].ToString() + " " + p[1].ToString() + " " + p[2].ToString() + " " + p[3].ToString() + " " + p[4].ToString() + " " + p[5].ToString() + ") & T(" + delay.ToString() + ")" + Environment.NewLine;
+        }
     }
 }
