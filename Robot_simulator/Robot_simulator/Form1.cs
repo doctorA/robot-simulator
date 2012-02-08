@@ -547,6 +547,7 @@ namespace Robot_simulator
             richTextBox2.Text += "\t MOVS" + "(" + p[0].ToString() + " " + p[1].ToString() + " " + p[2].ToString() + " " + p[3].ToString() + " " + p[4].ToString() + " " + p[5].ToString() + ") & T(" + delay.ToString() + ")" + Environment.NewLine;
         }
 
+        // ono za inverzno:D
         private void button5_Click(object sender, EventArgs e)
         {
             string[] vals=textBox1.Text.Split(',');
@@ -563,5 +564,6 @@ namespace Robot_simulator
             }
             
         }
+        //konec inverzne
     }
 }
