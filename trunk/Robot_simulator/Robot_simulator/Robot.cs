@@ -87,9 +87,9 @@ namespace Robot_simulator
             vrh += new Vector3(0f, 15.35f, -0.4f); 
             vrh = rot_po_z(vrh, rotacija2);
             vrh += new Vector3(3.75f, 8.3f, -1.6f);
-            vrh = rot_po_y(vrh, rotacija1 + 90); 
+            vrh = rot_po_y(vrh, rotacija1 + 90);
 
-            return vrh;
+             return Vector3.Multiply(vrh, 10f);
         }
 
         public Vector3 rot_po_x(Vector3 state, float angle)
