@@ -94,6 +94,7 @@
             this.odpriJBIToolStripMenuItem.Name = "odpriJBIToolStripMenuItem";
             this.odpriJBIToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.odpriJBIToolStripMenuItem.Text = "Prenesi JBI na robota...";
+            this.odpriJBIToolStripMenuItem.Click += new System.EventHandler(this.odpriJBIToolStripMenuItem_Click);
             // 
             // izhodToolStripMenuItem
             // 
