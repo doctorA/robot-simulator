@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.glControl1 = new OpenTK.GLControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -50,7 +51,6 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button_tmp = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).BeginInit();
@@ -92,13 +92,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Orodjarna";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(231, 644);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(116, 23);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Vrh robota";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(73, 633);
+            this.button3.Location = new System.Drawing.Point(14, 644);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(211, 23);
             this.button3.TabIndex = 8;
-            this.button3.Text = "Utripaj";
+            this.button3.Text = "Moves Like Jagger";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -119,7 +129,7 @@
             this.richTextBox2.Location = new System.Drawing.Point(6, 225);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(339, 84);
+            this.richTextBox2.Size = new System.Drawing.Size(339, 124);
             this.richTextBox2.TabIndex = 6;
             this.richTextBox2.Text = "";
             // 
@@ -137,7 +147,7 @@
             this.groupBox2.Controls.Add(this.trackBar3);
             this.groupBox2.Controls.Add(this.trackBar2);
             this.groupBox2.Controls.Add(this.trackBar1);
-            this.groupBox2.Location = new System.Drawing.Point(8, 317);
+            this.groupBox2.Location = new System.Drawing.Point(8, 355);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(339, 283);
             this.groupBox2.TabIndex = 3;
@@ -298,16 +308,6 @@
             this.button_tmp.Text = "Rezkar";
             this.button_tmp.UseVisualStyleBackColor = false;
             this.button_tmp.Click += new System.EventHandler(this.button_tmp_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(171, 633);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(116, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Vrh robota";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form1
             // 
