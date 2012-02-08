@@ -307,7 +307,7 @@ namespace Robot_simulator
                 program += ("/JOB") + Environment.NewLine;
                 program += ("//NAME ") + ime.ToUpper() + Environment.NewLine;
                 program += ("//POS") + Environment.NewLine;
-                program += ("///NPOS " + tocke.Count + ",0,0,0,0,0") + Environment.NewLine;
+                program += ("///NPOS " + (tocke.Count + 2).ToString() + ",0,0,0,0,0") + Environment.NewLine;
                 program += ("///" + conf.nacin_izvajanja.ToUpper()) + Environment.NewLine;
                 program += ("///" + conf.tool.ToUpper()) + Environment.NewLine;
 
@@ -321,14 +321,20 @@ namespace Robot_simulator
                 {
                     program += "C" + i.ToString("00000") + "=" + tocke[i-1] + Environment.NewLine;
                 }
+                program += "C" + (tocke.Count+1).ToString("00000") + "=" + "0.000,0.000," + conf.visina_svedra_pred_rezkanjem.ToString("0.000", CultureInfo.InvariantCulture) + "," + startPos + Environment.NewLine;
+
 
                 program += ("//INST") + Environment.NewLine;
                 program += ("///DATE " + conf.datum) + Environment.NewLine;
                 program += ("///COMM " + conf.komentar.ToUpper()) + Environment.NewLine;
                 program += ("///ATTR SC,RW,RJ") + Environment.NewLine;
                 program += ("////FRAME " + conf.nacin_izvajanja.ToUpper()) + Environment.NewLine;
-                program += ("///GROUP RB1") + Environment.NewLine;
+                program += ("///GROUP RB") + Environment.NewLine;
                 program += ("NOP") + Environment.NewLine;
+
+
+                program += ("MOVJ C00000 VJ=" + conf.hitrost_restkanja.ToString("0.00", CultureInfo.InvariantCulture)) + Environment.NewLine;
+                string temp = "";
 
                 if(conf.vklop_orodja)
                 {
@@ -336,9 +342,6 @@ namespace Robot_simulator
                     program += ("TIMER T=0.20") + Environment.NewLine;
                 }
 
-
-                program += ("MOVJ C00000 VJ=20.00") + Environment.NewLine;
-                string temp = "";
                 for (int i = 1; i < premiki.Count + 1; i++)
                 {
                     temp = "C" + i.ToString("00000") + " ";
@@ -350,6 +353,7 @@ namespace Robot_simulator
                     program += ("DOUT OT#(11) OFF") + Environment.NewLine;
                 }
 
+                program += ("MOVL C" + (tocke.Count + 1).ToString("00000") + " V=" + (conf.hitrost_restkanja).ToString("0.0", CultureInfo.InvariantCulture)) + Environment.NewLine;
 
                 program += ("END") + Environment.NewLine;
                 TextWriter tw = new StreamWriter(sFile.FileName.ToUpper());
@@ -381,7 +385,7 @@ namespace Robot_simulator
             program += ("/JOB") + Environment.NewLine;
             program += ("//NAME ") + ime.ToUpper() + Environment.NewLine;
             program += ("//POS") + Environment.NewLine;
-            program += ("///NPOS " + tocke.Count + ",0,0,0,0,0") + Environment.NewLine;
+            program += ("///NPOS " + (tocke.Count+2).ToString() + ",0,0,0,0,0") + Environment.NewLine;
             program += ("///" + conf.nacin_izvajanja.ToUpper()) + Environment.NewLine;
             program += ("///" + conf.tool.ToUpper()) + Environment.NewLine;
 
@@ -395,14 +399,20 @@ namespace Robot_simulator
             {
                 program += "C" + i.ToString("00000") + "=" + tocke[i - 1] + Environment.NewLine;
             }
+            program += "C" + (tocke.Count + 1).ToString("00000") + "=" + "0.000,0.000," + conf.visina_svedra_pred_rezkanjem.ToString("0.000", CultureInfo.InvariantCulture) + "," + startPos + Environment.NewLine;
+
 
             program += ("//INST") + Environment.NewLine;
             program += ("///DATE " + conf.datum) + Environment.NewLine;
             program += ("///COMM " + conf.komentar.ToUpper()) + Environment.NewLine;
             program += ("///ATTR SC,RW,RJ") + Environment.NewLine;
             program += ("////FRAME " + conf.nacin_izvajanja.ToUpper()) + Environment.NewLine;
-            program += ("///GROUP RB1") + Environment.NewLine;
+            program += ("///GROUP RB") + Environment.NewLine;
             program += ("NOP") + Environment.NewLine;
+
+
+            program += ("MOVJ C00000 VJ=" + (conf.hitrost_restkanja).ToString("0.00", CultureInfo.InvariantCulture) ) + Environment.NewLine;
+            string temp = "";
 
             if (conf.vklop_orodja)
             {
@@ -410,9 +420,6 @@ namespace Robot_simulator
                 program += ("TIMER T=0.20") + Environment.NewLine;
             }
 
-
-            program += ("MOVJ C00000 VJ=20.00") + Environment.NewLine;
-            string temp = "";
             for (int i = 1; i < premiki.Count + 1; i++)
             {
                 temp = "C" + i.ToString("00000") + " ";
@@ -423,6 +430,9 @@ namespace Robot_simulator
             {
                 program += ("DOUT OT#(11) OFF") + Environment.NewLine;
             }
+
+            program += ("MOVL C" + (tocke.Count + 1).ToString("00000") + " V=" + (conf.hitrost_restkanja).ToString("0.0", CultureInfo.InvariantCulture)) + Environment.NewLine;
+
             program += ("END") + Environment.NewLine;
 
             GLIHIC_vs_DUGIC = program;
