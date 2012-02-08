@@ -12,18 +12,19 @@ namespace Robot_simulator
     {
         #region RAZREDNE SPREMENLJIVKE
 
-        public double x, y, z, a, b, c;
-        private double scaleFactor = 100.0;	                                      //Osnovne enote v decimetrih, skaliranje z 100 jih pretvori v milimetre
-        private double maxAnglePerSecondVelocity = 15;                            //Največji kot premika na sekundo
-        private int activeToolMatrix = -1, activeFrameMatrix = -1;                //aktivni matriki, -1 za nic
-        private List<Matrix4d> toolMatrices = null;	                              //koordiantni sistem orodja - TOOL
-        private List<Matrix4d> toolMatricesInv = null;                            //Inverz - koordiantni sistem orodja - TOOL
-        private List<Matrix4d> frameMatrices = null;		                      //koordiantni sistem uporabnika - FRAME
-        private List<Vector3d> m_locations, m_orientations = null;                //Seznam lokacij in orientacij
-        private int interpolationFrequencyPerSecond = 40;                         //Koliko časa računamo pozicijo robota v različnih MOV ukazih - v sekundah
-        private double hitrostPrejsnjegaUkaza = -1;                               //Hitrost prejšnjega ukaza zaradi zveznega prehajanja hitrosti pri MOVL
-        private Vector3d orientacijaPrejsnjegaUkaza = new Vector3d();             //Potrebujemo zaradi zveznega prehajanja orientiranosti
-        private Vector3d orientacijaPrejsnjegaUkaza_originalna = new Vector3d();  //Potrebujemo zaradi zveznega prehajanja orientiranosti
+        public double x, y, z, a, b, c;                                 //Shranjevanje začasnih koordinat
+        public double scaleFactor;	                                    //Osnovne enote v decimetrih, skaliranje z 100 jih pretvori v milimetre
+        public double maxAnglePerSecondVelocity;                        //Največji kot premika na sekundo
+        public int activeToolMatrix, activeFrameMatrix;                 //aktivni matriki, -1 za nic
+        public List<Matrix4d> toolMatrices;	                            //koordiantni sistem orodja - TOOL
+        public List<Matrix4d> toolMatricesInv;                          //Inverz - koordiantni sistem orodja - TOOL
+        public List<Matrix4d> frameMatrices;		                    //koordiantni sistem uporabnika - FRAME
+        public List<Matrix4d> frameMatricesInv;		                    //koordiantni sistem uporabnika - FRAME
+        public List<Vector3d> m_locations, m_orientations;              //Seznam lokacij in orientacij
+        public int interpolationFrequencyPerSecond;                     //Koliko časa računamo pozicijo robota v različnih MOV ukazih - v sekundah
+        public double hitrostPrejsnjegaUkaza;                           //Hitrost prejšnjega ukaza zaradi zveznega prehajanja hitrosti pri MOVL
+        public Vector3d orientacijaPrejsnjegaUkaza;                     //Potrebujemo zaradi zveznega prehajanja orientiranosti
+        public Vector3d orientacijaPrejsnjegaUkaza_originalna;          //Potrebujemo zaradi zveznega prehajanja orientiranosti
 
         #endregion
 
@@ -41,24 +42,37 @@ namespace Robot_simulator
         /// <returns></returns>
         public double Razdalja3D(double x1, double y1, double z1, double x2, double y2, double z2)
         {
-            //     _____________________________________
-            //d = sqrt (x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2
-            //
-
-            //rezultat
             double rezultat = 0;
-            // (x2-x1)^2
             double x = Math.Pow((x2 - x1), 2);
-            // (y2-y1)^2
             double y = Math.Pow((y2 - y1), 2);
-            // (z2-z1)^2
             double z = Math.Pow((z2 - z1), 2);
-            //Vsota vseh delov
             double vsotaVseh = x + y + z;
-            //Koren vsote je razdalja
             rezultat = (double)Math.Sqrt(vsotaVseh);
-            //Razdalja
             return rezultat;
+        }
+
+        #endregion
+
+        #region PRIVZETI KONSTRUKTOR
+
+        public Animacija()
+        {
+            scaleFactor = 100.0;
+            maxAnglePerSecondVelocity = 15;
+            activeToolMatrix = -1;
+            activeFrameMatrix = -1;
+
+            m_locations = new List<Vector3d>();
+            m_orientations = new List<Vector3d>();
+            toolMatrices = new List<Matrix4d>();
+            toolMatricesInv = new List<Matrix4d>();
+            frameMatrices = new List<Matrix4d>();
+            frameMatricesInv = new List<Matrix4d>();
+            orientacijaPrejsnjegaUkaza = new Vector3d();
+            orientacijaPrejsnjegaUkaza_originalna = new Vector3d();
+
+            interpolationFrequencyPerSecond = 40;
+            hitrostPrejsnjegaUkaza = -1;
         }
 
         #endregion
@@ -76,23 +90,20 @@ namespace Robot_simulator
             {
                 activeToolMatrix = idx;
                 /*************************************************************************/
-                //TO JE BLO ODKOMENTIRANO
+                //TO JE BLO ODKOMENTIRANO - KOT NEKE GLOBALNE REFERENCE NA toolMatrix
                 //this._jrobSimRef.toolMatrix = new Matrix4d();     
                 //this._jrobSimRef.toolMatrix.setIdentity();       
                 /*************************************************************************/
                 return true;
             }
 
-            /*************************************************************************/
-            //TO JE BLO ODKOMENTIRANO
-            //Matrix4d tmp = toolMatrices.get(idx);         
-            //if (tmp == null)                      
-            /*************************************************************************/
+            Matrix4d tmp = toolMatrices[idx];         
+            if (tmp == null)                      
                 return false;
 
             activeToolMatrix = idx;
             /*************************************************************************/
-            //TO JE BLO ODKOMENTIRANO
+            //TO JE BLO ODKOMENTIRANO - KOT NEKE GLOBALNE REFERENCE NA toolMatrix
             //this._jrobSimRef.toolMatrix = new Matrix4d(this.toolMatricesInv.get(idx));    
             /*************************************************************************/
             return true;
@@ -105,7 +116,6 @@ namespace Robot_simulator
         {
             /*************************************************************************/
             //VSE JE BILO ODKOMENTIRANO
-
     	    //Če trenutna scena ni izbrana 	
 		    //if( m_scene == null || m_scene.getRobot(0) == null)
 			//    return;
@@ -128,7 +138,6 @@ namespace Robot_simulator
 		    a = orientation.X;
 		    b = orientation.Y;
 		    c = orientation.Z;
-    		
 	    }
 	
 	    /// <summary>
@@ -157,63 +166,30 @@ namespace Robot_simulator
 	    {
             /*************************************************************************/
             //VSE SPODAJ JE BILO ODKOMENTIRANO
-
             //Dobimo trenutnega robota
 		    //Robot robot = m_scene.getRobot(robo_idx);
 		    //Vector3d qnames = robot.getQNamesLinearized(robot.getKnuckle());
-		    //Vector3d qvalues_old = robot.getQValuesLinearized(robot.getKnuckle());
-    						
+		    //Vector3d qvalues_old = robot.getQValuesLinearized(robot.getKnuckle());			
 		    //java.util.Hashtable qKI = robot.getIK().performIK(robot, location, orientation);
-            /*************************************************************************/
+            
+		    //if( qKI != null ){    //KAKI JE POGOJ
+                //Seznam lokacij in orientacij
+                m_locations[robo_idx] = location;
+                m_orientations[robo_idx] = orientation;
 
-		    //if(true) in { se izbriše, dodan zaradi pravilnosti kode
-            if(true)
-            {
-            /*************************************************************************/
-            //VSE SPODAJ JE BILO ODKOMENTIRANO
-		    //if( qKI != null ){
-    			
-                //Seznam lokacij in orientacij - spremenimo na določenem indeksu v seznamu lokacijo in orientacijo
-			    //m_locations.set(robo_idx, location);
-			    //m_orientations.set(robo_idx, orientation );
-    			
 			    Vector3d settingQ = new Vector3d();
     			
 			    //for( int i=0; i< qnames.size(); i++)
 				//    settingQ.Add((Double)qKI.get(qnames.get(i))-(Double)qvalues_old.get(i));			
     			
 			    //robot.setQValuesLinearized(robot.getKnuckle(), settingQ);
+			    //robot.waitForTransformationsToFinish();	//vrnem se sele ko se transformacije zakljucijo
     			
-			    //vrnem se sele ko se transformacije zakljucijo
-			    //robot.waitForTransformationsToFinish();	
-    			
-			    //draw tracking test
-			    //if (_jrobSimRef != null)
-                //{
-				//    _jrobSimRef.drawTracking();
-
-                    bool cut = false;
-
-                //    if (inter != null)
-                //    {
-                //        Object val = inter.get("OT#(11)");
-
-                //         if (val instanceof Boolean)
-                //        {
-                //            cut = (Boolean)val;
-                //        }
-                //     }
-                    
-                //    if (robot.isToolActivated() || cut)
-                //    {
-    			//	    _jrobSimRef.drawCutting();
-                //    }
-                //}
             /*************************************************************************/
 			    return true;
-		    }		
-		    else 
-			    return false;
+		    //}		
+		    //else 
+			//    return false;
         }
     
         /// <summary>
@@ -226,11 +202,11 @@ namespace Robot_simulator
         {
             /*************************************************************************/
             //TO JE BLO ODKOMENTIRANO VSE
-            /**************** DOBI METODE ***********************/
-            //Robot robot = m_scene.getRobot(idx);                          
+            //Robot robot = m_scene.getRobot(idx);             
             //Vector qvalues = robot.getQValuesLinearized(robot.getKnuckle());
             //Matrix4d dh = robot.getDh().calculateDhMul(qvalues, 0);
 
+            //Metoda pretvori matriko4d v 3d vektor
             //CommonTools.MatrikavPRPYwithPrevious(dh, location, orientation, (Point3d)m_orientations.get(idx));
             /*************************************************************************/
         }
@@ -245,14 +221,8 @@ namespace Robot_simulator
             Vector3d tmp_location = new Vector3d(location);
             Vector3d tmp_orientation = new Vector3d(orientation);
 		    Matrix4d tmp_matrix = CommonTools.PRPYvMatriko(tmp_location, tmp_orientation);
-            //tmp_matrix.mul(frameMatricesInv.get(activeFrameMatrix));   // Najprej odstrani frame //TO NI BLO ODKOMENTIRANO
 
-            /*************************************************************************/
-            /*********TA JE BIL UPORABLJEN ****************/
-            //tmp_matrix.mul(toolMatrices.get(activeToolMatrix));   // Premakni na tool point //TO JE BLO ODKOMENTIRANO
-            /*************************************************************************/
-
-            //tmp_matrix.mul(frameMatrices.get(activeFrameMatrix));   // Dodaj frame nazaj //TO NI BLO ODKOMENTIRANO
+            tmp_matrix = tmp_matrix * toolMatrices[activeToolMatrix];
 		    CommonTools.MatrikavPRPYwithPrevious(tmp_matrix, location, orientation, tmp_orientation);
         }
 
@@ -266,14 +236,8 @@ namespace Robot_simulator
             Vector3d tmp_location = new Vector3d(location);
             Vector3d tmp_orientation = new Vector3d(orientation);
             Matrix4d tmp_matrix = CommonTools.PRPYvMatriko(tmp_location, tmp_orientation);
-            //tmp_matrix.mul(frameMatricesInv.get(activeFrameMatrix));   // Najprej odstrani frame  //TO NI BLO ODKOMENTIRANO
 
-            /*************************************************************************/
-            /*********TA JE BIL UPORABLJEN ****************/
-            //tmp_matrix.mul(toolMatricesInv[activeToolMatrix]);   // Premakni na tool point    //TO JE BLO ODKOMENTIRANO
-            /*************************************************************************/
-
-            //tmp_matrix.mul(frameMatrices.get(activeFrameMatrix));   // Dodaj frame nazaj  //TO NI BLO ODKOMENTIRANO
+            tmp_matrix = tmp_matrix * toolMatrices[activeToolMatrix];
             CommonTools.MatrikavPRPYwithPrevious(tmp_matrix, location, orientation, tmp_orientation);
         }
 
@@ -285,36 +249,20 @@ namespace Robot_simulator
         /// <param name="current_orientation">3d vektor trenutne orientacije</param>
         public void getFrameOfDestination(Vector3d dest_location, Vector3d dest_orientation, Vector3d current_orientation)
         {
-
             Matrix4d dest = CommonTools.PRPYvMatriko(dest_location, dest_orientation);
-            
-            /***********SPREMENJEN VHOD V KONSTRUKTOR Z VSEMI VRSTICAMI*******************/
             Matrix4d premaknjena = new Matrix4d(dest.Row0, dest.Row1, dest.Row2, dest.Row3);
 
             if (activeFrameMatrix == -1 && activeToolMatrix != -1)
             {
-
-                //samo tool			
-                //premaknjena.mul(toolMatricesInv.get(activeToolMatrix));   //TO NI BLO ODKOMENTIRANO
-                //premaknjena.mul(toolMatrices.get(activeToolMatrix));      //TO NI BLO ODKOMENTIRANO
-                //CommonTools.MatrikavPRPYSamo(premaknjena, dest_location, dest_orientation);	//TO NI BLO ODKOMENTIRANO	    
                 CommonTools.MatrikavPRPYwithPrevious(premaknjena, dest_location, dest_orientation, current_orientation);
             }
             else
             {
-
                 //upostevam frame
                 if (activeFrameMatrix != -1)
-                    /*************************************************************************/
-                    //premaknjena.mul(frameMatrices.get(activeFrameMatrix), dest);  //TO JE BLO ODKOMENTIRANO
-                    /*************************************************************************/
-
-                //ce je tool gor moram upostevat se to
-                //if( activeToolMatrix != -1 )          //TO NI BLO ODKOMENTIRANO
-                    //premaknjena.mul(toolMatricesInv.get(activeToolMatrix));   
-                    //premaknjena.mul(toolMatrices.get(activeToolMatrix));    
-
-                //CommonTools.MatrikavPRPYSamo(premaknjena, dest_location, dest_orientation);
+                    //Multiplies each element of matrix m1 by a scalar and places the result into this
+                    dest = premaknjena * frameMatrices[activeFrameMatrix];
+                     
                 CommonTools.MatrikavPRPYwithPrevious(premaknjena, dest_location, dest_orientation, current_orientation);
             }
         }
@@ -332,8 +280,6 @@ namespace Robot_simulator
                 return true;
             }
 
-            //*****************SPREMEMBA KODE******************
-            //Matrix4d tmp = frameMatrices.get(idx);
             Matrix4d tmp = frameMatrices[idx];
 
             if (tmp == null)
@@ -363,20 +309,15 @@ namespace Robot_simulator
             /*********************** KI PRIDOBIŠ SCENO *********************/
             //int tool = m_scene.getRobot(robot_idx).getTool();         //TO JE BLO ODKOMENTIRANO
             /*************************************************************************/
-            int tool = 0; //To je treba odstranit, ko se zgornja odkomentira
+            int tool = 0; //tool je potrebno dobit iz scene robota
 
             if (tool < 0)
                 tool = tool_idx;
 
-            /*************************************************************************/
-            //**********************BERE IZ JROBSIM**********************/
-            //setActiveToolMatrix(tool);        //TO JE BLO ODKOMENTIRANO
-            /*************************************************************************/
-
-            //pretvorba iz mm - SPREMENJENO, DODANA 2 PARAMETRA za x y z
+            setActiveToolMatrix(tool);        
             dest_location.Scale(1.0 / scaleFactor, 1.0 / scaleFactor, 1.0 / scaleFactor);
 
-            // Shrani si originalno orietacijo
+            // Shrani si originalno orientacijo
             Vector3d dest_orientation_originalna = new Vector3d(dest_orientation);
 
             Vector3d curr_location = new Vector3d();
@@ -392,12 +333,7 @@ namespace Robot_simulator
             curr_location.Scale(scaleFactor, scaleFactor, scaleFactor);
             dest_location.Scale(scaleFactor, scaleFactor, scaleFactor);
 
-            //NAMESTU TISTEGA ZGORAJ SCALE UPORABIŠ MULT ?
-            //curr_location.Mult(scaleFactor);
-            //dest_location.Mult(scaleFactor);
-
-            //preracuna razdaljo premika v mm - METODA ZA RAZDALJO NI BILA NAPISANA - v javi obstaja
-            //double dist = curr_location.distance(dest_location);
+            //preracuna razdaljo premika v mm
             double dist = Razdalja3D(curr_location.X, curr_location.Y, curr_location.Z, dest_location.X, dest_location.Y, dest_location.Z);
 
             //cas potovanja
@@ -415,8 +351,6 @@ namespace Robot_simulator
             //diferencialni vektor za premik v pravi smeri
             Vector3d delta_vector = new Vector3d(direction);
             delta_vector.Scale(1.0 / num_steps, 1.0 / num_steps, 1.0 / num_steps);
-            //NAMESTU SCALE UPORABIMO MULT ?
-            //delta_vector.Mult(1.0 / num_steps);
 
             Vector3d next_loc = new Vector3d(curr_location);
             //double vect_len = delta_vector.length()*num_steps;   // Zakomentiral David Zakonjšek, ker se nikjer ne uporablja
@@ -433,8 +367,6 @@ namespace Robot_simulator
                 deltaOrientacija = new Vector3d(dest_orientation);
                 deltaOrientacija.Sub(orientacijaPrejsnjegaUkaza);
                 deltaOrientacija.Scale(1.0 / num_steps, 1.0 / num_steps, 1.0 / num_steps);
-                //UPORABIMO MULT ?
-                //deltaOrientacija.Mult(1.0 / num_steps);
             }
 
             Vector3d scaled_loc = new Vector3d(curr_location);
@@ -446,8 +378,7 @@ namespace Robot_simulator
 
                 double p = (double)i / num_steps;   // Razmerje prepotovane razdalje s celotno razdaljo
 
-                // Nastavi hitrost oz. delay (v = s/t ==> t = s/v)
-                if (hitrostPrejsnjegaUkaza != -1)
+                if (hitrostPrejsnjegaUkaza != -1)   // Nastavi hitrost oz. delay (v = s/t ==> t = s/v)
                 {
                     double v = (p * velocityInMMPerSecond + (1 - p) * hitrostPrejsnjegaUkaza) / 2;
                     sleep_time = (long)(dist / num_steps * 1000.0 / v);
@@ -460,56 +391,28 @@ namespace Robot_simulator
 
                 // premik v smeri in sleep za animirano izvajanje
 			    next_loc.Add(delta_vector);		
-                
-                //MAJHNA SPREMEMBA SCALE METODE
-			    //scaled_loc.scale(1.0/scaleFactor, next_loc);
                 scaled_loc.Scale(1.0 / scaleFactor, 1.0 / scaleFactor, 1.0 / scaleFactor);
-                //scaled_loc.Mult(1.0 / scaleFactor); IN MULT
-    			
-			    //tmpMatr = CommonTools.PRPYvMatriko(scaled_loc, trenutnaOrientacija);
-			    //tmpMatr.mul(toolMatrices.get(activeToolMatrix));
-			    //CommonTools.MatrikavPRPYwithPrevious(tmpMatr, scaled_loc, trenutnaOrientacija, tmpTrenutnaOrientacija);
+                
 			    transformirajTool(scaled_loc, tmpTrenutnaOrientacija);
     			
                 //Če ni možno izvest premik robota
-			    if( moveTo(robot_idx, scaled_loc, trenutnaOrientacija) == false ){
-				    //System.out.println("Error in MOVL: cannot move to specified location");
-                    //Izpis napake!
-                    //textBox1.Text = "Error in MOVL: cannot move to specified location";
-                    //Console.WriteLine("Error in MOVL: cannot move to specified location");
+			    if( moveTo(robot_idx, scaled_loc, trenutnaOrientacija) == false )
+                {
+                    //Izpis napake - MOVL se ni mogel izvest;
 				    return false;
 			    }
 						
-			    try{								
-				    //long duration = System.currentTimeMillis()-start_time;				
+			    try{												
 				    tmp_sleep = sleep_time - (System.DateTime.Now.Millisecond - start_time);
                     if (tmp_sleep > 0)
-                        //Thread.Sleep(tmp_sleep);
                         Thread.Sleep(Convert.ToInt32(tmp_sleep));
 
 			    }
-			    catch( Exception e )
+			    catch(Exception e)
 			    {}			
-			    //if( next_loc.distance(dest_location) < 0.01){
                 if(Razdalja3D(next_loc.X, next_loc.Y, next_loc.Z, dest_location.X, dest_location.Y, dest_location.Z) < 0.01){
 				    break;
 			    }
-
-                /*********************************************/
-                //NEVEM KAJ NAJ Z TEM
-                
-                /*synchronized (JRobSim.control)
-                {
-                    while (JRobSim.control.pauseJob)
-                    {
-                        try
-                        {
-                            JRobSim.control.wait();
-                        }
-                        catch (Exception e){}
-                    }
-                }*/
-                /*********************************************/
             }
 
             //if (JRobSim.control.stopJob)  //KAJ NAJ S TEM POGOJEM
@@ -521,19 +424,8 @@ namespace Robot_simulator
                 saveCoords();
             }
             else
-            {
-                //dest_location.scale(1.0/scaleFactor);   
-                dest_location.Scale(1.0 / scaleFactor, 1.0 / scaleFactor, 1.0 / scaleFactor);  
-                //SPET MULT
-                //dest_location.Mult(1.0 / scaleFactor);
- 
-                //*************TO NI BILO ODKOMENTIRANO*******************
-                //tmpTrenutnaOrientacija = new Point3d(dest_orientation);
-                //tmpMatr = CommonTools.PRPYvMatriko(dest_location, dest_orientation);
-                //tmpMatr.mul(toolMatrices.get(activeToolMatrix));
-                //CommonTools.MatrikavPRPYwithPrevious(tmpMatr, scaled_loc, trenutnaOrientacija, tmpTrenutnaOrientacija);
-                //*************TO NI BILO ODKOMENTIRANO***************
-             
+            { 
+                dest_location.Scale(1.0 / scaleFactor, 1.0 / scaleFactor, 1.0 / scaleFactor);               
                 transformirajTool(dest_location, dest_orientation); 
                 moveTo(robot_idx, dest_location, dest_orientation); 
                 saveCoords();   
@@ -560,7 +452,7 @@ namespace Robot_simulator
             double percentOfMaxVelocity, int tool_idx, int frame_idx)
         {
             setActiveFrameMatrix(frame_idx);
-            //setActiveToolMatrix(tool_idx);
+            setActiveToolMatrix(tool_idx);
             /*************************************************************************/
             /*********************** KI PRIDOBIŠ SCENO *********************/
             //int tool = m_scene.getRobot(robot_idx).getTool();         //TO JE BLO ODKOMENTIRANO
@@ -572,12 +464,7 @@ namespace Robot_simulator
                 tool = tool_idx;
             }
             setActiveToolMatrix(tool);
-
-            // pretvorba iz mm
-            //dest_location.scale(1.0 / scaleFactor);
             dest_location.Scale(1.0 / scaleFactor, 1.0 / scaleFactor, 1.0 / scaleFactor);
-            //dest_location.Mult(1.0 / scaleFactor); ALI MULT ?
-
 
             Vector3d curr_location = new Vector3d();
             Vector3d curr_orientation = new Vector3d();
@@ -605,30 +492,22 @@ namespace Robot_simulator
             //Za pravilnost kode dodani objekti - pol jih zbriši!!!!
             Vector3d qnames = new Vector3d();
             Vector3d qvalues_old = new Vector3d();
-            /*************************************************************************/
-
-            //java.util.Hashtable qKI = robot.getIK().performIK(robot, dest_location, dest_orientation);
-            /*************************************************************************/
             //TO JE BILO ODKOMENTIRANO
-            //Hashtable qKI = robot.getIK().performIK(robot, dest_location, dest_orientation);
+            //java.util.Hashtable qKI = robot.getIK().performIK(robot, dest_location, dest_orientation);
             /*************************************************************************/
             Hashtable qKI = new Hashtable();
             
 		    if( qKI == null){
-			    //System.out.println("MOVJ: cannot execute. Destination outside boundaries.");
-                //Izpišemo napako, če premik ni bil možen
-                //textBox1.Text = "MOVJ: cannot execute. Destination outside boundaries.";
-                //Console.WriteLine("MOVJ: cannot execute. Destination outside boundaries.");
+                //Izpišemo napako, če premik ni bil možen MOVJ se ni mogel izvesti - meje so zunaj dovoljenega območja
+
 			    return false;			
 		    }
 
-            //m_locations.set(robot_idx, dest_location);
-            //m_orientations.set(robot_idx, dest_orientation);
             m_locations[robot_idx] = dest_location;
             m_orientations[robot_idx] = dest_orientation;
 
             /*************************************************************************/
-                        //TO JE BILO ODKOMENTIRANO
+            //TO JE BILO ODKOMENTIRANO
             //double[] settingQ = new double[qnames.size()];
             //double[] move = new double[qnames.size()];
 
@@ -661,25 +540,21 @@ namespace Robot_simulator
 				    if( Math.Abs( tmpQ ) > 0.00001){
 					    if( Math.Abs(tmpQ) > velocity){
 						    if( tmpQ > 0 ){		//can be negative
-							    //move.set(i, velocity);
                                 move[i] = velocity;
 							    settingQ[i] -= velocity;							
 						    }
 						    else{
-							    //move.set(i, -velocity);
                                 move[i] = -velocity;
 							    settingQ[i] += velocity;
 						    }
 					    }
 					    else{
-						    //move.set(i, tmpQ);
                             move[i] = tmpQ;
 						    settingQ[i] = 0.0;
 					    }
 					    moved = true;
 				    }
-				    else
-					    //move.set(i, 0.0);				
+				    else			
                         move[i] = 0.0;
 			    }
     			
@@ -694,23 +569,6 @@ namespace Robot_simulator
 			    //robot.waitForTransformationsToFinish();//to obvezno treba klicat, ker se drugace vsi gibi ne izvedejo do konca pred naslednjim klicem
 			    long duration = System.DateTime.Now.Millisecond - start;
                 /*************************************************************************/
-
-
-                /*************************************************************************/
-                //VSE ODKOMENTIRAT
-                /*synchronized (JRobSim.control)
-                {
-                    while (JRobSim.control.pauseJob)
-                    {
-                        try
-                        {
-                            JRobSim.control.wait();
-                        }
-                        catch (Exception e){}
-                    }
-                }*/
-                /*************************************************************************/
-
 		    }
 
             /*************************************************************************/
@@ -779,7 +637,7 @@ namespace Robot_simulator
             Vector3d orientacija1 = new Vector3d();
             Vector3d orientacija2 = new Vector3d();
             Vector3d orientacija3 = new Vector3d();
-            
+
             /*************************************************************************/
 
             /* Ekstrahiram hitrosti
@@ -801,7 +659,7 @@ namespace Robot_simulator
 
             //nastavimo frame in tool, enako kot v drugih funkcijah
             setActiveFrameMatrix(frame_idx);
-            //setActiveToolMatrix(tool_idx);
+            setActiveToolMatrix(tool_idx);
 
             /*************************************************************************/
             //TO JE BLO ODKOMENTIRANO _ PRIDOBIMO SCENO
@@ -814,41 +672,19 @@ namespace Robot_simulator
                 tool = tool_idx;
             }
             setActiveToolMatrix(tool);
-
-            //given in mm, have to transform into or units
-            //tocka1_3d.scale(1.0 / scaleFactor);
-            //tocka2_3d.scale(1.0 / scaleFactor);
-            //tocka3_3d.scale(1.0 / scaleFactor);	
-
             //Skaliramo vse vrednosti v mm iz decimetrov
             tocka1_3d.Scale(1.0 / scaleFactor, 1.0 / scaleFactor, 1.0 / scaleFactor);
             tocka2_3d.Scale(1.0 / scaleFactor, 1.0 / scaleFactor, 1.0 / scaleFactor);
             tocka3_3d.Scale(1.0 / scaleFactor, 1.0 / scaleFactor, 1.0 / scaleFactor);
 
-            //tocka1_3d.Mult(1.0 / scaleFactor);    //UPORABIMO MULT ?
-            //tocka2_3d.Mult(1.0 / scaleFactor);
-            //tocka3_3d.Mult(1.0 / scaleFactor);	
 
-            //enako kot v drugih funkcijah
-            //transformirajToolInv(tocka1_3d,orientacija1);
             getFrameOfDestination(tocka1_3d, orientacija1, (Vector3d)m_orientations[robot_idx]);
-            //transformirajToolInv(tocka2_3d,orientacija2);
             getFrameOfDestination(tocka2_3d, orientacija2, (Vector3d)m_orientations[robot_idx]);
-            //transformirajToolInv(tocka3_3d,orientacija3);
             getFrameOfDestination(tocka3_3d, orientacija3, (Vector3d)m_orientations[robot_idx]);
-
-            // convert into milimeters. I think the base unit is decimeters ?!?
-            //tocka1_3d.scale(scaleFactor);
-            //tocka2_3d.scale(scaleFactor);
-            //tocka3_3d.scale(scaleFactor);
 
             tocka1_3d.Scale(scaleFactor, scaleFactor, scaleFactor);
             tocka2_3d.Scale(scaleFactor, scaleFactor, scaleFactor);
             tocka3_3d.Scale(scaleFactor, scaleFactor, scaleFactor);
-
-            //tocka1_3d.Mult(scaleFactor); UPORABIMO MULT ??
-            //tocka2_3d.Mult(scaleFactor);
-            //tocka3_3d.Mult(scaleFactor);
 
             //izvedemo primerjavo z zadnjimi tockami in si shranimo nove lokacije
             //Preverjamo kazalec na null, takrat prvic vstopamo v to funkcijo
@@ -888,7 +724,7 @@ namespace Robot_simulator
             }
 
             /**
-			 * V spodnjih vrsticah izracunam X in Y vektorja ravnine, v kateri bomo risali krivouljo 
+			 * V spodnjih vrsticah izracunam X in Y vektorja ravnine, v kateri bomo risali krivuljo 
 				Ravnine, v kateri so tri tocke
 			 */
 
@@ -913,20 +749,19 @@ namespace Robot_simulator
             Ae.Y = (tocka2_3d.Y - tocka1_3d.Y) / absA;
             Ae.Z = (tocka2_3d.Z - tocka1_3d.Z) / absA;
 
-
             //preko vektorskega produkta dobimo ZBe. ZBe = XBe X Ae
             Vector3d ZBe = new Vector3d();
             ZBe.X = XBe.Y * Ae.Z - XBe.Z * Ae.Y;
             ZBe.Y = XBe.Z * Ae.X - XBe.X * Ae.Z;
             ZBe.Z = XBe.X * Ae.Y - XBe.Y * Ae.X;
-            normalizePoint3d(ZBe);
+            ZBe.Normalize();
 
             //sedaj pa lahko izracunamo YBe = ZBe x XBe;
             Vector3d YBe = new Vector3d();
             YBe.X = ZBe.Y * XBe.Z - ZBe.Z * XBe.Y;
             YBe.Y = ZBe.Z * XBe.X - ZBe.X * XBe.Z;
             YBe.Z = ZBe.X * XBe.Y - ZBe.Y * XBe.X;
-            normalizePoint3d(YBe);
+            YBe.Normalize();
 
             //se pravi sedaj imamo X in Y koordinato ravnine v 3D prostoru
 
@@ -1080,13 +915,13 @@ namespace Robot_simulator
                 korakKota = korakKota23;
             }
 
-             /**interpolacija orientacije
-			 * 
-			 */
+            /**interpolacija orientacije
+            * 
+            */
 
-             /**stevilo korakov med prvo in drugo tocko
-             * V spremenljivki korakKota je če notri upoštevana spremenljivka natančnost
-             */
+            /**stevilo korakov med prvo in drugo tocko
+            * V spremenljivki korakKota je če notri upoštevana spremenljivka natančnost
+            */
 
             double stKorakov12 = Math.Abs(tocka1_alfa_kot - tocka2_alfa_kot) / korakKota12;
             //stevilo korakov med drugo in tretjo tocko
@@ -1124,7 +959,7 @@ namespace Robot_simulator
             }
 
             bool konecPremika = false;
-			
+
             /*************************************************************************/
             //TO JE TREBA ODKOMENTIRAT
             //while(true && !JRobSim.control.stopJob)
@@ -1135,7 +970,6 @@ namespace Robot_simulator
 
                 if (smerVrtenja)
                 {
-
                     //povecamo kot
                     double trenutni_kot_v_radianih = (trenutenKot / 360d) * 2 * Math.PI;
 
@@ -1143,12 +977,10 @@ namespace Robot_simulator
                     double trenuten_x = polmer * Math.Cos(trenutni_kot_v_radianih) + vektPremVRavn.X;
                     double trenuten_y = polmer * Math.Sin(trenutni_kot_v_radianih) + vektPremVRavn.Y;
 
-
                     //sedaj izracunamo nove 3D koordinate
                     novaTockaPremika.X = trenuten_x * XBe.X + trenuten_y * YBe.X + tocka1_3d.X;
                     novaTockaPremika.Y = trenuten_x * XBe.Y + trenuten_y * YBe.Y + tocka1_3d.Y;
                     novaTockaPremika.Z = trenuten_x * XBe.Z + trenuten_y * YBe.Z + tocka1_3d.Z;
-
 
                     //povecamo kot
                     if ((trenutenKot + korakKota) < koncni_kot)
@@ -1161,7 +993,6 @@ namespace Robot_simulator
                 }
                 else
                 {
-
                     //povecamo kot
                     double trenutni_kot_v_radianih = (trenutenKot / 360d) * 2 * Math.PI;
 
@@ -1174,7 +1005,6 @@ namespace Robot_simulator
                     novaTockaPremika.Y = (trenuten_x * XBe.Y) + (trenuten_y * YBe.Y) + tocka1_3d.Y;
                     novaTockaPremika.Z = (trenuten_x * XBe.Z) + (trenuten_y * YBe.Z) + tocka1_3d.Z;
 
-
                     //zmanjsamo kot
                     if ((trenutenKot - korakKota) > koncni_kot)
                         trenutenKot -= korakKota;
@@ -1184,9 +1014,7 @@ namespace Robot_simulator
                         trenutenKot = koncni_kot;
                         konecPremika = true;
                     }
-                    /**Interpolacija orientacije
-                     * 
-                     */
+                    //Interpolacija orientacije
                     if (risemoOdPrveDoZadnjeTocke)
                     {
 
@@ -1222,9 +1050,7 @@ namespace Robot_simulator
                         }
                     }
                     /**drugace... risemo od druge do tretje tocke, orientacijo preprosto povecujemo za pozitivni 
-				     * ali negativni delec korakiInterpOrient23
-				     * 
-				     */
+				     * ali negativni delec korakiInterpOrient23 */
                     else
                     {
                         trenutnaOrientacija.X += korakiInterpOrient23.X;
@@ -1234,88 +1060,44 @@ namespace Robot_simulator
 
 
                     //na novo izracunane 3D koordinate premika skaliram nazaj
-                    //novaTockaPremika.scale(1.0/scaleFactor);
                     novaTockaPremika.Scale(1.0 / scaleFactor, 1.0 / scaleFactor, 1.0 / scaleFactor);
-                    //novaTockaPremika.Mult(1.0/scaleFactor); ALI MULT ?
 
                     Vector3d tmpTrenutnaOrientacija = new Vector3d(trenutnaOrientacija);
                     transformirajTool(novaTockaPremika, tmpTrenutnaOrientacija);
                     if (!this.moveTo(robot_idx, novaTockaPremika, tmpTrenutnaOrientacija))
                     {
-                        //IZPIS NAPAKE
-                        //System.out.println("Error in MOVC: cannot move to specified location");
-                        //textBox1.Text = "Error in MOVC: cannot move to specified location";
-                        //Console.WriteLine("Error in MOVC: cannot move to specified location");
+                        //IZPIS NAPAKE movc se ni mogel izvesti
                         saveCoords();
                         return false;
                     }
                     //zaspimo za doloceno stevilo milisekund
-                    //try {
-                    //	Thread.Sleep(1000 / interpolationFrequencyPerSecond);
-                    /*************************************************************************/
-                    //JAVI NAPAKO
-                }
-                //catch (InterruptedException e) {
-                //catch() {
-                // TODO Auto-generated catch block
-                //	e.printStackTrace();
-                //}
-                /*************************************************************************/
-
-                if (konecPremika)
-                    break;
-
-                /*************************************************************************/
-                //TO JE TREBA ODKOMENTIRAT
-                /*
-                synchronized (JRobSim.control)
-                {
-                    while (JRobSim.control.pauseJob)
+                    try
                     {
-                        try
-                        {
-                            JRobSim.control.wait();
-                        }
-                        catch (Exception e){}
+                        Thread.Sleep(1000 / interpolationFrequencyPerSecond);
+
                     }
+                    catch (Exception e) { }
+
+                    if (konecPremika)
+                        break;
                 }
-                */
             }
             //if (JRobSim.control.stopJob)
             /*************************************************************************/
-            if(true)    //TO POTEM ODSTRANI
+            if (true)    //TO POTEM ODSTRANI
             {
                 // pridobi trenutni polozaj robota
                 getTopOfRobot(robot_idx, tocka3_3d, trenutnaOrientacija);
                 orientacija3 = trenutnaOrientacija;
             }
-		
-			saveCoords();
-		
-			//hitrostPrejsnjegaUkaza = hitrost23.doubleValue();
-			orientacijaPrejsnjegaUkaza = new Vector3d(orientacija3);
+
+            saveCoords();
+
+            hitrostPrejsnjegaUkaza = Convert.ToDouble(hitrost23);
+            orientacijaPrejsnjegaUkaza = new Vector3d(orientacija3);
 
             return true;
         }
-
-        /// <summary>
-        /// Metoda normalizira točko
-        /// </summary>
-        /// <param name="tocka">3d točka - vektor</param>
-        public static void normalizePoint3d(Vector3d tocka)
-        {
-            //normaliziram, uporabim normalize funkcijo od Vector3d
-            Vector3d vector = new Vector3d(tocka);
-            vector.Normalize();
-
-            //updejtam Point3d
-            tocka.X = vector.X;
-            tocka.Y = vector.Y;
-            tocka.Z = vector.Z;
-        }
-
         #endregion
-
-
     }
 }
