@@ -7,28 +7,28 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-/*
-// $ANTLR 3.4 D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g 2012-02-08 15:56:41
+
+// $ANTLR 3.4 D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g 2012-02-08 16:36:33
 
 // The variable 'variable' is assigned but its value is never used.
-#pragma warning disable 168, 219
+#pragma warning disable 219
 // Unreachable code detected.
 #pragma warning disable 162
 // Missing XML comment for publicly visible type or member 'Type_or_Member'
 #pragma warning disable 1591
+// CLS compliance checking will not be performed on 'type' because it is not visible from outside this assembly.
+#pragma warning disable 3019
 
 
 using System.Collections.Generic;
 using Antlr.Runtime;
 using Antlr.Runtime.Misc;
-using ConditionalAttribute = System.Diagnostics.ConditionalAttribute;
 
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "3.4")]
 [System.CLSCompliant(false)]
 public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 {
 	public const int EOF=-1;
-	public const int T__31=31;
 	public const int T__32=32;
 	public const int T__33=33;
 	public const int T__34=34;
@@ -43,6 +43,7 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	public const int T__43=43;
 	public const int T__44=44;
 	public const int T__45=45;
+	public const int T__46=46;
 	public const int ATTR=4;
 	public const int COMM=5;
 	public const int DATE=6;
@@ -59,17 +60,18 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	public const int MOVS=17;
 	public const int NAME=18;
 	public const int NEWLINE=19;
-	public const int NPOS=20;
-	public const int POS=21;
-	public const int POSTYPE=22;
-	public const int RCONF=23;
-	public const int REAL=24;
-	public const int RECTAN=25;
-	public const int TIME=26;
-	public const int TIMER=27;
-	public const int TOOL=28;
-	public const int USER=29;
-	public const int WS=30;
+	public const int NIZ=20;
+	public const int NPOS=21;
+	public const int POS=22;
+	public const int POSTYPE=23;
+	public const int RCONF=24;
+	public const int REAL=25;
+	public const int RECTAN=26;
+	public const int TIME=27;
+	public const int TIMER=28;
+	public const int TOOL=29;
+	public const int USER=30;
+	public const int WS=31;
 
     // delegates
     // delegators
@@ -92,2452 +94,2495 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	}
 	public override string GrammarFileName { get { return "D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g"; } }
 
-	private static readonly bool[] decisionCanBacktrack = new bool[0];
-
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void OnCreated() {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void EnterRule(string ruleName, int ruleIndex) {}
-	[Conditional("ANTLR_TRACE")]
-	protected virtual void LeaveRule(string ruleName, int ruleIndex) {}
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_T__31() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_T__31() {}
-
-    // $ANTLR start "T__31"
-    [GrammarRule("T__31")]
-    private void mT__31()
-    {
-    	EnterRule_T__31();
-    	EnterRule("T__31", 1);
-    	TraceIn("T__31", 1);
-    		try
-    		{
-    		int _type = T__31;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:7:7: ( ',' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:7:9: ','
-    		{
-    		DebugLocation(7, 9);
-    		Match(','); 
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("T__31", 1);
-    		LeaveRule("T__31", 1);
-    		LeaveRule_T__31();
-        }
-    }
-    // $ANTLR end "T__31"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_T__32() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_T__32() {}
-
-    // $ANTLR start "T__32"
-    [GrammarRule("T__32")]
-    private void mT__32()
-    {
-    	EnterRule_T__32();
-    	EnterRule("T__32", 2);
-    	TraceIn("T__32", 2);
-    		try
-    		{
-    		int _type = T__32;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:8:7: ( '-' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:8:9: '-'
-    		{
-    		DebugLocation(8, 9);
-    		Match('-'); 
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("T__32", 2);
-    		LeaveRule("T__32", 2);
-    		LeaveRule_T__32();
-        }
-    }
-    // $ANTLR end "T__32"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_T__33() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_T__33() {}
-
-    // $ANTLR start "T__33"
-    [GrammarRule("T__33")]
-    private void mT__33()
-    {
-    	EnterRule_T__33();
-    	EnterRule("T__33", 3);
-    	TraceIn("T__33", 3);
-    		try
-    		{
-    		int _type = T__33;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:9:7: ( '/' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:9:9: '/'
-    		{
-    		DebugLocation(9, 9);
-    		Match('/'); 
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("T__33", 3);
-    		LeaveRule("T__33", 3);
-    		LeaveRule_T__33();
-        }
-    }
-    // $ANTLR end "T__33"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_T__34() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_T__34() {}
-
-    // $ANTLR start "T__34"
-    [GrammarRule("T__34")]
-    private void mT__34()
-    {
-    	EnterRule_T__34();
-    	EnterRule("T__34", 4);
-    	TraceIn("T__34", 4);
-    		try
-    		{
-    		int _type = T__34;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:10:7: ( '0' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:10:9: '0'
-    		{
-    		DebugLocation(10, 9);
-    		Match('0'); 
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("T__34", 4);
-    		LeaveRule("T__34", 4);
-    		LeaveRule_T__34();
-        }
-    }
-    // $ANTLR end "T__34"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_T__35() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_T__35() {}
-
-    // $ANTLR start "T__35"
-    [GrammarRule("T__35")]
-    private void mT__35()
-    {
-    	EnterRule_T__35();
-    	EnterRule("T__35", 5);
-    	TraceIn("T__35", 5);
-    		try
-    		{
-    		int _type = T__35;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:11:7: ( '1' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:11:9: '1'
-    		{
-    		DebugLocation(11, 9);
-    		Match('1'); 
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("T__35", 5);
-    		LeaveRule("T__35", 5);
-    		LeaveRule_T__35();
-        }
-    }
-    // $ANTLR end "T__35"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_T__36() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_T__36() {}
-
-    // $ANTLR start "T__36"
-    [GrammarRule("T__36")]
-    private void mT__36()
-    {
-    	EnterRule_T__36();
-    	EnterRule("T__36", 6);
-    	TraceIn("T__36", 6);
-    		try
-    		{
-    		int _type = T__36;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:12:7: ( '=' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:12:9: '='
-    		{
-    		DebugLocation(12, 9);
-    		Match('='); 
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("T__36", 6);
-    		LeaveRule("T__36", 6);
-    		LeaveRule_T__36();
-        }
-    }
-    // $ANTLR end "T__36"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_T__37() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_T__37() {}
-
-    // $ANTLR start "T__37"
-    [GrammarRule("T__37")]
-    private void mT__37()
-    {
-    	EnterRule_T__37();
-    	EnterRule("T__37", 7);
-    	TraceIn("T__37", 7);
-    		try
-    		{
-    		int _type = T__37;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:13:7: ( 'A' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:13:9: 'A'
-    		{
-    		DebugLocation(13, 9);
-    		Match('A'); 
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("T__37", 7);
-    		LeaveRule("T__37", 7);
-    		LeaveRule_T__37();
-        }
-    }
-    // $ANTLR end "T__37"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_T__38() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_T__38() {}
-
-    // $ANTLR start "T__38"
-    [GrammarRule("T__38")]
-    private void mT__38()
-    {
-    	EnterRule_T__38();
-    	EnterRule("T__38", 8);
-    	TraceIn("T__38", 8);
-    		try
-    		{
-    		int _type = T__38;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:14:7: ( 'C' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:14:9: 'C'
-    		{
-    		DebugLocation(14, 9);
-    		Match('C'); 
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("T__38", 8);
-    		LeaveRule("T__38", 8);
-    		LeaveRule_T__38();
-        }
-    }
-    // $ANTLR end "T__38"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_T__39() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_T__39() {}
-
-    // $ANTLR start "T__39"
-    [GrammarRule("T__39")]
-    private void mT__39()
-    {
-    	EnterRule_T__39();
-    	EnterRule("T__39", 9);
-    	TraceIn("T__39", 9);
-    		try
-    		{
-    		int _type = T__39;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:15:7: ( 'END' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:15:9: 'END'
-    		{
-    		DebugLocation(15, 9);
-    		Match("END"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("T__39", 9);
-    		LeaveRule("T__39", 9);
-    		LeaveRule_T__39();
-        }
-    }
-    // $ANTLR end "T__39"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_T__40() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_T__40() {}
-
-    // $ANTLR start "T__40"
-    [GrammarRule("T__40")]
-    private void mT__40()
-    {
-    	EnterRule_T__40();
-    	EnterRule("T__40", 10);
-    	TraceIn("T__40", 10);
-    		try
-    		{
-    		int _type = T__40;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:16:7: ( 'NOP' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:16:9: 'NOP'
-    		{
-    		DebugLocation(16, 9);
-    		Match("NOP"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("T__40", 10);
-    		LeaveRule("T__40", 10);
-    		LeaveRule_T__40();
-        }
-    }
-    // $ANTLR end "T__40"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_T__41() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_T__41() {}
-
-    // $ANTLR start "T__41"
-    [GrammarRule("T__41")]
-    private void mT__41()
-    {
-    	EnterRule_T__41();
-    	EnterRule("T__41", 11);
-    	TraceIn("T__41", 11);
-    		try
-    		{
-    		int _type = T__41;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:17:7: ( 'PULSE' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:17:9: 'PULSE'
-    		{
-    		DebugLocation(17, 9);
-    		Match("PULSE"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("T__41", 11);
-    		LeaveRule("T__41", 11);
-    		LeaveRule_T__41();
-        }
-    }
-    // $ANTLR end "T__41"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_T__42() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_T__42() {}
-
-    // $ANTLR start "T__42"
-    [GrammarRule("T__42")]
-    private void mT__42()
-    {
-    	EnterRule_T__42();
-    	EnterRule("T__42", 12);
-    	TraceIn("T__42", 12);
-    		try
-    		{
-    		int _type = T__42;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:18:7: ( 'USER' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:18:9: 'USER'
-    		{
-    		DebugLocation(18, 9);
-    		Match("USER"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("T__42", 12);
-    		LeaveRule("T__42", 12);
-    		LeaveRule_T__42();
-        }
-    }
-    // $ANTLR end "T__42"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_T__43() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_T__43() {}
-
-    // $ANTLR start "T__43"
-    [GrammarRule("T__43")]
-    private void mT__43()
-    {
-    	EnterRule_T__43();
-    	EnterRule("T__43", 13);
-    	TraceIn("T__43", 13);
-    		try
-    		{
-    		int _type = T__43;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:19:7: ( 'V' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:19:9: 'V'
-    		{
-    		DebugLocation(19, 9);
-    		Match('V'); 
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("T__43", 13);
-    		LeaveRule("T__43", 13);
-    		LeaveRule_T__43();
-        }
-    }
-    // $ANTLR end "T__43"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_T__44() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_T__44() {}
-
-    // $ANTLR start "T__44"
-    [GrammarRule("T__44")]
-    private void mT__44()
-    {
-    	EnterRule_T__44();
-    	EnterRule("T__44", 14);
-    	TraceIn("T__44", 14);
-    		try
-    		{
-    		int _type = T__44;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:20:7: ( 'VJ' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:20:9: 'VJ'
-    		{
-    		DebugLocation(20, 9);
-    		Match("VJ"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("T__44", 14);
-    		LeaveRule("T__44", 14);
-    		LeaveRule_T__44();
-        }
-    }
-    // $ANTLR end "T__44"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_T__45() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_T__45() {}
-
-    // $ANTLR start "T__45"
-    [GrammarRule("T__45")]
-    private void mT__45()
-    {
-    	EnterRule_T__45();
-    	EnterRule("T__45", 15);
-    	TraceIn("T__45", 15);
-    		try
-    		{
-    		int _type = T__45;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:21:7: ( 'Z' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:21:9: 'Z'
-    		{
-    		DebugLocation(21, 9);
-    		Match('Z'); 
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("T__45", 15);
-    		LeaveRule("T__45", 15);
-    		LeaveRule_T__45();
-        }
-    }
-    // $ANTLR end "T__45"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_JOB() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_JOB() {}
-
-    // $ANTLR start "JOB"
-    [GrammarRule("JOB")]
-    private void mJOB()
-    {
-    	EnterRule_JOB();
-    	EnterRule("JOB", 16);
-    	TraceIn("JOB", 16);
-    		try
-    		{
-    		int _type = JOB;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:42:5: ( '/JOB' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:42:7: '/JOB'
-    		{
-    		DebugLocation(42, 7);
-    		Match("/JOB"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("JOB", 16);
-    		LeaveRule("JOB", 16);
-    		LeaveRule_JOB();
-        }
-    }
-    // $ANTLR end "JOB"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_NAME() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_NAME() {}
-
-    // $ANTLR start "NAME"
-    [GrammarRule("NAME")]
-    private void mNAME()
-    {
-    	EnterRule_NAME();
-    	EnterRule("NAME", 17);
-    	TraceIn("NAME", 17);
-    		try
-    		{
-    		int _type = NAME;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:43:6: ( '//NAME' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:43:8: '//NAME'
-    		{
-    		DebugLocation(43, 8);
-    		Match("//NAME"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("NAME", 17);
-    		LeaveRule("NAME", 17);
-    		LeaveRule_NAME();
-        }
-    }
-    // $ANTLR end "NAME"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_POS() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_POS() {}
-
-    // $ANTLR start "POS"
-    [GrammarRule("POS")]
-    private void mPOS()
-    {
-    	EnterRule_POS();
-    	EnterRule("POS", 18);
-    	TraceIn("POS", 18);
-    		try
-    		{
-    		int _type = POS;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:44:5: ( '//POS' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:44:7: '//POS'
-    		{
-    		DebugLocation(44, 7);
-    		Match("//POS"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("POS", 18);
-    		LeaveRule("POS", 18);
-    		LeaveRule_POS();
-        }
-    }
-    // $ANTLR end "POS"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_NPOS() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_NPOS() {}
-
-    // $ANTLR start "NPOS"
-    [GrammarRule("NPOS")]
-    private void mNPOS()
-    {
-    	EnterRule_NPOS();
-    	EnterRule("NPOS", 19);
-    	TraceIn("NPOS", 19);
-    		try
-    		{
-    		int _type = NPOS;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:45:6: ( '///NPOS' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:45:8: '///NPOS'
-    		{
-    		DebugLocation(45, 8);
-    		Match("///NPOS"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("NPOS", 19);
-    		LeaveRule("NPOS", 19);
-    		LeaveRule_NPOS();
-        }
-    }
-    // $ANTLR end "NPOS"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_USER() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_USER() {}
-
-    // $ANTLR start "USER"
-    [GrammarRule("USER")]
-    private void mUSER()
-    {
-    	EnterRule_USER();
-    	EnterRule("USER", 20);
-    	TraceIn("USER", 20);
-    		try
-    		{
-    		int _type = USER;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:46:6: ( '///USER' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:46:8: '///USER'
-    		{
-    		DebugLocation(46, 8);
-    		Match("///USER"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("USER", 20);
-    		LeaveRule("USER", 20);
-    		LeaveRule_USER();
-        }
-    }
-    // $ANTLR end "USER"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_TOOL() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_TOOL() {}
-
-    // $ANTLR start "TOOL"
-    [GrammarRule("TOOL")]
-    private void mTOOL()
-    {
-    	EnterRule_TOOL();
-    	EnterRule("TOOL", 21);
-    	TraceIn("TOOL", 21);
-    		try
-    		{
-    		int _type = TOOL;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:47:6: ( '///TOOL' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:47:8: '///TOOL'
-    		{
-    		DebugLocation(47, 8);
-    		Match("///TOOL"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("TOOL", 21);
-    		LeaveRule("TOOL", 21);
-    		LeaveRule_TOOL();
-        }
-    }
-    // $ANTLR end "TOOL"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_POSTYPE() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_POSTYPE() {}
-
-    // $ANTLR start "POSTYPE"
-    [GrammarRule("POSTYPE")]
-    private void mPOSTYPE()
-    {
-    	EnterRule_POSTYPE();
-    	EnterRule("POSTYPE", 22);
-    	TraceIn("POSTYPE", 22);
-    		try
-    		{
-    		int _type = POSTYPE;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:48:9: ( '///POSTYPE' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:48:11: '///POSTYPE'
-    		{
-    		DebugLocation(48, 11);
-    		Match("///POSTYPE"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("POSTYPE", 22);
-    		LeaveRule("POSTYPE", 22);
-    		LeaveRule_POSTYPE();
-        }
-    }
-    // $ANTLR end "POSTYPE"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_RECTAN() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_RECTAN() {}
-
-    // $ANTLR start "RECTAN"
-    [GrammarRule("RECTAN")]
-    private void mRECTAN()
-    {
-    	EnterRule_RECTAN();
-    	EnterRule("RECTAN", 23);
-    	TraceIn("RECTAN", 23);
-    		try
-    		{
-    		int _type = RECTAN;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:49:8: ( '///RECTAN' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:49:10: '///RECTAN'
-    		{
-    		DebugLocation(49, 10);
-    		Match("///RECTAN"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("RECTAN", 23);
-    		LeaveRule("RECTAN", 23);
-    		LeaveRule_RECTAN();
-        }
-    }
-    // $ANTLR end "RECTAN"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_RCONF() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_RCONF() {}
-
-    // $ANTLR start "RCONF"
-    [GrammarRule("RCONF")]
-    private void mRCONF()
-    {
-    	EnterRule_RCONF();
-    	EnterRule("RCONF", 24);
-    	TraceIn("RCONF", 24);
-    		try
-    		{
-    		int _type = RCONF;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:50:7: ( '///RCONF' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:50:9: '///RCONF'
-    		{
-    		DebugLocation(50, 9);
-    		Match("///RCONF"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("RCONF", 24);
-    		LeaveRule("RCONF", 24);
-    		LeaveRule_RCONF();
-        }
-    }
-    // $ANTLR end "RCONF"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_INST() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_INST() {}
-
-    // $ANTLR start "INST"
-    [GrammarRule("INST")]
-    private void mINST()
-    {
-    	EnterRule_INST();
-    	EnterRule("INST", 25);
-    	TraceIn("INST", 25);
-    		try
-    		{
-    		int _type = INST;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:51:6: ( '//INST' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:51:8: '//INST'
-    		{
-    		DebugLocation(51, 8);
-    		Match("//INST"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("INST", 25);
-    		LeaveRule("INST", 25);
-    		LeaveRule_INST();
-        }
-    }
-    // $ANTLR end "INST"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_DATE() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_DATE() {}
-
-    // $ANTLR start "DATE"
-    [GrammarRule("DATE")]
-    private void mDATE()
-    {
-    	EnterRule_DATE();
-    	EnterRule("DATE", 26);
-    	TraceIn("DATE", 26);
-    		try
-    		{
-    		int _type = DATE;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:52:6: ( '///DATE' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:52:8: '///DATE'
-    		{
-    		DebugLocation(52, 8);
-    		Match("///DATE"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("DATE", 26);
-    		LeaveRule("DATE", 26);
-    		LeaveRule_DATE();
-        }
-    }
-    // $ANTLR end "DATE"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_TIME() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_TIME() {}
-
-    // $ANTLR start "TIME"
-    [GrammarRule("TIME")]
-    private void mTIME()
-    {
-    	EnterRule_TIME();
-    	EnterRule("TIME", 27);
-    	TraceIn("TIME", 27);
-    		try
-    		{
-    		int _type = TIME;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:6: ( ( INT )+ ':' ( INT )+ )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:8: ( INT )+ ':' ( INT )+
-    		{
-    		DebugLocation(53, 8);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:8: ( INT )+
-    		int cnt1=0;
-    		try { DebugEnterSubRule(1);
-    		while (true)
-    		{
-    			int alt1=2;
-    			try { DebugEnterDecision(1, decisionCanBacktrack[1]);
-    			int LA1_0 = input.LA(1);
-
-    			if (((LA1_0>='0' && LA1_0<='9')))
-    			{
-    				alt1 = 1;
-    			}
-
-
-    			} finally { DebugExitDecision(1); }
-    			switch (alt1)
-    			{
-    			case 1:
-    				DebugEnterAlt(1);
-    				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:8: INT
-    				{
-    				DebugLocation(53, 8);
-    				mINT(); 
-
-    				}
-    				break;
-
-    			default:
-    				if (cnt1 >= 1)
-    					goto loop1;
-
-    				EarlyExitException eee1 = new EarlyExitException( 1, input );
-    				DebugRecognitionException(eee1);
-    				throw eee1;
-    			}
-    			cnt1++;
-    		}
-    		loop1:
-    			;
-
-    		} finally { DebugExitSubRule(1); }
-
-    		DebugLocation(53, 13);
-    		Match(':'); 
-    		DebugLocation(53, 17);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:17: ( INT )+
-    		int cnt2=0;
-    		try { DebugEnterSubRule(2);
-    		while (true)
-    		{
-    			int alt2=2;
-    			try { DebugEnterDecision(2, decisionCanBacktrack[2]);
-    			int LA2_0 = input.LA(1);
-
-    			if (((LA2_0>='0' && LA2_0<='9')))
-    			{
-    				alt2 = 1;
-    			}
-
-
-    			} finally { DebugExitDecision(2); }
-    			switch (alt2)
-    			{
-    			case 1:
-    				DebugEnterAlt(1);
-    				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:17: INT
-    				{
-    				DebugLocation(53, 17);
-    				mINT(); 
-
-    				}
-    				break;
-
-    			default:
-    				if (cnt2 >= 1)
-    					goto loop2;
-
-    				EarlyExitException eee2 = new EarlyExitException( 2, input );
-    				DebugRecognitionException(eee2);
-    				throw eee2;
-    			}
-    			cnt2++;
-    		}
-    		loop2:
-    			;
-
-    		} finally { DebugExitSubRule(2); }
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("TIME", 27);
-    		LeaveRule("TIME", 27);
-    		LeaveRule_TIME();
-        }
-    }
-    // $ANTLR end "TIME"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_COMM() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_COMM() {}
-
-    // $ANTLR start "COMM"
-    [GrammarRule("COMM")]
-    private void mCOMM()
-    {
-    	EnterRule_COMM();
-    	EnterRule("COMM", 28);
-    	TraceIn("COMM", 28);
-    		try
-    		{
-    		int _type = COMM;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:54:6: ( '///COMM' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:54:8: '///COMM'
-    		{
-    		DebugLocation(54, 8);
-    		Match("///COMM"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("COMM", 28);
-    		LeaveRule("COMM", 28);
-    		LeaveRule_COMM();
-        }
-    }
-    // $ANTLR end "COMM"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_ATTR() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_ATTR() {}
-
-    // $ANTLR start "ATTR"
-    [GrammarRule("ATTR")]
-    private void mATTR()
-    {
-    	EnterRule_ATTR();
-    	EnterRule("ATTR", 29);
-    	TraceIn("ATTR", 29);
-    		try
-    		{
-    		int _type = ATTR;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:55:6: ( '///ATTR' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:55:8: '///ATTR'
-    		{
-    		DebugLocation(55, 8);
-    		Match("///ATTR"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("ATTR", 29);
-    		LeaveRule("ATTR", 29);
-    		LeaveRule_ATTR();
-        }
-    }
-    // $ANTLR end "ATTR"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_FRAME() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_FRAME() {}
-
-    // $ANTLR start "FRAME"
-    [GrammarRule("FRAME")]
-    private void mFRAME()
-    {
-    	EnterRule_FRAME();
-    	EnterRule("FRAME", 30);
-    	TraceIn("FRAME", 30);
-    		try
-    		{
-    		int _type = FRAME;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:56:7: ( '////FRAME' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:56:9: '////FRAME'
-    		{
-    		DebugLocation(56, 9);
-    		Match("////FRAME"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("FRAME", 30);
-    		LeaveRule("FRAME", 30);
-    		LeaveRule_FRAME();
-        }
-    }
-    // $ANTLR end "FRAME"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_GROUP() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_GROUP() {}
-
-    // $ANTLR start "GROUP"
-    [GrammarRule("GROUP")]
-    private void mGROUP()
-    {
-    	EnterRule_GROUP();
-    	EnterRule("GROUP", 31);
-    	TraceIn("GROUP", 31);
-    		try
-    		{
-    		int _type = GROUP;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:57:7: ( '///GROUP1' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:57:9: '///GROUP1'
-    		{
-    		DebugLocation(57, 9);
-    		Match("///GROUP1"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("GROUP", 31);
-    		LeaveRule("GROUP", 31);
-    		LeaveRule_GROUP();
-        }
-    }
-    // $ANTLR end "GROUP"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_DOUT() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_DOUT() {}
-
-    // $ANTLR start "DOUT"
-    [GrammarRule("DOUT")]
-    private void mDOUT()
-    {
-    	EnterRule_DOUT();
-    	EnterRule("DOUT", 32);
-    	TraceIn("DOUT", 32);
-    		try
-    		{
-    		int _type = DOUT;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:58:6: ( 'DOUT OT#' '(' INT ')' ' ' ( 'ON' | 'OFF' ) )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:58:8: 'DOUT OT#' '(' INT ')' ' ' ( 'ON' | 'OFF' )
-    		{
-    		DebugLocation(58, 8);
-    		Match("DOUT OT#"); 
-
-    		DebugLocation(58, 19);
-    		Match('('); 
-    		DebugLocation(58, 23);
-    		mINT(); 
-    		DebugLocation(58, 27);
-    		Match(')'); 
-    		DebugLocation(58, 31);
-    		Match(' '); 
-    		DebugLocation(58, 35);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:58:35: ( 'ON' | 'OFF' )
-    		int alt3=2;
-    		try { DebugEnterSubRule(3);
-    		try { DebugEnterDecision(3, decisionCanBacktrack[3]);
-    		int LA3_0 = input.LA(1);
-
-    		if ((LA3_0=='O'))
-    		{
-    			int LA3_1 = input.LA(2);
-
-    			if ((LA3_1=='N'))
-    			{
-    				alt3 = 1;
-    			}
-    			else if ((LA3_1=='F'))
-    			{
-    				alt3 = 2;
-    			}
-    			else
-    			{
-    				NoViableAltException nvae = new NoViableAltException("", 3, 1, input);
-    				DebugRecognitionException(nvae);
-    				throw nvae;
-    			}
-    		}
-    		else
-    		{
-    			NoViableAltException nvae = new NoViableAltException("", 3, 0, input);
-    			DebugRecognitionException(nvae);
-    			throw nvae;
-    		}
-    		} finally { DebugExitDecision(3); }
-    		switch (alt3)
-    		{
-    		case 1:
-    			DebugEnterAlt(1);
-    			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:58:36: 'ON'
-    			{
-    			DebugLocation(58, 36);
-    			Match("ON"); 
-
-
-    			}
-    			break;
-    		case 2:
-    			DebugEnterAlt(2);
-    			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:58:43: 'OFF'
-    			{
-    			DebugLocation(58, 43);
-    			Match("OFF"); 
-
-
-    			}
-    			break;
-
-    		}
-    		} finally { DebugExitSubRule(3); }
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("DOUT", 32);
-    		LeaveRule("DOUT", 32);
-    		LeaveRule_DOUT();
-        }
-    }
-    // $ANTLR end "DOUT"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_DIN() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_DIN() {}
-
-    // $ANTLR start "DIN"
-    [GrammarRule("DIN")]
-    private void mDIN()
-    {
-    	EnterRule_DIN();
-    	EnterRule("DIN", 33);
-    	TraceIn("DIN", 33);
-    		try
-    		{
-    		int _type = DIN;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:59:5: ( 'DIN OT#' '(' INT ')' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:59:7: 'DIN OT#' '(' INT ')'
-    		{
-    		DebugLocation(59, 7);
-    		Match("DIN OT#"); 
-
-    		DebugLocation(59, 17);
-    		Match('('); 
-    		DebugLocation(59, 21);
-    		mINT(); 
-    		DebugLocation(59, 25);
-    		Match(')'); 
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("DIN", 33);
-    		LeaveRule("DIN", 33);
-    		LeaveRule_DIN();
-        }
-    }
-    // $ANTLR end "DIN"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_TIMER() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_TIMER() {}
-
-    // $ANTLR start "TIMER"
-    [GrammarRule("TIMER")]
-    private void mTIMER()
-    {
-    	EnterRule_TIMER();
-    	EnterRule("TIMER", 34);
-    	TraceIn("TIMER", 34);
-    		try
-    		{
-    		int _type = TIMER;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:60:7: ( 'TIMER T=' REAL )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:60:9: 'TIMER T=' REAL
-    		{
-    		DebugLocation(60, 9);
-    		Match("TIMER T="); 
-
-    		DebugLocation(60, 20);
-    		mREAL(); 
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("TIMER", 34);
-    		LeaveRule("TIMER", 34);
-    		LeaveRule_TIMER();
-        }
-    }
-    // $ANTLR end "TIMER"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_MOVJ() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_MOVJ() {}
-
-    // $ANTLR start "MOVJ"
-    [GrammarRule("MOVJ")]
-    private void mMOVJ()
-    {
-    	EnterRule_MOVJ();
-    	EnterRule("MOVJ", 35);
-    	TraceIn("MOVJ", 35);
-    		try
-    		{
-    		int _type = MOVJ;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:61:6: ( 'MOVJ' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:61:8: 'MOVJ'
-    		{
-    		DebugLocation(61, 8);
-    		Match("MOVJ"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("MOVJ", 35);
-    		LeaveRule("MOVJ", 35);
-    		LeaveRule_MOVJ();
-        }
-    }
-    // $ANTLR end "MOVJ"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_MOVL() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_MOVL() {}
-
-    // $ANTLR start "MOVL"
-    [GrammarRule("MOVL")]
-    private void mMOVL()
-    {
-    	EnterRule_MOVL();
-    	EnterRule("MOVL", 36);
-    	TraceIn("MOVL", 36);
-    		try
-    		{
-    		int _type = MOVL;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:62:6: ( 'MOVL' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:62:8: 'MOVL'
-    		{
-    		DebugLocation(62, 8);
-    		Match("MOVL"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("MOVL", 36);
-    		LeaveRule("MOVL", 36);
-    		LeaveRule_MOVL();
-        }
-    }
-    // $ANTLR end "MOVL"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_MOVC() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_MOVC() {}
-
-    // $ANTLR start "MOVC"
-    [GrammarRule("MOVC")]
-    private void mMOVC()
-    {
-    	EnterRule_MOVC();
-    	EnterRule("MOVC", 37);
-    	TraceIn("MOVC", 37);
-    		try
-    		{
-    		int _type = MOVC;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:63:6: ( 'MOVC' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:63:8: 'MOVC'
-    		{
-    		DebugLocation(63, 8);
-    		Match("MOVC"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("MOVC", 37);
-    		LeaveRule("MOVC", 37);
-    		LeaveRule_MOVC();
-        }
-    }
-    // $ANTLR end "MOVC"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_MOVS() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_MOVS() {}
-
-    // $ANTLR start "MOVS"
-    [GrammarRule("MOVS")]
-    private void mMOVS()
-    {
-    	EnterRule_MOVS();
-    	EnterRule("MOVS", 38);
-    	TraceIn("MOVS", 38);
-    		try
-    		{
-    		int _type = MOVS;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:64:6: ( 'MOVS' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:64:8: 'MOVS'
-    		{
-    		DebugLocation(64, 8);
-    		Match("MOVS"); 
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("MOVS", 38);
-    		LeaveRule("MOVS", 38);
-    		LeaveRule_MOVS();
-        }
-    }
-    // $ANTLR end "MOVS"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_REAL() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_REAL() {}
-
-    // $ANTLR start "REAL"
-    [GrammarRule("REAL")]
-    private void mREAL()
-    {
-    	EnterRule_REAL();
-    	EnterRule("REAL", 39);
-    	TraceIn("REAL", 39);
-    		try
-    		{
-    		int _type = REAL;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:66:6: ( ( INT )+ '.' ( INT )+ )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:66:8: ( INT )+ '.' ( INT )+
-    		{
-    		DebugLocation(66, 8);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:66:8: ( INT )+
-    		int cnt4=0;
-    		try { DebugEnterSubRule(4);
-    		while (true)
-    		{
-    			int alt4=2;
-    			try { DebugEnterDecision(4, decisionCanBacktrack[4]);
-    			int LA4_0 = input.LA(1);
-
-    			if (((LA4_0>='0' && LA4_0<='9')))
-    			{
-    				alt4 = 1;
-    			}
-
-
-    			} finally { DebugExitDecision(4); }
-    			switch (alt4)
-    			{
-    			case 1:
-    				DebugEnterAlt(1);
-    				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:66:8: INT
-    				{
-    				DebugLocation(66, 8);
-    				mINT(); 
-
-    				}
-    				break;
-
-    			default:
-    				if (cnt4 >= 1)
-    					goto loop4;
-
-    				EarlyExitException eee4 = new EarlyExitException( 4, input );
-    				DebugRecognitionException(eee4);
-    				throw eee4;
-    			}
-    			cnt4++;
-    		}
-    		loop4:
-    			;
-
-    		} finally { DebugExitSubRule(4); }
-
-    		DebugLocation(66, 13);
-    		Match('.'); 
-    		DebugLocation(66, 17);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:66:17: ( INT )+
-    		int cnt5=0;
-    		try { DebugEnterSubRule(5);
-    		while (true)
-    		{
-    			int alt5=2;
-    			try { DebugEnterDecision(5, decisionCanBacktrack[5]);
-    			int LA5_0 = input.LA(1);
-
-    			if (((LA5_0>='0' && LA5_0<='9')))
-    			{
-    				alt5 = 1;
-    			}
-
-
-    			} finally { DebugExitDecision(5); }
-    			switch (alt5)
-    			{
-    			case 1:
-    				DebugEnterAlt(1);
-    				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:66:17: INT
-    				{
-    				DebugLocation(66, 17);
-    				mINT(); 
-
-    				}
-    				break;
-
-    			default:
-    				if (cnt5 >= 1)
-    					goto loop5;
-
-    				EarlyExitException eee5 = new EarlyExitException( 5, input );
-    				DebugRecognitionException(eee5);
-    				throw eee5;
-    			}
-    			cnt5++;
-    		}
-    		loop5:
-    			;
-
-    		} finally { DebugExitSubRule(5); }
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("REAL", 39);
-    		LeaveRule("REAL", 39);
-    		LeaveRule_REAL();
-        }
-    }
-    // $ANTLR end "REAL"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_INT() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_INT() {}
-
-    // $ANTLR start "INT"
-    [GrammarRule("INT")]
-    private void mINT()
-    {
-    	EnterRule_INT();
-    	EnterRule("INT", 40);
-    	TraceIn("INT", 40);
-    		try
-    		{
-    		int _type = INT;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:67:6: ( ( '0' .. '9' )+ )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:67:8: ( '0' .. '9' )+
-    		{
-    		DebugLocation(67, 8);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:67:8: ( '0' .. '9' )+
-    		int cnt6=0;
-    		try { DebugEnterSubRule(6);
-    		while (true)
-    		{
-    			int alt6=2;
-    			try { DebugEnterDecision(6, decisionCanBacktrack[6]);
-    			int LA6_0 = input.LA(1);
-
-    			if (((LA6_0>='0' && LA6_0<='9')))
-    			{
-    				alt6 = 1;
-    			}
-
-
-    			} finally { DebugExitDecision(6); }
-    			switch (alt6)
-    			{
-    			case 1:
-    				DebugEnterAlt(1);
-    				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:
-    				{
-    				DebugLocation(67, 8);
-    				input.Consume();
-
-
-    				}
-    				break;
-
-    			default:
-    				if (cnt6 >= 1)
-    					goto loop6;
-
-    				EarlyExitException eee6 = new EarlyExitException( 6, input );
-    				DebugRecognitionException(eee6);
-    				throw eee6;
-    			}
-    			cnt6++;
-    		}
-    		loop6:
-    			;
-
-    		} finally { DebugExitSubRule(6); }
-
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("INT", 40);
-    		LeaveRule("INT", 40);
-    		LeaveRule_INT();
-        }
-    }
-    // $ANTLR end "INT"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_NEWLINE() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_NEWLINE() {}
-
-    // $ANTLR start "NEWLINE"
-    [GrammarRule("NEWLINE")]
-    private void mNEWLINE()
-    {
-    	EnterRule_NEWLINE();
-    	EnterRule("NEWLINE", 41);
-    	TraceIn("NEWLINE", 41);
-    		try
-    		{
-    		int _type = NEWLINE;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:68:9: ( ( '\\r' )? '\\n' )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:68:11: ( '\\r' )? '\\n'
-    		{
-    		DebugLocation(68, 11);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:68:11: ( '\\r' )?
-    		int alt7=2;
-    		try { DebugEnterSubRule(7);
-    		try { DebugEnterDecision(7, decisionCanBacktrack[7]);
-    		int LA7_0 = input.LA(1);
-
-    		if ((LA7_0=='\r'))
-    		{
-    			alt7 = 1;
-    		}
-    		} finally { DebugExitDecision(7); }
-    		switch (alt7)
-    		{
-    		case 1:
-    			DebugEnterAlt(1);
-    			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:68:11: '\\r'
-    			{
-    			DebugLocation(68, 11);
-    			Match('\r'); 
-
-    			}
-    			break;
-
-    		}
-    		} finally { DebugExitSubRule(7); }
-
-    		DebugLocation(68, 17);
-    		Match('\n'); 
-    		DebugLocation(68, 22);
-    		Skip();
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("NEWLINE", 41);
-    		LeaveRule("NEWLINE", 41);
-    		LeaveRule_NEWLINE();
-        }
-    }
-    // $ANTLR end "NEWLINE"
-
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void EnterRule_WS() {}
-    [Conditional("ANTLR_TRACE")]
-    protected virtual void LeaveRule_WS() {}
-
-    // $ANTLR start "WS"
-    [GrammarRule("WS")]
-    private void mWS()
-    {
-    	EnterRule_WS();
-    	EnterRule("WS", 42);
-    	TraceIn("WS", 42);
-    		try
-    		{
-    		int _type = WS;
-    		int _channel = DefaultTokenChannel;
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:69:5: ( ( ' ' | '\\t' )+ )
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:69:7: ( ' ' | '\\t' )+
-    		{
-    		DebugLocation(69, 7);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:69:7: ( ' ' | '\\t' )+
-    		int cnt8=0;
-    		try { DebugEnterSubRule(8);
-    		while (true)
-    		{
-    			int alt8=2;
-    			try { DebugEnterDecision(8, decisionCanBacktrack[8]);
-    			int LA8_0 = input.LA(1);
-
-    			if ((LA8_0=='\t'||LA8_0==' '))
-    			{
-    				alt8 = 1;
-    			}
-
-
-    			} finally { DebugExitDecision(8); }
-    			switch (alt8)
-    			{
-    			case 1:
-    				DebugEnterAlt(1);
-    				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:
-    				{
-    				DebugLocation(69, 7);
-    				input.Consume();
-
-
-    				}
-    				break;
-
-    			default:
-    				if (cnt8 >= 1)
-    					goto loop8;
-
-    				EarlyExitException eee8 = new EarlyExitException( 8, input );
-    				DebugRecognitionException(eee8);
-    				throw eee8;
-    			}
-    			cnt8++;
-    		}
-    		loop8:
-    			;
-
-    		} finally { DebugExitSubRule(8); }
-
-    		DebugLocation(69, 19);
-    		Skip();
-
-    		}
-
-    		state.type = _type;
-    		state.channel = _channel;
-    	}
-    	finally
-    	{
-    		TraceOut("WS", 42);
-    		LeaveRule("WS", 42);
-    		LeaveRule_WS();
-        }
-    }
-    // $ANTLR end "WS"
-
-    public override void mTokens()
-    {
-    	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:8: ( T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | JOB | NAME | POS | NPOS | USER | TOOL | POSTYPE | RECTAN | RCONF | INST | DATE | TIME | COMM | ATTR | FRAME | GROUP | DOUT | DIN | TIMER | MOVJ | MOVL | MOVC | MOVS | REAL | INT | NEWLINE | WS )
-    	int alt9=42;
-    	try { DebugEnterDecision(9, decisionCanBacktrack[9]);
-    	try
-    	{
-    		alt9 = dfa9.Predict(input);
-    	}
-    	catch (NoViableAltException nvae)
-    	{
-    		DebugRecognitionException(nvae);
-    		throw;
-    	}
-    	} finally { DebugExitDecision(9); }
-    	switch (alt9)
-    	{
-    	case 1:
-    		DebugEnterAlt(1);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:10: T__31
-    		{
-    		DebugLocation(1, 10);
-    		mT__31(); 
-
-    		}
-    		break;
-    	case 2:
-    		DebugEnterAlt(2);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:16: T__32
-    		{
-    		DebugLocation(1, 16);
-    		mT__32(); 
-
-    		}
-    		break;
-    	case 3:
-    		DebugEnterAlt(3);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:22: T__33
-    		{
-    		DebugLocation(1, 22);
-    		mT__33(); 
-
-    		}
-    		break;
-    	case 4:
-    		DebugEnterAlt(4);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:28: T__34
-    		{
-    		DebugLocation(1, 28);
-    		mT__34(); 
-
-    		}
-    		break;
-    	case 5:
-    		DebugEnterAlt(5);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:34: T__35
-    		{
-    		DebugLocation(1, 34);
-    		mT__35(); 
-
-    		}
-    		break;
-    	case 6:
-    		DebugEnterAlt(6);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:40: T__36
-    		{
-    		DebugLocation(1, 40);
-    		mT__36(); 
-
-    		}
-    		break;
-    	case 7:
-    		DebugEnterAlt(7);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:46: T__37
-    		{
-    		DebugLocation(1, 46);
-    		mT__37(); 
-
-    		}
-    		break;
-    	case 8:
-    		DebugEnterAlt(8);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:52: T__38
-    		{
-    		DebugLocation(1, 52);
-    		mT__38(); 
-
-    		}
-    		break;
-    	case 9:
-    		DebugEnterAlt(9);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:58: T__39
-    		{
-    		DebugLocation(1, 58);
-    		mT__39(); 
-
-    		}
-    		break;
-    	case 10:
-    		DebugEnterAlt(10);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:64: T__40
-    		{
-    		DebugLocation(1, 64);
-    		mT__40(); 
-
-    		}
-    		break;
-    	case 11:
-    		DebugEnterAlt(11);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:70: T__41
-    		{
-    		DebugLocation(1, 70);
-    		mT__41(); 
-
-    		}
-    		break;
-    	case 12:
-    		DebugEnterAlt(12);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:76: T__42
-    		{
-    		DebugLocation(1, 76);
-    		mT__42(); 
-
-    		}
-    		break;
-    	case 13:
-    		DebugEnterAlt(13);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:82: T__43
-    		{
-    		DebugLocation(1, 82);
-    		mT__43(); 
-
-    		}
-    		break;
-    	case 14:
-    		DebugEnterAlt(14);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:88: T__44
-    		{
-    		DebugLocation(1, 88);
-    		mT__44(); 
-
-    		}
-    		break;
-    	case 15:
-    		DebugEnterAlt(15);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:94: T__45
-    		{
-    		DebugLocation(1, 94);
-    		mT__45(); 
-
-    		}
-    		break;
-    	case 16:
-    		DebugEnterAlt(16);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:100: JOB
-    		{
-    		DebugLocation(1, 100);
-    		mJOB(); 
-
-    		}
-    		break;
-    	case 17:
-    		DebugEnterAlt(17);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:104: NAME
-    		{
-    		DebugLocation(1, 104);
-    		mNAME(); 
-
-    		}
-    		break;
-    	case 18:
-    		DebugEnterAlt(18);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:109: POS
-    		{
-    		DebugLocation(1, 109);
-    		mPOS(); 
-
-    		}
-    		break;
-    	case 19:
-    		DebugEnterAlt(19);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:113: NPOS
-    		{
-    		DebugLocation(1, 113);
-    		mNPOS(); 
-
-    		}
-    		break;
-    	case 20:
-    		DebugEnterAlt(20);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:118: USER
-    		{
-    		DebugLocation(1, 118);
-    		mUSER(); 
-
-    		}
-    		break;
-    	case 21:
-    		DebugEnterAlt(21);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:123: TOOL
-    		{
-    		DebugLocation(1, 123);
-    		mTOOL(); 
-
-    		}
-    		break;
-    	case 22:
-    		DebugEnterAlt(22);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:128: POSTYPE
-    		{
-    		DebugLocation(1, 128);
-    		mPOSTYPE(); 
-
-    		}
-    		break;
-    	case 23:
-    		DebugEnterAlt(23);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:136: RECTAN
-    		{
-    		DebugLocation(1, 136);
-    		mRECTAN(); 
-
-    		}
-    		break;
-    	case 24:
-    		DebugEnterAlt(24);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:143: RCONF
-    		{
-    		DebugLocation(1, 143);
-    		mRCONF(); 
-
-    		}
-    		break;
-    	case 25:
-    		DebugEnterAlt(25);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:149: INST
-    		{
-    		DebugLocation(1, 149);
-    		mINST(); 
-
-    		}
-    		break;
-    	case 26:
-    		DebugEnterAlt(26);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:154: DATE
-    		{
-    		DebugLocation(1, 154);
-    		mDATE(); 
-
-    		}
-    		break;
-    	case 27:
-    		DebugEnterAlt(27);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:159: TIME
-    		{
-    		DebugLocation(1, 159);
-    		mTIME(); 
-
-    		}
-    		break;
-    	case 28:
-    		DebugEnterAlt(28);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:164: COMM
-    		{
-    		DebugLocation(1, 164);
-    		mCOMM(); 
-
-    		}
-    		break;
-    	case 29:
-    		DebugEnterAlt(29);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:169: ATTR
-    		{
-    		DebugLocation(1, 169);
-    		mATTR(); 
-
-    		}
-    		break;
-    	case 30:
-    		DebugEnterAlt(30);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:174: FRAME
-    		{
-    		DebugLocation(1, 174);
-    		mFRAME(); 
-
-    		}
-    		break;
-    	case 31:
-    		DebugEnterAlt(31);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:180: GROUP
-    		{
-    		DebugLocation(1, 180);
-    		mGROUP(); 
-
-    		}
-    		break;
-    	case 32:
-    		DebugEnterAlt(32);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:186: DOUT
-    		{
-    		DebugLocation(1, 186);
-    		mDOUT(); 
-
-    		}
-    		break;
-    	case 33:
-    		DebugEnterAlt(33);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:191: DIN
-    		{
-    		DebugLocation(1, 191);
-    		mDIN(); 
-
-    		}
-    		break;
-    	case 34:
-    		DebugEnterAlt(34);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:195: TIMER
-    		{
-    		DebugLocation(1, 195);
-    		mTIMER(); 
-
-    		}
-    		break;
-    	case 35:
-    		DebugEnterAlt(35);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:201: MOVJ
-    		{
-    		DebugLocation(1, 201);
-    		mMOVJ(); 
-
-    		}
-    		break;
-    	case 36:
-    		DebugEnterAlt(36);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:206: MOVL
-    		{
-    		DebugLocation(1, 206);
-    		mMOVL(); 
-
-    		}
-    		break;
-    	case 37:
-    		DebugEnterAlt(37);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:211: MOVC
-    		{
-    		DebugLocation(1, 211);
-    		mMOVC(); 
-
-    		}
-    		break;
-    	case 38:
-    		DebugEnterAlt(38);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:216: MOVS
-    		{
-    		DebugLocation(1, 216);
-    		mMOVS(); 
-
-    		}
-    		break;
-    	case 39:
-    		DebugEnterAlt(39);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:221: REAL
-    		{
-    		DebugLocation(1, 221);
-    		mREAL(); 
-
-    		}
-    		break;
-    	case 40:
-    		DebugEnterAlt(40);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:226: INT
-    		{
-    		DebugLocation(1, 226);
-    		mINT(); 
-
-    		}
-    		break;
-    	case 41:
-    		DebugEnterAlt(41);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:230: NEWLINE
-    		{
-    		DebugLocation(1, 230);
-    		mNEWLINE(); 
-
-    		}
-    		break;
-    	case 42:
-    		DebugEnterAlt(42);
-    		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:238: WS
-    		{
-    		DebugLocation(1, 238);
-    		mWS(); 
-
-    		}
-    		break;
-
-    	}
-
-    }
+
+	partial void OnCreated();
+	partial void EnterRule(string ruleName, int ruleIndex);
+	partial void LeaveRule(string ruleName, int ruleIndex);
+
+	partial void EnterRule_T__32();
+	partial void LeaveRule_T__32();
+
+	// $ANTLR start "T__32"
+	[GrammarRule("T__32")]
+	private void mT__32()
+	{
+		EnterRule_T__32();
+		EnterRule("T__32", 1);
+		TraceIn("T__32", 1);
+		try
+		{
+			int _type = T__32;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:7:7: ( ',' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:7:9: ','
+			{
+			DebugLocation(7, 9);
+			Match(','); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__32", 1);
+			LeaveRule("T__32", 1);
+			LeaveRule_T__32();
+		}
+	}
+	// $ANTLR end "T__32"
+
+	partial void EnterRule_T__33();
+	partial void LeaveRule_T__33();
+
+	// $ANTLR start "T__33"
+	[GrammarRule("T__33")]
+	private void mT__33()
+	{
+		EnterRule_T__33();
+		EnterRule("T__33", 2);
+		TraceIn("T__33", 2);
+		try
+		{
+			int _type = T__33;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:8:7: ( '-' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:8:9: '-'
+			{
+			DebugLocation(8, 9);
+			Match('-'); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__33", 2);
+			LeaveRule("T__33", 2);
+			LeaveRule_T__33();
+		}
+	}
+	// $ANTLR end "T__33"
+
+	partial void EnterRule_T__34();
+	partial void LeaveRule_T__34();
+
+	// $ANTLR start "T__34"
+	[GrammarRule("T__34")]
+	private void mT__34()
+	{
+		EnterRule_T__34();
+		EnterRule("T__34", 3);
+		TraceIn("T__34", 3);
+		try
+		{
+			int _type = T__34;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:9:7: ( '/' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:9:9: '/'
+			{
+			DebugLocation(9, 9);
+			Match('/'); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__34", 3);
+			LeaveRule("T__34", 3);
+			LeaveRule_T__34();
+		}
+	}
+	// $ANTLR end "T__34"
+
+	partial void EnterRule_T__35();
+	partial void LeaveRule_T__35();
+
+	// $ANTLR start "T__35"
+	[GrammarRule("T__35")]
+	private void mT__35()
+	{
+		EnterRule_T__35();
+		EnterRule("T__35", 4);
+		TraceIn("T__35", 4);
+		try
+		{
+			int _type = T__35;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:10:7: ( '0' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:10:9: '0'
+			{
+			DebugLocation(10, 9);
+			Match('0'); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__35", 4);
+			LeaveRule("T__35", 4);
+			LeaveRule_T__35();
+		}
+	}
+	// $ANTLR end "T__35"
+
+	partial void EnterRule_T__36();
+	partial void LeaveRule_T__36();
+
+	// $ANTLR start "T__36"
+	[GrammarRule("T__36")]
+	private void mT__36()
+	{
+		EnterRule_T__36();
+		EnterRule("T__36", 5);
+		TraceIn("T__36", 5);
+		try
+		{
+			int _type = T__36;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:11:7: ( '1' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:11:9: '1'
+			{
+			DebugLocation(11, 9);
+			Match('1'); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__36", 5);
+			LeaveRule("T__36", 5);
+			LeaveRule_T__36();
+		}
+	}
+	// $ANTLR end "T__36"
+
+	partial void EnterRule_T__37();
+	partial void LeaveRule_T__37();
+
+	// $ANTLR start "T__37"
+	[GrammarRule("T__37")]
+	private void mT__37()
+	{
+		EnterRule_T__37();
+		EnterRule("T__37", 6);
+		TraceIn("T__37", 6);
+		try
+		{
+			int _type = T__37;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:12:7: ( '=' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:12:9: '='
+			{
+			DebugLocation(12, 9);
+			Match('='); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__37", 6);
+			LeaveRule("T__37", 6);
+			LeaveRule_T__37();
+		}
+	}
+	// $ANTLR end "T__37"
+
+	partial void EnterRule_T__38();
+	partial void LeaveRule_T__38();
+
+	// $ANTLR start "T__38"
+	[GrammarRule("T__38")]
+	private void mT__38()
+	{
+		EnterRule_T__38();
+		EnterRule("T__38", 7);
+		TraceIn("T__38", 7);
+		try
+		{
+			int _type = T__38;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:13:7: ( 'A' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:13:9: 'A'
+			{
+			DebugLocation(13, 9);
+			Match('A'); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__38", 7);
+			LeaveRule("T__38", 7);
+			LeaveRule_T__38();
+		}
+	}
+	// $ANTLR end "T__38"
+
+	partial void EnterRule_T__39();
+	partial void LeaveRule_T__39();
+
+	// $ANTLR start "T__39"
+	[GrammarRule("T__39")]
+	private void mT__39()
+	{
+		EnterRule_T__39();
+		EnterRule("T__39", 8);
+		TraceIn("T__39", 8);
+		try
+		{
+			int _type = T__39;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:14:7: ( 'C' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:14:9: 'C'
+			{
+			DebugLocation(14, 9);
+			Match('C'); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__39", 8);
+			LeaveRule("T__39", 8);
+			LeaveRule_T__39();
+		}
+	}
+	// $ANTLR end "T__39"
+
+	partial void EnterRule_T__40();
+	partial void LeaveRule_T__40();
+
+	// $ANTLR start "T__40"
+	[GrammarRule("T__40")]
+	private void mT__40()
+	{
+		EnterRule_T__40();
+		EnterRule("T__40", 9);
+		TraceIn("T__40", 9);
+		try
+		{
+			int _type = T__40;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:15:7: ( 'END' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:15:9: 'END'
+			{
+			DebugLocation(15, 9);
+			Match("END"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__40", 9);
+			LeaveRule("T__40", 9);
+			LeaveRule_T__40();
+		}
+	}
+	// $ANTLR end "T__40"
+
+	partial void EnterRule_T__41();
+	partial void LeaveRule_T__41();
+
+	// $ANTLR start "T__41"
+	[GrammarRule("T__41")]
+	private void mT__41()
+	{
+		EnterRule_T__41();
+		EnterRule("T__41", 10);
+		TraceIn("T__41", 10);
+		try
+		{
+			int _type = T__41;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:16:7: ( 'NOP' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:16:9: 'NOP'
+			{
+			DebugLocation(16, 9);
+			Match("NOP"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__41", 10);
+			LeaveRule("T__41", 10);
+			LeaveRule_T__41();
+		}
+	}
+	// $ANTLR end "T__41"
+
+	partial void EnterRule_T__42();
+	partial void LeaveRule_T__42();
+
+	// $ANTLR start "T__42"
+	[GrammarRule("T__42")]
+	private void mT__42()
+	{
+		EnterRule_T__42();
+		EnterRule("T__42", 11);
+		TraceIn("T__42", 11);
+		try
+		{
+			int _type = T__42;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:17:7: ( 'PULSE' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:17:9: 'PULSE'
+			{
+			DebugLocation(17, 9);
+			Match("PULSE"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__42", 11);
+			LeaveRule("T__42", 11);
+			LeaveRule_T__42();
+		}
+	}
+	// $ANTLR end "T__42"
+
+	partial void EnterRule_T__43();
+	partial void LeaveRule_T__43();
+
+	// $ANTLR start "T__43"
+	[GrammarRule("T__43")]
+	private void mT__43()
+	{
+		EnterRule_T__43();
+		EnterRule("T__43", 12);
+		TraceIn("T__43", 12);
+		try
+		{
+			int _type = T__43;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:18:7: ( 'USER' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:18:9: 'USER'
+			{
+			DebugLocation(18, 9);
+			Match("USER"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__43", 12);
+			LeaveRule("T__43", 12);
+			LeaveRule_T__43();
+		}
+	}
+	// $ANTLR end "T__43"
+
+	partial void EnterRule_T__44();
+	partial void LeaveRule_T__44();
+
+	// $ANTLR start "T__44"
+	[GrammarRule("T__44")]
+	private void mT__44()
+	{
+		EnterRule_T__44();
+		EnterRule("T__44", 13);
+		TraceIn("T__44", 13);
+		try
+		{
+			int _type = T__44;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:19:7: ( 'V' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:19:9: 'V'
+			{
+			DebugLocation(19, 9);
+			Match('V'); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__44", 13);
+			LeaveRule("T__44", 13);
+			LeaveRule_T__44();
+		}
+	}
+	// $ANTLR end "T__44"
+
+	partial void EnterRule_T__45();
+	partial void LeaveRule_T__45();
+
+	// $ANTLR start "T__45"
+	[GrammarRule("T__45")]
+	private void mT__45()
+	{
+		EnterRule_T__45();
+		EnterRule("T__45", 14);
+		TraceIn("T__45", 14);
+		try
+		{
+			int _type = T__45;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:20:7: ( 'VJ' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:20:9: 'VJ'
+			{
+			DebugLocation(20, 9);
+			Match("VJ"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__45", 14);
+			LeaveRule("T__45", 14);
+			LeaveRule_T__45();
+		}
+	}
+	// $ANTLR end "T__45"
+
+	partial void EnterRule_T__46();
+	partial void LeaveRule_T__46();
+
+	// $ANTLR start "T__46"
+	[GrammarRule("T__46")]
+	private void mT__46()
+	{
+		EnterRule_T__46();
+		EnterRule("T__46", 15);
+		TraceIn("T__46", 15);
+		try
+		{
+			int _type = T__46;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:21:7: ( 'Z' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:21:9: 'Z'
+			{
+			DebugLocation(21, 9);
+			Match('Z'); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("T__46", 15);
+			LeaveRule("T__46", 15);
+			LeaveRule_T__46();
+		}
+	}
+	// $ANTLR end "T__46"
+
+	partial void EnterRule_JOB();
+	partial void LeaveRule_JOB();
+
+	// $ANTLR start "JOB"
+	[GrammarRule("JOB")]
+	private void mJOB()
+	{
+		EnterRule_JOB();
+		EnterRule("JOB", 16);
+		TraceIn("JOB", 16);
+		try
+		{
+			int _type = JOB;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:42:5: ( '/JOB' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:42:7: '/JOB'
+			{
+			DebugLocation(42, 7);
+			Match("/JOB"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("JOB", 16);
+			LeaveRule("JOB", 16);
+			LeaveRule_JOB();
+		}
+	}
+	// $ANTLR end "JOB"
+
+	partial void EnterRule_NAME();
+	partial void LeaveRule_NAME();
+
+	// $ANTLR start "NAME"
+	[GrammarRule("NAME")]
+	private void mNAME()
+	{
+		EnterRule_NAME();
+		EnterRule("NAME", 17);
+		TraceIn("NAME", 17);
+		try
+		{
+			int _type = NAME;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:43:6: ( '//NAME' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:43:8: '//NAME'
+			{
+			DebugLocation(43, 8);
+			Match("//NAME"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("NAME", 17);
+			LeaveRule("NAME", 17);
+			LeaveRule_NAME();
+		}
+	}
+	// $ANTLR end "NAME"
+
+	partial void EnterRule_POS();
+	partial void LeaveRule_POS();
+
+	// $ANTLR start "POS"
+	[GrammarRule("POS")]
+	private void mPOS()
+	{
+		EnterRule_POS();
+		EnterRule("POS", 18);
+		TraceIn("POS", 18);
+		try
+		{
+			int _type = POS;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:44:5: ( '//POS' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:44:7: '//POS'
+			{
+			DebugLocation(44, 7);
+			Match("//POS"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("POS", 18);
+			LeaveRule("POS", 18);
+			LeaveRule_POS();
+		}
+	}
+	// $ANTLR end "POS"
+
+	partial void EnterRule_NPOS();
+	partial void LeaveRule_NPOS();
+
+	// $ANTLR start "NPOS"
+	[GrammarRule("NPOS")]
+	private void mNPOS()
+	{
+		EnterRule_NPOS();
+		EnterRule("NPOS", 19);
+		TraceIn("NPOS", 19);
+		try
+		{
+			int _type = NPOS;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:45:6: ( '///NPOS' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:45:8: '///NPOS'
+			{
+			DebugLocation(45, 8);
+			Match("///NPOS"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("NPOS", 19);
+			LeaveRule("NPOS", 19);
+			LeaveRule_NPOS();
+		}
+	}
+	// $ANTLR end "NPOS"
+
+	partial void EnterRule_USER();
+	partial void LeaveRule_USER();
+
+	// $ANTLR start "USER"
+	[GrammarRule("USER")]
+	private void mUSER()
+	{
+		EnterRule_USER();
+		EnterRule("USER", 20);
+		TraceIn("USER", 20);
+		try
+		{
+			int _type = USER;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:46:6: ( '///USER' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:46:8: '///USER'
+			{
+			DebugLocation(46, 8);
+			Match("///USER"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("USER", 20);
+			LeaveRule("USER", 20);
+			LeaveRule_USER();
+		}
+	}
+	// $ANTLR end "USER"
+
+	partial void EnterRule_TOOL();
+	partial void LeaveRule_TOOL();
+
+	// $ANTLR start "TOOL"
+	[GrammarRule("TOOL")]
+	private void mTOOL()
+	{
+		EnterRule_TOOL();
+		EnterRule("TOOL", 21);
+		TraceIn("TOOL", 21);
+		try
+		{
+			int _type = TOOL;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:47:6: ( '///TOOL' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:47:8: '///TOOL'
+			{
+			DebugLocation(47, 8);
+			Match("///TOOL"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("TOOL", 21);
+			LeaveRule("TOOL", 21);
+			LeaveRule_TOOL();
+		}
+	}
+	// $ANTLR end "TOOL"
+
+	partial void EnterRule_POSTYPE();
+	partial void LeaveRule_POSTYPE();
+
+	// $ANTLR start "POSTYPE"
+	[GrammarRule("POSTYPE")]
+	private void mPOSTYPE()
+	{
+		EnterRule_POSTYPE();
+		EnterRule("POSTYPE", 22);
+		TraceIn("POSTYPE", 22);
+		try
+		{
+			int _type = POSTYPE;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:48:9: ( '///POSTYPE' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:48:11: '///POSTYPE'
+			{
+			DebugLocation(48, 11);
+			Match("///POSTYPE"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("POSTYPE", 22);
+			LeaveRule("POSTYPE", 22);
+			LeaveRule_POSTYPE();
+		}
+	}
+	// $ANTLR end "POSTYPE"
+
+	partial void EnterRule_RECTAN();
+	partial void LeaveRule_RECTAN();
+
+	// $ANTLR start "RECTAN"
+	[GrammarRule("RECTAN")]
+	private void mRECTAN()
+	{
+		EnterRule_RECTAN();
+		EnterRule("RECTAN", 23);
+		TraceIn("RECTAN", 23);
+		try
+		{
+			int _type = RECTAN;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:49:8: ( '///RECTAN' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:49:10: '///RECTAN'
+			{
+			DebugLocation(49, 10);
+			Match("///RECTAN"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("RECTAN", 23);
+			LeaveRule("RECTAN", 23);
+			LeaveRule_RECTAN();
+		}
+	}
+	// $ANTLR end "RECTAN"
+
+	partial void EnterRule_RCONF();
+	partial void LeaveRule_RCONF();
+
+	// $ANTLR start "RCONF"
+	[GrammarRule("RCONF")]
+	private void mRCONF()
+	{
+		EnterRule_RCONF();
+		EnterRule("RCONF", 24);
+		TraceIn("RCONF", 24);
+		try
+		{
+			int _type = RCONF;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:50:7: ( '///RCONF' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:50:9: '///RCONF'
+			{
+			DebugLocation(50, 9);
+			Match("///RCONF"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("RCONF", 24);
+			LeaveRule("RCONF", 24);
+			LeaveRule_RCONF();
+		}
+	}
+	// $ANTLR end "RCONF"
+
+	partial void EnterRule_INST();
+	partial void LeaveRule_INST();
+
+	// $ANTLR start "INST"
+	[GrammarRule("INST")]
+	private void mINST()
+	{
+		EnterRule_INST();
+		EnterRule("INST", 25);
+		TraceIn("INST", 25);
+		try
+		{
+			int _type = INST;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:51:6: ( '//INST' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:51:8: '//INST'
+			{
+			DebugLocation(51, 8);
+			Match("//INST"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("INST", 25);
+			LeaveRule("INST", 25);
+			LeaveRule_INST();
+		}
+	}
+	// $ANTLR end "INST"
+
+	partial void EnterRule_DATE();
+	partial void LeaveRule_DATE();
+
+	// $ANTLR start "DATE"
+	[GrammarRule("DATE")]
+	private void mDATE()
+	{
+		EnterRule_DATE();
+		EnterRule("DATE", 26);
+		TraceIn("DATE", 26);
+		try
+		{
+			int _type = DATE;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:52:6: ( '///DATE' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:52:8: '///DATE'
+			{
+			DebugLocation(52, 8);
+			Match("///DATE"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("DATE", 26);
+			LeaveRule("DATE", 26);
+			LeaveRule_DATE();
+		}
+	}
+	// $ANTLR end "DATE"
+
+	partial void EnterRule_TIME();
+	partial void LeaveRule_TIME();
+
+	// $ANTLR start "TIME"
+	[GrammarRule("TIME")]
+	private void mTIME()
+	{
+		EnterRule_TIME();
+		EnterRule("TIME", 27);
+		TraceIn("TIME", 27);
+		try
+		{
+			int _type = TIME;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:6: ( ( INT )+ ':' ( INT )+ )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:8: ( INT )+ ':' ( INT )+
+			{
+			DebugLocation(53, 8);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:8: ( INT )+
+			int cnt1=0;
+			try { DebugEnterSubRule(1);
+			while (true)
+			{
+				int alt1=2;
+				try { DebugEnterDecision(1, false);
+				int LA1_0 = input.LA(1);
+
+				if (((LA1_0>='0' && LA1_0<='9')))
+				{
+					alt1 = 1;
+				}
+
+
+				} finally { DebugExitDecision(1); }
+				switch (alt1)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:8: INT
+					{
+					DebugLocation(53, 8);
+					mINT(); 
+
+					}
+					break;
+
+				default:
+					if (cnt1 >= 1)
+						goto loop1;
+
+					EarlyExitException eee1 = new EarlyExitException( 1, input );
+					DebugRecognitionException(eee1);
+					throw eee1;
+				}
+				cnt1++;
+			}
+			loop1:
+				;
+
+			} finally { DebugExitSubRule(1); }
+
+			DebugLocation(53, 13);
+			Match(':'); 
+			DebugLocation(53, 17);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:17: ( INT )+
+			int cnt2=0;
+			try { DebugEnterSubRule(2);
+			while (true)
+			{
+				int alt2=2;
+				try { DebugEnterDecision(2, false);
+				int LA2_0 = input.LA(1);
+
+				if (((LA2_0>='0' && LA2_0<='9')))
+				{
+					alt2 = 1;
+				}
+
+
+				} finally { DebugExitDecision(2); }
+				switch (alt2)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:53:17: INT
+					{
+					DebugLocation(53, 17);
+					mINT(); 
+
+					}
+					break;
+
+				default:
+					if (cnt2 >= 1)
+						goto loop2;
+
+					EarlyExitException eee2 = new EarlyExitException( 2, input );
+					DebugRecognitionException(eee2);
+					throw eee2;
+				}
+				cnt2++;
+			}
+			loop2:
+				;
+
+			} finally { DebugExitSubRule(2); }
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("TIME", 27);
+			LeaveRule("TIME", 27);
+			LeaveRule_TIME();
+		}
+	}
+	// $ANTLR end "TIME"
+
+	partial void EnterRule_COMM();
+	partial void LeaveRule_COMM();
+
+	// $ANTLR start "COMM"
+	[GrammarRule("COMM")]
+	private void mCOMM()
+	{
+		EnterRule_COMM();
+		EnterRule("COMM", 28);
+		TraceIn("COMM", 28);
+		try
+		{
+			int _type = COMM;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:54:6: ( '///COMM' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:54:8: '///COMM'
+			{
+			DebugLocation(54, 8);
+			Match("///COMM"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("COMM", 28);
+			LeaveRule("COMM", 28);
+			LeaveRule_COMM();
+		}
+	}
+	// $ANTLR end "COMM"
+
+	partial void EnterRule_ATTR();
+	partial void LeaveRule_ATTR();
+
+	// $ANTLR start "ATTR"
+	[GrammarRule("ATTR")]
+	private void mATTR()
+	{
+		EnterRule_ATTR();
+		EnterRule("ATTR", 29);
+		TraceIn("ATTR", 29);
+		try
+		{
+			int _type = ATTR;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:55:6: ( '///ATTR' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:55:8: '///ATTR'
+			{
+			DebugLocation(55, 8);
+			Match("///ATTR"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("ATTR", 29);
+			LeaveRule("ATTR", 29);
+			LeaveRule_ATTR();
+		}
+	}
+	// $ANTLR end "ATTR"
+
+	partial void EnterRule_FRAME();
+	partial void LeaveRule_FRAME();
+
+	// $ANTLR start "FRAME"
+	[GrammarRule("FRAME")]
+	private void mFRAME()
+	{
+		EnterRule_FRAME();
+		EnterRule("FRAME", 30);
+		TraceIn("FRAME", 30);
+		try
+		{
+			int _type = FRAME;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:56:7: ( '////FRAME' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:56:9: '////FRAME'
+			{
+			DebugLocation(56, 9);
+			Match("////FRAME"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("FRAME", 30);
+			LeaveRule("FRAME", 30);
+			LeaveRule_FRAME();
+		}
+	}
+	// $ANTLR end "FRAME"
+
+	partial void EnterRule_GROUP();
+	partial void LeaveRule_GROUP();
+
+	// $ANTLR start "GROUP"
+	[GrammarRule("GROUP")]
+	private void mGROUP()
+	{
+		EnterRule_GROUP();
+		EnterRule("GROUP", 31);
+		TraceIn("GROUP", 31);
+		try
+		{
+			int _type = GROUP;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:57:7: ( '///GROUP1' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:57:9: '///GROUP1'
+			{
+			DebugLocation(57, 9);
+			Match("///GROUP1"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("GROUP", 31);
+			LeaveRule("GROUP", 31);
+			LeaveRule_GROUP();
+		}
+	}
+	// $ANTLR end "GROUP"
+
+	partial void EnterRule_DOUT();
+	partial void LeaveRule_DOUT();
+
+	// $ANTLR start "DOUT"
+	[GrammarRule("DOUT")]
+	private void mDOUT()
+	{
+		EnterRule_DOUT();
+		EnterRule("DOUT", 32);
+		TraceIn("DOUT", 32);
+		try
+		{
+			int _type = DOUT;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:58:6: ( 'DOUT OT#' '(' INT ')' ' ' ( 'ON' | 'OFF' ) )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:58:8: 'DOUT OT#' '(' INT ')' ' ' ( 'ON' | 'OFF' )
+			{
+			DebugLocation(58, 8);
+			Match("DOUT OT#"); 
+
+			DebugLocation(58, 19);
+			Match('('); 
+			DebugLocation(58, 23);
+			mINT(); 
+			DebugLocation(58, 27);
+			Match(')'); 
+			DebugLocation(58, 31);
+			Match(' '); 
+			DebugLocation(58, 35);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:58:35: ( 'ON' | 'OFF' )
+			int alt3=2;
+			try { DebugEnterSubRule(3);
+			try { DebugEnterDecision(3, false);
+			int LA3_0 = input.LA(1);
+
+			if ((LA3_0=='O'))
+			{
+				int LA3_1 = input.LA(2);
+
+				if ((LA3_1=='N'))
+				{
+					alt3 = 1;
+				}
+				else if ((LA3_1=='F'))
+				{
+					alt3 = 2;
+				}
+				else
+				{
+					NoViableAltException nvae = new NoViableAltException("", 3, 1, input);
+					DebugRecognitionException(nvae);
+					throw nvae;
+				}
+			}
+			else
+			{
+				NoViableAltException nvae = new NoViableAltException("", 3, 0, input);
+				DebugRecognitionException(nvae);
+				throw nvae;
+			}
+			} finally { DebugExitDecision(3); }
+			switch (alt3)
+			{
+			case 1:
+				DebugEnterAlt(1);
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:58:36: 'ON'
+				{
+				DebugLocation(58, 36);
+				Match("ON"); 
+
+
+				}
+				break;
+			case 2:
+				DebugEnterAlt(2);
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:58:43: 'OFF'
+				{
+				DebugLocation(58, 43);
+				Match("OFF"); 
+
+
+				}
+				break;
+
+			}
+			} finally { DebugExitSubRule(3); }
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("DOUT", 32);
+			LeaveRule("DOUT", 32);
+			LeaveRule_DOUT();
+		}
+	}
+	// $ANTLR end "DOUT"
+
+	partial void EnterRule_DIN();
+	partial void LeaveRule_DIN();
+
+	// $ANTLR start "DIN"
+	[GrammarRule("DIN")]
+	private void mDIN()
+	{
+		EnterRule_DIN();
+		EnterRule("DIN", 33);
+		TraceIn("DIN", 33);
+		try
+		{
+			int _type = DIN;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:59:5: ( 'DIN OT#' '(' INT ')' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:59:7: 'DIN OT#' '(' INT ')'
+			{
+			DebugLocation(59, 7);
+			Match("DIN OT#"); 
+
+			DebugLocation(59, 17);
+			Match('('); 
+			DebugLocation(59, 21);
+			mINT(); 
+			DebugLocation(59, 25);
+			Match(')'); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("DIN", 33);
+			LeaveRule("DIN", 33);
+			LeaveRule_DIN();
+		}
+	}
+	// $ANTLR end "DIN"
+
+	partial void EnterRule_TIMER();
+	partial void LeaveRule_TIMER();
+
+	// $ANTLR start "TIMER"
+	[GrammarRule("TIMER")]
+	private void mTIMER()
+	{
+		EnterRule_TIMER();
+		EnterRule("TIMER", 34);
+		TraceIn("TIMER", 34);
+		try
+		{
+			int _type = TIMER;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:60:7: ( 'TIMER T=' REAL )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:60:9: 'TIMER T=' REAL
+			{
+			DebugLocation(60, 9);
+			Match("TIMER T="); 
+
+			DebugLocation(60, 20);
+			mREAL(); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("TIMER", 34);
+			LeaveRule("TIMER", 34);
+			LeaveRule_TIMER();
+		}
+	}
+	// $ANTLR end "TIMER"
+
+	partial void EnterRule_MOVJ();
+	partial void LeaveRule_MOVJ();
+
+	// $ANTLR start "MOVJ"
+	[GrammarRule("MOVJ")]
+	private void mMOVJ()
+	{
+		EnterRule_MOVJ();
+		EnterRule("MOVJ", 35);
+		TraceIn("MOVJ", 35);
+		try
+		{
+			int _type = MOVJ;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:61:6: ( 'MOVJ' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:61:8: 'MOVJ'
+			{
+			DebugLocation(61, 8);
+			Match("MOVJ"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("MOVJ", 35);
+			LeaveRule("MOVJ", 35);
+			LeaveRule_MOVJ();
+		}
+	}
+	// $ANTLR end "MOVJ"
+
+	partial void EnterRule_MOVL();
+	partial void LeaveRule_MOVL();
+
+	// $ANTLR start "MOVL"
+	[GrammarRule("MOVL")]
+	private void mMOVL()
+	{
+		EnterRule_MOVL();
+		EnterRule("MOVL", 36);
+		TraceIn("MOVL", 36);
+		try
+		{
+			int _type = MOVL;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:62:6: ( 'MOVL' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:62:8: 'MOVL'
+			{
+			DebugLocation(62, 8);
+			Match("MOVL"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("MOVL", 36);
+			LeaveRule("MOVL", 36);
+			LeaveRule_MOVL();
+		}
+	}
+	// $ANTLR end "MOVL"
+
+	partial void EnterRule_MOVC();
+	partial void LeaveRule_MOVC();
+
+	// $ANTLR start "MOVC"
+	[GrammarRule("MOVC")]
+	private void mMOVC()
+	{
+		EnterRule_MOVC();
+		EnterRule("MOVC", 37);
+		TraceIn("MOVC", 37);
+		try
+		{
+			int _type = MOVC;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:63:6: ( 'MOVC' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:63:8: 'MOVC'
+			{
+			DebugLocation(63, 8);
+			Match("MOVC"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("MOVC", 37);
+			LeaveRule("MOVC", 37);
+			LeaveRule_MOVC();
+		}
+	}
+	// $ANTLR end "MOVC"
+
+	partial void EnterRule_MOVS();
+	partial void LeaveRule_MOVS();
+
+	// $ANTLR start "MOVS"
+	[GrammarRule("MOVS")]
+	private void mMOVS()
+	{
+		EnterRule_MOVS();
+		EnterRule("MOVS", 38);
+		TraceIn("MOVS", 38);
+		try
+		{
+			int _type = MOVS;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:64:6: ( 'MOVS' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:64:8: 'MOVS'
+			{
+			DebugLocation(64, 8);
+			Match("MOVS"); 
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("MOVS", 38);
+			LeaveRule("MOVS", 38);
+			LeaveRule_MOVS();
+		}
+	}
+	// $ANTLR end "MOVS"
+
+	partial void EnterRule_NIZ();
+	partial void LeaveRule_NIZ();
+
+	// $ANTLR start "NIZ"
+	[GrammarRule("NIZ")]
+	private void mNIZ()
+	{
+		EnterRule_NIZ();
+		EnterRule("NIZ", 39);
+		TraceIn("NIZ", 39);
+		try
+		{
+			int _type = NIZ;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:66:5: ( ( 'A' .. 'Z' )+ )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:66:7: ( 'A' .. 'Z' )+
+			{
+			DebugLocation(66, 7);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:66:7: ( 'A' .. 'Z' )+
+			int cnt4=0;
+			try { DebugEnterSubRule(4);
+			while (true)
+			{
+				int alt4=2;
+				try { DebugEnterDecision(4, false);
+				int LA4_0 = input.LA(1);
+
+				if (((LA4_0>='A' && LA4_0<='Z')))
+				{
+					alt4 = 1;
+				}
+
+
+				} finally { DebugExitDecision(4); }
+				switch (alt4)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:
+					{
+					DebugLocation(66, 7);
+					input.Consume();
+
+
+					}
+					break;
+
+				default:
+					if (cnt4 >= 1)
+						goto loop4;
+
+					EarlyExitException eee4 = new EarlyExitException( 4, input );
+					DebugRecognitionException(eee4);
+					throw eee4;
+				}
+				cnt4++;
+			}
+			loop4:
+				;
+
+			} finally { DebugExitSubRule(4); }
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("NIZ", 39);
+			LeaveRule("NIZ", 39);
+			LeaveRule_NIZ();
+		}
+	}
+	// $ANTLR end "NIZ"
+
+	partial void EnterRule_REAL();
+	partial void LeaveRule_REAL();
+
+	// $ANTLR start "REAL"
+	[GrammarRule("REAL")]
+	private void mREAL()
+	{
+		EnterRule_REAL();
+		EnterRule("REAL", 40);
+		TraceIn("REAL", 40);
+		try
+		{
+			int _type = REAL;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:67:6: ( ( INT )+ '.' ( INT )+ )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:67:8: ( INT )+ '.' ( INT )+
+			{
+			DebugLocation(67, 8);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:67:8: ( INT )+
+			int cnt5=0;
+			try { DebugEnterSubRule(5);
+			while (true)
+			{
+				int alt5=2;
+				try { DebugEnterDecision(5, false);
+				int LA5_0 = input.LA(1);
+
+				if (((LA5_0>='0' && LA5_0<='9')))
+				{
+					alt5 = 1;
+				}
+
+
+				} finally { DebugExitDecision(5); }
+				switch (alt5)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:67:8: INT
+					{
+					DebugLocation(67, 8);
+					mINT(); 
+
+					}
+					break;
+
+				default:
+					if (cnt5 >= 1)
+						goto loop5;
+
+					EarlyExitException eee5 = new EarlyExitException( 5, input );
+					DebugRecognitionException(eee5);
+					throw eee5;
+				}
+				cnt5++;
+			}
+			loop5:
+				;
+
+			} finally { DebugExitSubRule(5); }
+
+			DebugLocation(67, 13);
+			Match('.'); 
+			DebugLocation(67, 17);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:67:17: ( INT )+
+			int cnt6=0;
+			try { DebugEnterSubRule(6);
+			while (true)
+			{
+				int alt6=2;
+				try { DebugEnterDecision(6, false);
+				int LA6_0 = input.LA(1);
+
+				if (((LA6_0>='0' && LA6_0<='9')))
+				{
+					alt6 = 1;
+				}
+
+
+				} finally { DebugExitDecision(6); }
+				switch (alt6)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:67:17: INT
+					{
+					DebugLocation(67, 17);
+					mINT(); 
+
+					}
+					break;
+
+				default:
+					if (cnt6 >= 1)
+						goto loop6;
+
+					EarlyExitException eee6 = new EarlyExitException( 6, input );
+					DebugRecognitionException(eee6);
+					throw eee6;
+				}
+				cnt6++;
+			}
+			loop6:
+				;
+
+			} finally { DebugExitSubRule(6); }
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("REAL", 40);
+			LeaveRule("REAL", 40);
+			LeaveRule_REAL();
+		}
+	}
+	// $ANTLR end "REAL"
+
+	partial void EnterRule_INT();
+	partial void LeaveRule_INT();
+
+	// $ANTLR start "INT"
+	[GrammarRule("INT")]
+	private void mINT()
+	{
+		EnterRule_INT();
+		EnterRule("INT", 41);
+		TraceIn("INT", 41);
+		try
+		{
+			int _type = INT;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:68:6: ( ( '0' .. '9' )+ )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:68:8: ( '0' .. '9' )+
+			{
+			DebugLocation(68, 8);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:68:8: ( '0' .. '9' )+
+			int cnt7=0;
+			try { DebugEnterSubRule(7);
+			while (true)
+			{
+				int alt7=2;
+				try { DebugEnterDecision(7, false);
+				int LA7_0 = input.LA(1);
+
+				if (((LA7_0>='0' && LA7_0<='9')))
+				{
+					alt7 = 1;
+				}
+
+
+				} finally { DebugExitDecision(7); }
+				switch (alt7)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:
+					{
+					DebugLocation(68, 8);
+					input.Consume();
+
+
+					}
+					break;
+
+				default:
+					if (cnt7 >= 1)
+						goto loop7;
+
+					EarlyExitException eee7 = new EarlyExitException( 7, input );
+					DebugRecognitionException(eee7);
+					throw eee7;
+				}
+				cnt7++;
+			}
+			loop7:
+				;
+
+			} finally { DebugExitSubRule(7); }
+
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("INT", 41);
+			LeaveRule("INT", 41);
+			LeaveRule_INT();
+		}
+	}
+	// $ANTLR end "INT"
+
+	partial void EnterRule_NEWLINE();
+	partial void LeaveRule_NEWLINE();
+
+	// $ANTLR start "NEWLINE"
+	[GrammarRule("NEWLINE")]
+	private void mNEWLINE()
+	{
+		EnterRule_NEWLINE();
+		EnterRule("NEWLINE", 42);
+		TraceIn("NEWLINE", 42);
+		try
+		{
+			int _type = NEWLINE;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:69:9: ( ( '\\r' )? '\\n' )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:69:11: ( '\\r' )? '\\n'
+			{
+			DebugLocation(69, 11);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:69:11: ( '\\r' )?
+			int alt8=2;
+			try { DebugEnterSubRule(8);
+			try { DebugEnterDecision(8, false);
+			int LA8_0 = input.LA(1);
+
+			if ((LA8_0=='\r'))
+			{
+				alt8 = 1;
+			}
+			} finally { DebugExitDecision(8); }
+			switch (alt8)
+			{
+			case 1:
+				DebugEnterAlt(1);
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:69:11: '\\r'
+				{
+				DebugLocation(69, 11);
+				Match('\r'); 
+
+				}
+				break;
+
+			}
+			} finally { DebugExitSubRule(8); }
+
+			DebugLocation(69, 17);
+			Match('\n'); 
+			DebugLocation(69, 22);
+			Skip();
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("NEWLINE", 42);
+			LeaveRule("NEWLINE", 42);
+			LeaveRule_NEWLINE();
+		}
+	}
+	// $ANTLR end "NEWLINE"
+
+	partial void EnterRule_WS();
+	partial void LeaveRule_WS();
+
+	// $ANTLR start "WS"
+	[GrammarRule("WS")]
+	private void mWS()
+	{
+		EnterRule_WS();
+		EnterRule("WS", 43);
+		TraceIn("WS", 43);
+		try
+		{
+			int _type = WS;
+			int _channel = DefaultTokenChannel;
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:70:5: ( ( ' ' | '\\t' )+ )
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:70:7: ( ' ' | '\\t' )+
+			{
+			DebugLocation(70, 7);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:70:7: ( ' ' | '\\t' )+
+			int cnt9=0;
+			try { DebugEnterSubRule(9);
+			while (true)
+			{
+				int alt9=2;
+				try { DebugEnterDecision(9, false);
+				int LA9_0 = input.LA(1);
+
+				if ((LA9_0=='\t'||LA9_0==' '))
+				{
+					alt9 = 1;
+				}
+
+
+				} finally { DebugExitDecision(9); }
+				switch (alt9)
+				{
+				case 1:
+					DebugEnterAlt(1);
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:
+					{
+					DebugLocation(70, 7);
+					input.Consume();
+
+
+					}
+					break;
+
+				default:
+					if (cnt9 >= 1)
+						goto loop9;
+
+					EarlyExitException eee9 = new EarlyExitException( 9, input );
+					DebugRecognitionException(eee9);
+					throw eee9;
+				}
+				cnt9++;
+			}
+			loop9:
+				;
+
+			} finally { DebugExitSubRule(9); }
+
+			DebugLocation(70, 19);
+			Skip();
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally
+		{
+			TraceOut("WS", 43);
+			LeaveRule("WS", 43);
+			LeaveRule_WS();
+		}
+	}
+	// $ANTLR end "WS"
+
+	public override void mTokens()
+	{
+		// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:8: ( T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | JOB | NAME | POS | NPOS | USER | TOOL | POSTYPE | RECTAN | RCONF | INST | DATE | TIME | COMM | ATTR | FRAME | GROUP | DOUT | DIN | TIMER | MOVJ | MOVL | MOVC | MOVS | NIZ | REAL | INT | NEWLINE | WS )
+		int alt10=43;
+		try { DebugEnterDecision(10, false);
+		try
+		{
+			alt10 = dfa10.Predict(input);
+		}
+		catch (NoViableAltException nvae)
+		{
+			DebugRecognitionException(nvae);
+			throw;
+		}
+		} finally { DebugExitDecision(10); }
+		switch (alt10)
+		{
+		case 1:
+			DebugEnterAlt(1);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:10: T__32
+			{
+			DebugLocation(1, 10);
+			mT__32(); 
+
+			}
+			break;
+		case 2:
+			DebugEnterAlt(2);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:16: T__33
+			{
+			DebugLocation(1, 16);
+			mT__33(); 
+
+			}
+			break;
+		case 3:
+			DebugEnterAlt(3);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:22: T__34
+			{
+			DebugLocation(1, 22);
+			mT__34(); 
+
+			}
+			break;
+		case 4:
+			DebugEnterAlt(4);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:28: T__35
+			{
+			DebugLocation(1, 28);
+			mT__35(); 
+
+			}
+			break;
+		case 5:
+			DebugEnterAlt(5);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:34: T__36
+			{
+			DebugLocation(1, 34);
+			mT__36(); 
+
+			}
+			break;
+		case 6:
+			DebugEnterAlt(6);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:40: T__37
+			{
+			DebugLocation(1, 40);
+			mT__37(); 
+
+			}
+			break;
+		case 7:
+			DebugEnterAlt(7);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:46: T__38
+			{
+			DebugLocation(1, 46);
+			mT__38(); 
+
+			}
+			break;
+		case 8:
+			DebugEnterAlt(8);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:52: T__39
+			{
+			DebugLocation(1, 52);
+			mT__39(); 
+
+			}
+			break;
+		case 9:
+			DebugEnterAlt(9);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:58: T__40
+			{
+			DebugLocation(1, 58);
+			mT__40(); 
+
+			}
+			break;
+		case 10:
+			DebugEnterAlt(10);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:64: T__41
+			{
+			DebugLocation(1, 64);
+			mT__41(); 
+
+			}
+			break;
+		case 11:
+			DebugEnterAlt(11);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:70: T__42
+			{
+			DebugLocation(1, 70);
+			mT__42(); 
+
+			}
+			break;
+		case 12:
+			DebugEnterAlt(12);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:76: T__43
+			{
+			DebugLocation(1, 76);
+			mT__43(); 
+
+			}
+			break;
+		case 13:
+			DebugEnterAlt(13);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:82: T__44
+			{
+			DebugLocation(1, 82);
+			mT__44(); 
+
+			}
+			break;
+		case 14:
+			DebugEnterAlt(14);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:88: T__45
+			{
+			DebugLocation(1, 88);
+			mT__45(); 
+
+			}
+			break;
+		case 15:
+			DebugEnterAlt(15);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:94: T__46
+			{
+			DebugLocation(1, 94);
+			mT__46(); 
+
+			}
+			break;
+		case 16:
+			DebugEnterAlt(16);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:100: JOB
+			{
+			DebugLocation(1, 100);
+			mJOB(); 
+
+			}
+			break;
+		case 17:
+			DebugEnterAlt(17);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:104: NAME
+			{
+			DebugLocation(1, 104);
+			mNAME(); 
+
+			}
+			break;
+		case 18:
+			DebugEnterAlt(18);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:109: POS
+			{
+			DebugLocation(1, 109);
+			mPOS(); 
+
+			}
+			break;
+		case 19:
+			DebugEnterAlt(19);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:113: NPOS
+			{
+			DebugLocation(1, 113);
+			mNPOS(); 
+
+			}
+			break;
+		case 20:
+			DebugEnterAlt(20);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:118: USER
+			{
+			DebugLocation(1, 118);
+			mUSER(); 
+
+			}
+			break;
+		case 21:
+			DebugEnterAlt(21);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:123: TOOL
+			{
+			DebugLocation(1, 123);
+			mTOOL(); 
+
+			}
+			break;
+		case 22:
+			DebugEnterAlt(22);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:128: POSTYPE
+			{
+			DebugLocation(1, 128);
+			mPOSTYPE(); 
+
+			}
+			break;
+		case 23:
+			DebugEnterAlt(23);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:136: RECTAN
+			{
+			DebugLocation(1, 136);
+			mRECTAN(); 
+
+			}
+			break;
+		case 24:
+			DebugEnterAlt(24);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:143: RCONF
+			{
+			DebugLocation(1, 143);
+			mRCONF(); 
+
+			}
+			break;
+		case 25:
+			DebugEnterAlt(25);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:149: INST
+			{
+			DebugLocation(1, 149);
+			mINST(); 
+
+			}
+			break;
+		case 26:
+			DebugEnterAlt(26);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:154: DATE
+			{
+			DebugLocation(1, 154);
+			mDATE(); 
+
+			}
+			break;
+		case 27:
+			DebugEnterAlt(27);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:159: TIME
+			{
+			DebugLocation(1, 159);
+			mTIME(); 
+
+			}
+			break;
+		case 28:
+			DebugEnterAlt(28);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:164: COMM
+			{
+			DebugLocation(1, 164);
+			mCOMM(); 
+
+			}
+			break;
+		case 29:
+			DebugEnterAlt(29);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:169: ATTR
+			{
+			DebugLocation(1, 169);
+			mATTR(); 
+
+			}
+			break;
+		case 30:
+			DebugEnterAlt(30);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:174: FRAME
+			{
+			DebugLocation(1, 174);
+			mFRAME(); 
+
+			}
+			break;
+		case 31:
+			DebugEnterAlt(31);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:180: GROUP
+			{
+			DebugLocation(1, 180);
+			mGROUP(); 
+
+			}
+			break;
+		case 32:
+			DebugEnterAlt(32);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:186: DOUT
+			{
+			DebugLocation(1, 186);
+			mDOUT(); 
+
+			}
+			break;
+		case 33:
+			DebugEnterAlt(33);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:191: DIN
+			{
+			DebugLocation(1, 191);
+			mDIN(); 
+
+			}
+			break;
+		case 34:
+			DebugEnterAlt(34);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:195: TIMER
+			{
+			DebugLocation(1, 195);
+			mTIMER(); 
+
+			}
+			break;
+		case 35:
+			DebugEnterAlt(35);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:201: MOVJ
+			{
+			DebugLocation(1, 201);
+			mMOVJ(); 
+
+			}
+			break;
+		case 36:
+			DebugEnterAlt(36);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:206: MOVL
+			{
+			DebugLocation(1, 206);
+			mMOVL(); 
+
+			}
+			break;
+		case 37:
+			DebugEnterAlt(37);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:211: MOVC
+			{
+			DebugLocation(1, 211);
+			mMOVC(); 
+
+			}
+			break;
+		case 38:
+			DebugEnterAlt(38);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:216: MOVS
+			{
+			DebugLocation(1, 216);
+			mMOVS(); 
+
+			}
+			break;
+		case 39:
+			DebugEnterAlt(39);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:221: NIZ
+			{
+			DebugLocation(1, 221);
+			mNIZ(); 
+
+			}
+			break;
+		case 40:
+			DebugEnterAlt(40);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:225: REAL
+			{
+			DebugLocation(1, 225);
+			mREAL(); 
+
+			}
+			break;
+		case 41:
+			DebugEnterAlt(41);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:230: INT
+			{
+			DebugLocation(1, 230);
+			mINT(); 
+
+			}
+			break;
+		case 42:
+			DebugEnterAlt(42);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:234: NEWLINE
+			{
+			DebugLocation(1, 234);
+			mNEWLINE(); 
+
+			}
+			break;
+		case 43:
+			DebugEnterAlt(43);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:1:242: WS
+			{
+			DebugLocation(1, 242);
+			mWS(); 
+
+			}
+			break;
+
+		}
+
+	}
 
 
 	#region DFA
-	DFA9 dfa9;
+	DFA10 dfa10;
 
 	protected override void InitDFAs()
 	{
 		base.InitDFAs();
-		dfa9 = new DFA9(this);
+		dfa10 = new DFA10(this);
 	}
 
-	private class DFA9 : DFA
+	private class DFA10 : DFA
 	{
-		private const string DFA9_eotS =
-			"\x3\xFFFF\x1\x17\x1\x18\x1\x1B\x7\xFFFF\x1\x1D\x1\xFFFF\x1\x1E\x27\xFFFF";
-		private const string DFA9_eofS =
-			"\x37\xFFFF";
-		private const string DFA9_minS =
-			"\x1\x9\x2\xFFFF\x1\x2F\x2\x2E\x7\xFFFF\x1\x4A\x1\xFFFF\x1\x2E\x1\x49"+
-			"\x1\xFFFF\x1\x4F\x3\xFFFF\x1\x2F\xA\xFFFF\x1\x56\x2\xFFFF\x1\x2F\x1\xFFFF"+
-			"\x1\x43\x4\xFFFF\x1\x43\xB\xFFFF";
-		private const string DFA9_maxS =
-			"\x1\x5A\x2\xFFFF\x1\x4A\x2\x3A\x7\xFFFF\x1\x4A\x1\xFFFF\x1\x3A\x1\x4F"+
-			"\x1\xFFFF\x1\x4F\x3\xFFFF\x1\x50\xA\xFFFF\x1\x56\x2\xFFFF\x1\x55\x1\xFFFF"+
-			"\x1\x53\x4\xFFFF\x1\x45\xB\xFFFF";
-		private const string DFA9_acceptS =
-			"\x1\xFFFF\x1\x1\x1\x2\x3\xFFFF\x1\x6\x1\x7\x1\x8\x1\x9\x1\xA\x1\xB\x1"+
-			"\xC\x1\xFFFF\x1\xF\x2\xFFFF\x1\x22\x1\xFFFF\x1\x29\x1\x2A\x1\x10\x1\xFFFF"+
-			"\x1\x3\x1\x4\x1\x1B\x1\x27\x1\x5\x1\xE\x1\xD\x1\x28\x1\x20\x1\x21\x1"+
-			"\xFFFF\x1\x11\x1\x12\x1\xFFFF\x1\x19\x1\xFFFF\x1\x13\x1\x14\x1\x15\x1"+
-			"\x16\x1\xFFFF\x1\x1A\x1\x1C\x1\x1D\x1\x1E\x1\x1F\x1\x23\x1\x24\x1\x25"+
-			"\x1\x26\x1\x17\x1\x18";
-		private const string DFA9_specialS =
-			"\x37\xFFFF}>";
-		private static readonly string[] DFA9_transitionS =
+		private const string DFA10_eotS =
+			"\x3\xFFFF\x1\x18\x1\x19\x1\x1C\x1\xFFFF\x1\x1D\x1\x1E\x4\x13\x1\x24\x1"+
+			"\x25\x1\x26\x3\x13\xC\xFFFF\x4\x13\x1\x33\x3\xFFFF\x4\x13\x4\xFFFF\x1"+
+			"\x42\x1\x43\x2\x13\x1\xFFFF\x4\x13\xC\xFFFF\x1\x13\x1\x50\x1\x13\x1\xFFFF"+
+			"\x1\x13\x1\x53\x1\x54\x1\x55\x1\x56\x2\xFFFF\x1\x57\x2\xFFFF\x1\x13\x6"+
+			"\xFFFF";
+		private const string DFA10_eofS =
+			"\x59\xFFFF";
+		private const string DFA10_minS =
+			"\x1\x9\x2\xFFFF\x1\x2F\x2\x2E\x1\xFFFF\x2\x41\x1\x4E\x1\x4F\x1\x55\x1"+
+			"\x53\x2\x41\x1\x2E\x2\x49\x1\x4F\x4\xFFFF\x1\x2F\x7\xFFFF\x1\x44\x1\x50"+
+			"\x1\x4C\x1\x45\x1\x41\x3\xFFFF\x1\x55\x1\x4E\x1\x4D\x1\x56\x2\xFFFF\x1"+
+			"\x2F\x1\xFFFF\x2\x41\x1\x53\x1\x52\x1\xFFFF\x1\x54\x1\x20\x1\x45\x1\x43"+
+			"\x4\xFFFF\x1\x43\x7\xFFFF\x1\x45\x1\x41\x1\x20\x1\xFFFF\x1\x52\x4\x41"+
+			"\x2\xFFFF\x1\x41\x2\xFFFF\x1\x20\x6\xFFFF";
+		private const string DFA10_maxS =
+			"\x1\x5A\x2\xFFFF\x1\x4A\x2\x3A\x1\xFFFF\x2\x5A\x1\x4E\x1\x4F\x1\x55\x1"+
+			"\x53\x2\x5A\x1\x3A\x1\x4F\x1\x49\x1\x4F\x4\xFFFF\x1\x50\x7\xFFFF\x1\x44"+
+			"\x1\x50\x1\x4C\x1\x45\x1\x5A\x3\xFFFF\x1\x55\x1\x4E\x1\x4D\x1\x56\x2"+
+			"\xFFFF\x1\x55\x1\xFFFF\x2\x5A\x1\x53\x1\x52\x1\xFFFF\x1\x54\x1\x20\x1"+
+			"\x45\x1\x53\x4\xFFFF\x1\x45\x7\xFFFF\x1\x45\x1\x5A\x1\x20\x1\xFFFF\x1"+
+			"\x52\x4\x5A\x2\xFFFF\x1\x5A\x2\xFFFF\x1\x20\x6\xFFFF";
+		private const string DFA10_acceptS =
+			"\x1\xFFFF\x1\x1\x1\x2\x3\xFFFF\x1\x6\xC\xFFFF\x1\x27\x1\x2A\x1\x2B\x1"+
+			"\x10\x1\xFFFF\x1\x3\x1\x4\x1\x1B\x1\x28\x1\x5\x1\x7\x1\x8\x5\xFFFF\x1"+
+			"\xD\x1\xF\x1\x29\x4\xFFFF\x1\x11\x1\x12\x1\xFFFF\x1\x19\x4\xFFFF\x1\xE"+
+			"\x4\xFFFF\x1\x13\x1\x14\x1\x15\x1\x16\x1\xFFFF\x1\x1A\x1\x1C\x1\x1D\x1"+
+			"\x1E\x1\x1F\x1\x9\x1\xA\x3\xFFFF\x1\x21\x5\xFFFF\x1\x17\x1\x18\x1\xFFFF"+
+			"\x1\xC\x1\x20\x1\xFFFF\x1\x23\x1\x24\x1\x25\x1\x26\x1\xB\x1\x22";
+		private const string DFA10_specialS =
+			"\x59\xFFFF}>";
+		private static readonly string[] DFA10_transitionS =
 			{
-				"\x1\x14\x1\x13\x2\xFFFF\x1\x13\x12\xFFFF\x1\x14\xB\xFFFF\x1\x1\x1\x2"+
-				"\x1\xFFFF\x1\x3\x1\x4\x1\x5\x8\xF\x3\xFFFF\x1\x6\x3\xFFFF\x1\x7\x1\xFFFF"+
-				"\x1\x8\x1\x10\x1\x9\x7\xFFFF\x1\x12\x1\xA\x1\xFFFF\x1\xB\x3\xFFFF\x1"+
-				"\x11\x1\xC\x1\xD\x3\xFFFF\x1\xE",
+				"\x1\x15\x1\x14\x2\xFFFF\x1\x14\x12\xFFFF\x1\x15\xB\xFFFF\x1\x1\x1\x2"+
+				"\x1\xFFFF\x1\x3\x1\x4\x1\x5\x8\xF\x3\xFFFF\x1\x6\x3\xFFFF\x1\x7\x1\x13"+
+				"\x1\x8\x1\x10\x1\x9\x7\x13\x1\x12\x1\xA\x1\x13\x1\xB\x3\x13\x1\x11\x1"+
+				"\xC\x1\xD\x3\x13\x1\xE",
 				"",
 				"",
-				"\x1\x16\x1A\xFFFF\x1\x15",
-				"\x1\x1A\x1\xFFFF\xA\xF\x1\x19",
-				"\x1\x1A\x1\xFFFF\xA\xF\x1\x19",
+				"\x1\x17\x1A\xFFFF\x1\x16",
+				"\x1\x1B\x1\xFFFF\xA\xF\x1\x1A",
+				"\x1\x1B\x1\xFFFF\xA\xF\x1\x1A",
 				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"\x1\x1C",
-				"",
-				"\x1\x1A\x1\xFFFF\xA\xF\x1\x19",
-				"\x1\x20\x5\xFFFF\x1\x1F",
-				"",
+				"\x1A\x13",
+				"\x1A\x13",
+				"\x1\x1F",
+				"\x1\x20",
 				"\x1\x21",
-				"",
-				"",
-				"",
-				"\x1\x24\x19\xFFFF\x1\x25\x4\xFFFF\x1\x22\x1\xFFFF\x1\x23",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"",
-				"\x1\x26",
-				"",
-				"",
-				"\x1\x2F\x11\xFFFF\x1\x2E\x1\xFFFF\x1\x2D\x1\x2C\x2\xFFFF\x1\x30\x6"+
-				"\xFFFF\x1\x27\x1\xFFFF\x1\x2A\x1\xFFFF\x1\x2B\x1\xFFFF\x1\x29\x1\x28",
-				"",
-				"\x1\x33\x6\xFFFF\x1\x31\x1\xFFFF\x1\x32\x6\xFFFF\x1\x34",
+				"\x1\x22",
+				"\x9\x13\x1\x23\x10\x13",
+				"\x1A\x13",
+				"\x1\x1B\x1\xFFFF\xA\xF\x1\x1A",
+				"\x1\x28\x5\xFFFF\x1\x27",
+				"\x1\x29",
+				"\x1\x2A",
 				"",
 				"",
 				"",
 				"",
-				"\x1\x36\x1\xFFFF\x1\x35",
+				"\x1\x2D\x19\xFFFF\x1\x2E\x4\xFFFF\x1\x2B\x1\xFFFF\x1\x2C",
 				"",
 				"",
 				"",
 				"",
 				"",
+				"",
+				"",
+				"\x1\x2F",
+				"\x1\x30",
+				"\x1\x31",
+				"\x1\x32",
+				"\x1A\x13",
+				"",
+				"",
+				"",
+				"\x1\x34",
+				"\x1\x35",
+				"\x1\x36",
+				"\x1\x37",
+				"",
+				"",
+				"\x1\x40\x11\xFFFF\x1\x3F\x1\xFFFF\x1\x3E\x1\x3D\x2\xFFFF\x1\x41\x6"+
+				"\xFFFF\x1\x38\x1\xFFFF\x1\x3B\x1\xFFFF\x1\x3C\x1\xFFFF\x1\x3A\x1\x39",
+				"",
+				"\x1A\x13",
+				"\x1A\x13",
+				"\x1\x44",
+				"\x1\x45",
+				"",
+				"\x1\x46",
+				"\x1\x47",
+				"\x1\x48",
+				"\x1\x4B\x6\xFFFF\x1\x49\x1\xFFFF\x1\x4A\x6\xFFFF\x1\x4C",
+				"",
+				"",
+				"",
+				"",
+				"\x1\x4E\x1\xFFFF\x1\x4D",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"",
+				"\x1\x4F",
+				"\x1A\x13",
+				"\x1\x51",
+				"",
+				"\x1\x52",
+				"\x1A\x13",
+				"\x1A\x13",
+				"\x1A\x13",
+				"\x1A\x13",
+				"",
+				"",
+				"\x1A\x13",
+				"",
+				"",
+				"\x1\x58",
 				"",
 				"",
 				"",
@@ -2546,38 +2591,38 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 				""
 			};
 
-		private static readonly short[] DFA9_eot = DFA.UnpackEncodedString(DFA9_eotS);
-		private static readonly short[] DFA9_eof = DFA.UnpackEncodedString(DFA9_eofS);
-		private static readonly char[] DFA9_min = DFA.UnpackEncodedStringToUnsignedChars(DFA9_minS);
-		private static readonly char[] DFA9_max = DFA.UnpackEncodedStringToUnsignedChars(DFA9_maxS);
-		private static readonly short[] DFA9_accept = DFA.UnpackEncodedString(DFA9_acceptS);
-		private static readonly short[] DFA9_special = DFA.UnpackEncodedString(DFA9_specialS);
-		private static readonly short[][] DFA9_transition;
+		private static readonly short[] DFA10_eot = DFA.UnpackEncodedString(DFA10_eotS);
+		private static readonly short[] DFA10_eof = DFA.UnpackEncodedString(DFA10_eofS);
+		private static readonly char[] DFA10_min = DFA.UnpackEncodedStringToUnsignedChars(DFA10_minS);
+		private static readonly char[] DFA10_max = DFA.UnpackEncodedStringToUnsignedChars(DFA10_maxS);
+		private static readonly short[] DFA10_accept = DFA.UnpackEncodedString(DFA10_acceptS);
+		private static readonly short[] DFA10_special = DFA.UnpackEncodedString(DFA10_specialS);
+		private static readonly short[][] DFA10_transition;
 
-		static DFA9()
+		static DFA10()
 		{
-			int numStates = DFA9_transitionS.Length;
-			DFA9_transition = new short[numStates][];
+			int numStates = DFA10_transitionS.Length;
+			DFA10_transition = new short[numStates][];
 			for ( int i=0; i < numStates; i++ )
 			{
-				DFA9_transition[i] = DFA.UnpackEncodedString(DFA9_transitionS[i]);
+				DFA10_transition[i] = DFA.UnpackEncodedString(DFA10_transitionS[i]);
 			}
 		}
 
-		public DFA9( BaseRecognizer recognizer )
+		public DFA10( BaseRecognizer recognizer )
 		{
 			this.recognizer = recognizer;
-			this.decisionNumber = 9;
-			this.eot = DFA9_eot;
-			this.eof = DFA9_eof;
-			this.min = DFA9_min;
-			this.max = DFA9_max;
-			this.accept = DFA9_accept;
-			this.special = DFA9_special;
-			this.transition = DFA9_transition;
+			this.decisionNumber = 10;
+			this.eot = DFA10_eot;
+			this.eof = DFA10_eof;
+			this.min = DFA10_min;
+			this.max = DFA10_max;
+			this.accept = DFA10_accept;
+			this.special = DFA10_special;
+			this.transition = DFA10_transition;
 		}
 
-		public override string Description { get { return "1:1: Tokens : ( T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | JOB | NAME | POS | NPOS | USER | TOOL | POSTYPE | RECTAN | RCONF | INST | DATE | TIME | COMM | ATTR | FRAME | GROUP | DOUT | DIN | TIMER | MOVJ | MOVL | MOVC | MOVS | REAL | INT | NEWLINE | WS );"; } }
+		public override string Description { get { return "1:1: Tokens : ( T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | JOB | NAME | POS | NPOS | USER | TOOL | POSTYPE | RECTAN | RCONF | INST | DATE | TIME | COMM | ATTR | FRAME | GROUP | DOUT | DIN | TIMER | MOVJ | MOVL | MOVC | MOVS | NIZ | REAL | INT | NEWLINE | WS );"; } }
 
 		public override void Error(NoViableAltException nvae)
 		{
@@ -2589,4 +2634,3 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	#endregion
 
 }
-*/
