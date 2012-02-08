@@ -152,6 +152,7 @@
     <None Include="ModelsLWO\MH6_saxis.lwo" />
     <None Include="ModelsLWO\MH6_taxis.lwo" />
     <None Include="ModelsLWO\MH6_uaxis.lwo" />
+    <None Include="ModelsLWO\Okolica\Aframe.lwo" />
     <None Include="ModelsLWO\Okolica\Barrel_6.lwo" />
     <None Include="ModelsLWO\TOOL1.lwo" />
     <None Include="Properties\Settings.settings">
