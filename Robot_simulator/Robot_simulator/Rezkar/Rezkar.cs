@@ -428,5 +428,12 @@ namespace Robot_simulator
             GLIHIC_vs_DUGIC = program;
             this.Close();
         }
+
+        private void Rezkar_Move(object sender, EventArgs e)
+        {
+            glControl1.Invalidate();
+
+        }
+
     }
 }

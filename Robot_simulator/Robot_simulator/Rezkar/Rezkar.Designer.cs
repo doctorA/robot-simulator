@@ -38,12 +38,12 @@
             this.nastavitveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.robotaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox_orodjarna = new System.Windows.Forms.GroupBox();
-            this.button_brisi = new System.Windows.Forms.Button();
             this.button_premakni = new System.Windows.Forms.Button();
             this.button_kvadrat = new System.Windows.Forms.Button();
             this.button_lok = new System.Windows.Forms.Button();
             this.button_krog = new System.Windows.Forms.Button();
             this.button_crta = new System.Windows.Forms.Button();
+            this.button_brisi = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox_orodjarna.SuspendLayout();
             this.SuspendLayout();
@@ -58,8 +58,8 @@
             this.glControl1.VSync = false;
             this.glControl1.Load += new System.EventHandler(this.glControl1_Load);
             this.glControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.glControl1_Paint);
-            this.glControl1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControl1_MouseMove);
             this.glControl1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControl1_MouseDown);
+            this.glControl1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControl1_MouseMove);
             // 
             // menuStrip1
             // 
@@ -131,18 +131,6 @@
             this.groupBox_orodjarna.TabStop = false;
             this.groupBox_orodjarna.Text = "Orodjarna";
             // 
-            // button_brisi
-            // 
-            this.button_brisi.Image = ((System.Drawing.Image)(resources.GetObject("button_brisi.Image")));
-            this.button_brisi.Location = new System.Drawing.Point(526, 676);
-            this.button_brisi.Name = "button_brisi";
-            this.button_brisi.Size = new System.Drawing.Size(100, 120);
-            this.button_brisi.TabIndex = 5;
-            this.button_brisi.Text = "Briši";
-            this.button_brisi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button_brisi.UseVisualStyleBackColor = true;
-            this.button_brisi.Click += new System.EventHandler(this.button_brisi_Click);
-            // 
             // button_premakni
             // 
             this.button_premakni.Image = ((System.Drawing.Image)(resources.GetObject("button_premakni.Image")));
@@ -204,6 +192,18 @@
             this.button_crta.UseVisualStyleBackColor = true;
             this.button_crta.Click += new System.EventHandler(this.button_crta_Click);
             // 
+            // button_brisi
+            // 
+            this.button_brisi.Image = ((System.Drawing.Image)(resources.GetObject("button_brisi.Image")));
+            this.button_brisi.Location = new System.Drawing.Point(526, 676);
+            this.button_brisi.Name = "button_brisi";
+            this.button_brisi.Size = new System.Drawing.Size(100, 120);
+            this.button_brisi.TabIndex = 5;
+            this.button_brisi.Text = "Briši";
+            this.button_brisi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button_brisi.UseVisualStyleBackColor = true;
+            this.button_brisi.Click += new System.EventHandler(this.button_brisi_Click);
+            // 
             // Rezkar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,8 +214,12 @@
             this.Controls.Add(this.glControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(705, 859);
+            this.MinimumSize = new System.Drawing.Size(705, 859);
             this.Name = "Rezkar";
             this.Text = "Rezkar";
+            this.Move += new System.EventHandler(this.Rezkar_Move);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox_orodjarna.ResumeLayout(false);

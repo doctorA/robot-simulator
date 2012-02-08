@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
+/*
 // $ANTLR 3.4 D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g 2012-02-08 15:56:41
 
 // The variable 'variable' is assigned but its value is never used.
@@ -2589,3 +2589,4 @@ public partial class RobotLanguageLexer : Antlr.Runtime.Lexer
 	#endregion
 
 }
+*/
