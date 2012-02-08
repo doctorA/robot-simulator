@@ -175,7 +175,7 @@ namespace Robot_simulator
             else  //če pa ni bilo napak pa nariši naložen LWO objekt
             {
 
-                //GL.Rotate(90, 1.0f, 0.0f, 0.0f);
+                GL.Rotate(90, 1.0f, 0.0f, 0.0f);
 
                 // okolica robota
                 GL.PushMatrix();
