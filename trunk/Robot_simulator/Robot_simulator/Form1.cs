@@ -303,6 +303,7 @@ namespace Robot_simulator
 
      }
  
+    int lol = 6;
 
      private void OnTimedEvent(object source, ElapsedEventArgs e)
      {
@@ -321,6 +322,23 @@ namespace Robot_simulator
              robot.rotacija1 += 2;
              if (robot.rotacija1 > 180)
                  robot.rotacija1 = -180;
+
+             robot.rotacija4 += 10;
+             if (robot.rotacija4 > 180)
+                 robot.rotacija4 = -180;
+
+             if (robot.rotacija2 + lol < 100)
+             {
+                 robot.rotacija2 += lol;
+             }
+             else
+             {
+                 lol = -lol;
+             }
+             if (robot.rotacija2< -50)
+             {
+                 lol = -lol;
+             }
              glControl1.Invalidate();
          }
          else
