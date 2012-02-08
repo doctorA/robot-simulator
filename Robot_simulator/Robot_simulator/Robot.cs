@@ -121,6 +121,44 @@ namespace Robot_simulator
             return v;
         }
 
+        public void idi_tja(Vector3 v)
+        {
+            Vector3 curr = getVrhOrodja();
+            float distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+            float new_distance;
+                rotacija1++;
+                curr = getVrhOrodja();
+                new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+                if (new_distance > distance)
+                    rotacija1 -= 2;
+                rotacija2++;
+                curr = getVrhOrodja();
+                new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+                if (new_distance > distance)
+                    rotacija2 -= 2;
+                rotacija3++;
+                curr = getVrhOrodja();
+                new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+                if (new_distance > distance)
+                    rotacija3 -= 2;
+                rotacija4++;
+                curr = getVrhOrodja();
+                new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+                if (new_distance > distance)
+                    rotacija4 -= 2;
+                rotacija5++;
+                curr = getVrhOrodja();
+                new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+                if (new_distance > distance)
+                    rotacija5 -= 2;
+                rotacija6++;
+                curr = getVrhOrodja();
+                new_distance = (float)Math.Sqrt(Math.Pow(curr.X - v.X, 2) + Math.Pow(curr.Y - v.Y, 2) + Math.Pow(curr.Z - v.Z, 2));
+                if (new_distance > distance)
+                    rotacija6 -= 2;
+
+        }
+
         public void narisi()
         {
             #region simple model
