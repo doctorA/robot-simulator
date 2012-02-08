@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using System.Globalization;
 
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
@@ -291,12 +293,76 @@ namespace Robot_simulator
             {
                 liki[i].toJBI(conf, tocke, premiki);
             }
+
+            SaveFileDialog sFile = new SaveFileDialog();
+            if (sFile.ShowDialog() == DialogResult.OK)
+            {
+
+                String ime = "BLA";
+                String program = "";
+                program += ("/JOB") + Environment.NewLine;
+                program += ("//NAME ") + ime.ToUpper() + Environment.NewLine;
+                program += ("//POS") + Environment.NewLine;
+                program += ("///NPOS " + tocke.Count + ",0,0,0,0,0") + Environment.NewLine;
+                program += ("///" + conf.nacin_izvajanja.ToUpper()) + Environment.NewLine;
+                program += ("///" + conf.tool.ToUpper()) + Environment.NewLine;
+
+                program += ("///POSTYPE USER") + Environment.NewLine;
+                program += ("///RECTAN") + Environment.NewLine;
+                program += ("///RCONF 0,0,0,0,0,0,0,0") + Environment.NewLine;
+
+                string startPos = conf.zacetna_tocka.X.ToString("0.00", CultureInfo.InvariantCulture) + ',' + conf.zacetna_tocka.Y.ToString("0.00", CultureInfo.InvariantCulture) + ',' + conf.zacetna_tocka.Z.ToString("0.00", CultureInfo.InvariantCulture);
+                program += "C" + i.ToString("00000") + "=0.000,0.000," + conf.visina_svedra_pred_rezkanjem.ToString("0.000", CultureInfo.InvariantCulture) + "," + startPos + Environment.NewLine;
+                for (int i = 1; i < tocke.Count+1; i++)
+                {
+                    program += "C" + i.ToString("00000") + "=" + tocke[i-1] + Environment.NewLine;
+                }
+
+                program += ("//INST") + Environment.NewLine;
+                program += ("///DATE " + conf.datum) + Environment.NewLine;
+                program += ("///COMM " + conf.komentar.ToUpper()) + Environment.NewLine;
+                program += ("///ATTR SC,RW,RJ") + Environment.NewLine;
+                program += ("////FRAME " + conf.nacin_izvajanja.ToUpper()) + Environment.NewLine;
+                program += ("///GROUP RB1") + Environment.NewLine;
+                program += ("NOP") + Environment.NewLine;
+
+                if(conf.vklop_orodja)
+                {
+                    program += ("DOUT OT#(11) ON") + Environment.NewLine;
+                    program += ("TIMER T=0.20") + Environment.NewLine;
+                }
+
+
+                program += ("MOVJ C00000 VJ=20.00") + Environment.NewLine;
+                string temp = "";
+                for (int i = 1; i < premiki.Count + 1; i++)
+                {
+                    temp = "C" + i.ToString("00000") + " ";
+                    program += premiki[i-1].Insert(5, temp) + Environment.NewLine;
+                }
+
+                if(conf.vklop_orodja)
+                {
+                    program += ("DOUT OT#(11) OFF") + Environment.NewLine;
+                    program += ("TIMER T=0.20") + Environment.NewLine;
+                }
+
+
+                program += ("END") + Environment.NewLine;
+
+                TextWriter tw = new StreamWriter(sFile.FileName);
+                tw.Write(program);
+                tw.Close();
+
+            }
+
         }
 
         private void robotaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Nastavitve n = new Nastavitve(conf);
             n.ShowDialog();
+            conf = n.conf1;
         }
     }
 }

@@ -39,7 +39,7 @@ namespace Robot_simulator
             hitrost_restkanja = 20;
             vklop_orodja = true;
             vel_ploscice = new Vector2(40,60);
-            datum = DateTime.Now.ToString();
+            datum = DateTime.Now.ToString("yyyy'/'MM'/'dd hh:mm");
 
         }
     }
