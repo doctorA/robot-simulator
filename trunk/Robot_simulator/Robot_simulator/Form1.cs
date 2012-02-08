@@ -32,7 +32,7 @@ namespace Robot_simulator
         int width;
         Robot robot = new Robot(0,60,-35,90,0,0);
         string robo_app_TU_NOT_MATA_VIDVA_ZA_SPARSAT_SMAJLI = "";
-        Color ozadje = Color.Black;
+        Color ozadje = Color.LightBlue;
         int cout_utrip = 0;
         System.Timers.Timer aTimer;
 
@@ -289,7 +289,7 @@ namespace Robot_simulator
        {
             aTimer = new System.Timers.Timer();
             aTimer.Elapsed+=new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = 250;
+            aTimer.Interval = 200;
             aTimer.Enabled=true;
             cout_utrip = 0;
 
@@ -298,18 +298,21 @@ namespace Robot_simulator
 
      private void OnTimedEvent(object source, ElapsedEventArgs e)
      {
-         if (cout_utrip < 4)
+         if (cout_utrip < 2000)
          {
 
-             if (Color.Black == ozadje)
+             if (Color.LightBlue == ozadje)
              {
-                 ozadje = Color.White;
+                 ozadje = Color.Red;
              }
              else
              {
-                 ozadje = Color.Black;
+                 ozadje = Color.LightBlue;
              }
              cout_utrip++;
+             robot.rotacija1 += 2;
+             if (robot.rotacija1 > 180)
+                 robot.rotacija1 = -180;
              glControl1.Invalidate();
          }
          else

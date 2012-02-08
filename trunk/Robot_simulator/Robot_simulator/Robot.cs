@@ -53,6 +53,7 @@ namespace Robot_simulator
                 // okolica
                 okolica[0] = LightwaveObject.LoadObject(dir + "Okolica\\Barrel_6.lwo");
                 okolica[1] = LightwaveObject.LoadObject(dir + "Okolica\\Aframe.lwo");
+                okolica[2] = LightwaveObject.LoadObject(dir + "Okolica\\floor.lwo");
                 modelOK = true;
             }
             catch
@@ -180,7 +181,9 @@ namespace Robot_simulator
 
                 /* okolica robota  */
                 GL.PushMatrix();
-                GL.Translate(10.0f, -3.0f, -50.0f);
+                GL.Translate(0.0f, -3.2f, 0.0f);
+                risi_model(okolica[2]);
+                GL.Translate(-5.0f, 0.0f, -50.0f);
                 risi_model(okolica[0]);
                 GL.Translate(7.0f, 0.0f, 0.0f);
                 risi_model(okolica[0]);
@@ -188,13 +191,22 @@ namespace Robot_simulator
                 risi_model(okolica[0]);
                 GL.PopMatrix();
                 GL.PushMatrix();
-                GL.Translate(0.0f, -3.0f, -50.0f);
+                GL.Translate(0.0f, -3.0f, 0.0f);
                 risi_model(okolica[1]);
                 GL.PopMatrix();
 
                 // robot
                 GL.PushMatrix();
                 
+                //dolžine posameznih objektov
+                //podstavek: 0, -3.2, 0
+                //prvi zglob: 3.75, 8.3, -1.6
+                //prva roka: 0, 15.35, -0.4
+                //drugi zglob: 5.2, 3.9, 2.0
+                //druga roka: 10.8, 0, 0
+                //zadnji zglob: 2.2, 0, 0
+                //oni krogec za orodja montirat: 0.4, 0, 0
+
 
                 risi_model(robot_model[0]);  //podstavek
 
