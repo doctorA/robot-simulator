@@ -30,7 +30,6 @@
         {
             this.glControl1 = new OpenTK.GLControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button_tmp = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.trackBar6 = new System.Windows.Forms.TrackBar();
@@ -44,6 +43,7 @@
             this.trackBar3 = new System.Windows.Forms.TrackBar();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.button_tmp = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar6)).BeginInit();
@@ -78,18 +78,6 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Orodjarna";
-            // 
-            // button_tmp
-            // 
-            this.button_tmp.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button_tmp.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button_tmp.Location = new System.Drawing.Point(199, 354);
-            this.button_tmp.Name = "button_tmp";
-            this.button_tmp.Size = new System.Drawing.Size(117, 62);
-            this.button_tmp.TabIndex = 3;
-            this.button_tmp.Text = "Rezkar";
-            this.button_tmp.UseVisualStyleBackColor = false;
-            this.button_tmp.Click += new System.EventHandler(this.button_tmp_Click);
             // 
             // groupBox2
             // 
@@ -130,6 +118,7 @@
             this.trackBar6.Size = new System.Drawing.Size(273, 45);
             this.trackBar6.TabIndex = 23;
             this.trackBar6.TickFrequency = 10;
+            this.trackBar6.ValueChanged += new System.EventHandler(this.trackBar6_ValueChanged);
             // 
             // label5
             // 
@@ -185,6 +174,7 @@
             this.trackBar5.Size = new System.Drawing.Size(273, 45);
             this.trackBar5.TabIndex = 17;
             this.trackBar5.TickFrequency = 10;
+            this.trackBar5.Scroll += new System.EventHandler(this.trackBar5_Scroll);
             // 
             // trackBar4
             // 
@@ -196,6 +186,7 @@
             this.trackBar4.TabIndex = 16;
             this.trackBar4.TickFrequency = 10;
             this.trackBar4.Value = 90;
+            this.trackBar4.Scroll += new System.EventHandler(this.trackBar4_Scroll);
             // 
             // trackBar3
             // 
@@ -207,6 +198,7 @@
             this.trackBar3.TabIndex = 15;
             this.trackBar3.TickFrequency = 10;
             this.trackBar3.Value = -35;
+            this.trackBar3.ValueChanged += new System.EventHandler(this.trackBar3_ValueChanged);
             // 
             // trackBar2
             // 
@@ -218,6 +210,7 @@
             this.trackBar2.TabIndex = 14;
             this.trackBar2.TickFrequency = 10;
             this.trackBar2.Value = 60;
+            this.trackBar2.ValueChanged += new System.EventHandler(this.trackBar2_ValueChanged);
             // 
             // trackBar1
             // 
@@ -228,6 +221,19 @@
             this.trackBar1.Size = new System.Drawing.Size(273, 45);
             this.trackBar1.TabIndex = 13;
             this.trackBar1.TickFrequency = 10;
+            this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
+            // 
+            // button_tmp
+            // 
+            this.button_tmp.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button_tmp.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button_tmp.Location = new System.Drawing.Point(199, 354);
+            this.button_tmp.Name = "button_tmp";
+            this.button_tmp.Size = new System.Drawing.Size(117, 62);
+            this.button_tmp.TabIndex = 3;
+            this.button_tmp.Text = "Rezkar";
+            this.button_tmp.UseVisualStyleBackColor = false;
+            this.button_tmp.Click += new System.EventHandler(this.button_tmp_Click);
             // 
             // Form1
             // 
