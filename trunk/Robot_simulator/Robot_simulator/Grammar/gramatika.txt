@@ -1,0 +1,30 @@
+Te ukaze smo izlušèili iz primera za rezkanje, ki je bil na sistemu za vaje. Ker smo prvi delali v C#, 
+smo naredili samo nekatere osnovne ukaze, ki smo jih rabli za rezkanje. 
+
+/JOB
+//NAME <string>
+//POS
+//NPOS <6 celih števil, prvo število predstavlja število ukazov>
+///USER <celo število>
+///TOOL <celo število>
+///POSTYPE <USER ali PULSE>
+///RECTAN
+(naslednji dve vrstici se lahko veèkrat ponovita)
+///RCONF <8 števil, med 0 in 1, opcijska vrstica, pri nas smo jo uporabili samo enkrat>
+///C<indeks, sestavljen iz 5 celih števil>=<2 toèki, vsaka ma x y z, torej imamo vse skupaj 6 realnih števil>
+///INST
+///DATE leto/mesec/dan ure:minute
+///COMM <string>
+///ATTR <stringi, loèeni z vejico>
+////FRAME USER <celo število, naj bi se ujemalo z zgornjim številom od USER-a>
+///GROUP <string>
+NOP
+TIMER T=<realno število>
+MOVJ C<indeks> VJ=<realno število>
+MOVL C<indeks> V=<realno število>
+MOVC C<indeks> V=<realno število>
+DOUT OT#(<celo število>) <ON ali OFF>
+END
+
+
+
