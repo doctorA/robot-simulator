@@ -28,6 +28,8 @@ namespace Robot_simulator
         int height;
         int width;
         Robot robot = new Robot(0,60,-35,90,0,0);
+        string robo_app_TU_NOT_MATA_VIDVA_ZA_SPARSAT_SMAJLI = "";
+
         #endregion
         //ej
 
@@ -220,6 +222,12 @@ namespace Robot_simulator
         {
             Rezkar lol = new Rezkar();
             lol.ShowDialog();
+            robo_app_TU_NOT_MATA_VIDVA_ZA_SPARSAT_SMAJLI = lol.GLIHIC_vs_DUGIC;
+            if (robo_app_TU_NOT_MATA_VIDVA_ZA_SPARSAT_SMAJLI.Length > 0)
+            {
+                //pol se nekaj zgodi... magic... :D drugače pa uporabnik ni zbral akcije za rezkat
+                MessageBox.Show("Tu sem vežita vajino inicializacijo");
+            }
             glControl1.MakeCurrent();
             glControl1.Invalidate();
            // glControl1.s
