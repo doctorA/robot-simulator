@@ -52,6 +52,7 @@ namespace Robot_simulator
                 robot_model[7] = LightwaveObject.LoadObject(dir + "TOOL1.lwo");
                 // okolica
                 okolica[0] = LightwaveObject.LoadObject(dir + "Okolica\\Barrel_6.lwo");
+                okolica[1] = LightwaveObject.LoadObject(dir + "Okolica\\Aframe.lwo");
                 modelOK = true;
             }
             catch
@@ -177,13 +178,18 @@ namespace Robot_simulator
 
                 GL.Rotate(90, 1.0f, 0.0f, 0.0f);
 
-                // okolica robota
+                /* okolica robota  */
                 GL.PushMatrix();
-                GL.Translate(10.0f, -3.0f, 10.0f);
+                GL.Translate(10.0f, -3.0f, -50.0f);
                 risi_model(okolica[0]);
                 GL.Translate(7.0f, 0.0f, 0.0f);
                 risi_model(okolica[0]);
-
+                GL.Translate(-3.5f, 10.0f, 0.0f);
+                risi_model(okolica[0]);
+                GL.PopMatrix();
+                GL.PushMatrix();
+                GL.Translate(0.0f, -3.0f, -50.0f);
+                risi_model(okolica[1]);
                 GL.PopMatrix();
 
                 // robot
