@@ -156,6 +156,7 @@
     <None Include="ModelsLWO\Okolica\Barrel_6.lwo" />
     <None Include="ModelsLWO\Okolica\floor.lwo" />
     <None Include="ModelsLWO\TOOL1.lwo" />
+    <None Include="ModelsLWO\TOOL3.lwo" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
