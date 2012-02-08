@@ -177,6 +177,7 @@
     <Content Include="Content\ProgramZaRezkanje\Ikone\kvadrat1.png" />
     <Content Include="Content\ProgramZaRezkanje\Ikone\premakni.png" />
     <Content Include="Content\ProgramZaRezkanje\Ikone\polkrog.png" />
+    <Content Include="DokumentacijaAnimacija.txt" />
     <Content Include="Lightwave\ClassLibrary.dll" />
   </ItemGroup>
   <ItemGroup>
