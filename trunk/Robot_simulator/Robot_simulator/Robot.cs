@@ -49,7 +49,7 @@ namespace Robot_simulator
                 robot_model[4] = LightwaveObject.LoadObject(dir + "MH6_raxis.lwo");
                 robot_model[5] = LightwaveObject.LoadObject(dir + "MH6_baxis.lwo");
                 robot_model[6] = LightwaveObject.LoadObject(dir + "MH6_taxis.lwo");
-                robot_model[7] = LightwaveObject.LoadObject(dir + "TOOL1.lwo");
+                robot_model[7] = LightwaveObject.LoadObject(dir + "TOOL3.lwo");
                 // okolica
                 okolica[0] = LightwaveObject.LoadObject(dir + "Okolica\\Barrel_6.lwo");
                 okolica[1] = LightwaveObject.LoadObject(dir + "Okolica\\Aframe.lwo");
@@ -84,11 +84,10 @@ namespace Robot_simulator
             vrh += new Vector3(5.2f, 3.9f, 2.0f);
             vrh = rot_po_x(vrh, -90);
             vrh = rot_po_z(vrh, rotacija3);
-            vrh += new Vector3(0f, 15.35f, -0.4f); //nadaljuj za vse člene
+            vrh += new Vector3(0f, 15.35f, -0.4f); 
             vrh = rot_po_z(vrh, rotacija2);
-            //izračun vrha
-            vrh += new Vector3(3.75f, 8.3f, -1.6f); //prištej vsak vektor člena
-            vrh = rot_po_y(vrh, rotacija1 + 90); // in rotiraj
+            vrh += new Vector3(3.75f, 8.3f, -1.6f);
+            vrh = rot_po_y(vrh, rotacija1 + 90); 
 
             return vrh;
         }
