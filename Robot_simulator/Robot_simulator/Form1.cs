@@ -179,6 +179,7 @@ namespace Robot_simulator
             robot.rotacija1 = trackBar1.Value;
             label1.Text = trackBar1.Value.ToString();
             glControl1.Invalidate();
+            MessageBox.Show("JaniD");
         }
 
         private void trackBar2_ValueChanged(object sender, EventArgs e)
