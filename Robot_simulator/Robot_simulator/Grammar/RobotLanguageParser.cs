@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4 D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g 2012-02-08 19:04:07
+// $ANTLR 3.4 D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g 2012-02-08 19:24:19
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -33,10 +33,9 @@ using RewriteRuleITokenStream = Antlr.Runtime.Tree.RewriteRuleTokenStream;
 public partial class RobotLanguageParser : Antlr.Runtime.Parser
 {
 	internal static readonly string[] tokenNames = new string[] {
-		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ATTR", "COMM", "DATE", "DIN", "DOUT", "FRAME", "GROUP", "INDEKS", "INST", "INT", "JOB", "MOVC", "MOVJ", "MOVL", "MOVS", "NAME", "NEWLINE", "NIZ", "NPOS", "ONOFF", "POS", "POSTYPE", "RCONF", "REAL", "RECTAN", "TIME", "TIMER", "TOOL", "USER", "WS", "','", "'-'", "'/'", "'0'", "'1'", "'='", "'END'", "'NOP'", "'PULSE'", "'USER'", "'V'", "'VJ'"
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ATTR", "COMM", "DATE", "DIN", "DOUT", "FRAME", "GROUP", "INDEKS", "INST", "INT", "JOB", "MINUS", "MOVC", "MOVJ", "MOVL", "MOVS", "NAME", "NEWLINE", "NIZ", "NPOS", "ONOFF", "POS", "POSTYPE", "RCONF", "REAL", "RECTAN", "TIME", "TIMER", "TOOL", "USER", "WS", "','", "'/'", "'0'", "'1'", "'='", "'END'", "'NOP'", "'PULSE'", "'USER'", "'V'", "'VJ'"
 	};
 	public const int EOF=-1;
-	public const int T__34=34;
 	public const int T__35=35;
 	public const int T__36=36;
 	public const int T__37=37;
@@ -59,25 +58,26 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 	public const int INST=12;
 	public const int INT=13;
 	public const int JOB=14;
-	public const int MOVC=15;
-	public const int MOVJ=16;
-	public const int MOVL=17;
-	public const int MOVS=18;
-	public const int NAME=19;
-	public const int NEWLINE=20;
-	public const int NIZ=21;
-	public const int NPOS=22;
-	public const int ONOFF=23;
-	public const int POS=24;
-	public const int POSTYPE=25;
-	public const int RCONF=26;
-	public const int REAL=27;
-	public const int RECTAN=28;
-	public const int TIME=29;
-	public const int TIMER=30;
-	public const int TOOL=31;
-	public const int USER=32;
-	public const int WS=33;
+	public const int MINUS=15;
+	public const int MOVC=16;
+	public const int MOVJ=17;
+	public const int MOVL=18;
+	public const int MOVS=19;
+	public const int NAME=20;
+	public const int NEWLINE=21;
+	public const int NIZ=22;
+	public const int NPOS=23;
+	public const int ONOFF=24;
+	public const int POS=25;
+	public const int POSTYPE=26;
+	public const int RCONF=27;
+	public const int REAL=28;
+	public const int RECTAN=29;
+	public const int TIME=30;
+	public const int TIMER=31;
+	public const int TOOL=32;
+	public const int USER=33;
+	public const int WS=34;
 
 	public RobotLanguageParser(ITokenStream input)
 		: this(input, new RecognizerSharedState())
@@ -388,7 +388,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 
 			{
 			// AST REWRITE
-			// elements: npos, rectan, comm, main, frame, name, tool, cindeks, group, date, rconf, job, pos, attr, inst, user, postype
+			// elements: name, main, tool, comm, rconf, postype, cindeks, date, user, group, inst, frame, attr, job, rectan, pos, npos
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -674,7 +674,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 	partial void LeaveRule_npos();
 
 	// $ANTLR start "npos"
-	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:18:1: npos : NPOS INT ( ',' ! ostanek )+ ;
+	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:18:1: npos : NPOS INT ( ',' INT )+ ;
 	[GrammarRule("npos")]
 	private AstParserRuleReturnScope<CommonTree, IToken> npos()
 	{
@@ -689,18 +689,19 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		IToken NPOS23 = default(IToken);
 		IToken INT24 = default(IToken);
 		IToken char_literal25 = default(IToken);
-		AstParserRuleReturnScope<CommonTree, IToken> ostanek26 = default(AstParserRuleReturnScope<CommonTree, IToken>);
+		IToken INT26 = default(IToken);
 
 		CommonTree NPOS23_tree = default(CommonTree);
 		CommonTree INT24_tree = default(CommonTree);
 		CommonTree char_literal25_tree = default(CommonTree);
+		CommonTree INT26_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "npos");
-		DebugLocation(18, 31);
+		DebugLocation(18, 26);
 		try
 		{
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:18:6: ( NPOS INT ( ',' ! ostanek )+ )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:18:6: ( NPOS INT ( ',' INT )+ )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:18:8: NPOS INT ( ',' ! ostanek )+
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:18:8: NPOS INT ( ',' INT )+
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
@@ -713,7 +714,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			INT24_tree = (CommonTree)adaptor.Create(INT24);
 			adaptor.AddChild(root_0, INT24_tree);
 			DebugLocation(18, 17);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:18:17: ( ',' ! ostanek )+
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:18:17: ( ',' INT )+
 			int cnt2=0;
 			try { DebugEnterSubRule(2);
 			while (true)
@@ -722,7 +723,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				try { DebugEnterDecision(2, false);
 				int LA2_0 = input.LA(1);
 
-				if ((LA2_0==34))
+				if ((LA2_0==35))
 				{
 					alt2 = 1;
 				}
@@ -733,16 +734,16 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:18:18: ',' ! ostanek
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:18:18: ',' INT
 					{
-					DebugLocation(18, 21);
-					char_literal25=(IToken)Match(input,34,Follow._34_in_npos152); 
-					DebugLocation(18, 23);
-					PushFollow(Follow._ostanek_in_npos155);
-					ostanek26=ostanek();
-					PopFollow();
-
-					adaptor.AddChild(root_0, ostanek26.Tree);
+					DebugLocation(18, 18);
+					char_literal25=(IToken)Match(input,35,Follow._35_in_npos152); 
+					char_literal25_tree = (CommonTree)adaptor.Create(char_literal25);
+					adaptor.AddChild(root_0, char_literal25_tree);
+					DebugLocation(18, 22);
+					INT26=(IToken)Match(input,INT,Follow._INT_in_npos154); 
+					INT26_tree = (CommonTree)adaptor.Create(INT26);
+					adaptor.AddChild(root_0, INT26_tree);
 
 					}
 					break;
@@ -784,7 +785,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			LeaveRule("npos", 6);
 			LeaveRule_npos();
 		}
-		DebugLocation(18, 31);
+		DebugLocation(18, 26);
 		} finally { DebugExitRule(GrammarFileName, "npos"); }
 		return retval;
 
@@ -821,7 +822,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(19, 11);
-			INT27=(IToken)Match(input,INT,Follow._INT_in_ostanek164); 
+			INT27=(IToken)Match(input,INT,Follow._INT_in_ostanek163); 
 			INT27_tree = (CommonTree)adaptor.Create(INT27);
 			adaptor.AddChild(root_0, INT27_tree);
 
@@ -885,11 +886,11 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(20, 8);
-			USER28=(IToken)Match(input,USER,Follow._USER_in_user171); 
+			USER28=(IToken)Match(input,USER,Follow._USER_in_user170); 
 			USER28_tree = (CommonTree)adaptor.Create(USER28);
 			adaptor.AddChild(root_0, USER28_tree);
 			DebugLocation(20, 13);
-			INT29=(IToken)Match(input,INT,Follow._INT_in_user173); 
+			INT29=(IToken)Match(input,INT,Follow._INT_in_user172); 
 			INT29_tree = (CommonTree)adaptor.Create(INT29);
 			adaptor.AddChild(root_0, INT29_tree);
 
@@ -953,11 +954,11 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(21, 8);
-			TOOL30=(IToken)Match(input,TOOL,Follow._TOOL_in_tool180); 
+			TOOL30=(IToken)Match(input,TOOL,Follow._TOOL_in_tool179); 
 			TOOL30_tree = (CommonTree)adaptor.Create(TOOL30);
 			adaptor.AddChild(root_0, TOOL30_tree);
 			DebugLocation(21, 13);
-			INT31=(IToken)Match(input,INT,Follow._INT_in_tool182); 
+			INT31=(IToken)Match(input,INT,Follow._INT_in_tool181); 
 			INT31_tree = (CommonTree)adaptor.Create(INT31);
 			adaptor.AddChild(root_0, INT31_tree);
 
@@ -1021,7 +1022,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(22, 11);
-			POSTYPE32=(IToken)Match(input,POSTYPE,Follow._POSTYPE_in_postype189); 
+			POSTYPE32=(IToken)Match(input,POSTYPE,Follow._POSTYPE_in_postype188); 
 			POSTYPE32_tree = (CommonTree)adaptor.Create(POSTYPE32);
 			adaptor.AddChild(root_0, POSTYPE32_tree);
 			DebugLocation(22, 19);
@@ -1099,7 +1100,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(23, 10);
-			RECTAN34=(IToken)Match(input,RECTAN,Follow._RECTAN_in_rectan204); 
+			RECTAN34=(IToken)Match(input,RECTAN,Follow._RECTAN_in_rectan203); 
 			RECTAN34_tree = (CommonTree)adaptor.Create(RECTAN34);
 			adaptor.AddChild(root_0, RECTAN34_tree);
 
@@ -1167,7 +1168,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(24, 9);
-			RCONF35=(IToken)Match(input,RCONF,Follow._RCONF_in_rconf211); 
+			RCONF35=(IToken)Match(input,RCONF,Follow._RCONF_in_rconf210); 
 			RCONF35_tree = (CommonTree)adaptor.Create(RCONF35);
 			adaptor.AddChild(root_0, RCONF35_tree);
 			DebugLocation(24, 15);
@@ -1196,7 +1197,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				try { DebugEnterDecision(3, false);
 				int LA3_0 = input.LA(1);
 
-				if ((LA3_0==34))
+				if ((LA3_0==35))
 				{
 					alt3 = 1;
 				}
@@ -1210,7 +1211,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:24:26: ',' ! ( '0' | '1' )
 					{
 					DebugLocation(24, 29);
-					char_literal37=(IToken)Match(input,34,Follow._34_in_rconf220); 
+					char_literal37=(IToken)Match(input,35,Follow._35_in_rconf219); 
 					DebugLocation(24, 31);
 
 					set38=(IToken)input.LT(1);
@@ -1279,7 +1280,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 	partial void LeaveRule_cindeks();
 
 	// $ANTLR start "cindeks"
-	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:1: cindeks : INDEKS '=' ! ( '-' )? REAL ( ',' ! ( '-' )? REAL )+ ;
+	// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:1: cindeks : INDEKS '=' ! ( MINUS )? REAL ( ',' ! ( MINUS )? REAL )+ ;
 	[GrammarRule("cindeks")]
 	private AstParserRuleReturnScope<CommonTree, IToken> cindeks()
 	{
@@ -1293,43 +1294,43 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 
 		IToken INDEKS39 = default(IToken);
 		IToken char_literal40 = default(IToken);
-		IToken char_literal41 = default(IToken);
+		IToken MINUS41 = default(IToken);
 		IToken REAL42 = default(IToken);
 		IToken char_literal43 = default(IToken);
-		IToken char_literal44 = default(IToken);
+		IToken MINUS44 = default(IToken);
 		IToken REAL45 = default(IToken);
 
 		CommonTree INDEKS39_tree = default(CommonTree);
 		CommonTree char_literal40_tree = default(CommonTree);
-		CommonTree char_literal41_tree = default(CommonTree);
+		CommonTree MINUS41_tree = default(CommonTree);
 		CommonTree REAL42_tree = default(CommonTree);
 		CommonTree char_literal43_tree = default(CommonTree);
-		CommonTree char_literal44_tree = default(CommonTree);
+		CommonTree MINUS44_tree = default(CommonTree);
 		CommonTree REAL45_tree = default(CommonTree);
 		try { DebugEnterRule(GrammarFileName, "cindeks");
-		DebugLocation(25, 49);
+		DebugLocation(25, 53);
 		try
 		{
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:9: ( INDEKS '=' ! ( '-' )? REAL ( ',' ! ( '-' )? REAL )+ )
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:9: ( INDEKS '=' ! ( MINUS )? REAL ( ',' ! ( MINUS )? REAL )+ )
 			DebugEnterAlt(1);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:11: INDEKS '=' ! ( '-' )? REAL ( ',' ! ( '-' )? REAL )+
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:11: INDEKS '=' ! ( MINUS )? REAL ( ',' ! ( MINUS )? REAL )+
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(25, 11);
-			INDEKS39=(IToken)Match(input,INDEKS,Follow._INDEKS_in_cindeks236); 
+			INDEKS39=(IToken)Match(input,INDEKS,Follow._INDEKS_in_cindeks235); 
 			INDEKS39_tree = (CommonTree)adaptor.Create(INDEKS39);
 			adaptor.AddChild(root_0, INDEKS39_tree);
 			DebugLocation(25, 21);
-			char_literal40=(IToken)Match(input,39,Follow._39_in_cindeks238); 
+			char_literal40=(IToken)Match(input,39,Follow._39_in_cindeks237); 
 			DebugLocation(25, 23);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:23: ( '-' )?
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:23: ( MINUS )?
 			int alt4=2;
 			try { DebugEnterSubRule(4);
 			try { DebugEnterDecision(4, false);
 			int LA4_0 = input.LA(1);
 
-			if ((LA4_0==35))
+			if ((LA4_0==MINUS))
 			{
 				alt4 = 1;
 			}
@@ -1338,12 +1339,12 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:23: '-'
+				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:23: MINUS
 				{
 				DebugLocation(25, 23);
-				char_literal41=(IToken)Match(input,35,Follow._35_in_cindeks241); 
-				char_literal41_tree = (CommonTree)adaptor.Create(char_literal41);
-				adaptor.AddChild(root_0, char_literal41_tree);
+				MINUS41=(IToken)Match(input,MINUS,Follow._MINUS_in_cindeks240); 
+				MINUS41_tree = (CommonTree)adaptor.Create(MINUS41);
+				adaptor.AddChild(root_0, MINUS41_tree);
 
 				}
 				break;
@@ -1351,12 +1352,12 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			}
 			} finally { DebugExitSubRule(4); }
 
-			DebugLocation(25, 28);
-			REAL42=(IToken)Match(input,REAL,Follow._REAL_in_cindeks244); 
+			DebugLocation(25, 30);
+			REAL42=(IToken)Match(input,REAL,Follow._REAL_in_cindeks243); 
 			REAL42_tree = (CommonTree)adaptor.Create(REAL42);
 			adaptor.AddChild(root_0, REAL42_tree);
-			DebugLocation(25, 33);
-			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:33: ( ',' ! ( '-' )? REAL )+
+			DebugLocation(25, 35);
+			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:35: ( ',' ! ( MINUS )? REAL )+
 			int cnt6=0;
 			try { DebugEnterSubRule(6);
 			while (true)
@@ -1365,7 +1366,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				try { DebugEnterDecision(6, false);
 				int LA6_0 = input.LA(1);
 
-				if ((LA6_0==34))
+				if ((LA6_0==35))
 				{
 					alt6 = 1;
 				}
@@ -1376,18 +1377,18 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:34: ',' ! ( '-' )? REAL
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:36: ',' ! ( MINUS )? REAL
 					{
-					DebugLocation(25, 37);
-					char_literal43=(IToken)Match(input,34,Follow._34_in_cindeks247); 
 					DebugLocation(25, 39);
-					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:39: ( '-' )?
+					char_literal43=(IToken)Match(input,35,Follow._35_in_cindeks246); 
+					DebugLocation(25, 41);
+					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:41: ( MINUS )?
 					int alt5=2;
 					try { DebugEnterSubRule(5);
 					try { DebugEnterDecision(5, false);
 					int LA5_0 = input.LA(1);
 
-					if ((LA5_0==35))
+					if ((LA5_0==MINUS))
 					{
 						alt5 = 1;
 					}
@@ -1396,12 +1397,12 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:39: '-'
+						// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:25:41: MINUS
 						{
-						DebugLocation(25, 39);
-						char_literal44=(IToken)Match(input,35,Follow._35_in_cindeks250); 
-						char_literal44_tree = (CommonTree)adaptor.Create(char_literal44);
-						adaptor.AddChild(root_0, char_literal44_tree);
+						DebugLocation(25, 41);
+						MINUS44=(IToken)Match(input,MINUS,Follow._MINUS_in_cindeks249); 
+						MINUS44_tree = (CommonTree)adaptor.Create(MINUS44);
+						adaptor.AddChild(root_0, MINUS44_tree);
 
 						}
 						break;
@@ -1409,8 +1410,8 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					}
 					} finally { DebugExitSubRule(5); }
 
-					DebugLocation(25, 44);
-					REAL45=(IToken)Match(input,REAL,Follow._REAL_in_cindeks253); 
+					DebugLocation(25, 48);
+					REAL45=(IToken)Match(input,REAL,Follow._REAL_in_cindeks252); 
 					REAL45_tree = (CommonTree)adaptor.Create(REAL45);
 					adaptor.AddChild(root_0, REAL45_tree);
 
@@ -1454,7 +1455,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			LeaveRule("cindeks", 13);
 			LeaveRule_cindeks();
 		}
-		DebugLocation(25, 49);
+		DebugLocation(25, 53);
 		} finally { DebugExitRule(GrammarFileName, "cindeks"); }
 		return retval;
 
@@ -1491,7 +1492,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(26, 8);
-			INST46=(IToken)Match(input,INST,Follow._INST_in_inst262); 
+			INST46=(IToken)Match(input,INST,Follow._INST_in_inst261); 
 			INST46_tree = (CommonTree)adaptor.Create(INST46);
 			adaptor.AddChild(root_0, INST46_tree);
 
@@ -1565,7 +1566,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(27, 8);
-			DATE47=(IToken)Match(input,DATE,Follow._DATE_in_date269); 
+			DATE47=(IToken)Match(input,DATE,Follow._DATE_in_date268); 
 			DATE47_tree = (CommonTree)adaptor.Create(DATE47);
 			adaptor.AddChild(root_0, DATE47_tree);
 			DebugLocation(27, 13);
@@ -1592,7 +1593,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:27:13: INT
 					{
 					DebugLocation(27, 13);
-					INT48=(IToken)Match(input,INT,Follow._INT_in_date271); 
+					INT48=(IToken)Match(input,INT,Follow._INT_in_date270); 
 					INT48_tree = (CommonTree)adaptor.Create(INT48);
 					adaptor.AddChild(root_0, INT48_tree);
 
@@ -1615,7 +1616,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(7); }
 
 			DebugLocation(27, 21);
-			char_literal49=(IToken)Match(input,36,Follow._36_in_date274); 
+			char_literal49=(IToken)Match(input,36,Follow._36_in_date273); 
 			DebugLocation(27, 23);
 			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:27:23: ( INT )+
 			int cnt8=0;
@@ -1640,7 +1641,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:27:23: INT
 					{
 					DebugLocation(27, 23);
-					INT50=(IToken)Match(input,INT,Follow._INT_in_date277); 
+					INT50=(IToken)Match(input,INT,Follow._INT_in_date276); 
 					INT50_tree = (CommonTree)adaptor.Create(INT50);
 					adaptor.AddChild(root_0, INT50_tree);
 
@@ -1663,7 +1664,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(8); }
 
 			DebugLocation(27, 31);
-			char_literal51=(IToken)Match(input,36,Follow._36_in_date280); 
+			char_literal51=(IToken)Match(input,36,Follow._36_in_date279); 
 			DebugLocation(27, 33);
 			// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:27:33: ( INT )+
 			int cnt9=0;
@@ -1688,7 +1689,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:27:33: INT
 					{
 					DebugLocation(27, 33);
-					INT52=(IToken)Match(input,INT,Follow._INT_in_date283); 
+					INT52=(IToken)Match(input,INT,Follow._INT_in_date282); 
 					INT52_tree = (CommonTree)adaptor.Create(INT52);
 					adaptor.AddChild(root_0, INT52_tree);
 
@@ -1711,7 +1712,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			} finally { DebugExitSubRule(9); }
 
 			DebugLocation(27, 38);
-			TIME53=(IToken)Match(input,TIME,Follow._TIME_in_date286); 
+			TIME53=(IToken)Match(input,TIME,Follow._TIME_in_date285); 
 			TIME53_tree = (CommonTree)adaptor.Create(TIME53);
 			adaptor.AddChild(root_0, TIME53_tree);
 
@@ -1775,7 +1776,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(28, 8);
-			COMM54=(IToken)Match(input,COMM,Follow._COMM_in_comm293); 
+			COMM54=(IToken)Match(input,COMM,Follow._COMM_in_comm292); 
 			COMM54_tree = (CommonTree)adaptor.Create(COMM54);
 			adaptor.AddChild(root_0, COMM54_tree);
 			DebugLocation(28, 13);
@@ -1802,7 +1803,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:28:13: NIZ
 					{
 					DebugLocation(28, 13);
-					NIZ55=(IToken)Match(input,NIZ,Follow._NIZ_in_comm295); 
+					NIZ55=(IToken)Match(input,NIZ,Follow._NIZ_in_comm294); 
 					NIZ55_tree = (CommonTree)adaptor.Create(NIZ55);
 					adaptor.AddChild(root_0, NIZ55_tree);
 
@@ -1889,11 +1890,11 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(29, 8);
-			ATTR56=(IToken)Match(input,ATTR,Follow._ATTR_in_attr303); 
+			ATTR56=(IToken)Match(input,ATTR,Follow._ATTR_in_attr302); 
 			ATTR56_tree = (CommonTree)adaptor.Create(ATTR56);
 			adaptor.AddChild(root_0, ATTR56_tree);
 			DebugLocation(29, 13);
-			NIZ57=(IToken)Match(input,NIZ,Follow._NIZ_in_attr305); 
+			NIZ57=(IToken)Match(input,NIZ,Follow._NIZ_in_attr304); 
 			NIZ57_tree = (CommonTree)adaptor.Create(NIZ57);
 			adaptor.AddChild(root_0, NIZ57_tree);
 			DebugLocation(29, 17);
@@ -1906,7 +1907,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				try { DebugEnterDecision(11, false);
 				int LA11_0 = input.LA(1);
 
-				if ((LA11_0==34))
+				if ((LA11_0==35))
 				{
 					alt11 = 1;
 				}
@@ -1920,9 +1921,9 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 					// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:29:18: ',' ! NIZ
 					{
 					DebugLocation(29, 21);
-					char_literal58=(IToken)Match(input,34,Follow._34_in_attr308); 
+					char_literal58=(IToken)Match(input,35,Follow._35_in_attr307); 
 					DebugLocation(29, 23);
-					NIZ59=(IToken)Match(input,NIZ,Follow._NIZ_in_attr311); 
+					NIZ59=(IToken)Match(input,NIZ,Follow._NIZ_in_attr310); 
 					NIZ59_tree = (CommonTree)adaptor.Create(NIZ59);
 					adaptor.AddChild(root_0, NIZ59_tree);
 
@@ -2007,15 +2008,15 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(30, 9);
-			FRAME60=(IToken)Match(input,FRAME,Follow._FRAME_in_frame320); 
+			FRAME60=(IToken)Match(input,FRAME,Follow._FRAME_in_frame319); 
 			FRAME60_tree = (CommonTree)adaptor.Create(FRAME60);
 			adaptor.AddChild(root_0, FRAME60_tree);
 			DebugLocation(30, 15);
-			string_literal61=(IToken)Match(input,43,Follow._43_in_frame322); 
+			string_literal61=(IToken)Match(input,43,Follow._43_in_frame321); 
 			string_literal61_tree = (CommonTree)adaptor.Create(string_literal61);
 			adaptor.AddChild(root_0, string_literal61_tree);
 			DebugLocation(30, 22);
-			INT62=(IToken)Match(input,INT,Follow._INT_in_frame324); 
+			INT62=(IToken)Match(input,INT,Follow._INT_in_frame323); 
 			INT62_tree = (CommonTree)adaptor.Create(INT62);
 			adaptor.AddChild(root_0, INT62_tree);
 
@@ -2079,11 +2080,11 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(31, 9);
-			GROUP63=(IToken)Match(input,GROUP,Follow._GROUP_in_group331); 
+			GROUP63=(IToken)Match(input,GROUP,Follow._GROUP_in_group330); 
 			GROUP63_tree = (CommonTree)adaptor.Create(GROUP63);
 			adaptor.AddChild(root_0, GROUP63_tree);
 			DebugLocation(31, 15);
-			NIZ64=(IToken)Match(input,NIZ,Follow._NIZ_in_group333); 
+			NIZ64=(IToken)Match(input,NIZ,Follow._NIZ_in_group332); 
 			NIZ64_tree = (CommonTree)adaptor.Create(NIZ64);
 			adaptor.AddChild(root_0, NIZ64_tree);
 
@@ -2148,17 +2149,17 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(32, 8);
-			string_literal65=(IToken)Match(input,41,Follow._41_in_main340); 
+			string_literal65=(IToken)Match(input,41,Follow._41_in_main339); 
 			string_literal65_tree = (CommonTree)adaptor.Create(string_literal65);
 			adaptor.AddChild(root_0, string_literal65_tree);
 			DebugLocation(32, 14);
-			PushFollow(Follow._ukazi_in_main342);
+			PushFollow(Follow._ukazi_in_main341);
 			ukazi66=ukazi();
 			PopFollow();
 
 			adaptor.AddChild(root_0, ukazi66.Tree);
 			DebugLocation(32, 20);
-			string_literal67=(IToken)Match(input,40,Follow._40_in_main344); 
+			string_literal67=(IToken)Match(input,40,Follow._40_in_main343); 
 			string_literal67_tree = (CommonTree)adaptor.Create(string_literal67);
 			adaptor.AddChild(root_0, string_literal67_tree);
 
@@ -2235,45 +2236,45 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(33, 9);
-			PushFollow(Follow._premik_in_ukazi351);
+			PushFollow(Follow._premik_in_ukazi350);
 			premik68=premik();
 			PopFollow();
 
 			adaptor.AddChild(root_0, premik68.Tree);
 			DebugLocation(33, 16);
-			DOUT69=(IToken)Match(input,DOUT,Follow._DOUT_in_ukazi353); 
+			DOUT69=(IToken)Match(input,DOUT,Follow._DOUT_in_ukazi352); 
 			DOUT69_tree = (CommonTree)adaptor.Create(DOUT69);
 			adaptor.AddChild(root_0, DOUT69_tree);
 			DebugLocation(33, 21);
-			ONOFF70=(IToken)Match(input,ONOFF,Follow._ONOFF_in_ukazi355); 
+			ONOFF70=(IToken)Match(input,ONOFF,Follow._ONOFF_in_ukazi354); 
 			ONOFF70_tree = (CommonTree)adaptor.Create(ONOFF70);
 			adaptor.AddChild(root_0, ONOFF70_tree);
 			DebugLocation(33, 27);
-			TIMER71=(IToken)Match(input,TIMER,Follow._TIMER_in_ukazi357); 
+			TIMER71=(IToken)Match(input,TIMER,Follow._TIMER_in_ukazi356); 
 			TIMER71_tree = (CommonTree)adaptor.Create(TIMER71);
 			adaptor.AddChild(root_0, TIMER71_tree);
 			DebugLocation(33, 36);
-			char_literal72=(IToken)Match(input,39,Follow._39_in_ukazi359); 
+			char_literal72=(IToken)Match(input,39,Follow._39_in_ukazi358); 
 			DebugLocation(33, 38);
-			REAL73=(IToken)Match(input,REAL,Follow._REAL_in_ukazi362); 
+			REAL73=(IToken)Match(input,REAL,Follow._REAL_in_ukazi361); 
 			REAL73_tree = (CommonTree)adaptor.Create(REAL73);
 			adaptor.AddChild(root_0, REAL73_tree);
 			DebugLocation(33, 43);
-			PushFollow(Follow._premiki_in_ukazi364);
+			PushFollow(Follow._premiki_in_ukazi363);
 			premiki74=premiki();
 			PopFollow();
 
 			adaptor.AddChild(root_0, premiki74.Tree);
 			DebugLocation(33, 51);
-			DOUT75=(IToken)Match(input,DOUT,Follow._DOUT_in_ukazi366); 
+			DOUT75=(IToken)Match(input,DOUT,Follow._DOUT_in_ukazi365); 
 			DOUT75_tree = (CommonTree)adaptor.Create(DOUT75);
 			adaptor.AddChild(root_0, DOUT75_tree);
 			DebugLocation(33, 56);
-			ONOFF76=(IToken)Match(input,ONOFF,Follow._ONOFF_in_ukazi368); 
+			ONOFF76=(IToken)Match(input,ONOFF,Follow._ONOFF_in_ukazi367); 
 			ONOFF76_tree = (CommonTree)adaptor.Create(ONOFF76);
 			adaptor.AddChild(root_0, ONOFF76_tree);
 			DebugLocation(33, 62);
-			PushFollow(Follow._premik_in_ukazi370);
+			PushFollow(Follow._premik_in_ukazi369);
 			premik77=premik();
 			PopFollow();
 
@@ -2610,13 +2611,13 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(34, 11);
-				PushFollow(Follow._premik_in_premiki377);
+				PushFollow(Follow._premik_in_premiki376);
 				premik78=premik();
 				PopFollow();
 
 				adaptor.AddChild(root_0, premik78.Tree);
 				DebugLocation(34, 18);
-				PushFollow(Follow._premiki_in_premiki379);
+				PushFollow(Follow._premiki_in_premiki378);
 				premiki79=premiki();
 				PopFollow();
 
@@ -2631,7 +2632,7 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				root_0 = (CommonTree)adaptor.Nil();
 
 				DebugLocation(34, 28);
-				PushFollow(Follow._premik_in_premiki383);
+				PushFollow(Follow._premik_in_premiki382);
 				premik80=premik();
 				PopFollow();
 
@@ -2776,21 +2777,21 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:35:11: MOVJ INDEKS 'VJ' '=' ! REAL
 				{
 				DebugLocation(35, 11);
-				MOVJ81=(IToken)Match(input,MOVJ,Follow._MOVJ_in_premik391); 
+				MOVJ81=(IToken)Match(input,MOVJ,Follow._MOVJ_in_premik390); 
 				MOVJ81_tree = (CommonTree)adaptor.Create(MOVJ81);
 				adaptor.AddChild(root_0, MOVJ81_tree);
 				DebugLocation(35, 16);
-				INDEKS82=(IToken)Match(input,INDEKS,Follow._INDEKS_in_premik393); 
+				INDEKS82=(IToken)Match(input,INDEKS,Follow._INDEKS_in_premik392); 
 				INDEKS82_tree = (CommonTree)adaptor.Create(INDEKS82);
 				adaptor.AddChild(root_0, INDEKS82_tree);
 				DebugLocation(35, 23);
-				string_literal83=(IToken)Match(input,45,Follow._45_in_premik395); 
+				string_literal83=(IToken)Match(input,45,Follow._45_in_premik394); 
 				string_literal83_tree = (CommonTree)adaptor.Create(string_literal83);
 				adaptor.AddChild(root_0, string_literal83_tree);
 				DebugLocation(35, 31);
-				char_literal84=(IToken)Match(input,39,Follow._39_in_premik397); 
+				char_literal84=(IToken)Match(input,39,Follow._39_in_premik396); 
 				DebugLocation(35, 33);
-				REAL85=(IToken)Match(input,REAL,Follow._REAL_in_premik400); 
+				REAL85=(IToken)Match(input,REAL,Follow._REAL_in_premik399); 
 				REAL85_tree = (CommonTree)adaptor.Create(REAL85);
 				adaptor.AddChild(root_0, REAL85_tree);
 
@@ -2811,21 +2812,21 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:35:42: MOVL INDEKS 'V' '=' ! REAL
 				{
 				DebugLocation(35, 42);
-				MOVL86=(IToken)Match(input,MOVL,Follow._MOVL_in_premik406); 
+				MOVL86=(IToken)Match(input,MOVL,Follow._MOVL_in_premik405); 
 				MOVL86_tree = (CommonTree)adaptor.Create(MOVL86);
 				adaptor.AddChild(root_0, MOVL86_tree);
 				DebugLocation(35, 47);
-				INDEKS87=(IToken)Match(input,INDEKS,Follow._INDEKS_in_premik408); 
+				INDEKS87=(IToken)Match(input,INDEKS,Follow._INDEKS_in_premik407); 
 				INDEKS87_tree = (CommonTree)adaptor.Create(INDEKS87);
 				adaptor.AddChild(root_0, INDEKS87_tree);
 				DebugLocation(35, 54);
-				char_literal88=(IToken)Match(input,44,Follow._44_in_premik410); 
+				char_literal88=(IToken)Match(input,44,Follow._44_in_premik409); 
 				char_literal88_tree = (CommonTree)adaptor.Create(char_literal88);
 				adaptor.AddChild(root_0, char_literal88_tree);
 				DebugLocation(35, 61);
-				char_literal89=(IToken)Match(input,39,Follow._39_in_premik412); 
+				char_literal89=(IToken)Match(input,39,Follow._39_in_premik411); 
 				DebugLocation(35, 63);
-				REAL90=(IToken)Match(input,REAL,Follow._REAL_in_premik415); 
+				REAL90=(IToken)Match(input,REAL,Follow._REAL_in_premik414); 
 				REAL90_tree = (CommonTree)adaptor.Create(REAL90);
 				adaptor.AddChild(root_0, REAL90_tree);
 
@@ -2846,21 +2847,21 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:35:72: MOVC INDEKS 'V' '=' ! REAL
 				{
 				DebugLocation(35, 72);
-				MOVC91=(IToken)Match(input,MOVC,Follow._MOVC_in_premik421); 
+				MOVC91=(IToken)Match(input,MOVC,Follow._MOVC_in_premik420); 
 				MOVC91_tree = (CommonTree)adaptor.Create(MOVC91);
 				adaptor.AddChild(root_0, MOVC91_tree);
 				DebugLocation(35, 77);
-				INDEKS92=(IToken)Match(input,INDEKS,Follow._INDEKS_in_premik423); 
+				INDEKS92=(IToken)Match(input,INDEKS,Follow._INDEKS_in_premik422); 
 				INDEKS92_tree = (CommonTree)adaptor.Create(INDEKS92);
 				adaptor.AddChild(root_0, INDEKS92_tree);
 				DebugLocation(35, 84);
-				char_literal93=(IToken)Match(input,44,Follow._44_in_premik425); 
+				char_literal93=(IToken)Match(input,44,Follow._44_in_premik424); 
 				char_literal93_tree = (CommonTree)adaptor.Create(char_literal93);
 				adaptor.AddChild(root_0, char_literal93_tree);
 				DebugLocation(35, 91);
-				char_literal94=(IToken)Match(input,39,Follow._39_in_premik427); 
+				char_literal94=(IToken)Match(input,39,Follow._39_in_premik426); 
 				DebugLocation(35, 93);
-				REAL95=(IToken)Match(input,REAL,Follow._REAL_in_premik430); 
+				REAL95=(IToken)Match(input,REAL,Follow._REAL_in_premik429); 
 				REAL95_tree = (CommonTree)adaptor.Create(REAL95);
 				adaptor.AddChild(root_0, REAL95_tree);
 
@@ -2881,21 +2882,21 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 				// D:\\Faks\\2. letnik\\Robotizacija\\RobotLanguage.g:35:102: MOVS INDEKS 'V' '=' ! REAL
 				{
 				DebugLocation(35, 102);
-				MOVS96=(IToken)Match(input,MOVS,Follow._MOVS_in_premik436); 
+				MOVS96=(IToken)Match(input,MOVS,Follow._MOVS_in_premik435); 
 				MOVS96_tree = (CommonTree)adaptor.Create(MOVS96);
 				adaptor.AddChild(root_0, MOVS96_tree);
 				DebugLocation(35, 107);
-				INDEKS97=(IToken)Match(input,INDEKS,Follow._INDEKS_in_premik438); 
+				INDEKS97=(IToken)Match(input,INDEKS,Follow._INDEKS_in_premik437); 
 				INDEKS97_tree = (CommonTree)adaptor.Create(INDEKS97);
 				adaptor.AddChild(root_0, INDEKS97_tree);
 				DebugLocation(35, 114);
-				char_literal98=(IToken)Match(input,44,Follow._44_in_premik440); 
+				char_literal98=(IToken)Match(input,44,Follow._44_in_premik439); 
 				char_literal98_tree = (CommonTree)adaptor.Create(char_literal98);
 				adaptor.AddChild(root_0, char_literal98_tree);
 				DebugLocation(35, 121);
-				char_literal99=(IToken)Match(input,39,Follow._39_in_premik442); 
+				char_literal99=(IToken)Match(input,39,Follow._39_in_premik441); 
 				DebugLocation(35, 123);
-				REAL100=(IToken)Match(input,REAL,Follow._REAL_in_premik445); 
+				REAL100=(IToken)Match(input,REAL,Follow._REAL_in_premik444); 
 				REAL100_tree = (CommonTree)adaptor.Create(REAL100);
 				adaptor.AddChild(root_0, REAL100_tree);
 
@@ -2938,14 +2939,14 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 	private static class Follow
 	{
 		public static readonly BitSet _prog_in_start37 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _job_in_prog45 = new BitSet(new ulong[]{0x80000UL});
-		public static readonly BitSet _name_in_prog47 = new BitSet(new ulong[]{0x1000000UL});
-		public static readonly BitSet _pos_in_prog49 = new BitSet(new ulong[]{0x400000UL});
-		public static readonly BitSet _npos_in_prog51 = new BitSet(new ulong[]{0x100000000UL});
-		public static readonly BitSet _user_in_prog53 = new BitSet(new ulong[]{0x80000000UL});
-		public static readonly BitSet _tool_in_prog55 = new BitSet(new ulong[]{0x2000000UL});
-		public static readonly BitSet _postype_in_prog57 = new BitSet(new ulong[]{0x10000000UL});
-		public static readonly BitSet _rectan_in_prog59 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _job_in_prog45 = new BitSet(new ulong[]{0x100000UL});
+		public static readonly BitSet _name_in_prog47 = new BitSet(new ulong[]{0x2000000UL});
+		public static readonly BitSet _pos_in_prog49 = new BitSet(new ulong[]{0x800000UL});
+		public static readonly BitSet _npos_in_prog51 = new BitSet(new ulong[]{0x200000000UL});
+		public static readonly BitSet _user_in_prog53 = new BitSet(new ulong[]{0x100000000UL});
+		public static readonly BitSet _tool_in_prog55 = new BitSet(new ulong[]{0x4000000UL});
+		public static readonly BitSet _postype_in_prog57 = new BitSet(new ulong[]{0x20000000UL});
+		public static readonly BitSet _rectan_in_prog59 = new BitSet(new ulong[]{0x8000000UL});
 		public static readonly BitSet _rconf_in_prog61 = new BitSet(new ulong[]{0x800UL});
 		public static readonly BitSet _cindeks_in_prog63 = new BitSet(new ulong[]{0x1800UL});
 		public static readonly BitSet _inst_in_prog66 = new BitSet(new ulong[]{0x40UL});
@@ -2956,87 +2957,87 @@ public partial class RobotLanguageParser : Antlr.Runtime.Parser
 		public static readonly BitSet _group_in_prog76 = new BitSet(new ulong[]{0x20000000000UL});
 		public static readonly BitSet _main_in_prog78 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _JOB_in_job124 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _NAME_in_name131 = new BitSet(new ulong[]{0x200000UL});
+		public static readonly BitSet _NAME_in_name131 = new BitSet(new ulong[]{0x400000UL});
 		public static readonly BitSet _NIZ_in_name133 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _POS_in_pos140 = new BitSet(new ulong[]{0x2UL});
 		public static readonly BitSet _NPOS_in_npos147 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _INT_in_npos149 = new BitSet(new ulong[]{0x400000000UL});
-		public static readonly BitSet _34_in_npos152 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _ostanek_in_npos155 = new BitSet(new ulong[]{0x400000002UL});
-		public static readonly BitSet _INT_in_ostanek164 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _USER_in_user171 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _INT_in_user173 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _TOOL_in_tool180 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _INT_in_tool182 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _POSTYPE_in_postype189 = new BitSet(new ulong[]{0xC0000000000UL});
-		public static readonly BitSet _set_in_postype191 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _RECTAN_in_rectan204 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _RCONF_in_rconf211 = new BitSet(new ulong[]{0x6000000000UL});
-		public static readonly BitSet _set_in_rconf213 = new BitSet(new ulong[]{0x400000000UL});
-		public static readonly BitSet _34_in_rconf220 = new BitSet(new ulong[]{0x6000000000UL});
-		public static readonly BitSet _set_in_rconf223 = new BitSet(new ulong[]{0x400000002UL});
-		public static readonly BitSet _INDEKS_in_cindeks236 = new BitSet(new ulong[]{0x8000000000UL});
-		public static readonly BitSet _39_in_cindeks238 = new BitSet(new ulong[]{0x808000000UL});
-		public static readonly BitSet _35_in_cindeks241 = new BitSet(new ulong[]{0x8000000UL});
-		public static readonly BitSet _REAL_in_cindeks244 = new BitSet(new ulong[]{0x400000000UL});
-		public static readonly BitSet _34_in_cindeks247 = new BitSet(new ulong[]{0x808000000UL});
-		public static readonly BitSet _35_in_cindeks250 = new BitSet(new ulong[]{0x8000000UL});
-		public static readonly BitSet _REAL_in_cindeks253 = new BitSet(new ulong[]{0x400000002UL});
-		public static readonly BitSet _INST_in_inst262 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _DATE_in_date269 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _INT_in_date271 = new BitSet(new ulong[]{0x1000002000UL});
-		public static readonly BitSet _36_in_date274 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _INT_in_date277 = new BitSet(new ulong[]{0x1000002000UL});
-		public static readonly BitSet _36_in_date280 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _INT_in_date283 = new BitSet(new ulong[]{0x20002000UL});
-		public static readonly BitSet _TIME_in_date286 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _COMM_in_comm293 = new BitSet(new ulong[]{0x200000UL});
-		public static readonly BitSet _NIZ_in_comm295 = new BitSet(new ulong[]{0x200002UL});
-		public static readonly BitSet _ATTR_in_attr303 = new BitSet(new ulong[]{0x200000UL});
-		public static readonly BitSet _NIZ_in_attr305 = new BitSet(new ulong[]{0x400000000UL});
-		public static readonly BitSet _34_in_attr308 = new BitSet(new ulong[]{0x200000UL});
-		public static readonly BitSet _NIZ_in_attr311 = new BitSet(new ulong[]{0x400000002UL});
-		public static readonly BitSet _FRAME_in_frame320 = new BitSet(new ulong[]{0x80000000000UL});
-		public static readonly BitSet _43_in_frame322 = new BitSet(new ulong[]{0x2000UL});
-		public static readonly BitSet _INT_in_frame324 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _GROUP_in_group331 = new BitSet(new ulong[]{0x200000UL});
-		public static readonly BitSet _NIZ_in_group333 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _41_in_main340 = new BitSet(new ulong[]{0x78000UL});
-		public static readonly BitSet _ukazi_in_main342 = new BitSet(new ulong[]{0x10000000000UL});
-		public static readonly BitSet _40_in_main344 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _premik_in_ukazi351 = new BitSet(new ulong[]{0x100UL});
-		public static readonly BitSet _DOUT_in_ukazi353 = new BitSet(new ulong[]{0x800000UL});
-		public static readonly BitSet _ONOFF_in_ukazi355 = new BitSet(new ulong[]{0x40000000UL});
-		public static readonly BitSet _TIMER_in_ukazi357 = new BitSet(new ulong[]{0x8000000000UL});
-		public static readonly BitSet _39_in_ukazi359 = new BitSet(new ulong[]{0x8000000UL});
-		public static readonly BitSet _REAL_in_ukazi362 = new BitSet(new ulong[]{0x78000UL});
-		public static readonly BitSet _premiki_in_ukazi364 = new BitSet(new ulong[]{0x100UL});
-		public static readonly BitSet _DOUT_in_ukazi366 = new BitSet(new ulong[]{0x800000UL});
-		public static readonly BitSet _ONOFF_in_ukazi368 = new BitSet(new ulong[]{0x78000UL});
-		public static readonly BitSet _premik_in_ukazi370 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _premik_in_premiki377 = new BitSet(new ulong[]{0x78000UL});
-		public static readonly BitSet _premiki_in_premiki379 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _premik_in_premiki383 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _MOVJ_in_premik391 = new BitSet(new ulong[]{0x800UL});
-		public static readonly BitSet _INDEKS_in_premik393 = new BitSet(new ulong[]{0x200000000000UL});
-		public static readonly BitSet _45_in_premik395 = new BitSet(new ulong[]{0x8000000000UL});
-		public static readonly BitSet _39_in_premik397 = new BitSet(new ulong[]{0x8000000UL});
-		public static readonly BitSet _REAL_in_premik400 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _MOVL_in_premik406 = new BitSet(new ulong[]{0x800UL});
-		public static readonly BitSet _INDEKS_in_premik408 = new BitSet(new ulong[]{0x100000000000UL});
-		public static readonly BitSet _44_in_premik410 = new BitSet(new ulong[]{0x8000000000UL});
-		public static readonly BitSet _39_in_premik412 = new BitSet(new ulong[]{0x8000000UL});
-		public static readonly BitSet _REAL_in_premik415 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _MOVC_in_premik421 = new BitSet(new ulong[]{0x800UL});
-		public static readonly BitSet _INDEKS_in_premik423 = new BitSet(new ulong[]{0x100000000000UL});
-		public static readonly BitSet _44_in_premik425 = new BitSet(new ulong[]{0x8000000000UL});
-		public static readonly BitSet _39_in_premik427 = new BitSet(new ulong[]{0x8000000UL});
-		public static readonly BitSet _REAL_in_premik430 = new BitSet(new ulong[]{0x2UL});
-		public static readonly BitSet _MOVS_in_premik436 = new BitSet(new ulong[]{0x800UL});
-		public static readonly BitSet _INDEKS_in_premik438 = new BitSet(new ulong[]{0x100000000000UL});
-		public static readonly BitSet _44_in_premik440 = new BitSet(new ulong[]{0x8000000000UL});
-		public static readonly BitSet _39_in_premik442 = new BitSet(new ulong[]{0x8000000UL});
-		public static readonly BitSet _REAL_in_premik445 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _INT_in_npos149 = new BitSet(new ulong[]{0x800000000UL});
+		public static readonly BitSet _35_in_npos152 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _INT_in_npos154 = new BitSet(new ulong[]{0x800000002UL});
+		public static readonly BitSet _INT_in_ostanek163 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _USER_in_user170 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _INT_in_user172 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _TOOL_in_tool179 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _INT_in_tool181 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _POSTYPE_in_postype188 = new BitSet(new ulong[]{0xC0000000000UL});
+		public static readonly BitSet _set_in_postype190 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _RECTAN_in_rectan203 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _RCONF_in_rconf210 = new BitSet(new ulong[]{0x6000000000UL});
+		public static readonly BitSet _set_in_rconf212 = new BitSet(new ulong[]{0x800000000UL});
+		public static readonly BitSet _35_in_rconf219 = new BitSet(new ulong[]{0x6000000000UL});
+		public static readonly BitSet _set_in_rconf222 = new BitSet(new ulong[]{0x800000002UL});
+		public static readonly BitSet _INDEKS_in_cindeks235 = new BitSet(new ulong[]{0x8000000000UL});
+		public static readonly BitSet _39_in_cindeks237 = new BitSet(new ulong[]{0x10008000UL});
+		public static readonly BitSet _MINUS_in_cindeks240 = new BitSet(new ulong[]{0x10000000UL});
+		public static readonly BitSet _REAL_in_cindeks243 = new BitSet(new ulong[]{0x800000000UL});
+		public static readonly BitSet _35_in_cindeks246 = new BitSet(new ulong[]{0x10008000UL});
+		public static readonly BitSet _MINUS_in_cindeks249 = new BitSet(new ulong[]{0x10000000UL});
+		public static readonly BitSet _REAL_in_cindeks252 = new BitSet(new ulong[]{0x800000002UL});
+		public static readonly BitSet _INST_in_inst261 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _DATE_in_date268 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _INT_in_date270 = new BitSet(new ulong[]{0x1000002000UL});
+		public static readonly BitSet _36_in_date273 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _INT_in_date276 = new BitSet(new ulong[]{0x1000002000UL});
+		public static readonly BitSet _36_in_date279 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _INT_in_date282 = new BitSet(new ulong[]{0x40002000UL});
+		public static readonly BitSet _TIME_in_date285 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _COMM_in_comm292 = new BitSet(new ulong[]{0x400000UL});
+		public static readonly BitSet _NIZ_in_comm294 = new BitSet(new ulong[]{0x400002UL});
+		public static readonly BitSet _ATTR_in_attr302 = new BitSet(new ulong[]{0x400000UL});
+		public static readonly BitSet _NIZ_in_attr304 = new BitSet(new ulong[]{0x800000000UL});
+		public static readonly BitSet _35_in_attr307 = new BitSet(new ulong[]{0x400000UL});
+		public static readonly BitSet _NIZ_in_attr310 = new BitSet(new ulong[]{0x800000002UL});
+		public static readonly BitSet _FRAME_in_frame319 = new BitSet(new ulong[]{0x80000000000UL});
+		public static readonly BitSet _43_in_frame321 = new BitSet(new ulong[]{0x2000UL});
+		public static readonly BitSet _INT_in_frame323 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _GROUP_in_group330 = new BitSet(new ulong[]{0x400000UL});
+		public static readonly BitSet _NIZ_in_group332 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _41_in_main339 = new BitSet(new ulong[]{0xF0000UL});
+		public static readonly BitSet _ukazi_in_main341 = new BitSet(new ulong[]{0x10000000000UL});
+		public static readonly BitSet _40_in_main343 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _premik_in_ukazi350 = new BitSet(new ulong[]{0x100UL});
+		public static readonly BitSet _DOUT_in_ukazi352 = new BitSet(new ulong[]{0x1000000UL});
+		public static readonly BitSet _ONOFF_in_ukazi354 = new BitSet(new ulong[]{0x80000000UL});
+		public static readonly BitSet _TIMER_in_ukazi356 = new BitSet(new ulong[]{0x8000000000UL});
+		public static readonly BitSet _39_in_ukazi358 = new BitSet(new ulong[]{0x10000000UL});
+		public static readonly BitSet _REAL_in_ukazi361 = new BitSet(new ulong[]{0xF0000UL});
+		public static readonly BitSet _premiki_in_ukazi363 = new BitSet(new ulong[]{0x100UL});
+		public static readonly BitSet _DOUT_in_ukazi365 = new BitSet(new ulong[]{0x1000000UL});
+		public static readonly BitSet _ONOFF_in_ukazi367 = new BitSet(new ulong[]{0xF0000UL});
+		public static readonly BitSet _premik_in_ukazi369 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _premik_in_premiki376 = new BitSet(new ulong[]{0xF0000UL});
+		public static readonly BitSet _premiki_in_premiki378 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _premik_in_premiki382 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _MOVJ_in_premik390 = new BitSet(new ulong[]{0x800UL});
+		public static readonly BitSet _INDEKS_in_premik392 = new BitSet(new ulong[]{0x200000000000UL});
+		public static readonly BitSet _45_in_premik394 = new BitSet(new ulong[]{0x8000000000UL});
+		public static readonly BitSet _39_in_premik396 = new BitSet(new ulong[]{0x10000000UL});
+		public static readonly BitSet _REAL_in_premik399 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _MOVL_in_premik405 = new BitSet(new ulong[]{0x800UL});
+		public static readonly BitSet _INDEKS_in_premik407 = new BitSet(new ulong[]{0x100000000000UL});
+		public static readonly BitSet _44_in_premik409 = new BitSet(new ulong[]{0x8000000000UL});
+		public static readonly BitSet _39_in_premik411 = new BitSet(new ulong[]{0x10000000UL});
+		public static readonly BitSet _REAL_in_premik414 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _MOVC_in_premik420 = new BitSet(new ulong[]{0x800UL});
+		public static readonly BitSet _INDEKS_in_premik422 = new BitSet(new ulong[]{0x100000000000UL});
+		public static readonly BitSet _44_in_premik424 = new BitSet(new ulong[]{0x8000000000UL});
+		public static readonly BitSet _39_in_premik426 = new BitSet(new ulong[]{0x10000000UL});
+		public static readonly BitSet _REAL_in_premik429 = new BitSet(new ulong[]{0x2UL});
+		public static readonly BitSet _MOVS_in_premik435 = new BitSet(new ulong[]{0x800UL});
+		public static readonly BitSet _INDEKS_in_premik437 = new BitSet(new ulong[]{0x100000000000UL});
+		public static readonly BitSet _44_in_premik439 = new BitSet(new ulong[]{0x8000000000UL});
+		public static readonly BitSet _39_in_premik441 = new BitSet(new ulong[]{0x10000000UL});
+		public static readonly BitSet _REAL_in_premik444 = new BitSet(new ulong[]{0x2UL});
 	}
 	#endregion Follow sets
 }
