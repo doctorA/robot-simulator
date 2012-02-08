@@ -31,7 +31,7 @@ namespace Robot_simulator
             textBox_x.Text = conf.zacetna_tocka.X.ToString();
             textBox_y.Text = conf.zacetna_tocka.Y.ToString();
             textBox_z.Text = conf.zacetna_tocka.Z.ToString();
-            textBox_datum.Text = DateTime.Now.ToString();
+            textBox_datum.Text = DateTime.Now.ToString("yyyy'/'MM'/'dd hh:mm");
             textBox_hitrost.Text = conf.hitrost_restkanja.ToString();
             if (conf.vklop_orodja)
             {
