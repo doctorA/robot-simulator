@@ -233,6 +233,16 @@ namespace Robot_simulator
            // glControl1.s
         }
 
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            //groupBox1
+            groupBox1.Left = this.Width - groupBox1.Width - 20;
+            glControl1.Width = this.Width - groupBox1.Width - 40;
+            glControl1.Height = this.Height - 65;
+            this.setup_viewport();
+            glControl1.Invalidate();
+        }
+
 
     }
 }
