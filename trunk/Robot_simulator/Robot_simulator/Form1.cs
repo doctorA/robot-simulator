@@ -310,8 +310,8 @@ namespace Robot_simulator
 
         private int checkGrammar(string vhod)
         {
-            //try
-            //{
+            try
+            {
                 ANTLRStringStream sStream = new ANTLRStringStream(vhod);
                 RobotLanguageLexer lexer = new RobotLanguageLexer(sStream);
 
@@ -448,12 +448,12 @@ namespace Robot_simulator
 
                 richTextBox2.Text += GetTimestamp(DateTime.Now) + Environment.NewLine + izpis;
                 return 0;
-            /*}
+            }
             catch
             {
                 richTextBox2.Text += GetTimestamp(DateTime.Now) + "Something went wrong..." + Environment.NewLine;
                 return -1;
-            }*/
+            }
         }
         #endregion
 
