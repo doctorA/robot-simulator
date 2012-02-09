@@ -21,7 +21,7 @@ namespace Robot_simulator
         {
             if (this.tocke.Count > 1)
             {
-                GL.LineWidth(5f);
+                GL.LineWidth(conf.debelina_svedra * 11.25f);
                 GL.Begin(BeginMode.Lines);
                 //GL.LineWidth(200f);
                 GL.Color3(Color.White);
@@ -39,7 +39,7 @@ namespace Robot_simulator
 
                 GL.End();
 
-                GL.PointSize(10f);
+                GL.PointSize(conf.debelina_svedra * 11.25f);
                 GL.Color3(Color.Red);
                 GL.Begin(BeginMode.Points);
                 for (int i = 0; i < tocke.Count; i++)
