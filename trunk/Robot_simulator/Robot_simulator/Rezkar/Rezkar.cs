@@ -120,6 +120,7 @@ namespace Robot_simulator
         {
 
             float x = ((float)e.X / (float)glControl1.Width) * (float)(conf.vel_ploscice.X + 10) - 5f;
+           // MessageBox.Show((glControl1.Width / conf.vel_ploscice.X).ToString());
             float y = ((float)e.Y / (float)glControl1.Height) * (float)(conf.vel_ploscice.Y + 10) - 5f;
             y = ((float)(conf.vel_ploscice.Y + 10) - 10f) - y;
             if (liki.Count>0)
@@ -369,6 +370,7 @@ namespace Robot_simulator
             Nastavitve n = new Nastavitve(conf);
             n.ShowDialog();
             conf = n.conf1;
+            glControl1.Invalidate();
         }
 
         private void odpriJBIToolStripMenuItem_Click(object sender, EventArgs e)

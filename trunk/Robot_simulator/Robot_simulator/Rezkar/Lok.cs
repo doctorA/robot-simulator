@@ -23,13 +23,13 @@ namespace Robot_simulator
             tip = 4;
         }
 
-        public void glCircle3i(Vector2 p1, float radius)
+        public void glCircle3i(Vector2 p1, float radius, Conf_rezkar conf)
         {
             float angle;
             GL.PushMatrix();
             GL.LoadIdentity();
             GL.Color3(Color.White);
-            GL.LineWidth(5f);
+            GL.LineWidth(conf.debelina_svedra * 11.25f);
             GL.Begin(BeginMode.LineStrip);
 
             for (int i = angle1; i < angle2; i++)
@@ -180,8 +180,8 @@ namespace Robot_simulator
             if (this.tocke.Count > 2)
             {
                 izracunaj_krog(tocke[0], tocke[1], tocke[2]);
-                glCircle3i(Center, radius);
-                GL.PointSize(10f);
+                glCircle3i(Center, radius, conf);
+                GL.PointSize(conf.debelina_svedra * 11.25f);
                 GL.Color3(Color.Red);
                 GL.Begin(BeginMode.Points);
                 for (int i = 0; i < tocke.Count; i++)

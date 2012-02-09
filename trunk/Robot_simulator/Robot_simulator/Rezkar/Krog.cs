@@ -19,13 +19,13 @@ namespace Robot_simulator
 
  
 
-        public void glCircle3i(Vector2 p1, float radius)
+        public void glCircle3i(Vector2 p1, float radius, Conf_rezkar conf)
         {
             float angle;
             GL.PushMatrix();
             GL.LoadIdentity();
             GL.Color3(Color.White);
-            GL.LineWidth(5f);
+            GL.LineWidth(conf.debelina_svedra * 11.25f);
             GL.Begin(BeginMode.LineLoop);
             for (int i = 0; i < 100; i++)
             {
@@ -48,9 +48,9 @@ namespace Robot_simulator
                 GL.Enable(EnableCap.Blend);
                 GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
 
-                glCircle3i(tocke[0], (new Vector2(tocke[0].X - tocke[1].X, tocke[0].Y - tocke[1].Y)).Length);
+                glCircle3i(tocke[0], (new Vector2(tocke[0].X - tocke[1].X, tocke[0].Y - tocke[1].Y)).Length, conf);
 
-                GL.PointSize(10f);
+                GL.PointSize(conf.debelina_svedra * 11.25f);
                 GL.Color3(Color.Red);
                 GL.Begin(BeginMode.Points);
                 for (int i = 0; i < tocke.Count; i++)

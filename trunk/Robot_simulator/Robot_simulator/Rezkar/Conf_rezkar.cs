@@ -28,7 +28,7 @@ namespace Robot_simulator
         public Conf_rezkar()
         {
             zacetna_tocka = new Vector3(1.00f, -89.00f, 179.00f);
-            debelina_svedra = 3;
+            debelina_svedra = 1;
             komentar = "KOMENTAR";
             ime = "CHUCK";
             tool = "TOOL 3";
